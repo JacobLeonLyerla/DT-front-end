@@ -6,13 +6,9 @@
   -o-background-size: cover;
   background-size: cover;
 }
-.mapBackground-styles .box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  color: blueviolet;
+.mapBackground-styles .card {
   width: 30vw;
-  height: 100vh;
-  font-size: 3.7rem;
+  min-height: 40vh;
+  margin: 0 auto;
+  margin-top: 25vh;
 }
