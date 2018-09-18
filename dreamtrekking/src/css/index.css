@@ -12,3 +12,14 @@
   margin: 0 auto;
   margin-top: 25vh;
 }
+.mapBackground-styles .card .share-styles {
+  display: flex;
+}
+.mapBackground-styles .card .share-styles .email-btn {
+  width: 12%;
+  color: blue;
+  border-radius: 300px;
+}
+.mapBackground-styles .card .share-styles .email-btn .email-icon {
+  border-radius: 300px;
+}
