@@ -12,22 +12,20 @@ import "./App.css";
 import "./css/index.css";
 
 class App extends Component {
-  state={
-    scroll:false,
-  }
-//   componentDidMount() {
-//     window.addEventListener('scroll',()=>this.scroll() );
-//  }
-//  scroll=()=>{
-//    this.setState({scroll:true})
-//  }
+  state = {
+    scroll: false
+  };
+  //   componentDidMount() {
+  //     window.addEventListener('scroll',()=>this.scroll() );
+  //  }
+  //  scroll=()=>{
+  //    this.setState({scroll:true})
+  //  }
   render() {
-    
     return (
       <div className="App mapBackground-styles">
-        <br />
-
-        <div>{this.state.scroll ? (<Card>
+        <br />(
+        <Card>
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
@@ -36,11 +34,8 @@ class App extends Component {
               bulk of the card's content.
             </CardText>
             <Button>Button</Button>
-
           </CardBody>
-        </Card>):(<div>whaaat</div>)}
-          </div>
-      
+        </Card>
       </div>
     );
   }
