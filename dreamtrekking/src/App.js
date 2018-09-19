@@ -11,13 +11,24 @@ import {
 
 import "./App.css";
 import "./css/index.css";
-import { react } from "babel-types";
+
 class App extends Component {
+  state={
+    scroll:false,
+  }
+  componentDidMount() {
+    window.addEventListener('scroll',()=>this.scroll() );
+ }
+ scroll=()=>{
+   this.setState({scroll:true})
+ }
   render() {
+    
     return (
       <div className="App mapBackground-styles">
         <br />
-        <Card>
+
+        <div>{this.state.scroll ? (<Card>
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
@@ -28,7 +39,9 @@ class App extends Component {
             <Button>Button</Button>
 
           </CardBody>
-        </Card>
+        </Card>):(<div>whaaat</div>)}
+          </div>
+      
       </div>
     );
   }
