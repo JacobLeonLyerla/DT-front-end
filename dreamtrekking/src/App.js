@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {
   Card,
-  CardImg,
   CardText,
   CardBody,
   CardTitle,
@@ -16,12 +15,12 @@ class App extends Component {
   state={
     scroll:false,
   }
-  componentDidMount() {
-    window.addEventListener('scroll',()=>this.scroll() );
- }
- scroll=()=>{
-   this.setState({scroll:true})
- }
+//   componentDidMount() {
+//     window.addEventListener('scroll',()=>this.scroll() );
+//  }
+//  scroll=()=>{
+//    this.setState({scroll:true})
+//  }
   render() {
     
     return (
