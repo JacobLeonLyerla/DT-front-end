@@ -61,23 +61,23 @@ class App extends Component {
             <Button>Button</Button>
             <div className="share-styles">
               <EmailShareButton>
-                <EmailIcon size={62} round={true} />
+                <EmailIcon  round={true} />
               </EmailShareButton>
-              <RedditShareButton  children={react.node} url={"https://www.reddit.com/submit?url=http%3A%2F%2Fgithub.com&title=GitHub"}>
-                <RedditIcon size={62} round={true} />
+              <RedditShareButton windowWidth={"900"}   children={react.node} url={"https://www.reddit.com/submit?url=http%3A%2F%2Fgithub.com&title=GitHub"}>
+                <RedditIcon  round={true} />
               </RedditShareButton>
               <LinkedinShareButton
                 children={react.node}
                 url={
-                  "https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fgithub.com"
+                  "https://www.linkedin.com/shareArticle?mini=true&url=http://developer.linkedin.com&title=LinkedIn%20Developer%20Network&summary=My%20favorite%20developer%20program&source=LinkedIn"
                 }
-                title={"Test page"}
-                description={"this is a test"}
+                title={"https://dungeon-run.netlify.com/"}
+                description={"sweet ass game"}
               >
-                <LinkedinIcon size={62} round={true} />
+                <LinkedinIcon  round={true} />
               </LinkedinShareButton>
-              <TwitterShareButton children={react.node} url={"https://twitter.com/intent/tweet"} title="test twitter">
-                <TwitterIcon size={62} round={true} />
+              <TwitterShareButton children={react.node} url={"https://dungeon-run.netlify.com"}>
+                <TwitterIcon  round={true} />
               </TwitterShareButton>
             </div>
           </CardBody>
