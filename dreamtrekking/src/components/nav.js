@@ -1,32 +1,48 @@
-import React,{Component,Fragment} from 'react';
+import React, { Component } from 'react'
+import { Menu } from 'semantic-ui-react'
 
+export default class MenuExampleStackable extends Component {
+  state = {}
 
- class DTNav extends Component {
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-  
   render() {
+    const { activeItem } = this.state
+
     return (
-    <Fragment>
-     <form class="ui form">
-  <div class="field">
-    <label>First Name</label>
-    <input type="text" name="first-name" placeholder="First Name"/>
-  </div>
+      <Menu stackable>
+        <Menu.Item>
+          <img src='/logo.png' />
+        </Menu.Item>
 
-  <div class="field">
-    <label>Last Name</label>
-    <input type="text" name="last-name" placeholder="Last Name"/>
-  </div>
 
-  <div class="field">
-    <div class="ui checkbox">
-      <input type="checkbox" tabindex="0" class="hidden"/>
-      <label>I agree to the Terms and Conditions</label>
-    </div>
-  </div>
-  <button class="ui button" type="submit">Submit</button>
-</form>
-      </Fragment> );
+        <Menu.Item
+          name='features'
+          active={activeItem === 'features'}
+          onClick={this.handleItemClick}
+        >
+          Features
+        </Menu.Item>
+        <Menu.Item
+          name='visit'
+          active={activeItem === 'visit'}
+          onClick={this.handleItemClick}
+        >
+          Visit
+        </Menu.Item>
+
+        <Menu.Item
+          name='testimonials'
+          active={activeItem === 'testimonials'}
+          onClick={this.handleItemClick}
+        >
+          Testimonials
+        </Menu.Item>
+
+        <Menu.Item name='sign-in' active={activeItem === 'sign-in'} onClick={this.handleItemClick}>
+          Sign-in
+        </Menu.Item>
+      </Menu>
+    )
   }
 }
-export default DTNav;
