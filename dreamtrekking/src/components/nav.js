@@ -1,26 +1,32 @@
-import React from 'react';
+import React,{Component,Fragment} from 'react';
 
 
- class DTNav extends React.Component {
+ class DTNav extends Component {
 
   
   render() {
     return (
-        <div>
-        <div class='ui labeled button'>
-          <button class='ui red button' tabindex='0'>
-            <i aria-hidden='true' class='heart icon' /> Like
-          </button>
-          <div class='ui red left pointing basic label'>2,048</div>
-        </div>
-        <div class='ui labeled button'>
-          <button class='ui blue basic button' tabindex='0'>
-            <i aria-hidden='true' class='fork icon' /> Fork
-          </button>
-          <a class='ui blue left pointing basic label'>2,048</a>
-        </div>
-      </div>
-    );
+    <Fragment>
+     <form class="ui form">
+  <div class="field">
+    <label>First Name</label>
+    <input type="text" name="first-name" placeholder="First Name"/>
+  </div>
+
+  <div class="field">
+    <label>Last Name</label>
+    <input type="text" name="last-name" placeholder="Last Name"/>
+  </div>
+
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden"/>
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="ui button" type="submit">Submit</button>
+</form>
+      </Fragment> );
   }
 }
 export default DTNav;
