@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import {
-  Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
-} from "reactstrap";
+
 
 import "./App.css";
 import "./css/index.css";
 
+import Nav from "./components/nav"
 class App extends Component {
   state = {
     scroll: false
@@ -24,18 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App mapBackground-styles">
-        <br />(
-        <Card>
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
+        <Nav/>
       </div>
     );
   }
