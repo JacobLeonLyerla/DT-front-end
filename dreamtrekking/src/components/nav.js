@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-import logo from "../assets/logoinit.jpg"
+import logo from "../assets/logoinit.png"
 
 export default class MenuExampleStackable extends Component {
   state = {}
@@ -33,11 +33,11 @@ export default class MenuExampleStackable extends Component {
         </Menu.Item>
 
         <Menu.Item
-          name='testimonials'
-          active={activeItem === 'testimonials'}
+          name='destinations'
+          active={activeItem === 'destinations'}
           onClick={this.handleItemClick}
         >
-          Testimonials
+          Destinations
         </Menu.Item>
 
         <Menu.Item name='sign-in' active={activeItem === 'sign-in'} onClick={this.handleItemClick}>

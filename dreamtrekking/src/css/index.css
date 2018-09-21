@@ -19,3 +19,25 @@
 .mapBackground-styles .card .share-styles {
   display: flex;
 }
+.mapBackground-styles .menu {
+  background: rgba(3, 3, 3, 0.219);
+  border-bottom: none;
+  box-shadow: none;
+}
+.mapBackground-styles .menu .item {
+  color: white;
+}
+.mapBackground-styles .menu .item:hover {
+  color: #F6E0D6 !important;
+}
+.mapBackground-styles .menu .active {
+  color: #F6E0D6 !important;
+}
+.mapBackground-styles .logo-wrapper {
+  margin-top: 12vh;
+  background: white;
+  opacity: .7;
+}
+.mapBackground-styles .logo-styles {
+  width: 60vw;
+}
