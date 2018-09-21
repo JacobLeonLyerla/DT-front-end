@@ -5,6 +5,7 @@ import "./App.css";
 import "./css/index.css";
 
 import Nav from "./components/nav"
+import Header from "./components/header"
 class App extends Component {
   state = {
     scroll: false
@@ -19,6 +20,10 @@ class App extends Component {
     return (
       <div className="App mapBackground-styles">
         <Nav/>
+        <br/>
+        <br/>
+        
+        <Header/>
       </div>
     );
   }
