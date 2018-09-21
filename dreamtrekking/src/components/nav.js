@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
+import logo from "../assets/logoinit.jpg"
 
 export default class MenuExampleStackable extends Component {
   state = {}
@@ -12,7 +13,7 @@ export default class MenuExampleStackable extends Component {
     return (
       <Menu stackable>
         <Menu.Item>
-          <img src='/logo.png' />
+          <img src={logo}/>
         </Menu.Item>
 
 
