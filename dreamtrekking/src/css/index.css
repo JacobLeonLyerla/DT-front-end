@@ -6,38 +6,25 @@
   -o-background-size: cover;
   background-size: cover;
 }
-.mapBackground-styles .card {
-  animation: fadeIn;
-  animation-duration: 1s;
-  /* animation-delay: 10s; */
-  animation-iteration-count: 1;
-  width: 30vw;
-  min-height: 40vh;
-  margin: 0 auto;
-  margin-top: 25vh;
-}
-.mapBackground-styles .card .share-styles {
-  display: flex;
-}
-.mapBackground-styles .menu {
+.menu {
   background: rgba(3, 3, 3, 0.219);
   border-bottom: none;
   box-shadow: none;
 }
-.mapBackground-styles .menu .item {
+.menu .item {
   color: white;
 }
-.mapBackground-styles .menu .item:hover {
+.menu .item:hover {
   color: #F6E0D6 !important;
 }
-.mapBackground-styles .menu .active {
+.menu .active {
   color: #F6E0D6 !important;
 }
-.mapBackground-styles .logo-wrapper {
-  margin-top: 12vh;
+.logo-wrapper {
+  margin-top: 22vh;
   background: white;
   opacity: .7;
 }
-.mapBackground-styles .logo-styles {
+.logo-styles {
   width: 60vw;
 }
