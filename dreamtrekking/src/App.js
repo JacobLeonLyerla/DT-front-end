@@ -10,7 +10,7 @@ import Landing from "./components/landing"
 class App extends Component {
   render() {
     return (
-      <div className="App mapBackground-styles">
+      <div className="App">
        <Route
          exact path="/"
           render={props => <Landing/>}

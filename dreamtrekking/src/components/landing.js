@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Fragment} from "react";
 import Header from "./header"
 const Landing =()=> {
 
@@ -8,12 +8,13 @@ const Landing =()=> {
   //  scroll=()=>{
   //    this.setState({scroll:true})
   //  }
-    return (
+    return (<Fragment>
       <div className="App mapBackground-styles">
         <br/>
         <Header/>
       </div>
-    );
+      <div className="sell"><div className="shroud"></div></div>
+   </Fragment> );
   
 }
 
