@@ -1,16 +1,13 @@
 import React, { Fragment} from "react";
+import "../css/index.css"
 import Header from "./header"
+import Nav from "./landingNav"
 import logo from "../assets/castle.jpg"
 const Landing =()=> {
 
-  //   componentDidMount() {
-  //     window.addEventListener('scroll',()=>this.scroll() );
-  //  }
-  //  scroll=()=>{
-  //    this.setState({scroll:true})
-  //  }
     return (<Fragment>
       <div className="App mapBackground-styles">
+      <Nav/>
         <br/>
      <Header/>
       </div>

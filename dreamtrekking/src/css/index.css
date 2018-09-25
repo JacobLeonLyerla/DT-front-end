@@ -41,6 +41,16 @@
 .logo-styles {
   width: 60vw;
 }
+.landing-Nav {
+  background: rgba(3, 3, 3, 0.103);
+}
+.landing-Nav .nav-link {
+  color: white;
+}
+.landing-Nav .nav-link:hover {
+  color: #F6E0D6;
+  background: rgba(0, 0, 0, 0.103);
+}
 .navLogo-styles {
   width: 12%;
 }
