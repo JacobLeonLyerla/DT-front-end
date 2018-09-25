@@ -1,6 +1,5 @@
 import React, { Fragment} from "react";
 import Header from "./header"
-import { Segment, Image,Container } from 'semantic-ui-react'
 import logo from "../assets/castle.jpg"
 const Landing =()=> {
 
@@ -13,10 +12,11 @@ const Landing =()=> {
     return (<Fragment>
       <div className="App mapBackground-styles">
         <br/>
-        <Header/>
+     <Header/>
       </div>
-      <div className="sell"><Container size='massive' className="shroud">  <Segment  size='massive'>
-    <Image src={logo} size='large' floated='left' />
+      <div className="sell"><div  className="shroud">  <div>
+        
+    <img src={logo} />
     <p>
       Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem,
       est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum
@@ -24,7 +24,7 @@ const Landing =()=> {
       ex natum rebum iisque.
     </p>
 
-    <Image src={logo} size='big' floated='right' />
+    <img src={logo}  />
     <p>
       Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi
       nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix
@@ -37,7 +37,7 @@ const Landing =()=> {
       convenire mnesarchum eu per, quas minimum postulant per id.
     </p>
 
-    <Image src={logo} size='big' floated='left' />
+    <img src={logo} />
     <p>
       Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi
       nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix
@@ -49,7 +49,7 @@ const Landing =()=> {
       utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi
       convenire mnesarchum eu per, quas minimum postulant per id.
     </p>
-  </Segment></Container></div>
+  </div></div></div>
    </Fragment> );
   
 }
