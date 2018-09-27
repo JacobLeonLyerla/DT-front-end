@@ -9,17 +9,28 @@
 .sell {
   min-width: 100%;
   min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1484940564940-7eed11d146de?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e7192bd084a34adfe0c376ba8f8136b0&auto=format&fit=crop&w=634&q=80");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+.sell .rowContainer {
+  margin: 2% 15%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sell .col-md-3 {
+  margin-bottom: 2%;
+}
 .sell .media {
   width: 100%;
-  margin: 5% 0% 5% 5%;
+  height: 20vh;
 }
 .sell p {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 .menu {
   background: rgba(3, 3, 3, 0.219);
