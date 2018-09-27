@@ -1,5 +1,6 @@
 import React, { Fragment} from "react";
 import "../css/index.css"
+import {Row,Col} from 'reactstrap'
 import Header from "./header"
 import Nav from "./landingNav"
 import logo from "../assets/castle.jpg"
@@ -11,7 +12,7 @@ const Landing =()=> {
         <br/>
      <Header/>
       </div>
-      <div className="sell"><div  className="shroud">  <div>
+      <div className="sell">
         
     <img src={logo} />
     <p>
@@ -46,7 +47,7 @@ const Landing =()=> {
       utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi
       convenire mnesarchum eu per, quas minimum postulant per id.
     </p>
-  </div></div></div>
+ </div>
    </Fragment> );
   
 }
