@@ -6,11 +6,12 @@ const About =()=>{
 
     return(
         <div className="sell">
+        <div className="rowContainer">
         <Row>
-            <Col md="3">
+            <Col md="3" lg='3'>
           <Media src={logo}  />
           </Col>
-          <Col md ="9">
+          <Col md ="9"lg='9'>
           <p>
             Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam
             alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret
@@ -49,6 +50,7 @@ const About =()=>{
           </p>
           </Col>
         </Row>
+        </div>
       </div>
     )
 }
