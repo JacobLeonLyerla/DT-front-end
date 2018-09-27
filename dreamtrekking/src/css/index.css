@@ -39,8 +39,12 @@
   font-family: "Times New Roman", Times, serif;
   font-size: 6rem;
   margin-bottom: 1vh;
-  letter-spacing: .2ch;
-  text-decoration: underline #677FA3;
+  letter-spacing: 0.2ch;
+  text-decoration: underline #677fa3;
+}
+.sell .aboutRow {
+  border-bottom: 5px dashed #a8bdd6;
+  margin-bottom: 1%;
 }
 .sell .col-md-3 {
   margin-bottom: 2%;
@@ -70,7 +74,7 @@
 .logo-wrapper {
   margin-top: 22vh;
   background: white;
-  opacity: .7;
+  opacity: 0.7;
 }
 .logo-styles {
   width: 60vw;
