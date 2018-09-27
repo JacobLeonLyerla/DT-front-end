@@ -11,7 +11,7 @@
     .sell {
         
         min-width: 100%;
-        min-height: 100vh;
+        min-height: 100%;
        // background-image: url("https://images.unsplash.com/photo-1484940564940-7eed11d146de?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e7192bd084a34adfe0c376ba8f8136b0&auto=format&fit=crop&w=634&q=80");
        background:@maincolor; 
        -webkit-background-size: cover;
@@ -19,11 +19,22 @@
         -o-background-size: cover;
         background-size: cover;
         .rowContainer{
-            margin: 0% 15%;
-              height: 100vh;
+            margin: 0% 10%;
+              height: 100%;
+              min-height: 100vh;
             display:flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-evenly;
+            border:2px solid white;
+            padding: 1% 5%;
+            background:white;
+            border-radius: 2%;
+
+            
+        }
+        .col-md-9{
+        display: flex;
+        align-items: center;
         }
         .col-md-3{
          
@@ -32,7 +43,8 @@
         }
     .media{
         width:100%;
-        height:20vh;
+        height:60vh;
+
        
     }
     p{
