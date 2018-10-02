@@ -2,6 +2,10 @@ import React,{Component} from 'react';
 import "../css/index.css"
 import { Nav, NavItem, NavLink } from 'reactstrap';
  class LandingNav extends Component {
+
+  scrollAbout =()=>{
+    window.scrollTo(800,0)
+  }
   render() {
     return (
       <div className="landing-Nav">
@@ -13,7 +17,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
             <NavLink href="#">Link</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Another Link</NavLink>
+            <NavLink onclick={this.scrollAbout}>About</NavLink>
           </NavItem>
           <NavItem>
             <NavLink disabled href="#">Disabled Link</NavLink>
