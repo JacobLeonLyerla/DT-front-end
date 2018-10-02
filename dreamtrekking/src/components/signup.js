@@ -1,7 +1,7 @@
-import React from 'react';
+import React,{Component} from 'react';
 import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'reactstrap';
 
-export default class Example extends React.Component {
+class Signup extends Component {
   render() {
     return (
       <Form>
@@ -35,13 +35,9 @@ export default class Example extends React.Component {
           <FormFeedback valid tooltip>Sweet! that name is available</FormFeedback>
           <FormText>Example help text that remains unchanged.</FormText>
         </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Invalid input</Label>
-          <Input invalid />
-          <FormFeedback tooltip>Oh noes! that name is already taken</FormFeedback>
-          <FormText>Example help text that remains unchanged.</FormText>
-        </FormGroup>
+       \
       </Form>
     );
   }
 }
+export default Signup
