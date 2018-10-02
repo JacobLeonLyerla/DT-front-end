@@ -7,6 +7,7 @@ import { Route } from "react-router-dom";
 
 import Nav from "./components/nav"
 import Landing from "./components/landing"
+import Signup from"./components/signup"
 class App extends Component {
   render() {
     return (
@@ -19,7 +20,10 @@ class App extends Component {
           path="/dashboard"
           render={props => <Nav/>}
         />
-
+  <Route
+          path="/signup"
+          render={props => <Signup/>}
+        />
       </div>
     );
   }
