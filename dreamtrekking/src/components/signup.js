@@ -35,7 +35,7 @@ class Signup extends Component {
           <FormFeedback valid tooltip>Sweet! that name is available</FormFeedback>
           <FormText>Example help text that remains unchanged.</FormText>
         </FormGroup>
-       \
+       
       </Form>
     );
   }

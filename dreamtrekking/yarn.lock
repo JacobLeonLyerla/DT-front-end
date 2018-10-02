@@ -341,6 +341,16 @@ autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
+availity-reactstrap-validation@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/availity-reactstrap-validation/-/availity-reactstrap-validation-2.2.1.tgz#b5cf842924d460f793236eedc6ba7a96635ab38c"
+  dependencies:
+    babel-runtime "^6.26.0"
+    classnames "^2.2.6"
+    lodash "^4.17.10"
+    moment "^2.22.2"
+    prop-types "^15.6.2"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -4521,6 +4531,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   resolved "http://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+moment@^2.22.2:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
 ms@2.0.0:
   version "2.0.0"
