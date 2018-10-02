@@ -80,14 +80,29 @@
   width: 60vw;
 }
 .landing-Nav {
-  background: rgba(3, 3, 3, 0.103);
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.8rem;
+  background: rgba(3, 3, 3, 0.322);
 }
 .landing-Nav .nav-link {
-  color: white;
+  color: #a8bdd6;
 }
 .landing-Nav .nav-link:hover {
   color: #F6E0D6;
   background: rgba(0, 0, 0, 0.103);
+}
+.landing-Nav .signup {
+  color: white;
+  animation: wobble;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+.landing-Nav .signup:hover {
+  filter: brightness(160%);
+  animation: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }
 .navLogo-styles {
   width: 12%;
