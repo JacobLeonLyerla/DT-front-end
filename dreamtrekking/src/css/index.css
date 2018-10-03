@@ -108,9 +108,14 @@
   width: 12%;
 }
 .signup-container {
+  background-image: url("../assets/beach.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   min-height: 100vh;
   height: 100%;
-  font-size: 0.8rem;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,7 +125,19 @@
   height: 5vh;
   margin: 0 auto;
 }
+.signup-container .text-muted {
+  font-size: 1rem;
+}
+.signup-container .invalid-feedback {
+  font-size: 1rem;
+}
+.signup-container .valid-feedback {
+  font-size: rem;
+}
 .signup-container .signup-form {
   width: 30vw;
   height: 100%;
+  background: rgba(255, 255, 255, 0.767);
+  padding: 1%;
+  border-radius: 1%;
 }
