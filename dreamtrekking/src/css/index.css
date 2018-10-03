@@ -140,4 +140,7 @@
   background: rgba(255, 255, 255, 0.767);
   padding: 1%;
   border-radius: 1%;
+  animation: bounceInDown;
+  animation-duration: 1.7s;
+  animation-iteration-count: 1;
 }
