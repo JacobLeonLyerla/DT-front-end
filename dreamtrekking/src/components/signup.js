@@ -5,9 +5,9 @@ import {
   Label,
   Input,
   FormFeedback,
-  FormText
+  FormText,
+  Button
 } from "reactstrap";
-
 
 class Signup extends Component {
   render() {
@@ -43,11 +43,13 @@ class Signup extends Component {
           <FormGroup>
             <Label for="exampleEmail">Valid input</Label>
             <Input valid />
-            <FormFeedback valid tooltip>
-              Sweet! that name is available
-            </FormFeedback>
+    
             <FormText>Example help text that remains unchanged.</FormText>
           </FormGroup>
+          <div className="form-buttons">
+            <Button color="success">Submit</Button>
+            <Button color="primary">Cancel</Button>
+          </div>
         </Form>
       </div>
     );
