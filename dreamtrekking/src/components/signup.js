@@ -8,6 +8,7 @@ import {
   FormText,
   Button
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 class Signup extends Component {
   render() {
@@ -43,12 +44,12 @@ class Signup extends Component {
           <FormGroup>
             <Label for="exampleEmail">Valid input</Label>
             <Input valid />
-    
+
             <FormText>Example help text that remains unchanged.</FormText>
           </FormGroup>
           <div className="form-buttons">
             <Button color="success">Submit</Button>
-            <Button color="primary">Cancel</Button>
+           <Link to="/"><Button color="primary">Cancel</Button></Link>
           </div>
         </Form>
       </div>
