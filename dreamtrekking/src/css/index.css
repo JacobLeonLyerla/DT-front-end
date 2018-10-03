@@ -144,3 +144,11 @@
   animation-duration: 1.7s;
   animation-iteration-count: 1;
 }
+.signup-container .signup-form .form-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.signup-container .signup-form .btn {
+  width: 30%;
+  font-size: 1.4rem;
+}
