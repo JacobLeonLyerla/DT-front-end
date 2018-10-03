@@ -98,21 +98,39 @@
   }
   .signup {
     color: white;
-  animation: wobble;
-  animation-duration: 3s;
- 
-  animation-iteration-count: 1;
+    animation: wobble;
+    animation-duration: 3s;
+
+    animation-iteration-count: 1;
   }
   .signup:hover {
     filter: brightness(160%);
-    animation:pulse;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
+    animation: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
   }
 }
 //*************************************************************************NAV
 .navLogo-styles {
   width: 12%;
+}
+//**************************************************************************SIGNUP
+.signup-container {
+  min-height: 100vh;
+  height: 100%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-control {
+    width: 50%;
+    height: 5vh;
+    margin: 0 auto;
+  }
+  .signup-form {
+    width: 30vw;
+    height: 100%;
+  }
 }
 
 @maincolor : #F6E0D6;
