@@ -107,3 +107,20 @@
 .navLogo-styles {
   width: 12%;
 }
+.signup-container {
+  min-height: 100vh;
+  height: 100%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-container .form-control {
+  width: 50%;
+  height: 5vh;
+  margin: 0 auto;
+}
+.signup-container .signup-form {
+  width: 30vw;
+  height: 100%;
+}
