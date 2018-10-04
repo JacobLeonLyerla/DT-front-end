@@ -17,9 +17,12 @@ class Signup extends Component {
       email: "",
       checkEmail: "",
       password: "",
+      checkPassword:"",
       validate: {
         emailState: "",
-        dupemail:""
+        checkEmailState:"",
+        passwordState:"",
+        checkPasswordState:""
       },
   
     };
@@ -35,6 +38,16 @@ class Signup extends Component {
     }
     this.setState({ validate });
   }
+  passwordStrength(e) {
+    const mediumRegex =  /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
+    const { validate } = this.state;
+    if (mediumRegex.test(e.target.value)) {
+      validate.passwordState = "has-success";
+    } else {
+      validate.passwordState = "has-danger";
+    }
+    this.setState({ validate });
+  }
   emailMatch = e => {
     const { validate } = this.state;
     if (e.target.value === this.state.email) {
@@ -42,6 +55,16 @@ class Signup extends Component {
       validate.checkEmailState = "has-success";
     }else{
       validate.checkEmailState ="has-danger"
+    }
+    this.setState({ validate });
+  };
+  passwordMatch = e => {
+    const { validate } = this.state;
+    if (e.target.value === this.state.password) {
+      console.log("matches")
+      validate.checkPasswordState = "has-success";
+    }else{
+      validate.checkPasswordState ="has-danger"
     }
     this.setState({ validate });
   };
@@ -93,7 +116,6 @@ class Signup extends Component {
               type="email"
               name="checkEmail"
               id="checkEmail"
-              placeholder="myemail@dasdsads.com"
               value={this.state.checkEmail}
               valid={this.state.validate.checkEmailState === "has-success"}
               invalid={this.state.validate.checkEmailState === "has-danger"}
@@ -106,20 +128,42 @@ class Signup extends Component {
             <FormFeedback valid>Email Matches</FormFeedback>
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
 
-            <FormText>Example help text that remains unchanged.</FormText>
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Please Enter a Password</Label>
-            <Input  />
-            <FormFeedback>Oh noes! that name is already taken</FormFeedback>
-            <FormText>Example help text that remains unchanged.</FormText>
+            <Input
+              type="password"
+              name="password"
+              id="examplePassword"
+              value={this.state.password}
+              valid={this.state.validate.passwordState === "has-success"}
+              invalid={this.state.validate.passwordState === "has-danger"}
+              onChange={e => { 
+                 this.passwordStrength(e);
+                this.handleChange(e);
+               
+              }}
+            />
+            <FormFeedback valid>Strong!</FormFeedback>
+            <FormFeedback invalid>Password Not Strong Enough</FormFeedback>
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword">Please Re-type Enter a Password</Label>
-            <Input  />
-            <FormFeedback invalid>
-              Oh noes! that name is already taken
-            </FormFeedback>
+            <Label for="checkPasswrod">Please Re-type Enter a Password</Label>
+            <Input
+              type="checkPassword"
+              name="checkPassword"
+              id="checkPassword"
+              value={this.state.checkPassword}
+              valid={this.state.validate.checkPasswordState === "has-success"}
+              invalid={this.state.validate.checkPasswordState === "has-danger"}
+              onChange={e => { 
+                 this.passwordMatch(e);
+                this.handleChange(e);
+               
+              }}
+            />
+           <FormFeedback valid>Email Matches</FormFeedback>
+            <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
             <Button color="success">Sign-up</Button>
