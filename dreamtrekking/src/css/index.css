@@ -152,3 +152,7 @@
   width: 8vw;
   font-size: 1.4rem;
 }
+.signup-container .fa-eye {
+  font-size: 2rem;
+  color: darkcyan;
+}
