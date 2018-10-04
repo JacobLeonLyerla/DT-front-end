@@ -59,7 +59,7 @@ class Signup extends Component {
         <Form className="signup-form">
           <FormGroup>
             <Label for="username">Please Enter a Username</Label>
-            <Input valid />
+            <Input  />
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
           </FormGroup>
 
@@ -110,20 +110,16 @@ class Signup extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Please Enter a Password</Label>
-            <Input invalid />
+            <Input  />
             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
             <FormText>Example help text that remains unchanged.</FormText>
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Please Re-type Enter a Password</Label>
-            <Input invalid />
+            <Input  />
             <FormFeedback invalid>
               Oh noes! that name is already taken
             </FormFeedback>
-          </FormGroup>
-          <FormGroup>
-            <Label for="exampleEmail">Valid input</Label>
-            <Input valid />
           </FormGroup>
           <div className="form-buttons">
             <Button color="success">Submit</Button>
