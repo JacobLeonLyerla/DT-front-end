@@ -11,10 +11,19 @@ import {
 import { Link } from "react-router-dom";
 
 class Signup extends Component {
-  state={
-    email:"",
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      checkEmail: "",
+      password: "",
+      validate: {
+        emailState: "",
+        checkEmailState: ""
+      }
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
-
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const { validate } = this.state;
@@ -25,6 +34,20 @@ class Signup extends Component {
     }
     this.setState({ validate });
   }
+  emailMatch = e => {
+    const { validate } = this.state;
+    if ((e.target.value = this.state.email)) {
+      validate.checkEmailState = "has-success";
+    }
+  };
+  handleChange = async event => {
+    const { target } = event;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const { name } = target;
+    await this.setState({
+      [name]: value
+    });
+  };
   render() {
     return (
       <div className="signup-container">
@@ -34,17 +57,20 @@ class Signup extends Component {
             <Input valid />
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
           </FormGroup>
-
           <FormGroup>
             <Label for="exampleEmail">Please Enter Email Address</Label>
             <Input
-            onChange={this.validateEmail()}
-             type="email"
-             name="email"
-             id="exampleEmail"
-             placeholder="myemail@email.com"
+              type="email"
+              name="email"
+              id="exampleEmail"
+              placeholder="myemail@email.com"
+              value={this.state.email}
               valid={this.state.validate.emailState === "has-success"}
               invalid={this.state.validate.emailState === "has-danger"}
+              onChange={e => {
+                this.validateEmail(e);
+                this.handleChange(e);
+              }}
             />
             <FormFeedback valid>
               That's a tasty looking email you've got there.
@@ -54,10 +80,22 @@ class Signup extends Component {
               a correct email.
             </FormFeedback>{" "}
           </FormGroup>
+
           <FormGroup>
-            <Label for="exampleEmail">Please Re-type Email Address</Label>
-            <Input valid />
-            <FormFeedback valid>Sweet! that name is available</FormFeedback>
+            <Label for="checkEmail">Please Re-type Email Address</Label>
+            <Input
+              type="email"
+              name="checkEmail"
+              id="checkEmail"
+              placeholder="myemail@dasdsads.com"
+              value={this.state.checkEmail}
+              valid={this.state.validate.checkEmailState === "has-success"}
+              onChange={e => {
+                this.emailMatch(e);
+                this.handleChange(e);
+              }}
+            />
+            <FormFeedback valid>Matches</FormFeedback>
             <FormText>Example help text that remains unchanged.</FormText>
           </FormGroup>
           <FormGroup>
