@@ -17,14 +17,14 @@ class Signup extends Component {
       email: "",
       checkEmail: "",
       password: "",
-      checkPassword:"",
+      checkPassword: "",
+      passwordType: "password",
       validate: {
         emailState: "",
-        checkEmailState:"",
-        passwordState:"",
-        checkPasswordState:""
-      },
-  
+        checkEmailState: "",
+        passwordState: "",
+        checkPasswordState: ""
+      }
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -39,7 +39,7 @@ class Signup extends Component {
     this.setState({ validate });
   }
   passwordStrength(e) {
-    const mediumRegex =  /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
+    const mediumRegex = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
     const { validate } = this.state;
     if (mediumRegex.test(e.target.value)) {
       validate.passwordState = "has-success";
@@ -51,30 +51,39 @@ class Signup extends Component {
   emailMatch = e => {
     const { validate } = this.state;
     if (e.target.value === this.state.email) {
-      console.log("matches")
+      console.log("matches");
       validate.checkEmailState = "has-success";
-    }else{
-      validate.checkEmailState ="has-danger"
+    } else {
+      validate.checkEmailState = "has-danger";
     }
     this.setState({ validate });
   };
   passwordMatch = e => {
     const { validate } = this.state;
     if (e.target.value === this.state.password) {
-      console.log("matches")
+      console.log("matches");
       validate.checkPasswordState = "has-success";
-    }else{
-      validate.checkPasswordState ="has-danger"
+    } else {
+      validate.checkPasswordState = "has-danger";
     }
     this.setState({ validate });
   };
-  handleChange =  event => {
+  handleChange = event => {
     const { target } = event;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const { name } = target;
-     this.setState({
+    this.setState({
       [name]: value
     });
+  };
+  typefield = () => {
+    console.log("asdasdasd");
+    if (this.state.passwordType === "password") {
+      console.log("here");
+      this.setState({ passwordType: "text" });
+    } else {
+      this.setState({ passwordType: "password" });
+    }
   };
   render() {
     return (
@@ -82,7 +91,7 @@ class Signup extends Component {
         <Form className="signup-form">
           <FormGroup>
             <Label for="username">Please Enter a Username</Label>
-            <Input  />
+            <Input />
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
           </FormGroup>
 
@@ -119,29 +128,29 @@ class Signup extends Component {
               value={this.state.checkEmail}
               valid={this.state.validate.checkEmailState === "has-success"}
               invalid={this.state.validate.checkEmailState === "has-danger"}
-              onChange={e => { 
-                 this.emailMatch(e);
+              onChange={e => {
+                this.emailMatch(e);
                 this.handleChange(e);
-               
               }}
             />
             <FormFeedback valid>Email Matches</FormFeedback>
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
-
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Please Enter a Password</Label>
+            <br />
+            <i onClick={() => this.typefield()} className="far fa-eye" />
+
             <Input
-              type="password"
+              type={this.state.passwordType}
               name="password"
               id="examplePassword"
               value={this.state.password}
               valid={this.state.validate.passwordState === "has-success"}
               invalid={this.state.validate.passwordState === "has-danger"}
-              onChange={e => { 
-                 this.passwordStrength(e);
+              onChange={e => {
+                this.passwordStrength(e);
                 this.handleChange(e);
-               
               }}
             />
             <FormFeedback valid>Strong!</FormFeedback>
@@ -150,19 +159,18 @@ class Signup extends Component {
           <FormGroup>
             <Label for="checkPasswrod">Please Re-type Enter a Password</Label>
             <Input
-              type="password"
+              type={this.state.passwordType}
               name="checkPassword"
               id="checkPassword"
               value={this.state.checkPassword}
               valid={this.state.validate.checkPasswordState === "has-success"}
               invalid={this.state.validate.checkPasswordState === "has-danger"}
-              onChange={e => { 
-                 this.passwordMatch(e);
+              onChange={e => {
+                this.passwordMatch(e);
                 this.handleChange(e);
-               
               }}
             />
-           <FormFeedback valid>Email Matches</FormFeedback>
+            <FormFeedback valid>Email Matches</FormFeedback>
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
