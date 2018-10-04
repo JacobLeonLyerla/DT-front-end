@@ -58,12 +58,6 @@ class Signup extends Component {
       <div className="signup-container">
         <Form className="signup-form">
           <FormGroup>
-            <Label for="username">Please Enter a Username</Label>
-            <Input  />
-            <FormFeedback valid>Sweet! that name is available</FormFeedback>
-          </FormGroup>
-
-          <FormGroup>
             <Label for="exampleEmail">Please Enter Email Address</Label>
             <Input
               type="email"
@@ -86,43 +80,13 @@ class Signup extends Component {
               a correct email.
             </FormFeedback>{" "}
           </FormGroup>
-
-          <FormGroup>
-            <Label for="checkEmail">Please Re-type Email Address</Label>
-            <Input
-              type="email"
-              name="checkEmail"
-              id="checkEmail"
-              placeholder="myemail@dasdsads.com"
-              value={this.state.checkEmail}
-              valid={this.state.validate.checkEmailState === "has-success"}
-              invalid={this.state.validate.checkEmailState === "has-danger"}
-              onChange={e => { 
-                 this.emailMatch(e);
-                this.handleChange(e);
-               
-              }}
-            />
-            <FormFeedback valid>Email Matches</FormFeedback>
-            <FormFeedback invalid>Email Does Not Match</FormFeedback>
-
-            <FormText>Example help text that remains unchanged.</FormText>
-          </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Please Enter a Password</Label>
             <Input  />
             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
-            <FormText>Example help text that remains unchanged.</FormText>
-          </FormGroup>
-          <FormGroup>
-            <Label for="examplePassword">Please Re-type Enter a Password</Label>
-            <Input  />
-            <FormFeedback invalid>
-              Oh noes! that name is already taken
-            </FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Button color="success">Submit</Button>
+            <Button color="success">Sign-in</Button>
             <Link to="/">
               <Button color="primary">Cancel</Button>
             </Link>
