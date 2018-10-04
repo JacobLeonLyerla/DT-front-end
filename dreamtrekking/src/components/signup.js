@@ -19,8 +19,9 @@ class Signup extends Component {
       password: "",
       validate: {
         emailState: "",
-        checkEmailState: ""
-      }
+        dupemail:""
+      },
+  
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -36,15 +37,19 @@ class Signup extends Component {
   }
   emailMatch = e => {
     const { validate } = this.state;
-    if ((e.target.value = this.state.email)) {
+    if (e.target.value === this.state.email) {
+      console.log("matches")
       validate.checkEmailState = "has-success";
+    }else{
+      validate.checkEmailState ="has-danger"
     }
+    this.setState({ validate });
   };
-  handleChange = async event => {
+  handleChange =  event => {
     const { target } = event;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const { name } = target;
-    await this.setState({
+     this.setState({
       [name]: value
     });
   };
@@ -57,6 +62,7 @@ class Signup extends Component {
             <Input valid />
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
           </FormGroup>
+
           <FormGroup>
             <Label for="exampleEmail">Please Enter Email Address</Label>
             <Input
@@ -90,12 +96,16 @@ class Signup extends Component {
               placeholder="myemail@dasdsads.com"
               value={this.state.checkEmail}
               valid={this.state.validate.checkEmailState === "has-success"}
-              onChange={e => {
-                this.emailMatch(e);
+              invalid={this.state.validate.checkEmailState === "has-danger"}
+              onChange={e => { 
+                 this.emailMatch(e);
                 this.handleChange(e);
+               
               }}
             />
-            <FormFeedback valid>Matches</FormFeedback>
+            <FormFeedback valid>Email Matches</FormFeedback>
+            <FormFeedback invalid>Email Does Not Match</FormFeedback>
+
             <FormText>Example help text that remains unchanged.</FormText>
           </FormGroup>
           <FormGroup>
