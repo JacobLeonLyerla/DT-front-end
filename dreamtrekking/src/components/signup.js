@@ -122,7 +122,7 @@ class Signup extends Component {
             </FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Button color="success">Submit</Button>
+            <Button color="success">Sign-up</Button>
             <Link to="/">
               <Button color="primary">Cancel</Button>
             </Link>
