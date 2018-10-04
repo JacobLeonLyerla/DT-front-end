@@ -11,31 +11,48 @@ import {
 import { Link } from "react-router-dom";
 
 class Signup extends Component {
+  state={
+    email:"",
+  }
 
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const { validate } = this.state
-      if (emailRex.test(e.target.value)) {
-        validate.emailState = 'has-success'
-      } else {
-        validate.emailState = 'has-danger'
-      }
-      this.setState({ validate })
+    const { validate } = this.state;
+    if (emailRex.test(e.target.value)) {
+      validate.emailState = "has-success";
+    } else {
+      validate.emailState = "has-danger";
     }
+    this.setState({ validate });
+  }
   render() {
     return (
       <div className="signup-container">
         <Form className="signup-form">
-        <FormGroup>
+          <FormGroup>
             <Label for="username">Please Enter a Username</Label>
             <Input valid />
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
           </FormGroup>
 
-        <FormGroup>
+          <FormGroup>
             <Label for="exampleEmail">Please Enter Email Address</Label>
-            <Input valid />
-            <FormFeedback valid>Sweet! that name is available</FormFeedback>
+            <Input
+            onChange={this.validateEmail()}
+             type="email"
+             name="email"
+             id="exampleEmail"
+             placeholder="myemail@email.com"
+              valid={this.state.validate.emailState === "has-success"}
+              invalid={this.state.validate.emailState === "has-danger"}
+            />
+            <FormFeedback valid>
+              That's a tasty looking email you've got there.
+            </FormFeedback>
+            <FormFeedback invalid>
+              Uh oh! Looks like there is an issue with your email. Please input
+              a correct email.
+            </FormFeedback>{" "}
           </FormGroup>
           <FormGroup>
             <Label for="exampleEmail">Please Re-type Email Address</Label>
@@ -52,7 +69,9 @@ class Signup extends Component {
           <FormGroup>
             <Label for="examplePassword">Please Re-type Enter a Password</Label>
             <Input invalid />
-            <FormFeedback invalid>Oh noes! that name is already taken</FormFeedback>
+            <FormFeedback invalid>
+              Oh noes! that name is already taken
+            </FormFeedback>
           </FormGroup>
           <FormGroup>
             <Label for="exampleEmail">Valid input</Label>
@@ -60,7 +79,9 @@ class Signup extends Component {
           </FormGroup>
           <div className="form-buttons">
             <Button color="success">Submit</Button>
-           <Link to="/"><Button color="primary">Cancel</Button></Link>
+            <Link to="/">
+              <Button color="primary">Cancel</Button>
+            </Link>
           </div>
         </Form>
       </div>
