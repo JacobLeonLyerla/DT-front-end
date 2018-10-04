@@ -150,7 +150,7 @@ class Signup extends Component {
           <FormGroup>
             <Label for="checkPasswrod">Please Re-type Enter a Password</Label>
             <Input
-              type="checkPassword"
+              type="password"
               name="checkPassword"
               id="checkPassword"
               value={this.state.checkPassword}
