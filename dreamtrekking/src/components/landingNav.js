@@ -16,7 +16,7 @@ class LandingNav extends Component {
             </NavItem>
        
           <NavItem>
-            <NavLink>Sign In</NavLink>
+          <Link  style={{color:"white",textDecoration:"none"}} to="/signin">  <NavLink>Sign In</NavLink></Link>
           </NavItem>
         </Nav>
       </div>
