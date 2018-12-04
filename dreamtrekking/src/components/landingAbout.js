@@ -9,11 +9,8 @@ const About = () => {
     <div className="sell">
       <br />
       <div className="rowContainer">
-        <Row className="aboutRow">
-          <Col md="3" lg="3">
-            <Media src={redforest} />
-          </Col>
-          <Col md="9" lg="9">
+        <Row className="aboutRow red">
+          <Col md="12" lg="12">
             <div className="aboutHeader">Forest</div>
 
             <p>
