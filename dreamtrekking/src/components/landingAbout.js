@@ -6,11 +6,9 @@ import desertred from "../assets/desertred.jpg";
 
 const About = () => {
   return (
-    <div className="sell">
-      <br />
       <div className="rowContainer">
         <Row className="aboutRow red">
-          <Col md="12" lg="12">
+          <Col md="12" lg="12" className="filter">
             <div className="aboutHeader">Forest</div>
 
             <p>
@@ -23,7 +21,7 @@ const About = () => {
           </Col>
         </Row>
         <Row className="aboutRow sea">
-          <Col md="12">
+          <Col md="12" className="filter">
             <div className="aboutHeader">Beach</div>
             <p>
               Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex
@@ -36,7 +34,7 @@ const About = () => {
         </Row>{" "}
         <Row className="aboutRow desert">
        
-          <Col md="12">
+          <Col md="12" className="filter">
             <div className="aboutHeader">Desert</div>
 
             <p>
@@ -49,7 +47,6 @@ const About = () => {
           </Col>
         </Row>
       </div>
-    </div>
   );
 };
 export default About;
