@@ -22,7 +22,7 @@ const About = () => {
             </p>
           </Col>
         </Row>
-        <Row className="aboutRow">
+        <Row className="aboutRow sea">
           <Col md="9">
             <div className="aboutHeader">Beach</div>
             <p>
@@ -37,7 +37,7 @@ const About = () => {
             <Media src={beachlove} />
           </Col>
         </Row>{" "}
-        <Row className="aboutRow">
+        <Row className="aboutRow desert">
           <Col md="3">
             <Media src={desertred} />
           </Col>
