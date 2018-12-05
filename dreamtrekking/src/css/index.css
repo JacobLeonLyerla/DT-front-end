@@ -10,6 +10,7 @@
   min-width: 100%;
   min-height: 100vh;
   height: 100%;
+  background: #677fa3;
 }
 .sell .col-md-12 {
   display: flex;
@@ -39,7 +40,16 @@
   background-repeat: no-repeat;
 }
 .sell .sea {
-  background-image: url("../assets/beach.jpg");
+  background-image: url("../assets/water.jpg");
+  -webkit-background-size: contain ;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.sell .desert {
+  background-image: url("../assets/desert.jpg");
   -webkit-background-size: contain ;
   -moz-background-size: cover;
   -o-background-size: cover;
