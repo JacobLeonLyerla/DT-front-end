@@ -49,13 +49,16 @@
   background-position: center bottom;
   background-repeat: no-repeat;
 }
+.filter {
+  color: rgba(15, 15, 15, 0);
+}
 .filter:hover {
   background: rgba(15, 15, 15, 0.404);
+  color: white;
 }
 p {
   margin-top: 5vh;
   font-size: 1.6rem;
-  color: white;
   text-align: center;
 }
 .menu {
