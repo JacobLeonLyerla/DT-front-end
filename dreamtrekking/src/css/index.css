@@ -10,33 +10,36 @@
   min-width: 100%;
   min-height: 100vh;
   height: 100%;
-  background-image: url("../assets/field.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-bottom: 2%;
 }
-.sell .col-md-9 {
+.sell .col-md-12 {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.sell .col-md-9 .aboutHeader {
+.sell .col-md-12 .aboutHeader {
   font-family: "Times New Roman", Times, serif;
   font-size: 6rem;
   margin-bottom: 1vh;
   letter-spacing: 0.2ch;
+  color: white;
   text-decoration: underline #677fa3;
 }
 .sell .aboutRow {
   min-height: 60vh;
   padding-bottom: 2%;
-  border-bottom: 5px dashed #a8bdd6;
   margin-bottom: 1%;
 }
 .sell .red {
   background-image: url("../assets/red-forest.jpg");
+  -webkit-background-size: contain ;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.sell .sea {
+  background-image: url("../assets/beach.jpg");
   -webkit-background-size: contain ;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -53,7 +56,10 @@
   border-radius: 2%;
 }
 .sell p {
+  margin-top: 5vh;
   font-size: 1.6rem;
+  color: white;
+  text-align: center;
 }
 .menu {
   background: rgba(3, 3, 3, 0.219);
