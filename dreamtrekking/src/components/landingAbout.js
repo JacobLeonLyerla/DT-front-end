@@ -23,7 +23,7 @@ const About = () => {
           </Col>
         </Row>
         <Row className="aboutRow sea">
-          <Col md="9">
+          <Col md="12">
             <div className="aboutHeader">Beach</div>
             <p>
               Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex
@@ -33,15 +33,10 @@ const About = () => {
               dolorum definiebas an. Mei ex natum rebum iisque.
             </p>
           </Col>
-          <Col md="3">
-            <Media src={beachlove} />
-          </Col>
         </Row>{" "}
         <Row className="aboutRow desert">
-          <Col md="3">
-            <Media src={desertred} />
-          </Col>
-          <Col md="9">
+       
+          <Col md="12">
             <div className="aboutHeader">Desert</div>
 
             <p>
