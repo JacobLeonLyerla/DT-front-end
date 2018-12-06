@@ -9,6 +9,7 @@ import Nav from "./components/nav"
 import Landing from "./components/landing"
 import Signup from"./components/signup"
 import Signin from"./components/signin"
+import Dashboard from"./components/dashboard"
 class App extends Component {
   render() {
     return (
@@ -29,6 +30,11 @@ class App extends Component {
           path="/signin"
           render={props => <Signin/>}
         />
+        <Route
+        path="/dashboard"
+        render={props =><Dashboard/>}
+        />
+
       </div>
     );
   }
