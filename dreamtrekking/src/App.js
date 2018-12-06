@@ -18,10 +18,10 @@ class App extends Component {
          exact path="/"
           render={props => <Landing/>}
         />
-        <Route
+        {/* <Route
           path="/dashboard"
           render={props => <Nav/>}
-        />
+        /> */}
   <Route
           path="/signup"
           render={props => <Signup/>}
