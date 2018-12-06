@@ -1,9 +1,11 @@
 import React from 'react'
 import logo from '../assets/logo.png'
+import {Col} from "reactstrap"
 const Header =()=>{
     return(
-        <div className="logo-wrapper"><img className="logo-styles" src={logo}/></div>
-
+        <Col md="3">
+        <div className="dashboard"></div>
+</Col>
     )
 }
 export default Header

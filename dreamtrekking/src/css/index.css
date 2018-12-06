@@ -160,3 +160,7 @@ p {
   font-size: 2rem;
   color: darkcyan;
 }
+.dashboard {
+  min-height: 100vh;
+  background: #F6E0D6;
+}

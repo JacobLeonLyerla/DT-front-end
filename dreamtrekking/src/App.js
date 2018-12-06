@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Row} from "reactstrap";
 
 import "./App.css";
 import "./css/index.css";
@@ -29,12 +29,12 @@ class App extends Component {
           <Route
           path="/signin"
           render={props => <Signin/>}
-        />
+        /><Row>
         <Route
         path="/dashboard"
         render={props =><Dashboard/>}
         />
-
+</Row>
       </div>
     );
   }
