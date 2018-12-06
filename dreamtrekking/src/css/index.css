@@ -24,7 +24,7 @@
 }
 .red {
   background-image: url("../assets/red-forest.jpg");
-  -webkit-background-size: contain ;
+  -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -33,7 +33,7 @@
 }
 .sea {
   background-image: url("../assets/water.jpg");
-  -webkit-background-size: contain ;
+  -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -42,7 +42,7 @@
 }
 .desert {
   background-image: url("../assets/desert.jpg");
-  -webkit-background-size: contain ;
+  -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -164,10 +164,20 @@ p {
   min-height: 100vh;
   background: #a8bdd6;
 }
+.tags-container {
+  padding-right: 0px;
+}
+.tags-container .row {
+  max-width: 80vw;
+  margin-right: 0px;
+  margin: 0 auto;
+}
 .tags-container .tag-img {
-  width: 260px;
-  object-fit: cover;
+  max-width: 39vw;
+  margin: 0px;
+  margin-top: 3px;
+  padding: 0px;
 }
 .tags-container .tag {
-  height: 50vh;
+  height: 49.8vh;
 }

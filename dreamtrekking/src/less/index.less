@@ -7,71 +7,65 @@
   background-size: cover;
 }
 
-  .col-md-12 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .aboutHeader {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 6rem;
-      margin-bottom: 1vh;
-      letter-spacing: 0.2ch;
-      color:white;
-      text-decoration: underline @secondarycolor;
-    }
+.col-md-12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .aboutHeader {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 6rem;
+    margin-bottom: 1vh;
+    letter-spacing: 0.2ch;
+    color: white;
+    text-decoration: underline @secondarycolor;
   }
-  .aboutRow {
-    min-height: 66vh;
-  
-    
-   
-  }
-   .red{
-      background-image: url("../assets/red-forest.jpg");
-    //background:@maincolor;
-    -webkit-background-size: contain ;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-  }
-  .sea{
-    background-image: url("../assets/water.jpg");
-    //background:@maincolor;
-    -webkit-background-size: contain ;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
+}
+.aboutRow {
+  min-height: 66vh;
+}
+.red {
+  background-image: url("../assets/red-forest.jpg");
+  //background:@maincolor;
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.sea {
+  background-image: url("../assets/water.jpg");
+  //background:@maincolor;
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.desert {
+  background-image: url("../assets/desert.jpg");
+  //background:@maincolor;
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.filter {
+  color: rgba(15, 15, 15, 0);
+}
+.filter:hover {
+  background: rgba(15, 15, 15, 0.404);
+  color: white;
+}
+p {
+  margin-top: 5vh;
+  font-size: 1.6rem;
 
-  }
-  .desert{
-    background-image: url("../assets/desert.jpg");
-    //background:@maincolor;
-    -webkit-background-size: contain ;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-
-  }
-  .filter{
-    color:rgba(15, 15, 15, 0);
-
-  }
-  .filter:hover{
-    background:rgba(15, 15, 15, 0.404);
-    color:white;
-  }
-  p {
-    margin-top:5vh;
-    font-size: 1.6rem;
-
-    text-align: center;
-  }
+  text-align: center;
+}
 
 .menu {
   background: rgba(3, 3, 3, 0.219);
@@ -146,58 +140,62 @@
     height: 5vh;
     margin: 0 auto;
   }
-  .text-muted{
-    font-size:1rem;
+  .text-muted {
+    font-size: 1rem;
   }
-  .invalid-feedback{
-    font-size:1rem;
+  .invalid-feedback {
+    font-size: 1rem;
   }
-  .valid-feedback{
-    font-size:1rem;
+  .valid-feedback {
+    font-size: 1rem;
   }
   .signup-form {
     width: 30vw;
     height: 100%;
     background: rgba(255, 255, 255, 0.767);
-    padding:1%;
+    padding: 1%;
     border-radius: 1%;
     animation: bounceInDown;
     animation-duration: 1.7s;
     animation-iteration-count: 1;
-    .form-buttons{
-      display:flex;
-      justify-content: space-evenly
+    .form-buttons {
+      display: flex;
+      justify-content: space-evenly;
     }
-    .btn{
-      width:8vw;
+    .btn {
+      width: 8vw;
       font-size: 1.4rem;
     }
   }
-  .fa-eye{
-    font-size:2rem;
-color:darkcyan;
+  .fa-eye {
+    font-size: 2rem;
+    color: darkcyan;
   }
 }
 //****************************************************************DASHBOARD
-.dashboard{
+.dashboard {
   min-height: 100vh;
-  background:@accentcolor;
-
+  background: @accentcolor;
 }
-.tags-container{
- 
-.tag-img{
-  width: 260px;
-  object-fit: cover;
+.tags-container {
+  padding-right: 0px;
+  .row {
+    max-width: 80vw;
+    margin-right: 0px;
+    margin: 0 auto;
+  }
+
+  .tag-img {
+    max-width: 39vw;
+
+    margin: 0px;
+    margin-top: 3px;
+    padding: 0px;
+  }
+  .tag {
+    height: 49.8vh;
+  }
 }
-
-.tag{
-  height:50vh;
-
-}
-
-}
-
 
 @maincolor : #F6E0D6;
 @secondarycolor: #677fa3;
