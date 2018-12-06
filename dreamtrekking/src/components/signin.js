@@ -86,7 +86,7 @@ class Signup extends Component {
             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Button color="success">Sign-in</Button>
+            <Link to="dashboard"><Button color="success">Sign-in</Button></Link>
             <Link to="/">
               <Button color="primary">Cancel</Button>
             </Link>
