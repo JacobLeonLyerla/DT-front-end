@@ -162,7 +162,10 @@ p {
 }
 .dashboard {
   min-height: 100vh;
-  background: #a8bdd6;
+  background: #F6E0D6;
+}
+.dashboard .media {
+  height: 5.5vh;
 }
 .tags-container {
   padding-right: 0px;
