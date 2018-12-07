@@ -70,10 +70,10 @@ p {
   color: white;
 }
 .menu .item:hover {
-  color: #F6E0D6 !important;
+  color: #EBE1CE !important;
 }
 .menu .active {
-  color: #F6E0D6 !important;
+  color: #EBE1CE !important;
 }
 .logo-wrapper {
   margin-top: 22vh;
@@ -93,7 +93,7 @@ p {
   color: #a8bdd6;
 }
 .landing-Nav .nav-link:hover {
-  color: #F6E0D6;
+  color: #EBE1CE;
   background: rgba(0, 0, 0, 0.103);
 }
 .landing-Nav .signup {
@@ -162,7 +162,7 @@ p {
 }
 .dashboard {
   min-height: 100vh;
-  background: #F6E0D6;
+  background: #EBE1CE;
 }
 .dashboard .media {
   height: 5.5vh;
@@ -170,6 +170,10 @@ p {
 .dashboard .navbar {
   display: flex;
   flex-direction: column;
+}
+.dashboard .navbar a {
+  color: #677fa3;
+  font-size: 1.3rem;
 }
 .dashboard .navbar .btn {
   width: 12vw;
