@@ -166,27 +166,37 @@ p {
 }
 .dashboard .media {
   height: 5.5vh;
+  margin-bottom: 3vh;
 }
 .dashboard .navbar {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 60vh;
 }
-.dashboard .navbar a {
+.dashboard .navbar .nav-links {
   color: #677fa3;
   font-size: 1.3rem;
-  border-bottom: 1px solid black;
-  width: 14.7vw;
+  width: 15.1vw;
+  padding: 3vh 0vh 3vh;
+}
+.dashboard .navbar .nav-links:hover {
+  background: rgba(8, 8, 8, 0.267);
+  color: #ffffff;
 }
 .dashboard .navbar .btn {
+  border: none;
+  font-size: 1.3rem;
+  margin-top: 3vh;
   width: 12vw;
   background: #677fa3;
 }
 .dashboard .navbar .btn:active {
   background: #a8bdd6;
+  border: none;
 }
 .dashboard .navbar .btn:hover {
+  background: #a8bdd6;
+}
+.dashboard .navbar .btn:visited {
   background: #a8bdd6;
 }
 .dashboard .navbar .show {
