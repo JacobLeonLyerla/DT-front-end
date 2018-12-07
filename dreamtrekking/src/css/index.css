@@ -218,6 +218,16 @@ p {
   background-repeat: no-repeat;
   height: 49.8vh;
 }
+.tags-container .water {
+  background-image: url("../assets/rain.jpeg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 49.8vh;
+}
 .tags-container .row {
   max-width: 80vw;
   margin-right: 0px;

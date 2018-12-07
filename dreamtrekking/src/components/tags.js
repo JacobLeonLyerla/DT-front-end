@@ -9,7 +9,7 @@ const Tags = () => {
     <Col md="10" className="tags-container">
       <Row>
         <Col className="tag-img" md="6">
-          <Media className="tag" src={water} />
+        <div className="cover water"> <p>lake</p></div>
         </Col>
         <Col className="tag-img" md="6">
         <div className="cover snow"> <p>snow</p>
