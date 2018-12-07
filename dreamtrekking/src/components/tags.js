@@ -8,18 +8,20 @@ const Tags = () => {
   return (
     <Col md="10" className="tags-container">
       <Row>
-        <Col className="tag-img" md="6">
-        <div className="cover water"> <p>lake</p></div>
+        <Col className="tag-img water" md="6">
+        <div className="cover "> <p>lake</p></div>
         </Col>
-        <Col className="tag-img" md="6">
-        <div className="cover snow"> <p>snow</p>
+        <Col className="tag-img snow" md="6">
+        <div className="cover "> <p>snow</p>
         </div>
         </Col>{" "}
-        <Col className="tag-img" md="6">
-          <Media className="tag" src={market} />
+        <Col className="tag-img market" md="6">
+        <div className="cover "> <p>snow</p>
+        </div>
         </Col>
-        <Col className="tag-img" md="6">
-          <Media className="tag" src={camping} />
+        <Col className="tag-img camping" md="6">
+        <div className="cover "> <p>snow</p>
+        </div>
         </Col>
       </Row>
     </Col>
