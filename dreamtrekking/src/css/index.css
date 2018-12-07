@@ -170,6 +170,8 @@ p {
 .dashboard .navbar {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 60vh;
 }
 .dashboard .navbar a {
   color: #677fa3;
