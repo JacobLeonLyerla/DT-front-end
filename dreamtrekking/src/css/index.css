@@ -208,6 +208,20 @@ p {
 .tags-container {
   padding-right: 0px;
 }
+.tags-container .cover {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 1vh;
+}
+.tags-container .cover:Hover {
+  background: rgba(15, 15, 15, 0.342);
+}
+.tags-container p {
+  padding-top: 14vh;
+  color: white;
+  font-size: 3rem;
+}
 .tags-container .snow {
   background-image: url("../assets/snow.jpeg");
   -webkit-background-size: contain;
@@ -216,7 +230,8 @@ p {
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  height: 49.8vh;
+  height: 45.8vh;
+  margin-top: 2vh;
 }
 .tags-container .water {
   background-image: url("../assets/rain.jpeg");
@@ -226,7 +241,28 @@ p {
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  height: 49.8vh;
+  height: 45.8vh;
+  margin-top: 2vh;
+}
+.tags-container .market {
+  background-image: url("../assets/river-market.jpeg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+}
+.tags-container .camping {
+  background-image: url("../assets/camping.jpeg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
 }
 .tags-container .row {
   max-width: 80vw;
