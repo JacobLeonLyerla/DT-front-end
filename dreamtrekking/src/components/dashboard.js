@@ -22,13 +22,13 @@ const Dashboard = () => {
           <NavbarBrand href="/">
             <Media src={logo} />
           </NavbarBrand>
-            <Link to="/userinfo" style={{ textDecoration: 'none',}}>
+            <Link className="nav-links" to="/userinfo" style={{ textDecoration: 'none',}}>
             name placeholder
             </Link>
-            <Link to="/userinfo" style={{ textDecoration: 'none',}}>
+            <Link className="nav-links" to="/userinfo" style={{ textDecoration: 'none',}}>
            notifications
             </Link>
-            <Link to="/userinfo" style={{ textDecoration: 'none',}}>
+            <Link className="nav-links" to="/userinfo" style={{ textDecoration: 'none',}}>
             settings
             </Link>
           <UncontrolledDropdown color="primary">
