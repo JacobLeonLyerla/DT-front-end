@@ -167,6 +167,26 @@ p {
 .dashboard .media {
   height: 5.5vh;
 }
+.dashboard .navbar {
+  display: flex;
+  flex-direction: column;
+}
+.dashboard .navbar .btn {
+  width: 12vw;
+  background: #677fa3;
+}
+.dashboard .navbar .btn:active {
+  background: #a8bdd6;
+}
+.dashboard .navbar .btn:hover {
+  background: #a8bdd6;
+}
+.dashboard .navbar .show {
+  width: 12vw;
+}
+.dashboard .navbar .dropdown-item {
+  text-align: center;
+}
 .tags-container {
   padding-right: 0px;
 }
