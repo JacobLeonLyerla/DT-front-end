@@ -176,6 +176,8 @@ p {
 .dashboard .navbar a {
   color: #677fa3;
   font-size: 1.3rem;
+  border-bottom: 1px solid black;
+  width: 14.7vw;
 }
 .dashboard .navbar .btn {
   width: 12vw;
