@@ -208,16 +208,20 @@ p {
 .tags-container {
   padding-right: 0px;
 }
+.tags-container .snow {
+  background-image: url("../assets/snow.jpeg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 49.8vh;
+}
 .tags-container .row {
   max-width: 80vw;
   margin-right: 0px;
   margin: 0 auto;
-}
-.tags-container .tag-img {
-  max-width: 39vw;
-  margin: 0px;
-  margin-top: 3px;
-  padding: 0px;
 }
 .tags-container .tag {
   height: 49.8vh;

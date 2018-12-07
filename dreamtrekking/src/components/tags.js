@@ -12,7 +12,8 @@ const Tags = () => {
           <Media className="tag" src={water} />
         </Col>
         <Col className="tag-img" md="6">
-          <Media className="tag" src={snow} />
+        <div className="cover snow"> <p>snow</p>
+        </div>
         </Col>{" "}
         <Col className="tag-img" md="6">
           <Media className="tag" src={market} />
