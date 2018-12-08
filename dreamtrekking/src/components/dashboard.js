@@ -2,12 +2,9 @@ import React from "react";
 import {
   Col,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Media,
   UncontrolledDropdown,
-  NavItem,
-  NavLink,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
