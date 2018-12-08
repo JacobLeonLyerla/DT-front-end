@@ -274,7 +274,6 @@ p {
   overflow: hidden;
   overflow-y: scroll;
   max-height: 95vh;
-  max-width: 80vw;
   margin-right: 0px;
   margin: 0 auto;
 }
