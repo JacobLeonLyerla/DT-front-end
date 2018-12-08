@@ -1,3 +1,8 @@
+
+  .row{
+     max-width:100vw;
+  }
+
 .mapBackground-styles {
   min-height: 100vh;
   background-image: url("../assets/adventure.jpg");
@@ -173,10 +178,13 @@ p {
   }
 }
 //****************************************************************DASHBOARD
+
 .dashboard {
 
   min-height: 100vh;
-  background: @maincolor;
+  background:white;
+  box-shadow: 5px 15px 10px rgb(107, 105, 105);
+  // background:rgba(241, 241, 241, 0.904);
   .media{
     height: 5.5vh;
     margin-bottom:3vh
@@ -227,20 +235,23 @@ p {
 }
 .tags-container {
   padding-right: 0px;
-.cover{
-  display:flex;
-  justify-content: center;
-  align-content: center;
- margin:1vh;
+  padding-left:0px;
+  margin-top:3vh;
 
+.cover{
+ width: 40vw;
+color:rgba(15, 15, 15, 0)
 }
 .cover:Hover{
   background:rgba(15, 15, 15, 0.342);
-}
-  p{
- padding-top:14vh;
   color:white;
+}
+
+  p{
+ padding-top:22vh;
   font-size:3rem;
+  margin-top: 0px;
+    height: 45.8vh;
     
   }
  .snow{
@@ -252,7 +263,7 @@ p {
   background-position: center bottom;
   background-repeat: no-repeat;
   height: 45.8vh;
-  margin-top:2vh;
+  margin-top:5vh;
  } 
  .water{
   background-image: url("../assets/rain.jpeg");
@@ -263,7 +274,7 @@ p {
   background-position: center bottom;
   background-repeat: no-repeat;
   height: 45.8vh;
-  margin-top:2vh;
+  margin-top:3vh;
  } 
  .market{
   background-image: url("../assets/river-market.jpeg");
@@ -288,18 +299,21 @@ p {
   
  } 
   .row {
+     overflow: hidden;
+    overflow-y:scroll;
+    max-height: 95vh;
     max-width: 80vw;
     margin-right: 0px;
     margin: 0 auto;
+   
   }
 
-  // .tag-img {
-  //   max-width: 39vw;
+  .tag-img {
+  
 
-  //   margin: 0px;
-  //   margin-top: 3px;
-  //   padding: 0px;
-  // }
+    margin: 0px;
+    padding: 0px;
+  }
   .tag {
     height: 49.8vh;
   }
