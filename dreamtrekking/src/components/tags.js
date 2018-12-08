@@ -4,9 +4,9 @@ import market from "../assets/river-market.jpeg";
 import camping from "../assets/camping.jpeg";
 import water from "../assets/rain.jpeg";
 import snow from "../assets/snow.jpeg";
-const Tags = () => {
+const Tags = props => {
   return (
-    <Col md="10" className="tags-container">
+    <Col md={`${10 + props.tagVar}`} className="tags-container">
       <Row>
         <Col className="tag-img water" md="6">
         <div className="cover "> <p>Lake</p></div>
