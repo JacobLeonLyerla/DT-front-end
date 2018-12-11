@@ -63,6 +63,8 @@ p {
   margin-top: 5vh;
   font-size: 1.6rem;
   text-align: center;
+  width: 70%;
+  margin: 0 auto;
 }
 .menu {
   background: rgba(3, 3, 3, 0.219);
@@ -304,6 +306,46 @@ p {
 }
 .tags-container .ranch {
   background-image: url("../assets/ranch.jpg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+}
+.tags-container .africa {
+  background-image: url("../assets/africa.jpg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+}
+.tags-container .europe {
+  background-image: url("../assets/europe.jpg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+}
+.tags-container .alaska {
+  background-image: url("../assets/alaska.jpg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+}
+.tags-container .nz {
+  background-image: url("../assets/nz.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;

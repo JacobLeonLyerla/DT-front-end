@@ -44,8 +44,8 @@ const Dashboard = props => {
             settings
           </Link>
 
-          <UncontrolledDropdown>
-            <DropdownToggle className={props.btn} caret>
+          <UncontrolledDropdown direction="right">
+            <DropdownToggle  className={props.btn} caret>
               Catagories
             </DropdownToggle>
             <DropdownMenu>

@@ -1,14 +1,10 @@
 import React from "react";
-import { Row, Col, Media } from "reactstrap";
-import market from "../assets/river-market.jpeg";
-import camping from "../assets/camping.jpeg";
-import water from "../assets/rain.jpeg";
-import snow from "../assets/snow.jpeg";
+import { Row, Col } from "reactstrap";
 const Tags = props => {
   return (
     <Col md={`${10 + props.tagVar}`} className="tags-container">
       <Row>
-        <Col className="tag-img water" md="6">
+        <Col data-ca="ca" className="tag-img water" md="6">
           <div className="cover ">
             {" "}
             <p>Lake</p>
@@ -35,13 +31,37 @@ const Tags = props => {
         <Col className="tag-img ranch" md="6">
           <div className="cover ">
             {" "}
-            <p>ra</p>
+            <p>Ranch</p>
           </div>
         </Col>
         <Col className="tag-img explore" md="6">
           <div className="cover ">
             {" "}
-            <p>explore</p>
+            <p>Explore</p>
+          </div>
+        </Col>
+        <Col className="tag-img europe" md="6">
+          <div className="cover ">
+            {" "}
+            <p>Europe</p>
+          </div>
+        </Col>
+        <Col className="tag-img africa" md="6">
+          <div className="cover ">
+            {" "}
+            <p>Africa</p>
+          </div>
+        </Col>
+        <Col className="tag-img alaska" md="6">
+          <div className="cover ">
+            {" "}
+            <p>Alaska</p>
+          </div>
+        </Col>
+        <Col className="tag-img nz" md="6">
+          <div className="cover ">
+            {" "}
+            <p>New Zeland</p>
           </div>
         </Col>
       </Row>
