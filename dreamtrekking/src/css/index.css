@@ -237,7 +237,7 @@ p {
   margin-top: 3vh;
 }
 .tags-container .cover {
-  width: 40vw;
+  width: 100%;
   color: rgba(15, 15, 15, 0);
 }
 .tags-container .cover:hover {
