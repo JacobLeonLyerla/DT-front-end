@@ -11,7 +11,7 @@ import {
   Button
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+
 const Dashboard = props => {
   console.log(props)
   
@@ -21,7 +21,7 @@ const Dashboard = props => {
       <div className="dashboard">
         <Navbar >
           <NavbarBrand href="/">
-            <Media src={logo} />
+            <Media src={props.logo} />
           </NavbarBrand>
             <Link className={props.link} to="/userinfo" style={{ textDecoration: 'none',}}>
             name placeholder
