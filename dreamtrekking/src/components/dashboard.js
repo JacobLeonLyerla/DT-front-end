@@ -23,13 +23,13 @@ const Dashboard = props => {
           <NavbarBrand href="/">
             <Media src={logo} />
           </NavbarBrand>
-            <Link className="nav-links" to="/userinfo" style={{ textDecoration: 'none',}}>
+            <Link className={props.link} to="/userinfo" style={{ textDecoration: 'none',}}>
             name placeholder
             </Link>
-            <Link className="nav-links" to="/userinfo" style={{ textDecoration: 'none',}}>
+            <Link className={props.link} to="/userinfo" style={{ textDecoration: 'none',}}>
            notifications
             </Link>
-            <Link className="nav-links" to="/userinfo" style={{ textDecoration: 'none',}}>
+            <Link className={props.link} to="/userinfo" style={{ textDecoration: 'none',}}>
             settings
             </Link>
             
