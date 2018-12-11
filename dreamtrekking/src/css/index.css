@@ -189,7 +189,7 @@ p {
 }
 .dashboard .navbar .nav-sml {
   color: #677fa3;
-  font-size: .9rem;
+  font-size: 0.9rem;
   width: 7.1vw;
   padding: 3vh 0vh 3vh;
 }
@@ -210,7 +210,7 @@ p {
 }
 .dashboard .navbar .btn-sml {
   border: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 3vh;
   width: 5vw;
   background: #677fa3;
@@ -240,7 +240,7 @@ p {
   width: 40vw;
   color: rgba(15, 15, 15, 0);
 }
-.tags-container .cover:Hover {
+.tags-container .cover:hover {
   background: rgba(15, 15, 15, 0.342);
   color: white;
 }
@@ -284,6 +284,26 @@ p {
 }
 .tags-container .camping {
   background-image: url("../assets/camping.jpeg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+}
+.tags-container .explore {
+  background-image: url("../assets/explore.jpg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+}
+.tags-container .ranch {
+  background-image: url("../assets/ranch.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;
