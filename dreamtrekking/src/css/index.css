@@ -168,6 +168,11 @@ p {
   background: white;
   box-shadow: 5px 15px 10px #6b6969;
 }
+.dashboard .fas {
+  color: #a8bdd6;
+  margin-top: 3vh;
+  font-size: 2.9rem;
+}
 .dashboard .media {
   height: 5.5vh;
   margin-bottom: 3vh;
@@ -191,6 +196,13 @@ p {
   font-size: 1.3rem;
   margin-top: 3vh;
   width: 12vw;
+  background: #677fa3;
+}
+.dashboard .navbar .btn-sml {
+  border: none;
+  font-size: .8rem;
+  margin-top: 3vh;
+  width: 5vw;
   background: #677fa3;
 }
 .dashboard .navbar .btn:active {
