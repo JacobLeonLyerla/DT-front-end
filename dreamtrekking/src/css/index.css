@@ -187,7 +187,17 @@ p {
   width: 15.1vw;
   padding: 3vh 0vh 3vh;
 }
+.dashboard .navbar .nav-sml {
+  color: #677fa3;
+  font-size: .9rem;
+  width: 7.1vw;
+  padding: 3vh 0vh 3vh;
+}
 .dashboard .navbar .nav-links:hover {
+  background: rgba(8, 8, 8, 0.267);
+  color: #ffffff;
+}
+.dashboard .navbar .nav-sml:hover {
   background: rgba(8, 8, 8, 0.267);
   color: #ffffff;
 }
