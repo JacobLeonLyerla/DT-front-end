@@ -15,19 +15,22 @@ class App extends Component {
 state={
   dashboardVar:1,
   tagVar:0,
+  collapseIcon:"fas fa-angle-double-left",
 
 }
   columnSizer =()=>{
-    let dv,tv;
+    let dv,tv,icon;
     if(this.state.dashboardVar === 1){
        dv = this.state.dashboardVar -1
        tv = this.state.tagVar +1
+       icon = "fas fa-angle-double-right"
     }else{
        dv = this.state.dashboardVar +1
         tv = this.state.tagVar-1
+        icon = "fas fa-angle-double-left"
     }
     
-   this.setState({dashboardVar:dv, tagVar:tv})
+   this.setState({dashboardVar:dv, tagVar:tv,collapseIcon:icon})
   }
   render() {
     return (
@@ -40,7 +43,7 @@ state={
         <Route path="/signup" render={props => <Signup />} />
         <Route path="/signin" render={props => <Signin />} />
         <Row>
-          <Route path="/dashboard" render={props => <Dashboard columnSizer={this.columnSizer} dashboardVar={this.state.dashboardVar} />} />
+          <Route path="/dashboard" render={props => <Dashboard collapseIcon={this.state.collapseIcon} columnSizer={this.columnSizer} dashboardVar={this.state.dashboardVar} />} />
           <Route exact path="/dashboard" render={props => <Tags  tagVar={this.state.tagVar}  />} />
         </Row>
       </div>
