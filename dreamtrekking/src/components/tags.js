@@ -9,27 +9,40 @@ const Tags = props => {
     <Col md={`${10 + props.tagVar}`} className="tags-container">
       <Row>
         <Col className="tag-img water" md="6">
-        <div className="cover "> <p>Lake</p></div>
+          <div className="cover ">
+            {" "}
+            <p>Lake</p>
+          </div>
         </Col>
         <Col className="tag-img snow" md="6">
-        <div className="cover "> <p>Snow</p>
-        </div>
+          <div className="cover ">
+            {" "}
+            <p>Snow</p>
+          </div>
         </Col>{" "}
         <Col className="tag-img market" md="6">
-        <div className="cover "> <p>Market</p>
-        </div>
+          <div className="cover ">
+            {" "}
+            <p>Market</p>
+          </div>
         </Col>
         <Col className="tag-img camping" md="6">
-        <div className="cover "> <p>Camping</p>
-        </div>
+          <div className="cover ">
+            {" "}
+            <p>Camping</p>
+          </div>
         </Col>
-        <Col className="tag-img snow" md="6">
-        <div className="cover "> <p>Camping</p>
-        </div>
+        <Col className="tag-img ranch" md="6">
+          <div className="cover ">
+            {" "}
+            <p>ra</p>
+          </div>
         </Col>
-        <Col className="tag-img water" md="6">
-        <div className="cover "> <p>Camping</p>
-        </div>
+        <Col className="tag-img explore" md="6">
+          <div className="cover ">
+            {" "}
+            <p>explore</p>
+          </div>
         </Col>
       </Row>
     </Col>
