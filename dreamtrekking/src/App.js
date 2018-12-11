@@ -16,21 +16,24 @@ state={
   dashboardVar:1,
   tagVar:0,
   collapseIcon:"fas fa-angle-double-left",
+  buttonclass:"btn"
 
 }
   columnSizer =()=>{
-    let dv,tv,icon;
+    let dv,tv,icon,button;
     if(this.state.dashboardVar === 1){
        dv = this.state.dashboardVar -1
        tv = this.state.tagVar +1
        icon = "fas fa-angle-double-right"
+       button = "btn-sml"
     }else{
        dv = this.state.dashboardVar +1
         tv = this.state.tagVar-1
         icon = "fas fa-angle-double-left"
+        button = "btn"
     }
     
-   this.setState({dashboardVar:dv, tagVar:tv,collapseIcon:icon})
+   this.setState({dashboardVar:dv, tagVar:tv,collapseIcon:icon,buttonclass:button})
   }
   render() {
     return (
@@ -43,7 +46,7 @@ state={
         <Route path="/signup" render={props => <Signup />} />
         <Route path="/signin" render={props => <Signin />} />
         <Row>
-          <Route path="/dashboard" render={props => <Dashboard collapseIcon={this.state.collapseIcon} columnSizer={this.columnSizer} dashboardVar={this.state.dashboardVar} />} />
+          <Route path="/dashboard" render={props => <Dashboard btn={this.state.buttonclass} collapseIcon={this.state.collapseIcon} columnSizer={this.columnSizer} dashboardVar={this.state.dashboardVar} />} />
           <Route exact path="/dashboard" render={props => <Tags  tagVar={this.state.tagVar}  />} />
         </Row>
       </div>
