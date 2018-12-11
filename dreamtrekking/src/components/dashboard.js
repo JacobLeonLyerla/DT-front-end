@@ -33,8 +33,8 @@ const Dashboard = props => {
             settings
             </Link>
             
-          <UncontrolledDropdown color="primary">
-            <DropdownToggle caret>Catagories</DropdownToggle>
+          <UncontrolledDropdown >
+            <DropdownToggle className={props.btn} caret>Catagories</DropdownToggle>
             <DropdownMenu>
               <DropdownItem>Forest</DropdownItem>
               <DropdownItem>Lake</DropdownItem>
