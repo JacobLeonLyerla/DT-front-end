@@ -42,7 +42,7 @@ const Dashboard = props => {
               <DropdownItem>Beach</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
-        <Button onClick={()=> props.columnSizer()}>tab</Button>
+        <div onClick={()=> props.columnSizer()}><i class={props.collapseIcon}></i></div>
         </Navbar>
       </div>
     </Col>
