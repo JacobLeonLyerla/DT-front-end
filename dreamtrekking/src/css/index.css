@@ -373,6 +373,15 @@ p {
   margin-top: 10vh;
   width: 80%;
 }
+.table td {
+  min-width: 20vw;
+}
+.table .tag-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 40vw;
+}
 .table .tag {
-  width: 5%;
+  margin: 1%;
 }
