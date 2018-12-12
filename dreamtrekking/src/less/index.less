@@ -70,7 +70,7 @@ p {
 
   text-align: center;
   width: 70%;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 .menu {
@@ -391,22 +391,43 @@ p {
   }
 }
 //*********************************************************TAGVIEW
-.table{
-   margin:0 auto;
-  margin-top:10vh;
-  width:80%;
-  td{
-    min-width: 20vw;
+.thead {
+ display:flex;
+  width:100%;
+  .tr{
+    width:100%
   }
- 
-  .tag-container{
-    display:flex;
-    justify-content: center;
-    flex-wrap:wrap;
-    max-width:40vw;
+  .th {
+  padding-right:8.8vw;
+  padding-left:9vw;
   }
-  .tag{
-    margin:1%;
+}
+
+.table {
+  margin: 0 auto;
+  margin-top: 15vh;
+  width: 80%;
+  .table-items {
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 25vh;
+
+    margin: 0 auto;
+
+    td {
+      min-width: 20vw;
+    }
+
+    .tag-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 40vw;
+    }
+    .tag {
+      margin: 1%;
+    }
   }
 }
 

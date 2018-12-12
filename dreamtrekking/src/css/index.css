@@ -368,20 +368,38 @@ p {
 .tags-container .tag {
   height: 49.8vh;
 }
+.thead {
+  display: flex;
+  width: 100%;
+}
+.thead .tr {
+  width: 100%;
+}
+.thead .th {
+  padding-right: 8.8vw;
+  padding-left: 9vw;
+}
 .table {
   margin: 0 auto;
-  margin-top: 10vh;
+  margin-top: 15vh;
   width: 80%;
 }
-.table td {
+.table .table-items {
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 25vh;
+  margin: 0 auto;
+}
+.table .table-items td {
   min-width: 20vw;
 }
-.table .tag-container {
+.table .table-items .tag-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 40vw;
 }
-.table .tag {
+.table .table-items .tag {
   margin: 1%;
 }
