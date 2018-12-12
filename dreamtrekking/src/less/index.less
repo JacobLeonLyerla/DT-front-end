@@ -1,5 +1,9 @@
+.App{
+  overflow-x: hidden !important;
+}
 .row {
   max-width: 100vw;
+
 }
 
 .mapBackground-styles {
@@ -393,16 +397,156 @@ p {
 //*********************************************************TAGVIEW
 .table-container{
   .google{
-    margin-top:5vh;
+    margin-top:2vh;
     background:@secondarycolor;
     width:80vw;
-    height:30vh;
+    height:35vh;
     color:white;
+    overflow: hidden;
   }
-}
+.tag-filtered{
+
+  overflow: hidden;
+  overflow-y: scroll;
+  max-width: 81vw;
+  max-height: 95vh;
+  margin-right: 0px;
+  margin: 0 auto;
+    margin-top:2vh;
+    .cover {
+      width: 100%;
+      color: rgba(15, 15, 15, 0);
+    }
+    .cover:hover {
+      background: rgba(15, 15, 15, 0.342);
+      color: white;
+    }
+  
+    p {
+      padding-top: 22vh;
+      font-size: 3rem;
+      margin-top: 0px;
+      height: 45.8vh;
+    }
+    .snow {
+      background-image: url("../assets/snow.jpeg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+      margin-top: 5vh;
+    }
+    .water {
+      background-image: url("../assets/rain.jpeg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+      margin-top: 3vh;
+    }
+    .market {
+      background-image: url("../assets/river-market.jpeg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+    }
+    .camping {
+      background-image: url("../assets/camping.jpeg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+    }
+    .asia {
+      background-image: url("../assets/asia.jpg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+    }
+    .ranch {
+      background-image: url("../assets/ranch.jpg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+    }
+    .africa {
+      background-image: url("../assets/africa.jpg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+    }
+    .europe {
+      background-image: url("../assets/europe.jpg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+    }
+    .alaska {
+      background-image: url("../assets/alaska.jpg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+    }
+    .nz {
+      background-image: url("../assets/nz.jpg");
+      -webkit-background-size: contain;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      height: 45.8vh;
+    }
+    .row {
+      overflow: hidden;
+      overflow-y: scroll;
+      max-height: 95vh;
+      margin-right: 0px;
+      margin: 0 auto;
+    }
+  
+    .tag-img {
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+  }
 .thead {
  display:flex;
-  width:100%;
+  width:80vw;
   .tr{
     width:100%
   }
@@ -413,8 +557,9 @@ p {
 }
 
 .table {
+  margin-right:0px;
   margin: 0 auto;
-  width: 80%;
+  width: 80vw;
   .table-items {
     width: 100%;
     overflow: hidden;
