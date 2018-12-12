@@ -10,6 +10,8 @@ import Landing from "./components/landing";
 import Signup from "./components/signup";
 import Signin from "./components/signin";
 import Dashboard from "./components/dashboard";
+import TagView from "./components/tagView"
+
 import Tags from "./components/tags";
 import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
@@ -73,6 +75,11 @@ class App extends Component {
             exact
             path="/dashboard"
             render={props => <Tags tagVar={this.state.tagVar} />}
+          />
+             <Route
+            exact
+            path="/dashboard/:id"
+            render={props => <TagView tagVar={this.state.tagVar} />}
           />
         </Row>
       </div>
