@@ -368,3 +368,7 @@ p {
 .tags-container .tag {
   height: 49.8vh;
 }
+.table {
+  margin-top: 10vh;
+  width: 100%;
+}
