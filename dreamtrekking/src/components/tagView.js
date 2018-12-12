@@ -53,9 +53,10 @@ renderTags=(tag)=>{
         tag = []
     }
 if (tag !== undefined || tag !==""){
-return tag.map(tag =>(
-    <td className="tag">{`${tag}`}<br/></td>
+return <td className="tag-container"> {tag.map(tag =>(
+   <div className="tag">{`${tag}`}<br/></div>
 ))
+}</td>
 }
 }
 render(){
