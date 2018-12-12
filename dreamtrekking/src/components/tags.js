@@ -34,10 +34,10 @@ const Tags = props => {
             <p>Ranch</p>
           </div>
         </Col>
-        <Col className="tag-img explore" md="6">
+        <Col className="tag-img asia" md="6">
           <div className="cover ">
             {" "}
-            <p>Explore</p>
+            <p>Asia</p>
           </div>
         </Col>
         <Col className="tag-img europe" md="6">

@@ -294,8 +294,8 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.tags-container .explore {
-  background-image: url("../assets/explore.jpg");
+.tags-container .asia {
+  background-image: url("../assets/asia.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;
