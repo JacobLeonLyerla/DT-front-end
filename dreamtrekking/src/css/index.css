@@ -369,6 +369,10 @@ p {
   height: 49.8vh;
 }
 .table {
+  margin: 0 auto;
   margin-top: 10vh;
-  width: 100%;
+  width: 80%;
+}
+.table .tag {
+  width: 5%;
 }
