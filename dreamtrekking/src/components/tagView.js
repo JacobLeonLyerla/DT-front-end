@@ -55,6 +55,7 @@ return <td className="tag-container"> {tag.map(tag =>(
 render(){
   return (
     <Col className="table-container" md={`${10 + this.props.tagVar}`}>
+    <div className="google"></div>
        <Table hover>
         <thead className="thead">
       <tr className="tr">
@@ -68,6 +69,7 @@ render(){
   {this.userSubmissionTable()}
   </div>
   </Table>
+  <div className="pics"></div>
     </Col>
   );
 }
