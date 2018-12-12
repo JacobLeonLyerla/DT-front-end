@@ -368,6 +368,13 @@ p {
 .tags-container .tag {
   height: 49.8vh;
 }
+.table-container .google {
+  margin-top: 5vh;
+  background: #677fa3;
+  width: 80vw;
+  height: 30vh;
+  color: white;
+}
 .thead {
   display: flex;
   width: 100%;
@@ -381,7 +388,6 @@ p {
 }
 .table {
   margin: 0 auto;
-  margin-top: 15vh;
   width: 80%;
 }
 .table .table-items {
