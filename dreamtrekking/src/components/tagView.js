@@ -26,24 +26,17 @@ loadinfo = () =>{
 userSubmissionTable= ()=>{
    return  this.state.test.map(sub => 
    (
-    <Table hover>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>City</th>
-        <th>Country</th>
-        <th>Tags</th>
-      </tr>
-    </thead>
+ 
+
     <tbody>
       <tr>
-        <th scope="row">1</th>
+        <td>{sub.name}</td>
         <td>{sub.city}</td>
         <td>{sub.country}</td>
         {this.renderTags(sub.tag)}
       </tr>
     </tbody>
-  </Table>  
+
     
 ));
 
@@ -61,8 +54,20 @@ return <td className="tag-container"> {tag.map(tag =>(
 }
 render(){
   return (
-    <Col md={`${10 + this.props.tagVar}`}>
+    <Col className="table-container" md={`${10 + this.props.tagVar}`}>
+       <Table hover>
+        <thead className="thead">
+      <tr className="tr">
+        <th className="th">Name</th>
+        <th className="th">City</th>
+        <th className="th">Country</th>
+        <th className="th">Tags</th>
+      </tr>
+    </thead>
+    <div className="table-items">
   {this.userSubmissionTable()}
+  </div>
+  </Table>
     </Col>
   );
 }
