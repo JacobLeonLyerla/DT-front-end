@@ -49,10 +49,15 @@ const Dashboard = props => {
               Catagories
             </DropdownToggle>
             <DropdownMenu>
+            <Link to="/dashboard/forest" style={{ textDecoration: "none" }}>
               <DropdownItem>Forest</DropdownItem>
-              <DropdownItem>Lake</DropdownItem>
-              <DropdownItem>Market</DropdownItem>
-              <DropdownItem>Beach</DropdownItem>
+              </Link>
+              <Link to="/dashboard/lake" style={{ textDecoration: "none" }}>
+              <DropdownItem>Lake</DropdownItem></Link>
+              <Link to="/dashboard/market" style={{ textDecoration: "none" }}>
+              <DropdownItem>Market</DropdownItem></Link>
+              <Link to="/dashboard/beach" style={{ textDecoration: "none" }}>
+              <DropdownItem>Beach</DropdownItem></Link>
             </DropdownMenu>
           </UncontrolledDropdown>
           <div onClick={() => props.columnSizer()}>
