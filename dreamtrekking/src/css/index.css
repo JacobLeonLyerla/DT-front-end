@@ -372,12 +372,18 @@ p {
   height: 49.8vh;
 }
 .table-container .google {
+  display: flex;
+  border-radius: 1%;
   margin-top: 2vh;
   background: #677fa3;
-  width: 80vw;
+  width: 81vw;
   height: 35vh;
   color: white;
   overflow: hidden;
+}
+.table-container p {
+  margin-top: 7%;
+  font-size: 3rem;
 }
 .table-container .tag-filtered {
   overflow: hidden;
