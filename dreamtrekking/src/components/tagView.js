@@ -21,16 +21,15 @@ class TagView extends Component {
         let tagArr =[];
           response.data.forEach(e => {
             for (let i = 0; i < e.tag.length; i++) {
-              console.log(e.tag[i].toLowerCase() === this.state.tag.toLowerCase())
               if(e.tag[i].toLowerCase() === this.state.tag.toLowerCase()){
-                // tagArr.push(e)
+               tagArr.push(e)
               }
               
             }
             console.log(tagArr)
           });
 
-        this.setState({ test: response.data });
+        this.setState({ test:tagArr });
       })
       .catch(err => {});
   };
