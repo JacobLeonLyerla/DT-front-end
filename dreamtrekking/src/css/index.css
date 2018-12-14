@@ -395,25 +395,21 @@ p {
   margin: 0 auto;
   margin-top: 2vh;
 }
-.table-container .tag-filtered .return {
-  width: 100%;
-  height: 100%;
-}
-.table-container .tag-filtered .return .cover {
+.table-container .tag-filtered .cover {
   width: 100%;
   color: rgba(15, 15, 15, 0);
 }
-.table-container .tag-filtered .return .cover:hover {
+.table-container .tag-filtered .cover:hover {
   background: rgba(15, 15, 15, 0.342);
   color: white;
 }
-.table-container .tag-filtered .return p {
+.table-container .tag-filtered p {
   padding-top: 22vh;
   font-size: 3rem;
   margin-top: 0px;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .snow {
+.table-container .tag-filtered .snow {
   background-image: url("../assets/snow.jpeg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -424,7 +420,7 @@ p {
   height: 45.8vh;
   margin-top: 5vh;
 }
-.table-container .tag-filtered .return .water {
+.table-container .tag-filtered .water {
   background-image: url("../assets/rain.jpeg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -435,7 +431,7 @@ p {
   height: 45.8vh;
   margin-top: 3vh;
 }
-.table-container .tag-filtered .return .market {
+.table-container .tag-filtered .market {
   background-image: url("../assets/river-market.jpeg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -445,7 +441,7 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .camping {
+.table-container .tag-filtered .camping {
   background-image: url("../assets/camping.jpeg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -455,7 +451,7 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .asia {
+.table-container .tag-filtered .asia {
   background-image: url("../assets/asia.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -465,7 +461,7 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .ranch {
+.table-container .tag-filtered .ranch {
   background-image: url("../assets/ranch.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -475,7 +471,7 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .africa {
+.table-container .tag-filtered .africa {
   background-image: url("../assets/africa.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -485,7 +481,7 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .europe {
+.table-container .tag-filtered .europe {
   background-image: url("../assets/europe.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -495,7 +491,7 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .alaska {
+.table-container .tag-filtered .alaska {
   background-image: url("../assets/alaska.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -505,7 +501,7 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .nz {
+.table-container .tag-filtered .nz {
   background-image: url("../assets/nz.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
@@ -515,14 +511,14 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
 }
-.table-container .tag-filtered .return .row {
+.table-container .tag-filtered .row {
   overflow: hidden;
   overflow-y: scroll;
   max-height: 95vh;
   margin-right: 0px;
   margin: 0 auto;
 }
-.table-container .tag-filtered .return .tag-img {
+.table-container .tag-filtered .tag-img {
   margin: 0px;
   padding: 0px;
 }
