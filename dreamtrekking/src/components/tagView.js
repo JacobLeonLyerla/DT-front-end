@@ -9,7 +9,7 @@ class TagView extends Component {
     test: [{ tag: "" }],
     tag: "",
     flag:false,
-    picture:[],
+    picture:[{}],
   };
   componentDidMount() {
     let { id } = this.props.match.params;
@@ -17,7 +17,6 @@ class TagView extends Component {
     this.loadinfo();
   }
   loadinfo = () => {
-    console.log("ran")
     axios
       .get("http://localhost:5500/tags")
       .then(response => {
@@ -37,14 +36,12 @@ class TagView extends Component {
       axios
       .get("http://localhost:5500/pictures")
       .then(response => {
-        console.log(response.data)
         let pictureArr =[];
           response.data.forEach(e => {
-            for (let i = 0; i < e.tag.length; i++) {
-              if(e.tag[i].toLowerCase() === this.state.tag.toLowerCase()){
+            
+         
+              if(e.name.toLowerCase() === this.state.tag.toLowerCase()){
                pictureArr.push(e)
-              }
-              
             }
           });
 
@@ -110,20 +107,28 @@ class TagView extends Component {
       
     }
   }
+  test(img){
+    if (img === undefined){
+      img = "Blank"
+    }
+    return img.toLowerCase()
+  }
   renderRelatedImgs=()=>{
 
-    return (
+    return this.state.picture.map(img =>(
+
     <Row className="tag-filtered">
-    <Col data-ca="ca" className="tag-img water" md="6">
+    {console.log(img)}
+    <Col data-ca="ca" className={`tag-img ${this.test(img.name)}`} md="6">
       <Link onClick={()=>this.checkp()} to="/dashboard/water" style={{ textDecoration: "none" }}>
         <div onClick={()=>this.checkp()} className="cover ">
           {" "}
-          <p>Lake</p>
+          <p>{img.name}</p>
         </div>
       </Link>
     </Col>
   </Row>
-  )
+  ))
   }
   render() {
     
