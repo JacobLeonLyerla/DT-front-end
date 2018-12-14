@@ -112,6 +112,7 @@ class TagView extends Component {
     }
   }
   lowerCase(img){
+  
     if (img === undefined){
       img = "Blank"
     }
@@ -119,30 +120,30 @@ class TagView extends Component {
   }
   renderMainImgs=(img)=>{
     let arr =[]
-    if(typeof(img) === String){
+
+    if(Array.isArray(img) === false){
       arr.push(img)
+    }else{
+      arr= img
     }
-     return this.state.picture.map(img =>(
-      <div className="return">{this.renderImgs(img.name)}</div>
+    console.log(arr)
+     return arr.map(img =>(
+      <Row className="tag-filtered">
+      <Col data-ca="ca" className={`tag-img ${this.lowerCase(img)}`} md="6">
+      <Link onClick={()=>this.checkp()} to="/dashboard/water" style={{ textDecoration: "none" }}>
+        <div onClick={()=>this.checkp()} className="cover ">
+          {" "}
+          <p>{img}</p>
+        </div>
+      </Link>
+    </Col>
+    </Row>
+
+
       ))
      
   }
  
-renderImgs=(img)=>{
-  return(
-  
-  
-  <Col data-ca="ca" className={`tag-img ${this.lowerCase(img)}`} md="6">
-    <Link onClick={()=>this.checkp()} to="/dashboard/water" style={{ textDecoration: "none" }}>
-      <div onClick={()=>this.checkp()} className="cover ">
-        {" "}
-        <p>{img}</p>
-      </div>
-    </Link>
-  </Col>
-
-  )
-} 
 
   render() {
   
@@ -154,10 +155,9 @@ renderImgs=(img)=>{
           <p>Google Placeholder</p>
         </div>
         {this.renderTable()}
-        <Row className="tag-filtered">
-        {this.renderMainImgs(this.state.picture.name)}
+       
+        {this.renderMainImgs(this.state.imgName)}
         {this.renderMainImgs(this.state.imgTag)}
-        </Row>
       
       </Col>
     );
