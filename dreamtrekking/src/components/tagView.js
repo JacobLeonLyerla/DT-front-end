@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 class TagView extends Component {
   state = {
     test: [{ tag: "" }],
-    tag: ""
+    tag: "",
+    flag:false,
   };
   componentDidMount() {
     let { id } = this.props.match.params;
@@ -15,6 +16,7 @@ class TagView extends Component {
     this.loadinfo();
   }
   loadinfo = () => {
+    console.log("ran")
     axios
       .get("http://localhost:5500/tags")
       .then(response => {
@@ -26,7 +28,6 @@ class TagView extends Component {
               }
               
             }
-            console.log(tagArr)
           });
 
         this.setState({ test:tagArr });
@@ -84,18 +85,18 @@ class TagView extends Component {
       </Table>
     );
   };
-  tableFilter = ()=>{
-    this.state.test.map(filter =>{
-      let tagArr = filter.tag
-    // filter.tag.forEach(ele => {
+  checkp = ()=>{
+    if(this.props.match.params.id !== this.state.tag){
+      this.setState({tag:this.props.match.params.id})
+          this.loadinfo()
       
-    // });
-    })
+    }
   }
   render() {
+    
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
-      {this.tableFilter()}
+        {this.checkp()}
         {this.setTag()}
         <div className="google">
           <p>Google Placeholder</p>
@@ -104,8 +105,8 @@ class TagView extends Component {
 
         <Row className="tag-filtered">
           <Col data-ca="ca" className="tag-img water" md="6">
-            <Link to="/dashboard/water" style={{ textDecoration: "none" }}>
-              <div className="cover ">
+            <Link onClick={()=>this.checkp()} to="/dashboard/water" style={{ textDecoration: "none" }}>
+              <div onClick={()=>this.checkp()} className="cover ">
                 {" "}
                 <p>Lake</p>
               </div>
@@ -144,7 +145,7 @@ class TagView extends Component {
             </Link>
           </Col>
           <Col className="tag-img asia" md="6">
-            <Link to="/dashboard/asia" style={{ textDecoration: "none" }}>
+            <Link onClick={()=>this.checkp()} to="/dashboard/asia" style={{ textDecoration: "none" }}>
               <div className="cover ">
                 {" "}
                 <p>Asia</p>
@@ -152,7 +153,7 @@ class TagView extends Component {
             </Link>
           </Col>
           <Col className="tag-img europe" md="6">
-            <Link to="/dashboard/europe" style={{ textDecoration: "none" }}>
+            <Link onClick={()=>this.checkp()} to="/dashboard/europe" style={{ textDecoration: "none" }}>
               <div className="cover ">
                 {" "}
                 <p>Europe</p>
