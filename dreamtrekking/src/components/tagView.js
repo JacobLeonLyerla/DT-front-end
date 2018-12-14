@@ -9,7 +9,9 @@ class TagView extends Component {
     test: [{ tag: "" }],
     tag: "",
     flag:false,
-    picture:[{}],
+    picture:[{name:"pat"}],
+    imgTag:[],
+    imgName:""
   };
   componentDidMount() {
     let { id } = this.props.match.params;
@@ -44,11 +46,12 @@ class TagView extends Component {
                pictureArr.push(e)
             }
           });
-
-        this.setState({ picture:pictureArr });
+          let tag = pictureArr[0].tag
+          let name = pictureArr[0].name
+        this.setState({ picture:pictureArr,imgTag:tag,imgName:name });
       })
       .catch(err => {});
-  };
+    };
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
       <tbody>
@@ -79,6 +82,7 @@ class TagView extends Component {
       );
     }
   };
+
   setTag = () => {
     if (this.state.tag === "") {
       let { id } = this.props.match.params;
@@ -107,31 +111,41 @@ class TagView extends Component {
       
     }
   }
-  test(img){
+  lowerCase(img){
     if (img === undefined){
       img = "Blank"
     }
     return img.toLowerCase()
   }
-  renderRelatedImgs=()=>{
-
-    return this.state.picture.map(img =>(
-
-    <Row className="tag-filtered">
-    {console.log(img)}
-    <Col data-ca="ca" className={`tag-img ${this.test(img.name)}`} md="6">
-      <Link onClick={()=>this.checkp()} to="/dashboard/water" style={{ textDecoration: "none" }}>
-        <div onClick={()=>this.checkp()} className="cover ">
-          {" "}
-          <p>{img.name}</p>
-        </div>
-      </Link>
-    </Col>
-  </Row>
-  ))
+  renderMainImgs=(img)=>{
+    let arr =[]
+    if(typeof(img) === String){
+      arr.push(img)
+    }
+     return this.state.picture.map(img =>(
+      <div className="return">{this.renderImgs(img.name)}</div>
+      ))
+     
   }
+ 
+renderImgs=(img)=>{
+  return(
+  
+  
+  <Col data-ca="ca" className={`tag-img ${this.lowerCase(img)}`} md="6">
+    <Link onClick={()=>this.checkp()} to="/dashboard/water" style={{ textDecoration: "none" }}>
+      <div onClick={()=>this.checkp()} className="cover ">
+        {" "}
+        <p>{img}</p>
+      </div>
+    </Link>
+  </Col>
+
+  )
+} 
+
   render() {
-    
+  
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         {this.checkp()}
@@ -140,7 +154,10 @@ class TagView extends Component {
           <p>Google Placeholder</p>
         </div>
         {this.renderTable()}
-        {this.renderRelatedImgs()}
+        <Row className="tag-filtered">
+        {this.renderMainImgs(this.state.picture.name)}
+        {this.renderMainImgs(this.state.imgTag)}
+        </Row>
       
       </Col>
     );
