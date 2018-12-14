@@ -74,12 +74,12 @@ class App extends Component {
           <Route
             exact
             path="/dashboard"
-            render={props => <Tags tagVar={this.state.tagVar} />}
+            render={props => <Tags {...props} tagVar={this.state.tagVar} />}
           />
              <Route
             exact
             path="/dashboard/:id"
-            render={props => <TagView tagVar={this.state.tagVar} />}
+            render={props => <TagView {...props} tagVar={this.state.tagVar} />}
           />
         </Row>
       </div>
