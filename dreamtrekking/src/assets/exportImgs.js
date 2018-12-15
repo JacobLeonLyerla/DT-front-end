@@ -3,7 +3,7 @@ const importAll = (r) => {
     const keys = r.keys();
     const values = r.keys().map(r);
     for (let i = 0; i < keys.length; i++) {
-      images[keys[i].match(/\.\/([a-zA-Z]+)/i)[1]] = values[i];
+      images[keys[i].toLowerCase().match(/\.\/([a-zA-Z]+)/i)[1]] = values[i];
     }
     return images;
   }
