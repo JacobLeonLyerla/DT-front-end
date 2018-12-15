@@ -409,6 +409,16 @@ p {
   margin-top: 0px;
   height: 45.8vh;
 }
+.table-container .tag-filtered .tags {
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+  margin-top: 5vh;
+}
 .table-container .tag-filtered .snow {
   background-image: url("../assets/snow.jpeg");
   -webkit-background-size: contain;
