@@ -118,18 +118,20 @@ class TagView extends Component {
     }else{
       arr= img
     }
-     return arr.map(img =>(
-      
-      <Col data-ca="ca" className={`tag-img ${img.toLowerCase()}`} md="6">
+   
+     return arr.map(img =>{
+       
+      console.log(imgs[img.toLowerCase()])
+       return(
+      <Col data-ca="ca" style={{backgroundImage : `url(${imgs[img.toLowerCase()]})`}} className={`tag-img tags`} md="6">
       <Link onClick={()=>this.checkp()} to={`/dashboard/${img.toLowerCase()}`} style={{ textDecoration: "none" }}>
         <div onClick={()=>this.checkp()} className="cover ">
-          {" "}
           <p>{img}</p>
         </div>
       </Link>
     </Col>
 
-      ))
+      )})
      
   }
  
