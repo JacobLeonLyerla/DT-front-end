@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Table, Row, Col } from "reactstrap";
-
+import imgs from "../assets/exportImgs.js" 
 import { Link } from "react-router-dom";
 
 class TagView extends Component {
@@ -111,34 +111,23 @@ class TagView extends Component {
       
     }
   }
-  lowerCase(img){
-  
-    if (img === undefined){
-      img = "Blank"
-    }
-    return img.toLowerCase()
-  }
   renderMainImgs=(img)=>{
     let arr =[]
-
     if(Array.isArray(img) === false){
       arr.push(img)
     }else{
       arr= img
     }
-    console.log(arr)
      return arr.map(img =>(
-      <Row className="tag-filtered">
-      <Col data-ca="ca" className={`tag-img ${this.lowerCase(img)}`} md="6">
-      <Link onClick={()=>this.checkp()} to="/dashboard/water" style={{ textDecoration: "none" }}>
+      
+      <Col data-ca="ca" className={`tag-img ${img.toLowerCase()}`} md="6">
+      <Link onClick={()=>this.checkp()} to={`/dashboard/${img.toLowerCase()}`} style={{ textDecoration: "none" }}>
         <div onClick={()=>this.checkp()} className="cover ">
           {" "}
           <p>{img}</p>
         </div>
       </Link>
     </Col>
-    </Row>
-
 
       ))
      
@@ -149,16 +138,18 @@ class TagView extends Component {
   
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
+      
         {this.checkp()}
         {this.setTag()}
         <div className="google">
           <p>Google Placeholder</p>
         </div>
         {this.renderTable()}
-       
+       <Row className="tag-filtered">
         {this.renderMainImgs(this.state.imgName)}
-        {this.renderMainImgs(this.state.imgTag)}
-      
+        {this.renderMainImgs(this.state.imgTag)} 
+    </Row>
+
       </Col>
     );
   }
