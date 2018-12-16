@@ -148,7 +148,6 @@ class TagView extends Component {
         </div>
         {this.renderTable()}
        <Row className="tag-filtered">
-        {this.renderMainImgs(this.state.imgName)}
         {this.renderMainImgs(this.state.imgTag)} 
     </Row>
 

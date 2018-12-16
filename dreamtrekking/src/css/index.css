@@ -231,6 +231,11 @@ p {
 .dashboard .navbar .btn:visited {
   background: #a8bdd6;
 }
+.dashboard .navbar .dropdown-menu {
+  max-height: 18vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
 .dashboard .navbar .show {
   width: 12vw;
 }
