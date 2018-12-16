@@ -1,82 +1,32 @@
-import React from "react";
+import React,{Component} from "react";
 import { Row, Col } from "reactstrap";
 import {Link} from "react-router-dom"
-const Tags = props => {
+import imgs from "../assets/exportImgs.js" 
+class Tags extends Component {
+
+
+  renderTags =()=>{
+    if(this.props.pictures.length >0){
+      return this.props.pictures.map(img =>{
+   
+      return(<Col data-ca="ca" style={{backgroundImage : `url(${imgs[img.name.toLowerCase()]})`}} className={`tag-img tags`} md="6">
+       <Link to={`/dashboard/${img.name.toLowerCase()}`} style={{ textDecoration: "none" }}>
+          <div className="cover ">
+            {" "}
+            <p>{img.name}</p>
+          </div></Link>
+        </Col>
+        )})
+  }
+}
+  render(){
   return (
-    <Col md={`${10 + props.tagVar}`} className="tags-container">
+    <Col md={`${10 + this.props.tagVar}`} className="tags-container">
       <Row>
-       <Col data-ca="ca" className="tag-img lake" md="6">
-       <Link to="/dashboard/lake" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Lake</p>
-          </div></Link>
-        </Col>
-        <Col className="tag-img winter" md="6">
-        <Link to="/dashboard/winter" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Snow</p>
-          </div></Link>
-        </Col>{" "}
-        <Col className="tag-img market" md="6">
-        <Link to="/dashboard/market" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Market</p>
-          </div></Link>
-        </Col>
-        <Col className="tag-img camping" md="6">
-        <Link to="/dashboard/camping" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Camping</p>
-          </div></Link>
-        </Col>
-        <Col className="tag-img ranch" md="6">
-        <Link to="/dashboard/ranch" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Ranch</p>
-          </div></Link>
-        </Col>
-        <Col className="tag-img asia" md="6">
-        <Link to="/dashboard/asia" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Asia</p>
-          </div></Link>
-        </Col>
-        <Col className="tag-img europe" md="6">
-        <Link to="/dashboard/europe" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Europe</p>
-          </div></Link>
-        </Col>
-        <Col className="tag-img africa" md="6">
-        <Link to="/dashboard/africa" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Africa</p>
-          </div></Link>
-        </Col>
-        <Col className="tag-img alaska" md="6">
-        <Link to="/dashboard/alaska" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>Alaska</p>
-          </div></Link>
-        </Col>
-        <Col className="tag-img nz" md="6">
-        <Link to="/dashboard/nz" style={{ textDecoration: "none" }}>
-          <div className="cover ">
-            {" "}
-            <p>New Zeland</p>
-          </div></Link>
-        </Col>
+      {this.renderTags()}
       </Row>
     </Col>
   );
+  }
 };
 export default Tags;
