@@ -256,8 +256,8 @@ p {
   margin-top: 0px;
   height: 45.8vh;
 }
-.tags-container .snow {
-  background-image: url("../assets/snow.jpeg");
+.tags-container .winter {
+  background-image: url("../assets/winter.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -267,8 +267,8 @@ p {
   height: 45.8vh;
   margin-top: 5vh;
 }
-.tags-container .water {
-  background-image: url("../assets/rain.jpeg");
+.tags-container .lake {
+  background-image: url("../assets/lake.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -279,7 +279,7 @@ p {
   margin-top: 3vh;
 }
 .tags-container .market {
-  background-image: url("../assets/river-market.jpeg");
+  background-image: url("../assets/river-market.jpg");
   -webkit-background-size: contain;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -418,108 +418,6 @@ p {
   background-repeat: no-repeat;
   height: 45.8vh;
   margin-top: 5vh;
-}
-.table-container .tag-filtered .snow {
-  background-image: url("../assets/snow.jpeg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-  margin-top: 5vh;
-}
-.table-container .tag-filtered .water {
-  background-image: url("../assets/rain.jpeg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-  margin-top: 3vh;
-}
-.table-container .tag-filtered .market {
-  background-image: url("../assets/river-market.jpeg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-}
-.table-container .tag-filtered .camping {
-  background-image: url("../assets/camping.jpeg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-}
-.table-container .tag-filtered .asia {
-  background-image: url("../assets/asia.jpg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-}
-.table-container .tag-filtered .ranch {
-  background-image: url("../assets/ranch.jpg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-}
-.table-container .tag-filtered .africa {
-  background-image: url("../assets/africa.jpg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-}
-.table-container .tag-filtered .europe {
-  background-image: url("../assets/europe.jpg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-}
-.table-container .tag-filtered .alaska {
-  background-image: url("../assets/alaska.jpg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
-}
-.table-container .tag-filtered .nz {
-  background-image: url("../assets/nz.jpg");
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: 45.8vh;
 }
 .table-container .tag-filtered .row {
   overflow: hidden;
