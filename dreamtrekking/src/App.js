@@ -4,7 +4,7 @@ import { Row } from "reactstrap";
 import "./App.css";
 import "./css/index.css";
 import { Route } from "react-router-dom";
-
+import axios from "axios"
 import Nav from "./components/nav";
 import Landing from "./components/landing";
 import Signup from "./components/signup";
@@ -22,8 +22,18 @@ class App extends Component {
     collapseIcon: "fas fa-angle-double-left",
     buttonClass: "btn",
     linkClass: "nav-links",
-    logo: logo
+    logo: logo,
+    picture:{}
   };
+  componentDidMount(){
+    axios
+    .get("http://localhost:5500/pictures")
+    .then(response => {
+   
+      this.setState({ picture:response.data});
+    })
+    .catch(err => {});
+  }
   columnSizer = () => {
     let dv, tv, icon, button, link, newLogo;
     if (this.state.dashboardVar === 1) {
@@ -74,7 +84,7 @@ class App extends Component {
           <Route
             exact
             path="/dashboard"
-            render={props => <Tags {...props} tagVar={this.state.tagVar} />}
+            render={props => <Tags pictures={this.state.picture} {...props} tagVar={this.state.tagVar} />}
           />
              <Route
             exact
