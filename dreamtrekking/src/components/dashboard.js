@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import {
   Col,
   Navbar,
@@ -12,32 +12,40 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const Dashboard = props => {
-  console.log(props);
-
+class Dashboard extends Component {
+  renderCatagoreis=()=>{
+    if(this.props.pictures.length > 0){
+    return this.props.pictures.map(cata=>(
+      <Link to={`/dashboard/${cata.name}`} style={{ textDecoration: "none" }}>
+              <DropdownItem>{cata.name}</DropdownItem>
+              </Link>
+    ))
+    }
+  }
+render(){
   return (
-    <Col md={`${1 + props.dashboardVar}`}>
+    <Col md={`${1 + this.props.dashboardVar}`}>
       <div className="dashboard">
         <Navbar>
           <NavbarBrand href="/">
-            <Media src={props.logo} />
+            <Media src={this.props.logo} />
           </NavbarBrand>
           <Link
-            className={props.link}
+            className={this.props.link}
             to="/userinfo"
             style={{ textDecoration: "none" }}
           >
             name placeholder
           </Link>
           <Link
-            className={props.link}
+            className={this.props.link}
             to="/userinfo"
             style={{ textDecoration: "none" }}
           >
             notifications
           </Link>
           <Link
-            className={props.link}
+            className={this.props.link}
             to="/userinfo"
             style={{ textDecoration: "none" }}
           >
@@ -45,27 +53,20 @@ const Dashboard = props => {
           </Link>
 
           <UncontrolledDropdown direction="right">
-            <DropdownToggle  className={props.btn} caret>
+            <DropdownToggle  className={this.props.btn} caret>
               Catagories
             </DropdownToggle>
             <DropdownMenu>
-            <Link to="/dashboard/forest" style={{ textDecoration: "none" }}>
-              <DropdownItem>Forest</DropdownItem>
-              </Link>
-              <Link to="/dashboard/lake" style={{ textDecoration: "none" }}>
-              <DropdownItem>Lake</DropdownItem></Link>
-              <Link to="/dashboard/market" style={{ textDecoration: "none" }}>
-              <DropdownItem>Market</DropdownItem></Link>
-              <Link to="/dashboard/beach" style={{ textDecoration: "none" }}>
-              <DropdownItem>Beach</DropdownItem></Link>
+            {this.renderCatagoreis()}
             </DropdownMenu>
           </UncontrolledDropdown>
-          <div onClick={() => props.columnSizer()}>
-            <i class={props.collapseIcon} />
+          <div onClick={() => this.props.columnSizer()}>
+            <i class={this.props.collapseIcon} />
           </div>
         </Navbar>
       </div>
     </Col>
   );
+}
 };
 export default Dashboard;
