@@ -5,15 +5,15 @@ const Tags = props => {
   return (
     <Col md={`${10 + props.tagVar}`} className="tags-container">
       <Row>
-       <Col data-ca="ca" className="tag-img water" md="6">
-       <Link to="/dashboard/water" style={{ textDecoration: "none" }}>
+       <Col data-ca="ca" className="tag-img lake" md="6">
+       <Link to="/dashboard/lake" style={{ textDecoration: "none" }}>
           <div className="cover ">
             {" "}
             <p>Lake</p>
           </div></Link>
         </Col>
-        <Col className="tag-img snow" md="6">
-        <Link to="/dashboard/snow" style={{ textDecoration: "none" }}>
+        <Col className="tag-img winter" md="6">
+        <Link to="/dashboard/winter" style={{ textDecoration: "none" }}>
           <div className="cover ">
             {" "}
             <p>Snow</p>
