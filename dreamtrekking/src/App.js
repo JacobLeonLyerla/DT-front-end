@@ -25,6 +25,10 @@ class App extends Component {
     picture:{}
   };
   componentDidMount(){
+   this.loadPictures()
+   
+  }
+   loadPictures=()=>{
     const token = localStorage.getItem("token");
 
     const authToken = `${token}`;
@@ -41,9 +45,11 @@ class App extends Component {
       this.setState({ picture:response.data});
     })
     .catch(err => {
+      
       console.log(err)
+      
     });
-  }
+    }
   columnSizer = () => {
     let dv, tv, icon, button, link, newLogo;
     if (this.state.dashboardVar === 1) {
@@ -76,7 +82,7 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" render={props => <Landing />} />
         <Route path="/signup" render={props => <Signup  {...props}/>} />
-        <Route path="/signin" render={props => <Signin {...props} />} />
+        <Route path="/signin" render={props => <Signin loadPictures={this.loadPictures} {...props} />} />
         <Row>
           <Route
             path="/dashboard"
