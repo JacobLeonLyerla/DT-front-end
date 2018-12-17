@@ -67,6 +67,7 @@ console.log(user)
 
         // const { setLogin } = this.props.context.actions;
         // setLogin(resp.data.user);
+        this.props.loadPictures()
         this.props.history.push("/dashboard");
       }).catch(err=>{
         console.log(err)
