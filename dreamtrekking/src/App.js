@@ -5,7 +5,6 @@ import "./App.css";
 import "./css/index.css";
 import { Route } from "react-router-dom";
 import axios from "axios"
-import Nav from "./components/nav";
 import Landing from "./components/landing";
 import Signup from "./components/signup";
 import Signin from "./components/signin";
@@ -66,7 +65,7 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" render={props => <Landing />} />
         <Route path="/signup" render={props => <Signup  {...props}/>} />
-        <Route path="/signin" render={props => <Signin />} />
+        <Route path="/signin" render={props => <Signin {...props} />} />
         <Row>
           <Route
             path="/dashboard"

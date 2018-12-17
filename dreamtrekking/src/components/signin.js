@@ -5,15 +5,16 @@ import {
   Label,
   Input,
   FormFeedback,
-  FormText,
   Button
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      username:"",
       email: "",
       checkEmail: "",
       password: "",
@@ -53,22 +54,41 @@ class Signup extends Component {
       [name]: value
     });
   };
+  handleSubmit = e => {
+    const user = {
+      username: this.state.username,
+      password: this.state.password
+    };
+console.log(user)
+    axios
+      .post("http://localhost:5500/auth/login", user)
+      .then(resp => {
+        localStorage.setItem("token", `Bearer ${resp.data.token}`);
+
+        // const { setLogin } = this.props.context.actions;
+        // setLogin(resp.data.user);
+        this.props.history.push("/dashboard");
+      }).catch(err=>{
+        console.log(err)
+      })
+  };
+
   render() {
     return (
       <div className="signup-container">
-        <Form className="signup-form">
+        <Form onSubmit={this.handleSubmit} className="signup-form">
           <FormGroup>
-            <Label for="exampleEmail">Please Enter Email Address</Label>
+            <Label for="exampleEmail">Please Enter username</Label>
             <Input
-              type="email"
-              name="email"
-              id="exampleEmail"
-              placeholder="myemail@email.com"
-              value={this.state.email}
-              valid={this.state.validate.emailState === "has-success"}
-              invalid={this.state.validate.emailState === "has-danger"}
+              type="username"
+              name="username"
+              id="username"
+              // placeholder="myemail@email.com"
+              // value={this.state.email}
+              // valid={this.state.validate.emailState === "has-success"}
+              // invalid={this.state.validate.emailState === "has-danger"}
               onChange={e => {
-                this.validateEmail(e);
+                // this.validateEmail(e);
                 this.handleChange(e);
               }}
             />
@@ -82,11 +102,16 @@ class Signup extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Please Enter a Password</Label>
-            <Input  />
+            <Input 
+                 type="password"
+                 name="password"
+                 id="password"
+                 onChange={this.handleChange}
+            />
             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Link to="dashboard"><Button color="success">Sign-in</Button></Link>
+           <Button onClick={()=>this.handleSubmit()} color="success">Sign-in</Button>
             <Link to="/">
               <Button color="primary">Cancel</Button>
             </Link>
