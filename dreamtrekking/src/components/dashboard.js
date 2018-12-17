@@ -22,6 +22,7 @@ class Dashboard extends Component {
     }
   }
 render(){
+  console.log(localStorage.getItem("token"))
   return (
     <Col md={`${1 + this.props.dashboardVar}`}>
       <div className="dashboard">
