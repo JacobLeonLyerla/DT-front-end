@@ -26,8 +26,7 @@ class TagView extends Component {
         Authorization: authToken
       }
     } 
-   console.log(requestOptions)
-
+    console.log(requestOptions)
     axios
       .get("http://localhost:5500/tags", requestOptions)
       .then(response => {
@@ -44,10 +43,11 @@ class TagView extends Component {
         this.setState({ test:tagArr });
       })
       .catch(err => {
-        this.props.history.push("/signin");
+        console.log(err)
+        this.props.history.push("/");
 
       });
-
+console.log(requestOptions)
       axios
       .get("http://localhost:5500/pictures", requestOptions)
       .then(response => {
@@ -61,10 +61,13 @@ class TagView extends Component {
           });
           let tag = pictureArr[0].tag
           let name = pictureArr[0].name
+          console.log(tag)
         this.setState({ picture:pictureArr,imgTag:tag,imgName:name });
       })
       .catch(err => {
-        this.props.history.push("/signin");
+        console.log(err)
+
+        this.props.history.push("/dashboard");
 
       });
     };
