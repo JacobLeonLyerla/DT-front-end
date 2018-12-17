@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Media } from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 const About = () => {
   return (

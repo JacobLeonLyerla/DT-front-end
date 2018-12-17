@@ -7,8 +7,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-  Button
+  DropdownItem
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
