@@ -111,7 +111,7 @@ console.log(user)
             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-           <Button onClick={()=>this.handleSubmit()} color="success">Sign-in</Button>
+           <Button  onClick={()=>this.handleSubmit()} color="success">Sign-in</Button>
             <Link to="/">
               <Button color="primary">Cancel</Button>
             </Link>
