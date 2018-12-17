@@ -65,7 +65,7 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path="/" render={props => <Landing />} />
-        <Route path="/signup" render={props => <Signup />} />
+        <Route path="/signup" render={props => <Signup  {...props}/>} />
         <Route path="/signin" render={props => <Signin />} />
         <Row>
           <Route

@@ -9,21 +9,22 @@ import {
   Button
 } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import axios from "axios"
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      username:"",
       email: "",
       checkEmail: "",
       password: "",
-      checkPassword: "",
+      password2: "",
       passwordType: "password",
       validate: {
         emailState: "",
         checkEmailState: "",
         passwordState: "",
-        checkPasswordState: ""
+        password2State: ""
       }
     };
     this.handleChange = this.handleChange.bind(this);
@@ -62,9 +63,9 @@ class Signup extends Component {
     const { validate } = this.state;
     if (e.target.value === this.state.password) {
       console.log("matches");
-      validate.checkPasswordState = "has-success";
+      validate.password2State = "has-success";
     } else {
-      validate.checkPasswordState = "has-danger";
+      validate.password2State = "has-danger";
     }
     this.setState({ validate });
   };
@@ -85,13 +86,40 @@ class Signup extends Component {
       this.setState({ passwordType: "password" });
     }
   };
+  handleSubmit = e => {
+    const user = {
+      username: this.state.username,
+      password: this.state.password,
+      password2: this.state.password2,
+      email: this.state.email
+    };
+    console.log(user)
+    axios
+      .post("http://localhost:5500/auth/register", user)
+      .then(resp => {
+        this.props.history.push("/signin");
+      })
+      .catch(err => console.log(err));
+    this.setState({
+      username: "",
+      password: "",
+      password2:"",
+      email: "",
+    });
+  };
   render() {
     return (
       <div className="signup-container">
-        <Form className="signup-form">
+        <Form onSubmit={this.handleSubmit} className="signup-form">
           <FormGroup>
             <Label for="username">Please Enter a Username</Label>
-            <Input />
+            <Input
+               type="username"
+               name="username"
+               id="username"
+               value={this.state.username}
+               onChange={this.handleChange}    
+            />
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
           </FormGroup>
 
@@ -160,11 +188,11 @@ class Signup extends Component {
             <Label for="checkPasswrod">Please Re-type Enter a Password</Label>
             <Input
               type={this.state.passwordType}
-              name="checkPassword"
-              id="checkPassword"
-              value={this.state.checkPassword}
-              valid={this.state.validate.checkPasswordState === "has-success"}
-              invalid={this.state.validate.checkPasswordState === "has-danger"}
+              name="password2"
+              id="password2"
+              value={this.state.password2}
+              valid={this.state.validate.password2State === "has-success"}
+              invalid={this.state.validate.password2State === "has-danger"}
               onChange={e => {
                 this.passwordMatch(e);
                 this.handleChange(e);
@@ -174,7 +202,7 @@ class Signup extends Component {
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Button color="success">Sign-up</Button>
+            <Button onClick={()=>this.handleSubmit()} color="success">Sign-up</Button>
             <Link to="/">
               <Button color="primary">Cancel</Button>
             </Link>
