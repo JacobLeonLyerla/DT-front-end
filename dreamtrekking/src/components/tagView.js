@@ -17,8 +17,19 @@ class TagView extends Component {
     this.loadinfo();
   }
   loadinfo = () => {
+    const token = localStorage.getItem("token");
+
+    const authToken = `${token}`;
+
+    const requestOptions = {
+      headers: {
+        Authorization: authToken
+      }
+    } 
+   console.log(requestOptions)
+
     axios
-      .get("http://localhost:5500/tags")
+      .get("http://localhost:5500/tags", requestOptions)
       .then(response => {
         let tagArr =[];
           response.data.forEach(e => {
@@ -32,9 +43,13 @@ class TagView extends Component {
 
         this.setState({ test:tagArr });
       })
-      .catch(err => {});
+      .catch(err => {
+        this.props.history.push("/signin");
+
+      });
+
       axios
-      .get("http://localhost:5500/pictures")
+      .get("http://localhost:5500/pictures", requestOptions)
       .then(response => {
         let pictureArr =[];
           response.data.forEach(e => {
@@ -48,7 +63,10 @@ class TagView extends Component {
           let name = pictureArr[0].name
         this.setState({ picture:pictureArr,imgTag:tag,imgName:name });
       })
-      .catch(err => {});
+      .catch(err => {
+        this.props.history.push("/signin");
+
+      });
     };
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
