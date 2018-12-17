@@ -10,6 +10,7 @@ import {
   DropdownItem
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class Dashboard extends Component {
   renderCatagoreis=()=>{
@@ -21,8 +22,25 @@ class Dashboard extends Component {
     ))
     }
   }
+  componentDidMount = event => {
+    const token = localStorage.getItem("token");
+
+    const authToken = `${token}`;
+
+    const requestOptions = {
+      headers: {
+        Authorization: authToken
+      }
+    };
+    axios
+      .get("http://localhost:5500/users", requestOptions)
+      .then(response => {
+        this.setState({ users: response.data });
+      })
+      .catch(err => {
+      });
+  };
 render(){
-  console.log(localStorage.getItem("token"))
   return (
     <Col md={`${1 + this.props.dashboardVar}`}>
       <div className="dashboard">

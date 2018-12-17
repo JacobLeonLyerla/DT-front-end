@@ -25,13 +25,24 @@ class App extends Component {
     picture:{}
   };
   componentDidMount(){
+    const token = localStorage.getItem("token");
+
+    const authToken = `${token}`;
+
+    const requestOptions = {
+      headers: {
+        Authorization: authToken
+      }
+    }
     axios
-    .get("http://localhost:5500/pictures")
+    .get("http://localhost:5500/pictures", requestOptions)
     .then(response => {
-   
+      console.log("huh")
       this.setState({ picture:response.data});
     })
-    .catch(err => {});
+    .catch(err => {
+      console.log(err)
+    });
   }
   columnSizer = () => {
     let dv, tv, icon, button, link, newLogo;
