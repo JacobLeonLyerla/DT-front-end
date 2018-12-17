@@ -17,6 +17,8 @@ class Tags extends Component {
           </div></Link>
         </Col>
         )})
+  }else{
+
   }
 }
   render(){
