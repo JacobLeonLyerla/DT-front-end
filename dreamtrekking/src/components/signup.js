@@ -5,7 +5,6 @@ import {
   Label,
   Input,
   FormFeedback,
-  FormText,
   Button
 } from "reactstrap";
 import { Link } from "react-router-dom";

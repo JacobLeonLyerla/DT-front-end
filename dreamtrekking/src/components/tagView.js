@@ -14,8 +14,6 @@ class TagView extends Component {
     imgName:""
   };
   componentDidMount() {
-    let { id } = this.props.match.params;
-
     this.loadinfo();
   }
   loadinfo = () => {
