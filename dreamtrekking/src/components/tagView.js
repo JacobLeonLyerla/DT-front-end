@@ -139,13 +139,14 @@ console.log(requestOptions)
     }
    
      return arr.map(img =>{
-       
+       let test ;
+       console.log(test)
       console.log(imgs[img.toLowerCase()])
        return(
-      <Col data-ca="ca" style={{backgroundImage : `url(${imgs[img.toLowerCase()]})`}} className={`tag-img tags`} md="6">
+      <Col data-ca="ca" style={{backgroundImage : `url(${imgs[img.replace(/-/g, '').toLowerCase()]})`}} className={`tag-img tags`} md="6">
       <Link onClick={()=>this.checkp()} to={`/dashboard/${img.toLowerCase()}`} style={{ textDecoration: "none" }}>
         <div onClick={()=>this.checkp()} className="cover ">
-          <p>{img}</p>
+          <p>{img.replace(/-/g, ' ')}</p>
         </div>
       </Link>
     </Col>
