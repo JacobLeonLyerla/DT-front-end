@@ -33,7 +33,7 @@ class Dashboard extends Component {
       }
     };
     axios
-      .get("http://localhost:5500/users", requestOptions)
+      .get("https://dt-back-end.herokuapp.com/users", requestOptions)
       .then(response => {
         this.setState({ users: response.data });
       })
