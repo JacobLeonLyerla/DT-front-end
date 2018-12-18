@@ -39,7 +39,6 @@ class Signup extends Component {
   emailMatch = e => {
     const { validate } = this.state;
     if (e.target.value === this.state.email) {
-      console.log("matches")
       validate.checkEmailState = "has-success";
     }else{
       validate.checkEmailState ="has-danger"
@@ -59,7 +58,6 @@ class Signup extends Component {
       username: this.state.username,
       password: this.state.password
     };
-console.log(user)
     axios
       .post("https://dt-back-end.herokuapp.com/auth/login", user)
       .then(resp => {
@@ -70,7 +68,6 @@ console.log(user)
         this.props.loadPictures()
         this.props.history.push("/dashboard");
       }).catch(err=>{
-        console.log(err)
       })
   };
 
