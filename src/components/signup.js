@@ -94,7 +94,7 @@ class Signup extends Component {
     };
     console.log(user)
     axios
-      .post("http://localhost:5500/auth/register", user)
+      .post("https://dt-back-end.herokuapp.com/auth/register", user)
       .then(resp => {
         this.props.history.push("/signin");
       })
