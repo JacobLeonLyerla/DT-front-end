@@ -110,9 +110,9 @@ class Signup extends Component {
           </FormGroup>
           <div className="form-buttons">
            <Button  onClick={()=>this.handleSubmit()} color="success">Sign-in</Button>
-            <Link to="/">
+            {/* <Link to="/">
               <Button color="primary">Cancel</Button>
-            </Link>
+            </Link> */}
           </div>
         </Form>
       </div>
