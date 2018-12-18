@@ -28,7 +28,7 @@ class TagView extends Component {
     } 
     console.log(requestOptions)
     axios
-      .get("http://localhost:5500/tags", requestOptions)
+      .get("https://dt-back-end.herokuapp.com/tags", requestOptions)
       .then(response => {
         let tagArr =[];
           response.data.forEach(e => {
@@ -49,7 +49,7 @@ class TagView extends Component {
       });
 console.log(requestOptions)
       axios
-      .get("http://localhost:5500/pictures", requestOptions)
+      .get("https://dt-back-end.herokuapp.com/pictures", requestOptions)
       .then(response => {
         let pictureArr =[];
           response.data.forEach(e => {
