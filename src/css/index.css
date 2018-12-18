@@ -161,8 +161,8 @@ p {
   justify-content: space-evenly;
 }
 .signup-container .signup-form .btn {
-  width: 8vw;
-  font-size: 1.4rem;
+  width: 50%;
+  font-size: 80%;
 }
 .signup-container .fa-eye {
   font-size: 2rem;
