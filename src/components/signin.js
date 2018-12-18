@@ -61,7 +61,7 @@ class Signup extends Component {
     };
 console.log(user)
     axios
-      .post("http://localhost:5500/auth/login", user)
+      .post("https://dt-back-end.herokuapp.com/auth/login", user)
       .then(resp => {
         localStorage.setItem("token", `Bearer ${resp.data.token}`);
 
