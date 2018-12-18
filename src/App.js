@@ -39,7 +39,7 @@ class App extends Component {
       }
     }
     axios
-    .get("http://localhost:5500/pictures", requestOptions)
+    .get("https://dt-back-end.herokuapp.com/pictures", requestOptions)
     .then(response => {
       console.log("huh")
       this.setState({ picture:response.data});
