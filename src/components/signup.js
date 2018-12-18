@@ -51,7 +51,6 @@ class Signup extends Component {
   emailMatch = e => {
     const { validate } = this.state;
     if (e.target.value === this.state.email) {
-      console.log("matches");
       validate.checkEmailState = "has-success";
     } else {
       validate.checkEmailState = "has-danger";
@@ -61,7 +60,6 @@ class Signup extends Component {
   passwordMatch = e => {
     const { validate } = this.state;
     if (e.target.value === this.state.password) {
-      console.log("matches");
       validate.password2State = "has-success";
     } else {
       validate.password2State = "has-danger";
@@ -77,9 +75,7 @@ class Signup extends Component {
     });
   };
   typefield = () => {
-    console.log("asdasdasd");
     if (this.state.passwordType === "password") {
-      console.log("here");
       this.setState({ passwordType: "text" });
     } else {
       this.setState({ passwordType: "password" });
@@ -92,13 +88,11 @@ class Signup extends Component {
       password2: this.state.password2,
       email: this.state.email
     };
-    console.log(user)
     axios
       .post("https://dt-back-end.herokuapp.com/auth/register", user)
       .then(resp => {
         this.props.history.push("/signin");
       })
-      .catch(err => console.log(err));
     this.setState({
       username: "",
       password: "",

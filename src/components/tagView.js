@@ -26,7 +26,6 @@ class TagView extends Component {
         Authorization: authToken
       }
     } 
-    console.log(requestOptions)
     axios
       .get("https://dt-back-end.herokuapp.com/tags", requestOptions)
       .then(response => {
@@ -43,11 +42,9 @@ class TagView extends Component {
         this.setState({ test:tagArr });
       })
       .catch(err => {
-        console.log(err)
         this.props.history.push("/");
 
       });
-console.log(requestOptions)
       axios
       .get("https://dt-back-end.herokuapp.com/pictures", requestOptions)
       .then(response => {
@@ -61,11 +58,9 @@ console.log(requestOptions)
           });
           let tag = pictureArr[0].tag
           let name = pictureArr[0].name
-          console.log(tag)
         this.setState({ picture:pictureArr,imgTag:tag,imgName:name });
       })
       .catch(err => {
-        console.log(err)
 
         this.props.history.push("/dashboard");
 
@@ -140,8 +135,6 @@ console.log(requestOptions)
    
      return arr.map(img =>{
        let test ;
-       console.log(test)
-      console.log(imgs[img.toLowerCase()])
        return(
       <Col data-ca="ca" style={{backgroundImage : `url(${imgs[img.replace(/-/g, '').toLowerCase()]})`}} className={`tag-img tags`} md="6">
       <Link onClick={()=>this.checkp()} to={`/dashboard/${img.toLowerCase()}`} style={{ textDecoration: "none" }}>
