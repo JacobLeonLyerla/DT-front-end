@@ -16,6 +16,7 @@ import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
 class App extends Component {
   state = {
+    user:"",
     dashboardVar: 1,
     tagVar: 0,
     collapseIcon: "fas fa-angle-double-left",
@@ -25,9 +26,34 @@ class App extends Component {
     picture:{}
   };
   componentDidMount(){
+    this.loadUser()
    this.loadPictures()
    
   }
+  loadUser=()=>{
+    const token = localStorage.getItem("token");
+    const id = localStorage.getItem("id");
+    const authToken = `${token}`;
+
+    const requestOptions = {
+      headers: {
+        Authorization: authToken
+      }
+    }
+    console.log(id)
+    axios
+    .get(`https://dt-back-end.herokuapp.com/users/${id}`, requestOptions)
+    .then(response => {
+      console.log(response.data)
+      this.setState({ user:response.data});
+    })
+    .catch(err => {
+      console.log(err)
+      
+    });
+  }
+
+
    loadPictures=()=>{
     const token = localStorage.getItem("token");
 
