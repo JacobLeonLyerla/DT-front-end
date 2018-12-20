@@ -63,9 +63,6 @@ class Signup extends Component {
       .then(resp => {
         localStorage.setItem("token", `Bearer ${resp.data.token}`);
         localStorage.setItem("id", resp.data.user._id)
-
-        // const { setLogin } = this.props.context.actions;
-        // setLogin(resp.data.user);
         this.props.loadPictures()
         this.props.history.push("/dashboard");
       }).catch(err=>{

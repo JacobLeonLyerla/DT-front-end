@@ -23,6 +23,9 @@ class Dashboard extends Component {
     }
   }
   componentDidMount = event => {
+    if(this.props.user === ""){
+      this.props.loadUser()
+    } 
     const token = localStorage.getItem("token");
 
     const authToken = `${token}`;
@@ -41,6 +44,7 @@ class Dashboard extends Component {
       });
   };
 render(){
+  console.log(this.props.user)
   return (
     <Col md={`${1 + this.props.dashboardVar}`}>
       <div className="dashboard">
@@ -48,13 +52,11 @@ render(){
           <NavbarBrand href="/">
             <Media src={this.props.logo} />
           </NavbarBrand>
-          <Link
+          <div
             className={this.props.link}
-            to="/userinfo"
-            style={{ textDecoration: "none" }}
           >
-            name placeholder
-          </Link>
+            {this.props.user.username}
+          </div>
           <Link
             className={this.props.link}
             to="/userinfo"

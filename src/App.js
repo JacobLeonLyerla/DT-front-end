@@ -109,6 +109,8 @@ class App extends Component {
             path="/dashboard"
             render={props => (
               <Dashboard
+              user={this.state.user}
+              loadUser={this.loadUser}
               pictures={this.state.picture}
                 logo={this.state.logo}
                 link={this.state.linkClass}
