@@ -9,11 +9,11 @@ class Tags extends Component {
     if(this.props.pictures.length >0){
       return this.props.pictures.map(img =>{
    
-      return(<Col data-ca="ca" style={{backgroundImage : `url(${imgs[img.name.toLowerCase()]})`}} className={`tag-img tags`} md="6">
+      return(<Col data-ca="ca" style={{backgroundImage : `url(${imgs[img.name.replace(/-/g, '').toLowerCase()]})`}} className={`tag-img tags`} md="6">
        <Link to={`/dashboard/${img.name.toLowerCase()}`} style={{ textDecoration: "none" }}>
           <div className="cover ">
             {" "}
-            <p>{img.name}</p>
+            <p>{img.name.replace(/-/g, ' ')}</p>
           </div></Link>
         </Col>
         )})
