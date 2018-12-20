@@ -40,15 +40,12 @@ class App extends Component {
         Authorization: authToken
       }
     }
-    console.log(id)
     axios
     .get(`https://dt-back-end.herokuapp.com/users/${id}`, requestOptions)
     .then(response => {
-      console.log(response.data)
       this.setState({ user:response.data});
     })
     .catch(err => {
-      console.log(err)
       
     });
   }
