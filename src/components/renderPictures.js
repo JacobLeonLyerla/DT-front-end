@@ -11,7 +11,6 @@ class Pictures extends Component{
             this.props.pictures.forEach(e=>{
                 arr.push(e.name)
             })
-            console.log(arr)
         } 
     }
         if(this.props.imgTag !== undefined){
@@ -35,7 +34,6 @@ class Pictures extends Component{
       }
     }
     render(){
-        console.log(this.props.style)
         return(
             <Row className={`${this.props.style}`}>
             {this.renderPictures()}
