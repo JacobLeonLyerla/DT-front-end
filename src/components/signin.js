@@ -14,15 +14,14 @@ class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username:"",
+      username: "",
       email: "",
       checkEmail: "",
       password: "",
       validate: {
         emailState: "",
-        dupemail:""
-      },
-  
+        dupemail: ""
+      }
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -40,16 +39,16 @@ class Signup extends Component {
     const { validate } = this.state;
     if (e.target.value === this.state.email) {
       validate.checkEmailState = "has-success";
-    }else{
-      validate.checkEmailState ="has-danger"
+    } else {
+      validate.checkEmailState = "has-danger";
     }
     this.setState({ validate });
   };
-  handleChange =  event => {
+  handleChange = event => {
     const { target } = event;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const { name } = target;
-     this.setState({
+    this.setState({
       [name]: value
     });
   };
@@ -62,11 +61,11 @@ class Signup extends Component {
       .post("https://dt-back-end.herokuapp.com/auth/login", user)
       .then(resp => {
         localStorage.setItem("token", `Bearer ${resp.data.token}`);
-        localStorage.setItem("id", resp.data.user._id)
-        this.props.loadPictures()
+        localStorage.setItem("id", resp.data.user._id);
+        this.props.loadPictures();
         this.props.history.push("/dashboard");
-      }).catch(err=>{
       })
+      .catch(err => {});
   };
 
   render() {
@@ -98,16 +97,18 @@ class Signup extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Please Enter a Password</Label>
-            <Input 
-                 type="password"
-                 name="password"
-                 id="password"
-                 onChange={this.handleChange}
+            <Input
+              type="password"
+              name="password"
+              id="password"
+              onChange={this.handleChange}
             />
             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-           <Button  onClick={()=>this.handleSubmit()} color="success">Sign-in</Button>
+            <Button onClick={() => this.handleSubmit()} color="success">
+              Sign-in
+            </Button>
             {/* <Link to="/">
               <Button color="primary">Cancel</Button>
             </Link> */}
