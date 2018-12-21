@@ -6,34 +6,23 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Comments extends Component {
-state={comment:"", comments:[]}
+  state = { comment: "" };
 
-setComments =()=>{
-    console.log(this.props.comments)
- if(this.state.comments.length <0){
-      this.setState({comments:this.props.comments})
-      }
-      let arr = this.props.comments
-      console.log(arr)
-      return(<div>{this.renderComments(arr)}</div>)
-}
-  renderComments = (comments) => {
-      console.log(comments)
-    if (this.state.comments !== undefined) {
-      if (this.state.comments.length > 0) {
-        return this.state.comments.map(comment =>   {
-         return <div>{comment.comment}</div>;
+  renderComments = () => {
+    if (this.props.comments !== undefined) {
+      if (this.props.comments.length > 0) {
+        return this.props.comments.map(comment => {
+          return <div>{comment.comment}</div>;
         });
-      }    else {
-        return <div className="no-comments" >No comments yet</div>;
-      } 
+      } else {
+        return <div className="no-comments">No comments yet</div>;
+      }
     }
   };
   handleInput = input => {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
-
     let comment = {};
     if (this.state.comment !== "") {
       comment.comment = this.state.comment;
@@ -42,27 +31,25 @@ setComments =()=>{
     axios
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
-        let comment={}
-        comment.comments = this.props.comments
-        comment.comments.push(response.data._id)
+        let comment = {};
+        comment.comments = this.props.comments;
+        comment.comments.push(response.data._id);
         axios
           .put(
             `https://dt-back-end.herokuapp.com/tags/${this.props.id}`,
             comment
           )
           .then(response => {
-          
+            this.props.setTags(this.props.id);
           })
-          .catch(err => {
-          });
+          .catch(err => {});
       })
-      .catch(err => {
-      });
+      .catch(err => {});
   };
   render() {
     return (
       <Fragment>
-          {this.setComments()}
+        {this.renderComments()}
         <Form className="comment-form">
           <Button onClick={() => this.handleSubmit()} color="primary">
             Post
