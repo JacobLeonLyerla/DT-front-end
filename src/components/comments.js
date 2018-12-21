@@ -6,11 +6,22 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Comments extends Component {
-state={comment:""}
-  renderComments = () => {
-    if (this.props.comments !== undefined) {
-      if (this.props.comments.length > 0) {
-        return this.props.comments.map(comment =>   {
+state={comment:"", comments:[]}
+
+setComments =()=>{
+    console.log(this.props.comments)
+ if(this.state.comments.length <0){
+      this.setState({comments:this.props.comments})
+      }
+      let arr = this.props.comments
+      console.log(arr)
+      return(<div>{this.renderComments(arr)}</div>)
+}
+  renderComments = (comments) => {
+      console.log(comments)
+    if (this.state.comments !== undefined) {
+      if (this.state.comments.length > 0) {
+        return this.state.comments.map(comment =>   {
          return <div>{comment.comment}</div>;
         });
       }    else {
@@ -51,8 +62,7 @@ state={comment:""}
   render() {
     return (
       <Fragment>
-          
-        {this.renderComments()}
+          {this.setComments()}
         <Form className="comment-form">
           <Button onClick={() => this.handleSubmit()} color="primary">
             Post
