@@ -382,10 +382,6 @@ p {
 .comment-form {
   display: flex;
 }
-.comment-form .no-comments {
-  height: 10vh;
-  background: blue;
-}
 .comment-form .btn {
   font-size: .9rem;
   background: #a8bdd6;
@@ -393,4 +389,9 @@ p {
 }
 .comment-form .btn:hover {
   background: #677fa3;
+}
+.no-comments {
+  height: 10vh;
+  background: #f0e6e6;
+  font-size: 1.8rem;
 }
