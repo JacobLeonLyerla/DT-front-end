@@ -69,12 +69,12 @@ class TagView extends Component {
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
       <tbody>
-        <tr>
+         <Link style={{ textDecoration: "none", color:"black" }} to={`/dashboard/trip/${sub._id}`}><tr>
           <td>{sub.name}</td>
           <td>{sub.city}</td>
           <td>{sub.country}</td>
           {this.renderTags(sub.tag)}
-        </tr>
+        </tr></Link>
       </tbody>
     ));
   };
@@ -107,7 +107,7 @@ class TagView extends Component {
     return (
       <Table hover>
         <thead className="thead">
-          <tr className="tr">
+         <tr className="tr">
             <th className="th">Name</th>
             <th className="th">City</th>
             <th className="th">Country</th>
@@ -162,7 +162,7 @@ class TagView extends Component {
         {this.renderTable()}
        <Row className="tag-filtered">
 
-        {this.renderMainImgs(this.state.imgTag)} 
+         {this.renderMainImgs(this.state.imgTag)} 
     </Row>
 
       </Col>
