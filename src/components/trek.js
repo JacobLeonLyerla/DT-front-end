@@ -27,6 +27,9 @@ class Trek extends Component {
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         <Map />
         <div>
+            <br/>
+            {this.state.tag.user}<br/>
+            <br/>
           {this.state.tag.name}
           <br />
           <br />
