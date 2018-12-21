@@ -10,13 +10,14 @@ import axios from "axios";
 class Comments extends Component {
  
     renderComments=()=>{
-        if(this.props.comments !== undefined){
+        if(this.props.comments !== undefined){}
         if(this.props.comments.length >0){
             return this.props.comments.map(comment=>{
                 <div>{comment}</div>
             })
+        }else{
+            return<div className="no-comments"></div>
         }
-    }
     }
 
   render() {
