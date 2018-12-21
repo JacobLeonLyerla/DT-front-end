@@ -138,7 +138,7 @@ class App extends Component {
           <Route
             exact
             path="/dashboard/trek/:id"
-            render={props => <Trek {...props} tagVar={this.state.tagVar} />}
+            render={props => <Trek {...props}   user={this.state.user} tagVar={this.state.tagVar} />}
           />
         </Row>
       </div>

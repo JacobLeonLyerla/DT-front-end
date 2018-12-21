@@ -35,7 +35,7 @@ class Trek extends Component {
           <br />
           {this.state.tag.description}
         </div>
-        <Comments comments={this.state.tag.comments} />
+        <Comments comments={this.state.tag.comments} id={this.state.tag._id}   user={this.props.user}/>
         <Pictures imgTag={this.state.tag.tag} style="tag-filtered" />
       </Col>
     );
