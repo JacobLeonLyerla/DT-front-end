@@ -379,3 +379,14 @@ p {
 .table .table-items .tag {
   margin: 1%;
 }
+.comment-form {
+  display: flex;
+}
+.comment-form .btn {
+  font-size: .9rem;
+  background: #a8bdd6;
+  border: none;
+}
+.comment-form .btn:hover {
+  background: #677fa3;
+}
