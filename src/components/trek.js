@@ -17,8 +17,7 @@ class Trek extends Component {
       .then(response => {
         this.setState({ tag: response.data });
       })
-      .catch(err => {
-      });
+      .catch(err => {});
   }
 
   render() {
@@ -32,11 +31,11 @@ class Trek extends Component {
           <br />
           {this.state.tag.name}
           <br />
-          <br />
+          <br /> {this.state.tag._id}
           <br />
           {this.state.tag.description}
         </div>
-        <Comments comments={this.state.tag.comments}/>
+        <Comments comments={this.state.tag.comments} />
         <Pictures imgTag={this.state.tag.tag} style="tag-filtered" />
       </Col>
     );
