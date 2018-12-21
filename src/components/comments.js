@@ -8,11 +8,9 @@ import axios from "axios";
 class Comments extends Component {
 state={comment:""}
   renderComments = () => {
-      console.log(this.props)
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
         return this.props.comments.map(comment =>   {
-          {console.log(comment.comment)}
          return <div>{comment.comment}</div>;
         });
       }    else {
@@ -33,7 +31,6 @@ state={comment:""}
     axios
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
-        console.log(response.data);
         let comment={}
         comment.comments = this.props.comments
         comment.comments.push(response.data._id)
@@ -46,11 +43,9 @@ state={comment:""}
           
           })
           .catch(err => {
-            console.log(err);
           });
       })
       .catch(err => {
-        console.log(err);
       });
   };
   render() {
