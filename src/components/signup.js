@@ -8,12 +8,12 @@ import {
   Button
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import axios from "axios"
+import axios from "axios";
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username:"",
+      username: "",
       email: "",
       checkEmail: "",
       password: "",
@@ -92,12 +92,12 @@ class Signup extends Component {
       .post("https://dt-back-end.herokuapp.com/auth/register", user)
       .then(resp => {
         this.props.history.push("/signin");
-      })
+      });
     this.setState({
       username: "",
       password: "",
-      password2:"",
-      email: "",
+      password2: "",
+      email: ""
     });
   };
   render() {
@@ -107,11 +107,11 @@ class Signup extends Component {
           <FormGroup>
             <Label for="username">Please Enter a Username</Label>
             <Input
-               type="username"
-               name="username"
-               id="username"
-               value={this.state.username}
-               onChange={this.handleChange}    
+              type="username"
+              name="username"
+              id="username"
+              value={this.state.username}
+              onChange={this.handleChange}
             />
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
           </FormGroup>
@@ -195,7 +195,9 @@ class Signup extends Component {
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Button onClick={()=>this.handleSubmit()} color="success">Sign-up</Button>
+            <Button onClick={() => this.handleSubmit()} color="success">
+              Sign-up
+            </Button>
             <Link to="/">
               <Button color="primary">Cancel</Button>
             </Link>
