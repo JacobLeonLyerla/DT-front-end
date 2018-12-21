@@ -4,6 +4,8 @@ import { Table, Row, Col } from "reactstrap";
 import imgs from "../assets/exportImgs.js" 
 import { Link } from "react-router-dom";
 
+import Pictures from "./renderPictures.js"
+
 class TagView extends Component {
   state = {
     test: [{ tag: "" }],
@@ -69,7 +71,7 @@ class TagView extends Component {
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
       <tbody>
-         <Link style={{ textDecoration: "none", color:"black" }} to={`/dashboard/trip/${sub._id}`}><tr>
+         <Link style={{ textDecoration: "none", color:"black" }} to={`/dashboard/trek/${sub._id}`}><tr>
           <td>{sub.name}</td>
           <td>{sub.city}</td>
           <td>{sub.country}</td>
@@ -160,11 +162,7 @@ class TagView extends Component {
           <p>Google Placeholder</p>
         </div>
         {this.renderTable()}
-       <Row className="tag-filtered">
-
-         {this.renderMainImgs(this.state.imgTag)} 
-    </Row>
-
+       <Pictures imgTag={this.state.imgTag} style="tag-filtered"/> 
       </Col>
     );
   }
