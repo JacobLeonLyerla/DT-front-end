@@ -6,15 +6,17 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Comments extends Component {
-  state = {
-    comment: ""
-  };
+state={comment:""}
   renderComments = () => {
+      console.log(this.props)
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
-        return this.props.comments.map(comment => {
-          <div>{comment}</div>;
+        return this.props.comments.map(comment =>   {
+          {console.log(comment.comment)}
+         return <div>{comment.comment}</div>;
         });
+      }    else {
+        return <div className="no-comments" >No comments yet</div>;
       } 
     }
   };
@@ -22,15 +24,7 @@ class Comments extends Component {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
-    const token = localStorage.getItem("token");
 
-    const authToken = `${token}`;
-
-    const requestOptions = {
-      headers: {
-        Authorization: authToken
-      }
-    }
     let comment = {};
     if (this.state.comment !== "") {
       comment.comment = this.state.comment;
@@ -49,14 +43,7 @@ class Comments extends Component {
             comment
           )
           .then(response => {
-              console.log(response.data)
-            axios
-            .get(
-              `https://dt-back-end.herokuapp.com/tags/${response.data._id}`
-            )
-            .then(response => {
-              console.log(response.data);
-            })
+          
           })
           .catch(err => {
             console.log(err);
@@ -69,10 +56,8 @@ class Comments extends Component {
   render() {
     return (
       <Fragment>
-          {this.props.comments?(<Fragment>
-        {this.renderComments()}</Fragment>):(
-            <div className="no-comments" >No Comment yet</div>)
-          }
+          
+        {this.renderComments()}
         <Form className="comment-form">
           <Button onClick={() => this.handleSubmit()} color="primary">
             Post
