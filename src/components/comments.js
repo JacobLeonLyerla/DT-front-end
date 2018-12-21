@@ -2,20 +2,30 @@
 
 
 
-import React, { Component } from "react";
-import { Row, Col } from "reactstrap";
+import React, { Component,Fragment } from "react";
+import {Input, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Comments extends Component {
  
+    renderComments=()=>{
+        if(this.props.comments !== undefined){
+        if(this.props.comments.length >0){
+            return this.props.comments.map(comment=>{
+                <div>{comment}</div>
+            })
+        }
+    }
+    }
 
   render() {
-    return (
-      <Col className="table-container" md={`${10 + this.props.tagVar}`}>
-     
-      </Col>
-    );
+    return (<Fragment>
+        {this.renderComments()}
+        <Input
+        style={{height:"20vh"}}
+        />
+  </Fragment>);
   }
 }
 export default Comments;
