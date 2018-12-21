@@ -134,13 +134,12 @@ class App extends Component {
             exact
             path="/dashboard/:id"
             render={props => <TagView {...props} tagVar={this.state.tagVar} />}
-          /> 
+          />
           <Route
             exact
             path="/dashboard/trek/:id"
             render={props => <Trek {...props} tagVar={this.state.tagVar} />}
           />
-       
         </Row>
       </div>
     );
