@@ -15,9 +15,7 @@ class Comments extends Component {
         return this.props.comments.map(comment => {
           <div>{comment}</div>;
         });
-      } else {
-        return <div className="no-comments" />;
-      }
+      } 
     }
   };
   handleInput = input => {
@@ -39,10 +37,12 @@ class Comments extends Component {
       comment.username = this.props.user.username;
     }
     axios
-      .post("https://dt-back-end.herokuapp.com/comments", comment,requestOptions)
+      .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
         console.log(response.data);
-        let comment ={comments:response.data._id}
+        let comment={}
+        comment.comments = this.props.comments
+        comment.comments.push(response.data._id)
         axios
           .put(
             `https://dt-back-end.herokuapp.com/tags/${this.props.id}`,
@@ -69,7 +69,10 @@ class Comments extends Component {
   render() {
     return (
       <Fragment>
-        {this.renderComments()}
+          {this.props.comments?(<Fragment>
+        {this.renderComments()}</Fragment>):(
+            <div className="no-comments" >No Comment yet</div>)
+          }
         <Form className="comment-form">
           <Button onClick={() => this.handleSubmit()} color="primary">
             Post
