@@ -4,33 +4,32 @@ import { Row } from "reactstrap";
 import "./App.css";
 import "./css/index.css";
 import { Route } from "react-router-dom";
-import axios from "axios"
+import axios from "axios";
 import Landing from "./components/landing";
 import Signup from "./components/signup";
 import Signin from "./components/signin";
 import Dashboard from "./components/dashboard";
-import TagView from "./components/tagView"
-
+import TagView from "./components/tagView";
+import Trek from "./components/trek";
 import Tags from "./components/tags";
 import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
 class App extends Component {
   state = {
-    user:"",
+    user: "",
     dashboardVar: 1,
     tagVar: 0,
     collapseIcon: "fas fa-angle-double-left",
     buttonClass: "btn",
     linkClass: "nav-links",
     logo: logo,
-    picture:{}
+    picture: {}
   };
-  componentDidMount(){
-    this.loadUser()
-   this.loadPictures()
-   
+  componentDidMount() {
+    this.loadUser();
+    this.loadPictures();
   }
-  loadUser=()=>{
+  loadUser = () => {
     const token = localStorage.getItem("token");
     const id = localStorage.getItem("id");
     const authToken = `${token}`;
@@ -39,19 +38,16 @@ class App extends Component {
       headers: {
         Authorization: authToken
       }
-    }
+    };
     axios
-    .get(`https://dt-back-end.herokuapp.com/users/${id}`, requestOptions)
-    .then(response => {
-      this.setState({ user:response.data});
-    })
-    .catch(err => {
-      
-    });
-  }
+      .get(`https://dt-back-end.herokuapp.com/users/${id}`, requestOptions)
+      .then(response => {
+        this.setState({ user: response.data });
+      })
+      .catch(err => {});
+  };
 
-
-   loadPictures=()=>{
+  loadPictures = () => {
     const token = localStorage.getItem("token");
 
     const authToken = `${token}`;
@@ -60,17 +56,14 @@ class App extends Component {
       headers: {
         Authorization: authToken
       }
-    }
+    };
     axios
-    .get("https://dt-back-end.herokuapp.com/pictures", requestOptions)
-    .then(response => {
-      this.setState({ picture:response.data});
-    })
-    .catch(err => {
-      
-      
-    });
-    }
+      .get("https://dt-back-end.herokuapp.com/pictures", requestOptions)
+      .then(response => {
+        this.setState({ picture: response.data });
+      })
+      .catch(err => {});
+  };
   columnSizer = () => {
     let dv, tv, icon, button, link, newLogo;
     if (this.state.dashboardVar === 1) {
@@ -102,16 +95,21 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path="/" render={props => <Landing />} />
-        <Route path="/signup" render={props => <Signup  {...props}/>} />
-        <Route path="/signin" render={props => <Signin loadPictures={this.loadPictures} {...props} />} />
+        <Route path="/signup" render={props => <Signup {...props} />} />
+        <Route
+          path="/signin"
+          render={props => (
+            <Signin loadPictures={this.loadPictures} {...props} />
+          )}
+        />
         <Row>
           <Route
             path="/dashboard"
             render={props => (
               <Dashboard
-              user={this.state.user}
-              loadUser={this.loadUser}
-              pictures={this.state.picture}
+                user={this.state.user}
+                loadUser={this.loadUser}
+                pictures={this.state.picture}
                 logo={this.state.logo}
                 link={this.state.linkClass}
                 btn={this.state.buttonClass}
@@ -124,13 +122,25 @@ class App extends Component {
           <Route
             exact
             path="/dashboard"
-            render={props => <Tags pictures={this.state.picture} {...props} tagVar={this.state.tagVar} />}
+            render={props => (
+              <Tags
+                pictures={this.state.picture}
+                {...props}
+                tagVar={this.state.tagVar}
+              />
+            )}
           />
-             <Route
+          <Route
             exact
             path="/dashboard/:id"
             render={props => <TagView {...props} tagVar={this.state.tagVar} />}
+          /> 
+          <Route
+            exact
+            path="/dashboard/trek/:id"
+            render={props => <Trek {...props} tagVar={this.state.tagVar} />}
           />
+       
         </Row>
       </div>
     );
