@@ -12,14 +12,16 @@ class Trek extends Component {
   componentDidMount() {
     let { id } = this.props.match.params;
 
+    this.setTags(id);
+  }
+  setTags = id => {
     axios
       .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
       .then(response => {
         this.setState({ tag: response.data });
       })
       .catch(err => {});
-  }
-
+  };
   render() {
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
@@ -35,7 +37,12 @@ class Trek extends Component {
           <br />
           {this.state.tag.description}
         </div>
-        <Comments comments={this.state.tag.comments} id={this.state.tag._id}   user={this.props.user}/>
+        <Comments
+          comments={this.state.tag.comments}
+          setTags={this.setTags}
+          id={this.state.tag._id}
+          user={this.props.user}
+        />
         <Pictures imgTag={this.state.tag.tag} style="tag-filtered" />
       </Col>
     );
