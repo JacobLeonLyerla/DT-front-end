@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Pictures from "./renderPictures";
 import Map from "./googleMaps";
+import Comments from "./comments";
 class Trek extends Component {
   state = {
     tag: ""
@@ -14,11 +15,9 @@ class Trek extends Component {
     axios
       .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
       .then(response => {
-        console.log(response.data);
         this.setState({ tag: response.data });
       })
       .catch(err => {
-        console.log(err);
       });
   }
 
@@ -27,15 +26,17 @@ class Trek extends Component {
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         <Map />
         <div>
-            <br/>
-            {this.state.tag.user}<br/>
-            <br/>
+          <br />
+          {this.state.tag.user}
+          <br />
+          <br />
           {this.state.tag.name}
           <br />
           <br />
           <br />
           {this.state.tag.description}
         </div>
+        <Comments comments={this.state.tag.comments}/>
         <Pictures imgTag={this.state.tag.tag} style="tag-filtered" />
       </Col>
     );
