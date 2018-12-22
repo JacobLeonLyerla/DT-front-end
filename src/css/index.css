@@ -448,3 +448,18 @@ p {
   margin-bottom: 1vh;
   margin-left: 3vw;
 }
+.modal-content {
+  margin-top: 20vh;
+}
+.modal-footer {
+  justify-content: center;
+  padding: 0;
+}
+.modal-footer .btn {
+  width: 100%;
+  background: #677fa3;
+  border: none;
+}
+.modal-footer .btn:hover {
+  background: #a8bdd6;
+}
