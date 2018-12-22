@@ -12,7 +12,7 @@ class Comments extends Component {
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
         return this.props.comments.map(comment => {
-          return <div className="comment">{comment.comment}</div>;
+          return <div className="comment-container"><div className="username">{comment.username}</div><div className="comment">{comment.comment}</div></div>;
         });
       } else {
         return <div className="no-comments">No comments yet</div>;
@@ -40,6 +40,7 @@ class Comments extends Component {
             comment
           )
           .then(response => {
+              this.setState({comment:""})
             this.props.setTags(this.props.id);
           })
           .catch(err => {});
