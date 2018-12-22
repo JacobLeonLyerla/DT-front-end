@@ -15,6 +15,7 @@ class Trek extends Component {
     this.setTags(id);
   }
   setTags = id => {
+      console.log("hey")
     axios
       .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
       .then(response => {
@@ -43,6 +44,7 @@ class Trek extends Component {
           setTags={this.setTags}
           tagId={this.state.tag._id}
           user={this.props.user}
+          
         />
         <Pictures imgTag={this.state.tag.tag} style="tag-filtered" />
       </Col>
