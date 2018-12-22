@@ -441,10 +441,25 @@ p {
     min-width:100%;
     border-top: 3px solid @secondarycolor;
     border-bottom: 1px solid @secondarycolor;
-    .comment{
+    .comment-container{
       width:100%;
-      
-    }
+      display:flex;
+    flex-direction: column;
+  text-align: left;  
+  border: .1rem solid @accentcolor
+  }
+  .username{
+    font-size:1.6rem;
+    margin-bottom:.2vh;
+    margin-left:1vw;
+    color:@secondarycolor;
+  }
+  .comment{
+    font-size:1.3rem;
+    margin-bottom:1vh;
+    margin-left:3vw;
+  }
+
   }
 @maincolor : #EBE1CE;
 @secondarycolor: #677fa3;

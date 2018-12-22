@@ -402,6 +402,21 @@ p {
   border-top: 3px solid #677fa3;
   border-bottom: 1px solid #677fa3;
 }
-.comments-container .comment {
+.comments-container .comment-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 0.1rem solid #a8bdd6;
+}
+.comments-container .username {
+  font-size: 1.6rem;
+  margin-bottom: .2vh;
+  margin-left: 1vw;
+  color: #677fa3;
+}
+.comments-container .comment {
+  font-size: 1.3rem;
+  margin-bottom: 1vh;
+  margin-left: 3vw;
 }
