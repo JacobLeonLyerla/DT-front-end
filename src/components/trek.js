@@ -22,6 +22,7 @@ class Trek extends Component {
       })
       .catch(err => {});
   };
+
   render() {
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
@@ -40,7 +41,7 @@ class Trek extends Component {
         <Comments
           comments={this.state.tag.comments}
           setTags={this.setTags}
-          id={this.state.tag._id}
+          tagId={this.state.tag._id}
           user={this.props.user}
         />
         <Pictures imgTag={this.state.tag.tag} style="tag-filtered" />
