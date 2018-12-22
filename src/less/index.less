@@ -441,17 +441,25 @@ p {
     min-width:100%;
     border-top: 3px solid @secondarycolor;
     border-bottom: 1px solid @secondarycolor;
+    max-height: 38vh;
+    overflow: hidden;
+    overflow-y: scroll;
     .comment-container{
       width:100%;
       display:flex;
     flex-direction: column;
   text-align: left;  
-  border: .1rem solid @accentcolor
+  border: .1rem solid white;
+  }
+  .target-comment{
+    text-align: right;
+    margin-right:1.5vw;
+    color:@secondarycolor;
   }
   .username{
     font-size:1.6rem;
     margin-bottom:.2vh;
-    margin-left:1vw;
+    
     color:@secondarycolor;
   }
   .comment{
