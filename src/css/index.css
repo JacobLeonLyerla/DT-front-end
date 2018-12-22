@@ -438,12 +438,19 @@ p {
   color: tomato;
 }
 .comments-container .replies {
-  padding-left: 10vw;
   background: white;
 }
 .comments-container .replies .reply {
   font-size: 1.2rem;
   min-height: 5vh;
+  border: 1px solid #a8bdd6;
+}
+.comments-container .replies .reply .reply-username {
+  padding-left: 4vw;
+  color: #677fa3;
+}
+.comments-container .replies .reply .reply-comment {
+  padding-left: 6vw;
 }
 .comments-container .username {
   font-size: 1.6rem;
