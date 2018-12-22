@@ -437,16 +437,24 @@ p {
   margin-left: .5vw;
   color: tomato;
 }
+.comments-container .replies {
+  padding-left: 10vw;
+  background: white;
+}
+.comments-container .replies .reply {
+  font-size: 1.2rem;
+  min-height: 5vh;
+}
 .comments-container .username {
   font-size: 1.6rem;
   margin-bottom: .2vh;
-  margin-left: 1vw;
+  padding-left: 1vw;
   color: #677fa3;
 }
 .comments-container .comment {
   font-size: 1.3rem;
   margin-bottom: 1vh;
-  margin-left: 3vw;
+  padding-left: 3vw;
 }
 .modal-content {
   margin-top: 20vh;
@@ -457,9 +465,9 @@ p {
 }
 .modal-footer .btn {
   width: 100%;
-  background: #677fa3;
+  background: #a8bdd6;
   border: none;
 }
 .modal-footer .btn:hover {
-  background: #a8bdd6;
+  background: #677fa3;
 }
