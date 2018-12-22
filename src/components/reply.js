@@ -77,16 +77,16 @@ class Reply extends Component {
       axios
       .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, comment)
       .then(response => {
-     this.props.refreshTags(this.props.propsId)
+    this.props.setupComments(this.props.propsId)
       })
       .catch(err => {
       });
   })
   .catch(err => {
   });
+   
   };
   render() {
-      console.log(this.props)
     return (
       <div className="target-comment">
         <i
