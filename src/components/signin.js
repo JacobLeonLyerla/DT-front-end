@@ -53,6 +53,7 @@ class Signup extends Component {
     });
   };
   handleSubmit = e => {
+    localStorage.clear();
     const user = {
       username: this.state.username,
       password: this.state.password
