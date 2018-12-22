@@ -66,7 +66,7 @@ class Reply extends Component {
     let comment = {};
     if (this.state.reply !== "") {
       comment.replies = this.props.replies;
-        comment.replies.push(this.state.reply);
+        comment.replies.push({replies:this.state.reply,username:this.props.user.username});
     }
     axios
       .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, comment)
