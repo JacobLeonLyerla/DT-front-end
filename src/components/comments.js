@@ -9,6 +9,9 @@ import Replies from "./replies"
 class Comments extends Component {
   state = { comment: "" };
 
+  refreshTags(id){
+      this.props.setTags(id)
+  }
   renderComments = () => {
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
@@ -23,6 +26,9 @@ class Comments extends Component {
                     username={comment.username}
                     replies={comment.replies}
                     user={this.props.user}
+                    renderComments={this.renderComments}
+                    refreshTags={this.refreshTags}
+                    propsId={this.props.tagId}
                   />
                   <div className="username">{comment.username}</div>
                 </Fragment>
@@ -32,7 +38,7 @@ class Comments extends Component {
                   <div className="username">You Commented</div>
                 </Fragment>
               )}
-              <div className="comment">{comment.comment}</div><div className="replies"><Replies  user={this.props.user} replies={comment._id}/></div>
+              <div className="comment">{comment.comment}</div><div className="replies"><Replies  user={this.props.user} replies={comment.replies} id={comment._id}/></div>
             </div>
           );
         });
@@ -59,12 +65,13 @@ class Comments extends Component {
         comment.comments.push(response.data._id);
         axios
           .put(
-            `https://dt-back-end.herokuapp.com/tags/${this.props.id}`,
+            `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`,
             comment
           )
           .then(response => {
             this.setState({ comment: "" });
-            this.props.setTags(this.props.id);
+            console.log(this.props.tagId)
+            this.props.setTags(this.props.tagId);
           })
           .catch(err => {});
       })
