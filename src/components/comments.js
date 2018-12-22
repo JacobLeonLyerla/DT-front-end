@@ -13,7 +13,7 @@ class Comments extends Component {
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
         return this.props.comments.map(comment => {
-          return <div className="comment-container">{(comment.username !== this.props.user.username) ?(<Fragment><div className="target-comment"><i class="fas fa-reply"></i></div><div className="username">{comment.username}</div></Fragment>):(<Fragment><Edit/><div className="username">You Commented</div></Fragment>)}<div className="comment">{comment.comment}</div></div>;
+          return <div className="comment-container">{(comment.username !== this.props.user.username) ?(<Fragment><div className="target-comment"><i class="fas fa-reply"></i></div><div className="username">{comment.username}</div></Fragment>):(<Fragment><Edit id={comment._id}/><div className="username">You Commented</div></Fragment>)}<div className="comment">{comment.comment}</div></div>;
         });
       } else {
         return <div className="no-comments">No comments yet</div>;
