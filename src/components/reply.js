@@ -71,21 +71,22 @@ class Reply extends Component {
   axios
   .post(`https://dt-back-end.herokuapp.com/comments`, reply)
   .then(response => {
-    console.log(response.data) 
-
+    let comment = {};
+    comment.replies = this.props.replies;
+    comment.replies.push(response.data._id);
       axios
-      .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, {replies:response.data._id})
+      .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, comment)
       .then(response => {
-        console.log(response.data)       
+     this.props.refreshTags(this.props.propsId)
       })
       .catch(err => {
       });
   })
   .catch(err => {
   });
-  
   };
   render() {
+      console.log(this.props)
     return (
       <div className="target-comment">
         <i
