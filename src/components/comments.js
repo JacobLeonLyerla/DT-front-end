@@ -4,8 +4,9 @@ import React, { Component, Fragment } from "react";
 import { Button, Input, Form, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Edit from "./edit"
-import Reply from "./reply"
+import Edit from "./edit";
+import Reply from "./reply";
+import Replies from "./replies"
 class Comments extends Component {
   state = { comment: "" };
 
@@ -13,7 +14,28 @@ class Comments extends Component {
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
         return this.props.comments.map(comment => {
-          return <div className="comment-container">{(comment.username !== this.props.user.username) ?(<Fragment><Reply id={comment._id} username={comment.username}/><div className="username">{comment.username}</div></Fragment>):(<Fragment><Edit id={comment._id}/><div className="username">You Commented</div></Fragment>)}<div className="comment">{comment.comment}</div></div>;
+          return (
+            <div className="comment-container">
+              {comment.username !== this.props.user.username ? (
+                <Fragment>
+                  <Reply
+                    reply={comment.replyTo}
+                    id={comment._id}
+                    username={comment.username}
+                    replies={comment.replies}
+                    user={this.props.user}
+                  />
+                  <div className="username">{comment.username}</div>
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <Edit id={comment._id} />
+                  <div className="username">You Commented</div>
+                </Fragment>
+              )}
+              <div className="comment">{comment.comment}</div><div className="replies"><Replies replies={comment.replies}/></div>
+            </div>
+          );
         });
       } else {
         return <div className="no-comments">No comments yet</div>;
@@ -41,7 +63,7 @@ class Comments extends Component {
             comment
           )
           .then(response => {
-              this.setState({comment:""})
+            this.setState({ comment: "" });
             this.props.setTags(this.props.id);
           })
           .catch(err => {});
@@ -51,9 +73,7 @@ class Comments extends Component {
   render() {
     return (
       <Fragment>
-          <div className="comments-container">
-        {this.renderComments()}
-        </div>
+        <div className="comments-container">{this.renderComments()}</div>
         <Form className="comment-form">
           <Button onClick={() => this.handleSubmit()} color="primary">
             Post
