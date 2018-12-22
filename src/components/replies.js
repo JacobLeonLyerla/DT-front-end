@@ -1,43 +1,47 @@
 import React,{Component,Fragment} from 'react';
+import axios from "axios";
 
  class Replies extends Component {
     state={
         reply:{}
     }
-    componentDidMount(){
-        this.setupReplies()
-    }
-    setupReplies=()=>{
+componentDidMount(){
+    this.setupReplies()
+}
+    setupReplies=(id)=>{
+
+        
            axios
-           .get(`https://dt-back-end.herokuapp.com/comments/${this.props.replies}`)
+           .get(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`)
            .then(response=>{
-           console.log(response.data)
-         
+            this.setState({reply:response.data.replies})
            }).catch(err=>{
         
            })
-           return data
-          
+      
     }
 
        renderReplies=()=>{
            if(this.props.replies !== undefined){
-            return this.props.replies.map(reply =>(<Fragment>
+        
+            
+           if(this.state.reply.length >0){
+            return this.state.reply.map(reply =>(<Fragment>
                
         <div className="reply">{reply.username === this.props.user.username ?(<Fragment>aaa</Fragment>):(<Fragment>bbb</Fragment>)}
         <div className="reply-username">{reply.username}</div>
-            <div className="reply-comment">{reply.Comment}</div></div>
+            <div className="reply-comment">{reply.comment}</div></div>
 
              </Fragment>))
 
            }
+        }
        }
   render() {
-  
     return (
         <Fragment>
-        
-{this.renderReplies()}
+        {this.renderReplies()}
+
         </Fragment>)
 
 
