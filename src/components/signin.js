@@ -26,7 +26,7 @@ class Signup extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount(){
-    localStorage.clear()
+    localStorage.clear();
   }
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -57,6 +57,7 @@ class Signup extends Component {
   };
   handleSubmit = e => {
     localStorage.clear();
+    localStorage.removeItem("id");
     const user = {
       username: this.state.username,
       password: this.state.password
