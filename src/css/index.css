@@ -395,3 +395,13 @@ p {
   background: #f0e6e6;
   font-size: 1.8rem;
 }
+.comments-container {
+  background: #EBE1CE;
+  min-height: 20vh;
+  min-width: 100%;
+  border-top: 3px solid #677fa3;
+  border-bottom: 1px solid #677fa3;
+}
+.comments-container .comment {
+  width: 100%;
+}
