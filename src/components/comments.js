@@ -12,7 +12,7 @@ class Comments extends Component {
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
         return this.props.comments.map(comment => {
-          return <div>{comment.comment}</div>;
+          return <div className="comment">{comment.comment}</div>;
         });
       } else {
         return <div className="no-comments">No comments yet</div>;
@@ -49,7 +49,9 @@ class Comments extends Component {
   render() {
     return (
       <Fragment>
+          <div className="comments-container">
         {this.renderComments()}
+        </div>
         <Form className="comment-form">
           <Button onClick={() => this.handleSubmit()} color="primary">
             Post
