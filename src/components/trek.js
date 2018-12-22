@@ -33,7 +33,7 @@ class Trek extends Component {
           <br />
           {this.state.tag.name}
           <br />
-          <br /> {this.state.tag._id}
+      
           <br />
           {this.state.tag.description}
         </div>
