@@ -436,7 +436,7 @@ p {
     font-size:1.8rem;
   }
   .comments-container{
-    background:@maincolor;
+
     min-height: 20vh;
     min-width:100%;
     border-top: 3px solid @secondarycolor;
@@ -444,22 +444,46 @@ p {
     max-height: 38vh;
     overflow: hidden;
     overflow-y: scroll;
-    .comment-container{
+    
+    .comment-container{  
+        background:@maincolor;
       width:100%;
       display:flex;
     flex-direction: column;
   text-align: left;  
   border: .1rem solid white;
+  border-radius: 2%;
   }
   .target-comment{
+
     text-align: right;
-    margin-right:1.5vw;
-    color:@secondarycolor;
+    margin-right:1vw;
+    .fa-reply{
+      margin-right:.5vw;
+      color:@secondarycolor;  
+    }
+    .fa-edit{
+      margin-right:.5vw;
+      color:@accentcolor;
+    }
+    .fa-edit:hover{
+      margin-right:.5vw;
+      color:@secondarycolor;
+    }
+    .fa-times{
+      margin-left:.5vw;
+      color:coral;
+    }
+    
+    .fa-times:hover{
+      margin-left:.5vw;
+      color:tomato;
+    }
   }
   .username{
     font-size:1.6rem;
     margin-bottom:.2vh;
-    
+    margin-left:1vw;
     color:@secondarycolor;
   }
   .comment{
@@ -467,8 +491,10 @@ p {
     margin-bottom:1vh;
     margin-left:3vw;
   }
+  
 
   }
+ 
 @maincolor : #EBE1CE;
 @secondarycolor: #677fa3;
 @accentcolor: #a8bdd6;

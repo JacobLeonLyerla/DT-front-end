@@ -396,7 +396,6 @@ p {
   font-size: 1.8rem;
 }
 .comments-container {
-  background: #EBE1CE;
   min-height: 20vh;
   min-width: 100%;
   border-top: 3px solid #677fa3;
@@ -406,20 +405,42 @@ p {
   overflow-y: scroll;
 }
 .comments-container .comment-container {
+  background: #EBE1CE;
   width: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
   border: .1rem solid white;
+  border-radius: 2%;
 }
 .comments-container .target-comment {
   text-align: right;
-  margin-right: 1.5vw;
+  margin-right: 1vw;
+}
+.comments-container .target-comment .fa-reply {
+  margin-right: .5vw;
   color: #677fa3;
+}
+.comments-container .target-comment .fa-edit {
+  margin-right: .5vw;
+  color: #a8bdd6;
+}
+.comments-container .target-comment .fa-edit:hover {
+  margin-right: .5vw;
+  color: #677fa3;
+}
+.comments-container .target-comment .fa-times {
+  margin-left: .5vw;
+  color: coral;
+}
+.comments-container .target-comment .fa-times:hover {
+  margin-left: .5vw;
+  color: tomato;
 }
 .comments-container .username {
   font-size: 1.6rem;
   margin-bottom: .2vh;
+  margin-left: 1vw;
   color: #677fa3;
 }
 .comments-container .comment {
