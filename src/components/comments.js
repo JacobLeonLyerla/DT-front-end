@@ -2,7 +2,6 @@
 
 import React, { Component, Fragment } from "react";
 import { Button, Input, Form, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Edit from "./edit";
 import Reply from "./reply";
@@ -33,7 +32,7 @@ class Comments extends Component {
                   <div className="username">You Commented</div>
                 </Fragment>
               )}
-              <div className="comment">{comment.comment}</div><div className="replies"><Replies replies={comment.replies}/></div>
+              <div className="comment">{comment.comment}</div><div className="replies"><Replies  user={this.props.user} replies={comment._id}/></div>
             </div>
           );
         });
@@ -42,6 +41,7 @@ class Comments extends Component {
       }
     }
   };
+  
   handleInput = input => {
     this.setState({ [input.target.name]: input.target.value });
   };
