@@ -7,15 +7,30 @@ import Edit from "./edit";
 import Reply from "./reply";
 import Replies from "./replies"
 class Comments extends Component {
-  state = { comment: "" };
+  state = { comment: "",comments:{} };
 
-  refreshTags(id){
-      this.props.setTags(id)
+  setupComments=(id)=>{
+       axios
+    .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
+    .then(response => {
+        console.log(response.data)
+      this.setState({ comments: response.data.comments });
+    })
+    .catch(err => {
+        console.log(err)
+    });
   }
   renderComments = () => {
+      let arr;
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
-        return this.props.comments.map(comment => {
+          if(this.state.comments.length >0){
+              console.log(this.state.comments)
+            arr = this.state.comments
+          }else{
+              arr =this.props.comments
+          }
+        return arr.map(comment => {
           return (
             <div className="comment-container">
               {comment.username !== this.props.user.username ? (
@@ -27,7 +42,7 @@ class Comments extends Component {
                     replies={comment.replies}
                     user={this.props.user}
                     renderComments={this.renderComments}
-                    refreshTags={this.refreshTags}
+                    setupComments={this.setupComments}
                     propsId={this.props.tagId}
                   />
                   <div className="username">{comment.username}</div>
