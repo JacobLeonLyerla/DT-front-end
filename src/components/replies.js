@@ -9,7 +9,6 @@ componentDidMount(){
     this.setupReplies()
 }
     setupReplies=(id)=>{
-
         
            axios
            .get(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`)
@@ -22,6 +21,9 @@ componentDidMount(){
     }
 
        renderReplies=()=>{
+          if(this.state.reply !== {}){
+              this.setupReplies()
+          }
            if(this.props.replies !== undefined){
         
             
