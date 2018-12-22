@@ -6,19 +6,20 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Input,Form,
+  Input,
+  Form
 } from "reactstrap";
+import axios from "axios";
 class Reply extends Component {
   constructor(props) {
     super(props);
-
 
     this.toggle = this.toggle.bind(this);
     this.toggleTwo = this.toggleTwo.bind(this);
     this.state = {
       tooltipReply: false,
       modal: false,
-      reply:"",
+      reply: ""
     };
   }
   toggle() {
@@ -32,24 +33,61 @@ class Reply extends Component {
     });
   }
   renderModal = () => {
-return(
-    <Modal
-    isOpen={this.state.modal}
-    toggle={this.toggleTwo}
-    className={this.props.className}
-  >
-    <ModalHeader toggle={this.toggleTwo}>{`Reply to ${this.props.username}`}</ModalHeader>
-<Form>
-    <Input
-    style={{height:"30vh"}}
-    />
-</Form>
-    <ModalFooter>
-      <Button color="primary" onClick={this.toggleTwo}>
-        Do Something
-      </Button>{" "}
-    </ModalFooter>
-  </Modal>)
+    return (
+      <Modal
+        isOpen={this.state.modal}
+        toggle={this.toggleTwo}
+        className={this.props.className}
+      >
+        <ModalHeader toggle={this.toggleTwo}>{`Reply to ${
+          this.props.username
+        }`}</ModalHeader>
+        <Form>
+          <Input
+            style={{ height: "30vh" }}
+            name="reply"
+            value={this.state.reply}
+            onChange={this.handleInput}
+            type="textarea"
+          />
+        </Form>
+        <ModalFooter>
+          <Button color="primary" onClick={()=>this.handleSubmit()}>
+            Reply
+          </Button>{" "}
+        </ModalFooter>
+      </Modal>
+    );
+  };
+  handleInput = input => {
+    this.setState({ [input.target.name]: input.target.value });
+  };
+  handleSubmit = () => {
+    let comment = {};
+    if (this.state.reply !== "") {
+      comment.replies = this.props.replies;
+        comment.replies.push(this.state.reply);
+    }
+    axios
+      .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, comment)
+      .then(response => {
+        console.log(response.data)
+          this.toggleTwo()
+            let reply ={}
+            reply.username = this.props.user.username
+            reply.comment = this.state.reply
+            reply.replyTo = this.props.id
+          axios
+          .post(`https://dt-back-end.herokuapp.com/comments`, reply)
+          .then(response => {
+            console.log(response.data) 
+          })
+          .catch(err => {
+          });
+        
+      })
+      .catch(err => {
+      });
   };
   render() {
     return (
@@ -63,11 +101,11 @@ return(
           placement="left"
           isOpen={this.state.tooltipReply}
           target={`reply${this.props.id}`}
-          toggle={ this.toggle}
+          toggle={this.toggle}
         >
           Reply
         </Tooltip>
-      {this.renderModal()}
+        {this.renderModal()}
       </div>
     );
   }
