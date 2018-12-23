@@ -1,6 +1,8 @@
 import React,{Component,Fragment} from 'react';
+import SubReplies from "./subReplies"
 import axios from "axios";
 import Reply from "./reply"
+
  class Replies extends Component {
     state={
         reply:{},
@@ -15,7 +17,16 @@ componentDidMount(){
            axios
            .get(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`)
            .then(response=>{
+               console.log()
             this.setState({reply:response.data.replies})
+            let sub = []
+            response.data.replies.forEach(reply => {
+                reply.replies.forEach(nReply =>{
+                    sub.push(nReply)
+                })
+                
+            });
+            this.setState({subReply:sub})
            }).catch(err=>{
         
            })
@@ -23,6 +34,7 @@ componentDidMount(){
     }
 
        renderReplies=()=>{
+           console.log(this.state.reply,"huh")
           if(this.state.reply.length !== this.props.replies.length){
               this.setupReplies()
           }
@@ -43,7 +55,7 @@ componentDidMount(){
                   /></Fragment>)}
         <div className="reply-username">{reply.username}</div>
             <div className="reply-comment">{reply.comment}</div></div>
-
+              {console.log(reply.replies.length)}  <SubReplies replies={reply.replies}/>
 
              </Fragment>))
 
