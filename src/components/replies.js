@@ -24,7 +24,7 @@ componentDidMount(){
                 reply.replies.forEach(nReply =>{
                     sub.push(nReply)
                 })
-                
+               
             });
             this.setState({subReply:sub,id:this.props.propsId})
            }).catch(err=>{
@@ -37,11 +37,17 @@ componentDidMount(){
         let countReply =[]
          
            if(this.props.replies !== undefined){
- 
-             if(this.state.reply.length !== this.props.replies.length){
+            console.log(this.props)
+             if(this.state.reply.length !== this.props.replies.length ){       
+  
               this.setupReplies()
               
-          }if(this.state.reply.length >0){
+          }
+          if(this.props.reply === true){       
+            this.props.replyflag("false")
+          this.setupReplies()     
+      }
+          if(this.state.reply.length >0){
 
           this.state.reply.forEach(count=>{
              count.replies.forEach(repliesCount=>{
@@ -53,6 +59,8 @@ componentDidMount(){
             return this.state.reply.map(reply =>(<Fragment>
                
         <div className="reply">{reply.username === this.props.user.username ?(<Fragment>aaa</Fragment>):(<Fragment> <Reply
+                    
+                    replyflag={this.props.replyflag}
                     reply={reply.replyTo}
                     id={reply._id}
                     username={reply.username}
