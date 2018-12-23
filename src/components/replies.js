@@ -8,6 +8,7 @@ import Reply from "./reply"
         reply:{},
         subReply:{},
         subReplycalled:false,
+        id:"",
     }
 componentDidMount(){
     this.setupReplies()
@@ -17,7 +18,6 @@ componentDidMount(){
            axios
            .get(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`)
            .then(response=>{
-               console.log()
             this.setState({reply:response.data.replies})
             let sub = []
             response.data.replies.forEach(reply => {
@@ -26,7 +26,7 @@ componentDidMount(){
                 })
                 
             });
-            this.setState({subReply:sub})
+            this.setState({subReply:sub,id:this.props.propsId})
            }).catch(err=>{
         
            })
@@ -34,13 +34,21 @@ componentDidMount(){
     }
 
        renderReplies=()=>{
-           console.log(this.state.reply,"huh")
-          if(this.state.reply.length !== this.props.replies.length){
-              this.setupReplies()
-          }
+        let countReply =[]
+         
            if(this.props.replies !== undefined){
-        
-            
+ 
+             if(this.state.reply.length !== this.props.replies.length){
+              this.setupReplies()
+              
+          }if(this.state.reply.length >0){
+
+          this.state.reply.forEach(count=>{
+             count.replies.forEach(repliesCount=>{
+                  countReply.push(repliesCount)
+             })
+             
+          })}
            if(this.state.reply.length >0){
             return this.state.reply.map(reply =>(<Fragment>
                
@@ -50,12 +58,12 @@ componentDidMount(){
                     username={reply.username}
                     replies={reply.replies}
                     user={this.props.user}
-                    propsId={this.props.tagId}
+                    propsId={this.state.id}
                     setupComments={this.props.setupComments}
                   /></Fragment>)}
         <div className="reply-username">{reply.username}</div>
             <div className="reply-comment">{reply.comment}</div></div>
-              {console.log(reply.replies.length)}  <SubReplies replies={reply.replies}/>
+           {console.log(reply.replies.length,countReply.length)} <SubReplies  replies={reply.replies}/>
 
              </Fragment>))
 
