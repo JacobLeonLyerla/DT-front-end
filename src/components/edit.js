@@ -1,5 +1,6 @@
 import React from "react";
 import { Tooltip } from "reactstrap";
+import Delete from "./delete"
 class Edit extends React.Component {
   constructor(props) {
     super(props);
@@ -33,8 +34,11 @@ class Edit extends React.Component {
           toggle={() => this.toggle("edit")}
         >
           Edit
-        </Tooltip>
-        |<i id={`delete${this.props.id}`} class="fas fa-times" />
+        </Tooltip>|
+        <div className="delete-constainer" id={`delete${this.props.id}`}>
+        <Delete
+       
+        /> </div>
         <Tooltip
           placement="right"
           isOpen={this.state.tooltipDelete}
