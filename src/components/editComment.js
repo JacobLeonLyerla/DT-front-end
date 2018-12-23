@@ -74,7 +74,7 @@ class EditComment extends Component {
     );
   };
   render() {
-    console.log(this.props.comment.comment);
+ 
     return <Fragment>{this.renderModal()}</Fragment>;
   }
 }
