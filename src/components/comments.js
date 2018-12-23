@@ -7,7 +7,7 @@ import Edit from "./edit";
 import Reply from "./reply";
 import Replies from "./replies"
 class Comments extends Component {
-  state = { comment: "",comments:{} };
+  state = { comment: "",comments:{}, reply:false };
 
   setupComments=(id)=>{
        axios
@@ -19,6 +19,13 @@ class Comments extends Component {
     .catch(err => {
         console.log(err)
     });
+  }
+  replyflag=(type)=>{
+    if(type ==="true"){
+    this.setState({reply:true})
+    }else{
+      this.setState({reply:false})
+    }
   }
   renderComments = () => {
       let arr;
@@ -36,6 +43,8 @@ class Comments extends Component {
               {comment.username !== this.props.user.username ? (
                 <Fragment>
                   <Reply
+                  reply={this.state.reply}
+                  replyflag={this.replyflag}
                     reply={comment.replyTo}
                     id={comment._id}
                     username={comment.username}
@@ -53,7 +62,7 @@ class Comments extends Component {
                   <div className="username">You Commented</div>
                 </Fragment>
               )}
-              <div className="comment">{comment.comment}</div><div className="replies"><Replies propsId={this.props.tagId} setupComments={this.setupComments}  user={this.props.user} replies={comment.replies} id={comment._id}/></div>
+              <div className="comment">{comment.comment}</div><div className="replies"><Replies reply={this.state.reply} replyflag={this.replyflag} propsId={this.props.tagId} setupComments={this.setupComments}  user={this.props.user} replies={comment.replies} id={comment._id}/></div>
             </div>
           );
         });
