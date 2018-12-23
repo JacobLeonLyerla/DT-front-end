@@ -72,7 +72,9 @@ class Comments extends Component {
       comment.comment = this.state.comment;
       comment.username = this.props.user.username;
     }
+    console.log(comment)
     axios
+    
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
         let comment = {};
