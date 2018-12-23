@@ -105,15 +105,15 @@ class Comments extends Component {
         let comment = {};
         comment.comments = this.props.comments;
         comment.comments.push(response.data._id);
-        console.log(comment)
-        console.log(this.props.tagId)
+        console.log(comment);
+        console.log(this.props.tagId);
         axios
           .put(
             `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`,
             comment
           )
           .then(response => {
-            console.log(response.data)
+            console.log(response.data);
             this.setState({ comment: "" });
             this.setupComments(this.props.tagId);
           })
@@ -122,7 +122,6 @@ class Comments extends Component {
       .catch(err => {});
   };
   render() {
-  
     return (
       <Fragment>
         <div className="comments-container">{this.renderComments()}</div>

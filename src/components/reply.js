@@ -19,7 +19,7 @@ class Reply extends Component {
     this.state = {
       tooltipReply: false,
       modal: false,
-    reply: `Reply to ${this.props.username}`
+      reply: `Reply to ${this.props.username}`
     };
   }
   toggle() {
@@ -32,6 +32,7 @@ class Reply extends Component {
       modal: !this.state.modal
     });
   }
+
   renderModal = () => {
     return (
       <Modal
@@ -52,7 +53,7 @@ class Reply extends Component {
           />
         </Form>
         <ModalFooter>
-          <Button color="primary" onClick={()=>this.handleSubmit()}>
+          <Button color="primary" onClick={() => this.handleSubmit()}>
             Reply
           </Button>{" "}
         </ModalFooter>
@@ -63,33 +64,33 @@ class Reply extends Component {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
-    this.toggleTwo()
-    let reply ={}
+    this.toggleTwo();
+    let reply = {};
 
-    reply.username = this.props.user.username
-    reply.comment = this.state.reply
-    reply.replyTo = this.props.id
-    console.log(reply)
-  axios
-  .post(`https://dt-back-end.herokuapp.com/comments`, reply)
-  .then(response => {
-    console.log(response.data)
-    let comment = {};
-    comment.replies = this.props.replies;
-    comment.replies.push(response.data._id);
-      axios
-      .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, comment)
+    reply.username = this.props.user.username;
+    reply.comment = this.state.reply;
+    reply.replyTo = this.props.id;
+    console.log(reply);
+    axios
+      .post(`https://dt-back-end.herokuapp.com/comments`, reply)
       .then(response => {
-       console.log(response.data)
-       this.props.replyflag("true")
-    this.props.setupComments(this.props.propsId)
+        console.log(response.data);
+        let comment = {};
+        comment.replies = this.props.replies;
+        comment.replies.push(response.data._id);
+        axios
+          .put(
+            `https://dt-back-end.herokuapp.com/comments/${this.props.id}`,
+            comment
+          )
+          .then(response => {
+            console.log(response.data);
+            this.props.replyflag("true");
+            this.props.setupComments(this.props.propsId);
+          })
+          .catch(err => {});
       })
-      .catch(err => {
-      });
-  })
-  .catch(err => {
-  });
-   
+      .catch(err => {});
   };
   render() {
     return (
