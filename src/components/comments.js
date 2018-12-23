@@ -53,7 +53,7 @@ class Comments extends Component {
                   <div className="username">You Commented</div>
                 </Fragment>
               )}
-              <div className="comment">{comment.comment}</div><div className="replies"><Replies  user={this.props.user} replies={comment.replies} id={comment._id}/></div>
+              <div className="comment">{comment.comment}</div><div className="replies"><Replies propsId={this.props.tagId} setupComments={this.setupComments}  user={this.props.user} replies={comment.replies} id={comment._id}/></div>
             </div>
           );
         });
