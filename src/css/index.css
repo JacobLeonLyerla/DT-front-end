@@ -452,6 +452,12 @@ p {
 .comments-container .replies .reply .reply-comment {
   padding-left: 6vw;
 }
+.comments-container .replies .reply .sub-username {
+  padding-left: 6vw;
+}
+.comments-container .replies .reply .sub-comment {
+  padding-left: 8vw;
+}
 .comments-container .username {
   font-size: 1.6rem;
   margin-bottom: .2vh;
