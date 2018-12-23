@@ -63,26 +63,27 @@ class Reply extends Component {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
-      console.log("test")
     this.toggleTwo()
     let reply ={}
+
     reply.username = this.props.user.username
     reply.comment = this.state.reply
     reply.replyTo = this.props.id
+    console.log(reply)
   axios
   .post(`https://dt-back-end.herokuapp.com/comments`, reply)
   .then(response => {
+    console.log(response.data)
     let comment = {};
     comment.replies = this.props.replies;
     comment.replies.push(response.data._id);
       axios
       .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, comment)
       .then(response => {
-          console.log(response.data)
+       console.log(response.data)
     this.props.setupComments(this.props.propsId)
       })
       .catch(err => {
-          console.log(err)
       });
   })
   .catch(err => {
