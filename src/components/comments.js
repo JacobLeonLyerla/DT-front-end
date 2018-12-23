@@ -5,46 +5,45 @@ import { Button, Input, Form, Row, Col } from "reactstrap";
 import axios from "axios";
 import Edit from "./edit";
 import Reply from "./reply";
-import Replies from "./replies"
+import Replies from "./replies";
 class Comments extends Component {
-  state = { comment: "",comments:{}, reply:false };
+  state = { comment: "", comments: {}, reply: false };
 
-  setupComments=(id)=>{
-       axios
-    .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
-    .then(response => {
-        console.log(response.data)
-      this.setState({ comments: response.data.comments });
-    })
-    .catch(err => {
-        console.log(err)
-    });
-  }
-  replyflag=(type)=>{
-    if(type ==="true"){
-    this.setState({reply:true})
-    }else{
-      this.setState({reply:false})
+  setupComments = id => {
+    axios
+      .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
+      .then(response => {
+        console.log(response.data);
+        this.setState({ comments: response.data.comments });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+  replyflag = type => {
+    if (type === "true") {
+      this.setState({ reply: true });
+    } else {
+      this.setState({ reply: false });
     }
-  }
+  };
   renderComments = () => {
-      let arr;
+    let arr;
     if (this.props.comments !== undefined) {
       if (this.props.comments.length > 0) {
-          if(this.state.comments.length >0){
-              console.log(this.state.comments)
-            arr = this.state.comments
-          }else{
-              arr =this.props.comments
-          }
+        if (this.state.comments.length > 0) {
+          arr = this.state.comments;
+        } else {
+          arr = this.props.comments;
+        }
         return arr.map(comment => {
           return (
             <div className="comment-container">
               {comment.username !== this.props.user.username ? (
                 <Fragment>
                   <Reply
-                  reply={this.state.reply}
-                  replyflag={this.replyflag}
+                    reply={this.state.reply}
+                    replyflag={this.replyflag}
                     reply={comment.replyTo}
                     id={comment._id}
                     username={comment.username}
@@ -58,11 +57,28 @@ class Comments extends Component {
                 </Fragment>
               ) : (
                 <Fragment>
-                  <Edit id={comment._id} />
+                  <Edit
+                    id={comment._id}
+                    comment={comment}
+                    setupComments={this.setupComments}
+                    propsId={this.props.tagId}
+                    replyflag={this.replyflag}
+                  />
                   <div className="username">You Commented</div>
                 </Fragment>
               )}
-              <div className="comment">{comment.comment}</div><div className="replies"><Replies reply={this.state.reply} replyflag={this.replyflag} propsId={this.props.tagId} setupComments={this.setupComments}  user={this.props.user} replies={comment.replies} id={comment._id}/></div>
+              <div className="comment">{comment.comment}</div>
+              <div className="replies">
+                <Replies
+                  reply={this.state.reply}
+                  replyflag={this.replyflag}
+                  propsId={this.props.tagId}
+                  setupComments={this.setupComments}
+                  user={this.props.user}
+                  replies={comment.replies}
+                  id={comment._id}
+                />
+              </div>
             </div>
           );
         });
@@ -71,7 +87,7 @@ class Comments extends Component {
       }
     }
   };
-  
+
   handleInput = input => {
     this.setState({ [input.target.name]: input.target.value });
   };
@@ -81,29 +97,32 @@ class Comments extends Component {
       comment.comment = this.state.comment;
       comment.username = this.props.user.username;
     }
-    console.log(comment)
+    console.log(comment);
     axios
-    
+
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
         let comment = {};
         comment.comments = this.props.comments;
         comment.comments.push(response.data._id);
+        console.log(comment)
+        console.log(this.props.tagId)
         axios
           .put(
             `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`,
             comment
           )
           .then(response => {
+            console.log(response.data)
             this.setState({ comment: "" });
-            console.log(this.props.tagId)
-            this.props.setTags(this.props.tagId);
+            this.setupComments(this.props.tagId);
           })
           .catch(err => {});
       })
       .catch(err => {});
   };
   render() {
+  
     return (
       <Fragment>
         <div className="comments-container">{this.renderComments()}</div>
