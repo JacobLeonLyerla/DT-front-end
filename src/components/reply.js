@@ -84,7 +84,7 @@ class Reply extends Component {
             comment
           )
           .then(response => {
-            console.log(response.data);
+            console.log(this.props);
             this.props.replyflag("true");
             this.props.setupComments(this.props.propsId);
           })
