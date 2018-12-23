@@ -81,6 +81,7 @@ class Reply extends Component {
       .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, comment)
       .then(response => {
        console.log(response.data)
+       this.props.replyflag("true")
     this.props.setupComments(this.props.propsId)
       })
       .catch(err => {
