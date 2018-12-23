@@ -11,7 +11,6 @@ class SubReply  extends Component {
       }
 
   render() {
-console.log(this.props.replies.length)
     return (<Fragment>
 
         {this.renderReplies()}
