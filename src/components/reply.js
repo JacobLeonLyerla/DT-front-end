@@ -19,7 +19,7 @@ class Reply extends Component {
     this.state = {
       tooltipReply: false,
       modal: false,
-      reply: ""
+    reply: `Reply to ${this.props.username}`
     };
   }
   toggle() {
