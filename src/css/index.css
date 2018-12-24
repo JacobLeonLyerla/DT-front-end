@@ -526,5 +526,11 @@ p {
   background: #677fa3;
 }
 .checked {
-  background: rgba(149, 150, 149, 0.705);
+  background: rgba(131, 194, 245, 0.705);
+}
+.tag-badge {
+  width: 20%;
+}
+.tag-badge .badge {
+  background: #677fa3;
 }
