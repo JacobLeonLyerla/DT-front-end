@@ -55,7 +55,7 @@ componentDidMount(){
             return this.state.reply.map(reply =>(<Fragment>
                
         <div className="reply">{reply.username === this.props.user.username ?(<Fragment><Edit 
-         id={reply._id}
+                id={reply._id}
                 comment={reply}
                 setupComments={this.props.setupComments}
                 propsId={this.props.propsId}
@@ -73,7 +73,6 @@ componentDidMount(){
                   /></Fragment>)}
         <div className="reply-username">{reply.username}</div>
             <div className="reply-comment">{reply.comment}</div></div>
-           {console.log(reply.replies.length,countReply.length)} <SubReplies  replies={reply.replies}/>
 
              </Fragment>))
 
