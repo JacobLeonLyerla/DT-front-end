@@ -30,9 +30,9 @@ class Post extends Component {
     if(arr.length >0){
       return arr.map(img =>{
    
-      return(<Col data-ca="ca" onClick={()=>this.test(img)} style={{backgroundImage : `url(${imgs[img.replace(/-/g, '').toLowerCase()]})`}} className={`tag-img tags ${this.checked(img)}`} md="6">
+      return(<Col data-ca="ca" onClick={()=>this.test(img)} style={{backgroundImage : `url(${imgs[img.replace(/-/g, '').toLowerCase()]})`}} className={`tag-img tags`} md="6">
       
-          <div className="cover ">
+          <div className={`cover ${this.checked(img)}`}>
             {" "}
             <p>{img.replace(/-/g, ' ')}</p>
           </div>
@@ -41,12 +41,14 @@ class Post extends Component {
   }
 }
 checked =(id)=>{
+    
     let filteredArr = this.state.tags.filter(function(value, index, arr){
 
         return value !== id;
     
     });
     if(filteredArr.length < this.state.tags.length){
+        console.log("check")
         return "checked"
     }
 }
