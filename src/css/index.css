@@ -367,6 +367,15 @@ p {
   max-height: 25vh;
   margin: 0 auto;
 }
+.table .table-items .btn {
+  width: 100%;
+  font-size: 1.2rem;
+  background: #a8bdd6;
+  border: none;
+}
+.table .table-items .btn:hover {
+  background: #677fa3;
+}
 .table .table-items td {
   min-width: 20vw;
 }
