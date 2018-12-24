@@ -3,7 +3,7 @@ import {Button} from 'reactstrap';
 class Post extends Component {
   render() {
     return (<Fragment>
-<Button>New Post</Button>
+<div>yo</div> 
 
     </Fragment>);
   }
