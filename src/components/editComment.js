@@ -27,7 +27,7 @@ class EditComment extends Component {
     });
   }
   handleEditComment = () => {
-    console.log(this.props.id);
+    console.log(this.props);
     let edit = {};
     edit.comment = this.state.comment;
     axios
@@ -36,6 +36,8 @@ class EditComment extends Component {
         console.log(response.data);
         this.toggle();
         this.props.setupComments(this.props.propsId);
+        this.props.replyflag("true")
+
       })
       .catch(err => {
         console.log(err);
