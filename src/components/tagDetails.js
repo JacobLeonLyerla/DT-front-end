@@ -3,7 +3,9 @@ class Details extends Component {
   render() {
     return (
       <div className="details">
-        <p>details Placeholder</p>
+        <div className="username">{this.props.tag.user}</div>
+        <div className="name">{this.props.tag.name}</div>
+        <div className="description">{this.props.tag.description}</div>
       </div>
     );
   }
