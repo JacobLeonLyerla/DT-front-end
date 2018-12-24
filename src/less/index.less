@@ -248,14 +248,13 @@ p {
     .btn:visited {
       background: @accentcolor;
     }
-    .dropdown-menu{
+    .dropdown-menu {
       max-height: 18vh;
       overflow: hidden;
       overflow-y: scroll;
     }
     .show {
       width: 12vw;
-    
     }
     .dropdown-item {
       text-align: center;
@@ -293,7 +292,6 @@ p {
     height: 45.8vh;
     margin-top: 5vh;
   }
-
 
   .row {
     overflow: hidden;
@@ -335,7 +333,7 @@ p {
     margin-right: 0px;
     margin: 0 auto;
     margin-top: 2vh;
-  
+
     .cover {
       width: 100%;
       color: rgba(15, 15, 15, 0);
@@ -375,7 +373,6 @@ p {
       padding: 0px;
     }
   }
-
 }
 .thead {
   display: flex;
@@ -400,15 +397,14 @@ p {
     overflow-y: scroll;
     max-height: 25vh;
     margin: 0 auto;
-    .btn{
-      width:100%;
-      font-size:1.2rem;
-       background:@accentcolor;
-      border:none;
+    .btn {
+      width: 100%;
+      font-size: 1.2rem;
+      background: @accentcolor;
+      border: none;
     }
-    .btn:hover{
-      background:@secondarycolor;
-     
+    .btn:hover {
+      background: @secondarycolor;
     }
     td {
       min-width: 20vw;
@@ -426,163 +422,150 @@ p {
   }
 }
 //**********************************************************Details
-.details{
+.details {
   min-height: 15vh;
   max-height: 30vh;
-  padding-bottom:3vh;
+  padding-bottom: 3vh;
 
-  
-  .header{
-   
+  .header {
     justify-content: space-between;
-    border-bottom:1px solid @secondarycolor;
-  .username{
-    display: flex;
-text-align: left;
-margin-left:1vw;
+    border-bottom: 1px solid @secondarycolor;
+    .username {
+      display: flex;
+      text-align: left;
+      margin-left: 1vw;
 
-.user{
-margin-left:.2vw;
-color:@secondarycolor;
-}
+      .user {
+        margin-left: 0.2vw;
+        color: @secondarycolor;
+      }
+    }
+    .name {
+      margin: 0 auto;
+      width: 80%;
+      font-size: 1.3rem;
+    }
   }
-  .name{ 
-     margin:0 auto;
-    width:80%;
-    font-size:1.3rem;
-   
-  }}
-  .description{
-    font-size:1.2rem;
+  .description {
+    font-size: 1.2rem;
     line-height: 1.8rem;
-    width:60%;
-    margin:0 auto;
-    margin-top:1vh;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 1vh;
   }
 }
 
 //***********************************************************COMMENTS
-.comment-form{
-  display:flex;
-  .btn{
-    font-size:.9rem;
-     background:@accentcolor;
-    border:none;
+.comment-form {
+  display: flex;
+  .btn {
+    font-size: 0.9rem;
+    background: @accentcolor;
+    border: none;
   }
-  .btn:hover{
-    background:@secondarycolor;
-   
+  .btn:hover {
+    background: @secondarycolor;
   }
- 
 }
- .no-comments{
-    height: 10vh;
-    background:rgb(240, 230, 230);
-    font-size:1.8rem;
-  }
-  .comments-container{
+.no-comments {
+  height: 10vh;
+  background: rgb(240, 230, 230);
+  font-size: 1.8rem;
+}
+.comments-container {
+  min-height: 20vh;
+  min-width: 100%;
+  border-top: 3px solid @secondarycolor;
+  border-bottom: 1px solid @secondarycolor;
+  max-height: 38vh;
+  overflow: hidden;
+  overflow-y: scroll;
 
-    min-height: 20vh;
-    min-width:100%;
-    border-top: 3px solid @secondarycolor;
-    border-bottom: 1px solid @secondarycolor;
-    max-height: 38vh;
-    overflow: hidden;
-    overflow-y: scroll;
-    
-    .comment-container{  
-        background:@maincolor;
-      width:100%;
-      display:flex;
+  .comment-container {
+    background: @maincolor;
+    width: 100%;
+    display: flex;
     flex-direction: column;
-  text-align: left;  
-  border: .1rem solid white;
-  border-radius: 2%;
+    text-align: left;
+    border: 0.1rem solid white;
+    border-radius: 2%;
   }
-  .target-comment{
-   display: flex;
-   justify-content: flex-end;
-    margin-right:1vw;
-    margin-top:.5vh;
-    .fa-reply{
-      margin-right:.5vw;
-      color:@secondarycolor;  
+  .target-comment {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1vw;
+    margin-top: 0.5vh;
+    .fa-reply {
+      margin-right: 0.5vw;
+      color: @secondarycolor;
     }
-    .fa-edit{
-      margin-right:.5vw;
-      color:@accentcolor;
+    .fa-edit {
+      margin-right: 0.5vw;
+      color: @accentcolor;
     }
-    .fa-edit:hover{
-      margin-right:.5vw;
-      color:@secondarycolor;
+    .fa-edit:hover {
+      margin-right: 0.5vw;
+      color: @secondarycolor;
     }
-    .fa-times{
-      margin-left:.5vw;
-      color:coral;
+    .fa-times {
+      margin-left: 0.5vw;
+      color: coral;
     }
-    
-    .fa-times:hover{
-      margin-left:.5vw;
-      color:tomato;
+
+    .fa-times:hover {
+      margin-left: 0.5vw;
+      color: tomato;
     }
-   
   }
-  .replies{
-  
-    background:white;
-  .reply{
-   
-    font-size:1.2rem;
-    min-height: 5vh;
-    border:1px solid @accentcolor;
-    .reply-username{
-       padding-left:4vw;
-       color:@secondarycolor;
-    }
-    .reply-comment{
-      padding-left:6vw;
-      
-    }
-    .sub-username{
-      padding-left:6vw;
-    }
-    .sub-comment{
-        padding-left:8vw;
+  .replies {
+    background: white;
+    .reply {
+      font-size: 1.2rem;
+      min-height: 5vh;
+      border: 1px solid @accentcolor;
+      .reply-username {
+        padding-left: 4vw;
+        color: @secondarycolor;
       }
-  }
-
-  }
-  .username{
-    font-size:1.6rem;
-    margin-bottom:.2vh;
-    padding-left:1vw;
-    color:@secondarycolor;
-  }
-  .comment{
-    font-size:1.3rem;
-    margin-bottom:1vh;
-    padding-left:3vw;
-  }
-  
-
-  }
-  .modal-content{
-    margin-top:20vh;
-  }
-    .modal-footer{
-      justify-content: center;
-      padding:0;
-  .btn{
-    width:100%;
-      background:@accentcolor;
-      border:none;
-    }
-    .btn:hover{
-      background:@secondarycolor;
- 
+      .reply-comment {
+        padding-left: 6vw;
+      }
+      .sub-username {
+        padding-left: 6vw;
+      }
+      .sub-comment {
+        padding-left: 8vw;
+      }
     }
   }
- 
+  .username {
+    font-size: 1.6rem;
+    margin-bottom: 0.2vh;
+    padding-left: 1vw;
+    color: @secondarycolor;
+  }
+  .comment {
+    font-size: 1.3rem;
+    margin-bottom: 1vh;
+    padding-left: 3vw;
+  }
+}
+.modal-content {
+  margin-top: 20vh;
+}
+.modal-footer {
+  justify-content: center;
+  padding: 0;
+  .btn {
+    width: 100%;
+    background: @accentcolor;
+    border: none;
+  }
+  .btn:hover {
+    background: @secondarycolor;
+  }
+}
+
 @maincolor : #EBE1CE;
 @secondarycolor: #677fa3;
 @accentcolor: #a8bdd6;

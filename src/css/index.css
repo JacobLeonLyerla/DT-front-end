@@ -403,7 +403,7 @@ p {
   margin-left: 1vw;
 }
 .details .header .username .user {
-  margin-left: .2vw;
+  margin-left: 0.2vw;
   color: #677fa3;
 }
 .details .header .name {
@@ -422,7 +422,7 @@ p {
   display: flex;
 }
 .comment-form .btn {
-  font-size: .9rem;
+  font-size: 0.9rem;
   background: #a8bdd6;
   border: none;
 }
@@ -449,33 +449,33 @@ p {
   display: flex;
   flex-direction: column;
   text-align: left;
-  border: .1rem solid white;
+  border: 0.1rem solid white;
   border-radius: 2%;
 }
 .comments-container .target-comment {
   display: flex;
   justify-content: flex-end;
   margin-right: 1vw;
-  margin-top: .5vh;
+  margin-top: 0.5vh;
 }
 .comments-container .target-comment .fa-reply {
-  margin-right: .5vw;
+  margin-right: 0.5vw;
   color: #677fa3;
 }
 .comments-container .target-comment .fa-edit {
-  margin-right: .5vw;
+  margin-right: 0.5vw;
   color: #a8bdd6;
 }
 .comments-container .target-comment .fa-edit:hover {
-  margin-right: .5vw;
+  margin-right: 0.5vw;
   color: #677fa3;
 }
 .comments-container .target-comment .fa-times {
-  margin-left: .5vw;
+  margin-left: 0.5vw;
   color: coral;
 }
 .comments-container .target-comment .fa-times:hover {
-  margin-left: .5vw;
+  margin-left: 0.5vw;
   color: tomato;
 }
 .comments-container .replies {
@@ -501,7 +501,7 @@ p {
 }
 .comments-container .username {
   font-size: 1.6rem;
-  margin-bottom: .2vh;
+  margin-bottom: 0.2vh;
   padding-left: 1vw;
   color: #677fa3;
 }
