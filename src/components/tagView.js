@@ -5,6 +5,8 @@ import imgs from "../assets/exportImgs.js";
 import { Link } from "react-router-dom";
 import Map from "./googleMaps";
 import Pictures from "./renderPictures.js";
+import Post from "./createNewPost";
+
 
 class TagView extends Component {
   state = {
@@ -115,7 +117,7 @@ class TagView extends Component {
             <th className="th">Tags</th>
           </tr>
         </thead>
-        <div className="table-items"><Button></Button></div>
+        <div className="table-items"><Link to="/dashboard/create"><Post/></Link></div>
         <div className="table-items">{this.userSubmissionTable()}</div>
       </Table>
     );
