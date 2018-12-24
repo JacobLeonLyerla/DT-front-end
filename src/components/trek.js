@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Details from "./tagDetails";
+
 import Pictures from "./renderPictures";
 import Map from "./googleMaps";
 import Comments from "./comments";
@@ -28,17 +30,10 @@ class Trek extends Component {
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         <Map />
-        <div>
-          <br />
-          {this.state.tag.user}
-          <br />
-          <br />
-          {this.state.tag.name}
-          <br />
-      
-          <br />
-          {this.state.tag.description}
-        </div>
+        <Details
+        tag={this.state.tag}
+        />
+    
         <Comments
           comments={this.state.tag.comments}
           setTags={this.setTags}
