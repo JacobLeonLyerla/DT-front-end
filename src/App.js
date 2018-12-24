@@ -14,6 +14,7 @@ import Trek from "./components/trek";
 import Tags from "./components/tags";
 import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
+import Post from "./components/createNewPost";
 class App extends Component {
   state = {
     user: "",
@@ -139,6 +140,11 @@ class App extends Component {
             exact
             path="/dashboard/trek/:id"
             render={props => <Trek {...props}   user={this.state.user} tagVar={this.state.tagVar} />}
+          />
+           <Route
+            exact
+            path="/dashboard/create/:id"
+            render={props => <Post {...props}   user={this.state.user} tagVar={this.state.tagVar} />}
           />
         </Row>
       </div>
