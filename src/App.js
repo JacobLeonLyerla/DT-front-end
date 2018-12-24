@@ -144,7 +144,7 @@ class App extends Component {
            <Route
             exact
             path="/dashboard/create/:id"
-            render={props => <Post {...props}   user={this.state.user} tagVar={this.state.tagVar} />}
+            render={props => <Post {...props} pictures={this.state.picture}  user={this.state.user} tagVar={this.state.tagVar} />}
           />
         </Row>
       </div>
