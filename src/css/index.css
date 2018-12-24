@@ -525,3 +525,6 @@ p {
 .modal-footer .btn:hover {
   background: #677fa3;
 }
+.checked {
+  background: rgba(149, 150, 149, 0.705);
+}
