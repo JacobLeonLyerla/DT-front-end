@@ -73,7 +73,7 @@ componentDidMount(){
                   /></Fragment>)}
         <div className="reply-username">{reply.username}</div>
             <div className="reply-comment">{reply.comment}</div></div>
-
+            <SubReplies  replies={reply.replies}/>
              </Fragment>))
 
            }
