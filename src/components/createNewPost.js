@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button,Col,Row } from "reactstrap";
+import { Button,Col,Row,Badge  } from "reactstrap";
 import axios from "axios";
 import {Link} from "react-router-dom"
 import imgs from "../assets/exportImgs.js" 
@@ -30,7 +30,7 @@ class Post extends Component {
     if(arr.length >0){
       return arr.map(img =>{
    
-      return(<Col data-ca="ca" onClick={()=>this.test(img)} style={{backgroundImage : `url(${imgs[img.replace(/-/g, '').toLowerCase()]})`}} className={`tag-img tags`} md="6">
+      return(<Col data-ca="ca" onClick={()=>this.filterTags(img)} style={{backgroundImage : `url(${imgs[img.replace(/-/g, '').toLowerCase()]})`}} className={`tag-img tags`} md="6">
       
           <div className={`cover ${this.checked(img)}`}>
             {" "}
@@ -48,11 +48,10 @@ checked =(id)=>{
     
     });
     if(filteredArr.length < this.state.tags.length){
-        console.log("check")
         return "checked"
     }
 }
-test(id){
+filterTags(id){
     let arr = this.state.tags
 
     let filteredArr = arr.filter(function(value, index, arr){
@@ -66,11 +65,19 @@ test(id){
     
 this.setState({tags:filteredArr})
 }
+renderPickedTags =()=>{
+    if(this.state.tags.length >0){
+        return this.state.tags.map(tag=>(
+        <Badge >{tag}</Badge>
+        ))
+    }
+}
   render() {
-      console.log(this.state.tags)
     return (
       
           <Col md={`${10 + this.props.tagVar}`} className="tags-container">
+          <div className="tag-badge">
+          {this.renderPickedTags()}</div>
           <Row>
    {this.renderPictures()}</Row>
    
