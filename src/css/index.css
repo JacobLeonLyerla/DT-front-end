@@ -381,13 +381,26 @@ p {
 }
 .details {
   min-height: 15vh;
+  max-height: 30vh;
+  padding-bottom: 3vh;
 }
-.details .username {
-  color: white;
-}
-.details .name {
-  font-size: 1.3rem;
+.details .header {
+  justify-content: space-between;
   border-bottom: 1px solid #677fa3;
+}
+.details .header .username {
+  display: flex;
+  text-align: left;
+  margin-left: 1vw;
+}
+.details .header .username .user {
+  margin-left: .2vw;
+  color: #677fa3;
+}
+.details .header .name {
+  margin: 0 auto;
+  width: 80%;
+  font-size: 1.3rem;
 }
 .details .description {
   font-size: 1.2rem;

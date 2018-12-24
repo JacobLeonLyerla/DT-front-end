@@ -419,14 +419,30 @@ p {
 //**********************************************************Details
 .details{
   min-height: 15vh;
-  background: 
+  max-height: 30vh;
+  padding-bottom:3vh;
+
+  
+  .header{
+   
+    justify-content: space-between;
+    border-bottom:1px solid @secondarycolor;
   .username{
-    color:white;
+    display: flex;
+text-align: left;
+margin-left:1vw;
+
+.user{
+margin-left:.2vw;
+color:@secondarycolor;
+}
   }
-  .name{
+  .name{ 
+     margin:0 auto;
+    width:80%;
     font-size:1.3rem;
-   border-bottom:1px solid @secondarycolor;
-  }
+   
+  }}
   .description{
     font-size:1.2rem;
     line-height: 1.8rem;
