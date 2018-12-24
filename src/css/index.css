@@ -379,6 +379,23 @@ p {
 .table .table-items .tag {
   margin: 1%;
 }
+.details {
+  min-height: 15vh;
+}
+.details .username {
+  color: white;
+}
+.details .name {
+  font-size: 1.3rem;
+  border-bottom: 1px solid #677fa3;
+}
+.details .description {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1vh;
+}
 .comment-form {
   display: flex;
 }
