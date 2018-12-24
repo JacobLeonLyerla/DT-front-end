@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Table, Row, Col } from "reactstrap";
+import { Table, Row, Col,Button } from "reactstrap";
 import imgs from "../assets/exportImgs.js";
 import { Link } from "react-router-dom";
 import Map from "./googleMaps";
@@ -115,6 +115,7 @@ class TagView extends Component {
             <th className="th">Tags</th>
           </tr>
         </thead>
+        <div className="table-items"><Button></Button></div>
         <div className="table-items">{this.userSubmissionTable()}</div>
       </Table>
     );
