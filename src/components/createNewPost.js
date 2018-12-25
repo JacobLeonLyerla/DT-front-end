@@ -5,8 +5,13 @@ import {Link} from "react-router-dom"
 import imgs from "../assets/exportImgs.js" 
 class Post extends Component {
   state = {
-    test: {},
-    tags:[]
+    tags:[],
+    name:"",
+    user:"",
+    country:"",
+    region:"",
+    city:"",
+    description:"",
   };
   componentDidMount() {
     let { id } = this.props.match.params;
