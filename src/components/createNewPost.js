@@ -84,7 +84,7 @@ return(<Form className="create-form">
           <div className="tag-badge">
           {this.renderPickedTags()}</div>
           {this.Form()}
-          
+          <Button className="create-button">Post New Tag</Button>
           <Row>
    {this.renderPictures()}</Row>
    
