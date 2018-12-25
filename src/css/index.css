@@ -549,7 +549,11 @@ p {
 }
 .create-form {
   min-height: 40vh;
-  background: rebeccapurple;
+  padding: 3%;
+  background: #EBE1CE;
+}
+.create-form .form-control {
+  border: none;
 }
 .create-form .create-inputmid {
   width: 50vw;
