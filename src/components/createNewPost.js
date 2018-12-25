@@ -79,6 +79,21 @@ renderPickedTags =()=>{
 }
 Form =()=>{
 return(<Form className="create-form">
+<Input/>
+<br/>
+<Row className="create-inputmid">
+<Col md="4">
+<Input/>
+</Col>
+<Col md="4">
+<Input/>
+</Col>
+<Col md="4">
+<Input/>
+</Col>
+</Row>
+<br/>
+<Input/>
 
 </Form>)
 }
