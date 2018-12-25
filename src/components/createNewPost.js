@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button,Col,Row,Badge,Form,Input  } from "reactstrap";
+import { Button,Col,Row,Badge,Form,Input,Label  } from "reactstrap";
 import axios from "axios";
 import {Link} from "react-router-dom"
 import imgs from "../assets/exportImgs.js" 
@@ -81,6 +81,12 @@ Form =()=>{
 return(<Form className="create-form">
 <Input/>
 <br/>
+
+
+<Input
+type="textarea"
+style={{height:"30vh"}}
+/><br/>
 <Row className="create-inputmid">
 <Col md="4">
 <Input/>
@@ -92,9 +98,6 @@ return(<Form className="create-form">
 <Input/>
 </Col>
 </Row>
-<br/>
-<Input/>
-
 </Form>)
 }
   render() {
