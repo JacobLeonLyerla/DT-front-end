@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button,Col,Row,Badge  } from "reactstrap";
+import { Button,Col,Row,Badge,Form,Input  } from "reactstrap";
 import axios from "axios";
 import {Link} from "react-router-dom"
 import imgs from "../assets/exportImgs.js" 
@@ -72,12 +72,19 @@ renderPickedTags =()=>{
         ))
     }
 }
+Form =()=>{
+return(<Form className="create-form">
+
+</Form>)
+}
   render() {
     return (
       
           <Col md={`${10 + this.props.tagVar}`} className="tags-container">
           <div className="tag-badge">
           {this.renderPickedTags()}</div>
+          {this.Form()}
+          
           <Row>
    {this.renderPictures()}</Row>
    
