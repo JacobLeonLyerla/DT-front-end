@@ -250,6 +250,7 @@ p {
 .tags-container .cover {
   width: 100%;
   color: rgba(15, 15, 15, 0);
+  cursor: pointer;
 }
 .tags-container .cover:hover {
   background: rgba(15, 15, 15, 0.342);
@@ -532,5 +533,6 @@ p {
   width: 20%;
 }
 .tag-badge .badge {
+  cursor: pointer;
   background: #677fa3;
 }
