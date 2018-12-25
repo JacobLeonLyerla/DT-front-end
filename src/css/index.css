@@ -531,12 +531,23 @@ p {
 }
 .tag-badge {
   width: 20%;
+  min-height: 3.2vh;
 }
 .tag-badge .badge {
   cursor: pointer;
   background: #677fa3;
 }
+.create-button {
+  width: 100%;
+  background: #a8bdd6;
+  border: none;
+}
+.create-button:hover {
+  width: 100%;
+  background: #677fa3;
+  border: none;
+}
 .create-form {
-  min-height: 30vh;
+  min-height: 20vh;
   background: rebeccapurple;
 }
