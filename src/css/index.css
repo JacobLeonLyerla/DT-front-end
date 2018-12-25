@@ -536,3 +536,7 @@ p {
   cursor: pointer;
   background: #677fa3;
 }
+.create-form {
+  min-height: 30vh;
+  background: rebeccapurple;
+}
