@@ -79,23 +79,32 @@ renderPickedTags =()=>{
 }
 Form =()=>{
 return(<Form className="create-form">
-<Input/>
+<div className="text-left" >Title</div>
+<Input
+id="name"
+/>
 <br/>
 
-
+<div className="text-left" >Description</div>
 <Input
 type="textarea"
 style={{height:"30vh"}}
 /><br/>
 <Row className="create-inputmid">
 <Col md="4">
-<Input/>
+<Input
+placeholder="Country"
+/>
 </Col>
 <Col md="4">
-<Input/>
+<Input
+placeholder="Region"
+/>
 </Col>
 <Col md="4">
-<Input/>
+<Input
+placeholder="City"
+/>
 </Col>
 </Row>
 </Form>)
