@@ -68,7 +68,7 @@ this.setState({tags:filteredArr})
 renderPickedTags =()=>{
     if(this.state.tags.length >0){
         return this.state.tags.map(tag=>(
-        <Badge >{tag}</Badge>
+        <Badge onClick={()=>this.filterTags(tag)}>{tag}</Badge>
         ))
     }
 }
