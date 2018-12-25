@@ -552,6 +552,9 @@ p {
   padding: 3%;
   background: #EBE1CE;
 }
+.create-form .text-left {
+  letter-spacing: .2rem;
+}
 .create-form .form-control {
   border: none;
 }
