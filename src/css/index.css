@@ -551,3 +551,9 @@ p {
   min-height: 40vh;
   background: rebeccapurple;
 }
+.create-form .create-inputmid {
+  width: 50vw;
+  height: 5vh;
+  overflow: none;
+  overflow-y: hidden;
+}
