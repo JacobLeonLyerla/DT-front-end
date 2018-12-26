@@ -94,7 +94,7 @@ class Post extends Component {
     return (
       <Form className="create-form">
         <UncontrolledDropdown direction="right">
-              <DropdownToggle className={this.props.btn} caret>
+              <DropdownToggle className={this.props.btn}  color="primary" caret>
                 Tags
               </DropdownToggle>
               <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
