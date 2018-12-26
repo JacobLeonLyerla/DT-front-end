@@ -95,7 +95,7 @@ class Post extends Component {
   Form = () => {
     return (
       <Form className="create-form">
-        <UncontrolledDropdown direction="right">
+        <UncontrolledDropdown direction="left">
               <DropdownToggle className={this.props.btn}  color="primary" caret>
                 Tags
               </DropdownToggle>
@@ -105,11 +105,11 @@ class Post extends Component {
        
         <Input id="name" />
          <div className="tag-badge">{this.renderPickedTags()}</div>
-        <br />
+       
 
         <div className="text-left">Description</div>
         <Input type="textarea" style={{ height: "30vh" }} />
-        <br />
+     <br />
         <Row className="create-inputmid">
           <Col md="4">
             <Input placeholder="Country" />
@@ -121,7 +121,7 @@ class Post extends Component {
             <Input placeholder="City" />
           </Col>
         </Row>
-      
+          <br />
       </Form>
     );
   };
