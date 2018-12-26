@@ -19,11 +19,10 @@ class Post extends Component {
   }
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
-      return this.props.pictures.map(cata => (
-        <Link to={`/dashboard/${cata.name}`} style={{ textDecoration: "none" }}>
+      return this.props.pictures.map(cata => (<Fragment>
+        {console.log(cata.name)}
           <DropdownItem>{cata.name}</DropdownItem>
-        </Link>
-      ));
+     </Fragment> ));
     }
   };
   fetchTags = () => {};
@@ -103,8 +102,8 @@ class Post extends Component {
         <br />
         <Row className="create-inputmid">
         <Col md="3">
-        <UncontrolledDropdown direction="right">
-              <DropdownToggle className={this.props.btn} caret>
+        <UncontrolledDropdown direction="left">
+              <DropdownToggle  caret>
                 Catagories
               </DropdownToggle>
               <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
