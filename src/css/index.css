@@ -560,7 +560,7 @@ p {
 }
 .create-form .create-inputmid {
   width: 50vw;
-  height: 5vh;
+  min-height: 5vh;
   overflow: none;
   overflow-y: hidden;
 }
