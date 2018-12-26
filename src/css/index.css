@@ -583,6 +583,9 @@ p {
   background: #677fa3;
   border: none;
 }
+.create-form .dropdown-check {
+  color: #a8bdd6;
+}
 .create-form .create-inputmid {
   width: 50vw;
   min-height: 5vh;
