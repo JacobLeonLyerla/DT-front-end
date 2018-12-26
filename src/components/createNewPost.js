@@ -19,9 +19,8 @@ class Post extends Component {
   }
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
-      return this.props.pictures.map(cata => (<Fragment>
-        {console.log(cata)}
-          <DropdownItem>{cata.name}</DropdownItem>
+      return this.props.pictures.map(tag => (<Fragment>
+          <DropdownItem  ><div onClick={() => this.filterTags(tag.name)}>{tag.name}</div></DropdownItem>
       </Fragment>));
     }
   };
@@ -63,11 +62,11 @@ class Post extends Component {
       });
     }
   };
-  checked = id => {
+  checked = (id,type) => {
     let filteredArr = this.state.tags.filter(function(value, index, arr) {
       return value !== id;
     });
-    if (filteredArr.length < this.state.tags.length) {
+    if (filteredArr.length < this.state.tags.length && type !== "dropdown-check") {
       return "checked";
     }
   };
