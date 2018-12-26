@@ -562,8 +562,26 @@ p {
 .create-form .dropdown {
   text-align: left;
 }
+.create-form .dropdown-menu {
+  max-height: 18vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
 .create-form .btn {
-  font-size: 0.6rem;
+  font-size: .6rem ;
+  background: #a8bdd6;
+  border: none;
+}
+.create-form .btn:hover {
+  background: #677fa3;
+}
+.create-form .btn:focus {
+  background: #677fa3;
+  border: none;
+}
+.create-form .btn:link {
+  background: #677fa3;
+  border: none;
 }
 .create-form .create-inputmid {
   width: 50vw;

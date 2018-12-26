@@ -605,9 +605,29 @@ p {
     .dropdown{
       text-align: left;
     }
-    .btn{
-      font-size:.6rem 
+    .dropdown-menu{
+      max-height: 18vh;
+      overflow: hidden;
+      overflow-y: scroll;
     }
+    .btn{
+      font-size:.6rem ;
+    background:@accentcolor;
+    border: none;
+      }
+      .btn:hover{
+        background :@secondarycolor;
+      }
+      .btn:focus{
+        background :@secondarycolor;
+        border:none;
+ 
+      }
+      .btn:link{
+        background :@secondarycolor;
+        border:none;
+ 
+      }
     .create-inputmid{
       width:50vw;
       min-height:5vh;
