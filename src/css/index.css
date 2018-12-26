@@ -549,7 +549,8 @@ p {
 }
 .create-form {
   min-height: 40vh;
-  padding: 3%;
+  padding-right: 3%;
+  padding-left: 3%;
   background: #EBE1CE;
 }
 .create-form .text-left {
@@ -557,6 +558,12 @@ p {
 }
 .create-form .form-control {
   border: none;
+}
+.create-form .dropdown {
+  text-align: left;
+}
+.create-form .btn {
+  font-size: 0.6rem;
 }
 .create-form .create-inputmid {
   width: 50vw;
