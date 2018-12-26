@@ -102,7 +102,9 @@ class Post extends Component {
               <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
             </UncontrolledDropdown>
         <div className="text-left">Title</div>
+       
         <Input id="name" />
+         <div className="tag-badge">{this.renderPickedTags()}</div>
         <br />
 
         <div className="text-left">Description</div>
@@ -126,7 +128,7 @@ class Post extends Component {
   render() {
     return (
       <Col md={`${10 + this.props.tagVar}`} className="tags-container">
-        <div className="tag-badge">{this.renderPickedTags()}</div>
+  
         {this.Form()}
         <Button className="create-button">Post New Tag</Button>
         <Row>{this.renderPictures()}</Row>
