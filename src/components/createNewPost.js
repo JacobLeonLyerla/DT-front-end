@@ -93,7 +93,7 @@ class Post extends Component {
   Form = () => {
     return (
       <Form className="create-form">
-        <UncontrolledDropdown direction="left">
+        <UncontrolledDropdown direction="right">
               <DropdownToggle className={this.props.btn} caret>
                 Tags
               </DropdownToggle>
