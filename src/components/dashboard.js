@@ -67,7 +67,7 @@ class Dashboard extends Component {
             </Link>
 
             <UncontrolledDropdown direction="right">
-              <DropdownToggle className={this.props.btn} caret>
+              <DropdownToggle  className={this.props.btn} color="primary" caret>
                 Catagories
               </DropdownToggle>
               <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
