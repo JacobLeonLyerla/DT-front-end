@@ -20,9 +20,9 @@ class Post extends Component {
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
       return this.props.pictures.map(cata => (<Fragment>
-        {console.log(cata.name)}
+        {console.log(cata)}
           <DropdownItem>{cata.name}</DropdownItem>
-     </Fragment> ));
+      </Fragment>));
     }
   };
   fetchTags = () => {};
@@ -93,6 +93,7 @@ class Post extends Component {
   Form = () => {
     return (
       <Form className="create-form">
+      
         <div className="text-left">Title</div>
         <Input id="name" />
         <br />
@@ -101,24 +102,22 @@ class Post extends Component {
         <Input type="textarea" style={{ height: "30vh" }} />
         <br />
         <Row className="create-inputmid">
-        <Col md="3">
+          <Col md="4">
+            <Input placeholder="Country" />
+          </Col>
+          <Col md="4">
+            <Input placeholder="Region" />
+          </Col>
+          <Col md="4">
+            <Input placeholder="City" />
+          </Col>
+        </Row>
         <UncontrolledDropdown direction="left">
-              <DropdownToggle  caret>
+              <DropdownToggle className={this.props.btn} caret>
                 Catagories
               </DropdownToggle>
               <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
             </UncontrolledDropdown>
-          </Col>
-          <Col md="3">
-            <Input placeholder="Country" />
-          </Col>
-          <Col md="3">
-            <Input placeholder="Region" />
-          </Col>
-          <Col md="3">
-            <Input placeholder="City" />
-          </Col>
-        </Row>
       </Form>
     );
   };
