@@ -26,6 +26,7 @@ class EditComment extends Component {
       modal: !this.state.modal
     });
   }
+  
   handleEditComment = () => {
     console.log(this.props);
     let edit = {};

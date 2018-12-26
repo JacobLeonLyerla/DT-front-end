@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button, Col, Row, Badge, Form, Input, Label } from "reactstrap";
+import { Button, Col, Row, Badge, Form, Input, DropdownItem } from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import imgs from "../assets/exportImgs.js";
@@ -17,6 +17,15 @@ class Post extends Component {
     let { id } = this.props.match.params;
     this.fetchTags();
   }
+  renderCatagoreis = () => {
+    if (this.props.pictures.length > 0) {
+      return this.props.pictures.map(cata => (
+        <Link to={`/dashboard/${cata.name}`} style={{ textDecoration: "none" }}>
+          <DropdownItem>{cata.name}</DropdownItem>
+        </Link>
+      ));
+    }
+  };
   fetchTags = () => {};
   renderPictures = () => {
     let arr = [];
