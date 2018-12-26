@@ -20,7 +20,7 @@ class Post extends Component {
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
       return this.props.pictures.map(tag => (<Fragment>
-          <DropdownItem  ><div onClick={() => this.filterTags(tag.name)}>{tag.name}</div></DropdownItem>
+          <DropdownItem className={`${this.checked(tag.name,"dropdown-check")}`}  onClick={() => this.filterTags(tag.name)}>{tag.name}</DropdownItem>
       </Fragment>));
     }
   };
@@ -68,6 +68,9 @@ class Post extends Component {
     });
     if (filteredArr.length < this.state.tags.length && type !== "dropdown-check") {
       return "checked";
+    }
+    if(filteredArr.length < this.state.tags.length && type === "dropdown-check"){
+      return"dropdown-check"
     }
   };
   filterTags(id) {
