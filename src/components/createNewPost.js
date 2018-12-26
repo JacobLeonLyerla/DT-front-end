@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button, Col, Row, Badge, Form, Input, DropdownItem } from "reactstrap";
+import { Button, Col, Row, Badge, Form, Input, DropdownItem,UncontrolledDropdown,DropdownToggle,DropdownMenu } from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import imgs from "../assets/exportImgs.js";
@@ -102,13 +102,21 @@ class Post extends Component {
         <Input type="textarea" style={{ height: "30vh" }} />
         <br />
         <Row className="create-inputmid">
-          <Col md="4">
+        <Col md="3">
+        <UncontrolledDropdown direction="right">
+              <DropdownToggle className={this.props.btn} caret>
+                Catagories
+              </DropdownToggle>
+              <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
+            </UncontrolledDropdown>
+          </Col>
+          <Col md="3">
             <Input placeholder="Country" />
           </Col>
-          <Col md="4">
+          <Col md="3">
             <Input placeholder="Region" />
           </Col>
-          <Col md="4">
+          <Col md="3">
             <Input placeholder="City" />
           </Col>
         </Row>
