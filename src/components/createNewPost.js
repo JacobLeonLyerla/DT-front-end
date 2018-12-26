@@ -93,7 +93,12 @@ class Post extends Component {
   Form = () => {
     return (
       <Form className="create-form">
-      
+        <UncontrolledDropdown direction="left">
+              <DropdownToggle className={this.props.btn} caret>
+                Tags
+              </DropdownToggle>
+              <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
+            </UncontrolledDropdown>
         <div className="text-left">Title</div>
         <Input id="name" />
         <br />
@@ -112,12 +117,7 @@ class Post extends Component {
             <Input placeholder="City" />
           </Col>
         </Row>
-        <UncontrolledDropdown direction="left">
-              <DropdownToggle className={this.props.btn} caret>
-                Catagories
-              </DropdownToggle>
-              <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
-            </UncontrolledDropdown>
+      
       </Form>
     );
   };
