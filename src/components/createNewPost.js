@@ -115,6 +115,18 @@ post.tag =this.state.tags
     axios
       .post('https://dt-back-end.herokuapp.com/tags', post)
       .then(response => {
+
+        let postId ={}
+        postId.post = response.data._id
+        console.log(this.props.user._id)
+        axios
+        .put(`https://dt-back-end.herokuapp.com/users/${this.props.user._id}`, post)
+        .then(response =>{
+          console.log(response.data)
+        }).catch(err=>{
+          console.log(err)
+        })
+
         this.setState({tags: [],
         name: "",
         user: "",
@@ -123,7 +135,8 @@ post.tag =this.state.tags
         city: "",
         description: ""
         })
-      })
+       
+      })     
       .catch(err => {
         console.log(err);
       });
