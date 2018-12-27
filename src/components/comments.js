@@ -15,11 +15,9 @@ class Comments extends Component {
     axios
       .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
       .then(response => {
-        console.log(response.data);
         this.setState({ comments: response.data.comments });
       })
       .catch(err => {
-        console.log(err);
       });
   };
   replyflag = type => {
@@ -44,6 +42,7 @@ class Comments extends Component {
               {comment.username !== this.props.user.username ? (
                 <Fragment>
                   <Reply
+                  tag = {this.props.tag}
                     reply={this.state.reply}
                     replyflag={this.replyflag}
                     reply={comment.replyTo}
@@ -53,6 +52,7 @@ class Comments extends Component {
                     user={this.props.user}
                     renderComments={this.renderComments}
                     setupComments={this.setupComments}
+                    setTags={this.props.setTags}
                     propsId={this.props.tagId}
                   />
                   <div className="username">{comment.username}</div>
@@ -99,27 +99,11 @@ class Comments extends Component {
       comment.comment = this.state.comment;
       comment.username = this.props.user.username;
     }
-    console.log(comment);
     axios
 
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
-        let comment = {};
-        comment.comments = this.props.comments;
-        comment.comments.push(response.data._id);
-        console.log(comment);
-        console.log(this.props.tagId);
-        axios
-          .put(
-            `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`,
-            comment
-          )
-          .then(response => {
-            console.log(response.data);
-            this.setState({ comment: "" });
-            this.setupComments(this.props.tagId);
-          })
-          .catch(err => {});
+    
       })
       .catch(err => {});
   };
