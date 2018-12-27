@@ -43,6 +43,7 @@ class App extends Component {
     axios
       .get(`https://dt-back-end.herokuapp.com/users/${id}`, requestOptions)
       .then(response => {
+        console.log(response.data)
         this.setState({ user: response.data });
       })
       .catch(err => {});
