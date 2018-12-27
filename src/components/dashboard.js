@@ -25,24 +25,13 @@ class Dashboard extends Component {
   };
   componentDidMount = event => {
     if (this.props.user === "") {
-      this.props.loadUser();
+      this.props.loadUser(); 
+  
     }
-    const token = localStorage.getItem("token");
 
-    const authToken = `${token}`;
-
-    const requestOptions = {
-      headers: {
-        Authorization: authToken
-      }
-    };
-    axios
-      .get("https://dt-back-end.herokuapp.com/users", requestOptions)
-      .then(response => {
-        this.setState({ users: response.data });
-      })
-      .catch(err => {});
   };
+
+
   render() {
     return (
       <Col md={`${1 + this.props.dashboardVar}`}>
@@ -56,7 +45,9 @@ class Dashboard extends Component {
               className={this.props.link}
               to="/userinfo"
               style={{ textDecoration: "none" }}
-            >{this.props.user !== undefined ?(<Fragment>{(this.props.user.unreadComment >0)?(<Fragment>{`Post ${this.props.user.unreadComment}`}</Fragment>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
+            >
+            {console.log(this.props.likes)}
+            {this.props.user !== undefined ?(<Fragment>{(this.props.likes >0)?(<Fragment>{`Post ${this.props.likes}`}</Fragment>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
              
             </Link>
             <Link
