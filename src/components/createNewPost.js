@@ -97,14 +97,19 @@ class Post extends Component {
   };
   handleSubmit = () => {
     let post = {};
-    if(this.state.description !=="" && this.state.name !== "")
+    console.log(this.state)
+    if(this.state.description !=="" && this.state.name !== "" && this.state.tags.length >0){
+post.user = this.props.user.username
+post.tag =this.state.tags 
     post.description = this.state.description;
     post.name = this.state.name
     post.city = this.state.city
     post.region =this.state.region
-    post.counry = this.state.country
+    post.country = this.state.country 
+    }
+    console.log(post)
     axios
-      .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, post)
+      .put('https://dt-back-end.herokuapp.com/tags', post)
       .then(response => {
         console.log(response.data);
 
@@ -147,11 +152,12 @@ class Post extends Component {
     );
   };
   render() {
+
     return (
       <Col md={`${10 + this.props.tagVar}`} className="tags-container">
   
         {this.Form()}
-        <Button className="create-button">Post New Tag</Button>
+        <Button onClick={()=>this.handleSubmit()} className="create-button">Post New Tag</Button>
         <Row>{this.renderPictures()}</Row>
       </Col>
     );
