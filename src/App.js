@@ -53,7 +53,7 @@ class App extends Component {
         count += like.unreadLike
         
       })
-console.log(count)
+this.setState({count:count,post:response.data.post})
       })
      
       .catch(err => {});
