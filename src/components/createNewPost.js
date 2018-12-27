@@ -101,7 +101,6 @@ class Post extends Component {
   };
   handleSubmit = () => {
     let post = {};
-    console.log(this.state)
     if(this.state.description !=="" && this.state.name !== "" && this.state.tags.length >0){
 post.user = this.props.user.username
 post.tag =this.state.tags 
@@ -111,7 +110,6 @@ post.tag =this.state.tags
     post.region =this.state.region
     post.country = this.state.country 
     }
-    console.log(post)
     axios
       .post('https://dt-back-end.herokuapp.com/tags', post)
       .then(response => {
@@ -119,13 +117,10 @@ post.tag =this.state.tags
         let postId ={}
         postId.post = this.props.user.post
         postId.post.push(response.data._id)
-        console.log(postId)
         axios
         .put(`https://dt-back-end.herokuapp.com/users/${this.props.user._id}`, postId)
         .then(response =>{
-          console.log(response.data)
         }).catch(err=>{
-          console.log(err)
         })
 
         this.setState({tags: [],
@@ -139,7 +134,6 @@ post.tag =this.state.tags
        
       })     
       .catch(err => {
-        console.log(err);
       });
   };
   Form = () => {

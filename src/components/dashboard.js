@@ -58,7 +58,7 @@ class Dashboard extends Component {
               to="/userinfo"
               style={{ textDecoration: "none" }}
             >
-              notifications
+              Post
             </Link>
             <Link
               className={this.props.link}
