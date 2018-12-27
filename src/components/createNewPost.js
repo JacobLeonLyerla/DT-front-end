@@ -95,6 +95,10 @@ class Post extends Component {
       ));
     }
   };
+  
+  handleInput = input => {
+    this.setState({ [input.target.name]: input.target.value });
+  };
   handleSubmit = () => {
     let post = {};
     console.log(this.state)
@@ -109,7 +113,7 @@ post.tag =this.state.tags
     }
     console.log(post)
     axios
-      .put('https://dt-back-end.herokuapp.com/tags', post)
+      .post('https://dt-back-end.herokuapp.com/tags', post)
       .then(response => {
         console.log(response.data);
 
@@ -129,22 +133,42 @@ post.tag =this.state.tags
             </UncontrolledDropdown>
         <div className="text-left">Title</div>
        
-        <Input id="name" />
+        <Input     name="name"
+              value={this.state.name}
+              onChange={this.handleInput}
+  
+        />
          <div className="tag-badge">{this.renderPickedTags()}</div>
        
 
         <div className="text-left">Description</div>
-        <Input type="textarea" style={{ height: "30vh" }} />
+        <Input type="textarea" style={{ height: "30vh" }} 
+         name="description"
+         value={this.state.description}
+         onChange={this.handleInput}
+        />
      <br />
         <Row className="create-inputmid">
           <Col md="4">
-            <Input placeholder="Country" />
+            <Input placeholder="Country" 
+             name="country"
+             value={this.state.country}
+             onChange={this.handleInput}
+            />
           </Col>
           <Col md="4">
-            <Input placeholder="Region" />
+            <Input placeholder="Region" 
+             name="region"
+             value={this.state.region}
+             onChange={this.handleInput}
+            />
           </Col>
           <Col md="4">
-            <Input placeholder="City" />
+            <Input placeholder="City" 
+             name="city"
+             value={this.state.city}
+             onChange={this.handleInput}
+            />
           </Col>
         </Row>
           <br />
