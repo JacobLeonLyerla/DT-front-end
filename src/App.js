@@ -24,7 +24,9 @@ class App extends Component {
     buttonClass: "btn",
     linkClass: "nav-links",
     logo: logo,
-    picture: {}
+    picture: {},
+    count:0,
+    post:[]
   };
   componentDidMount() {
     this.loadUser();
@@ -45,7 +47,15 @@ class App extends Component {
       .then(response => {
         console.log(response.data)
         this.setState({ user: response.data });
+        let count = 0 ;
+        response.data.post.forEach(like => {
+        count += like.unreadComment
+        count += like.unreadLike
+        
       })
+console.log(count)
+      })
+     
       .catch(err => {});
   };
 
@@ -109,6 +119,8 @@ class App extends Component {
             path="/dashboard"
             render={props => (
               <Dashboard
+                likes={this.state.count}
+                post={this.state.post}
                 user={this.state.user}
                 loadUser={this.loadUser}
                 pictures={this.state.picture}
