@@ -34,6 +34,7 @@ class Trek extends Component {
         <Comments
           comments={this.state.tag.comments}
           setTags={this.setTags}
+          tag={this.state.tag}
           tagId={this.state.tag._id}
           user={this.props.user}
         />
