@@ -103,7 +103,27 @@ class Comments extends Component {
 
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
-    
+        let comment = {};
+        comment.comments = this.props.comments;
+        comment.comments.push(response.data._id);
+       let unread;
+       if(this.props.tag.user!==this.props.user.username){
+          unread= this.props.tag.unreadComment +1
+       }else{
+         unread = this.props.tage.unreadComment
+       }
+        comment.unreadComment = unread
+        axios
+          .put(
+            `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`,
+            comment
+          )
+          .then(response => {
+            this.setState({ comment: "" });
+            this.setupComments(this.props.tagId);
+            this.props.setTags(this.props.tagId)
+          })
+          .catch(err => {});
       })
       .catch(err => {});
   };
