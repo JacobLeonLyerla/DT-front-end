@@ -44,6 +44,7 @@ class Dashboard extends Component {
       .catch(err => {});
   };
   render() {
+    console.log(this.props)
     return (
       <Col md={`${1 + this.props.dashboardVar}`}>
         <div className="dashboard">
