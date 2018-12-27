@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 class SubReply extends Component {
   renderReplies() {
-      console.log("here")
     if (this.props.replies !== undefined) {
       return this.props.replies.map(reply => (
         <Fragment>
