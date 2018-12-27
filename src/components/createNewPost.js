@@ -4,6 +4,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import imgs from "../assets/exportImgs.js";
 class Post extends Component {
+  
+  
+  
   state = {
     tags: [],
     name: "",
@@ -91,6 +94,24 @@ class Post extends Component {
         <Badge onClick={() => this.filterTags(tag)}>{tag}</Badge>
       ));
     }
+  };
+  handleSubmit = () => {
+    let post = {};
+    if(this.state.description !=="" && this.state.name !== "")
+    post.description = this.state.description;
+    post.name = this.state.name
+    post.city = this.state.city
+    post.region =this.state.region
+    post.counry = this.state.country
+    axios
+      .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, post)
+      .then(response => {
+        console.log(response.data);
+
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   Form = () => {
     return (
