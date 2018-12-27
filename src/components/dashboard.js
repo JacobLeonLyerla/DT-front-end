@@ -47,7 +47,7 @@ class Dashboard extends Component {
               style={{ textDecoration: "none" }}
             >
             {console.log(this.props.likes)}
-            {this.props.user !== undefined ?(<Fragment>{(this.props.likes >0)?(<Fragment>{`Post ${this.props.likes}`}</Fragment>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
+    {this.props.user !== undefined ?(<Fragment>{(this.props.likes >0)?(<div style={{display:"flex",justifyContent:"center"}}>Post <div style={{color:"coral",marginLeft:".4vw"}}>( {this.props.likes} )</div></div>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
              
             </Link>
             <Link
