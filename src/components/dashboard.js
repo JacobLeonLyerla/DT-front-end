@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,Fragment } from "react";
 import {
   Col,
   Navbar,
@@ -56,8 +56,8 @@ class Dashboard extends Component {
               className={this.props.link}
               to="/userinfo"
               style={{ textDecoration: "none" }}
-            >
-              Post
+            >{this.props.user !== undefined ?(<Fragment>{(this.props.user.unreadComment >0)?(<Fragment>{`Post ${this.props.user.unreadComment}`}</Fragment>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
+             
             </Link>
             <Link
               className={this.props.link}
