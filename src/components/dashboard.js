@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Dashboard extends Component {
+  
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
       return this.props.pictures.map(cata => (
