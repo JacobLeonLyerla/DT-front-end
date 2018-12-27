@@ -117,10 +117,11 @@ post.tag =this.state.tags
       .then(response => {
 
         let postId ={}
-        postId.post = response.data._id
-        console.log(this.props.user._id)
+        postId.post = this.props.user.post
+        postId.post.push(response.data._id)
+        console.log(postId)
         axios
-        .put(`https://dt-back-end.herokuapp.com/users/${this.props.user._id}`, post)
+        .put(`https://dt-back-end.herokuapp.com/users/${this.props.user._id}`, postId)
         .then(response =>{
           console.log(response.data)
         }).catch(err=>{
