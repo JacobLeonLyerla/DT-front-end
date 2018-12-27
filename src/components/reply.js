@@ -70,11 +70,9 @@ class Reply extends Component {
     reply.username = this.props.user.username;
     reply.comment = this.state.reply;
     reply.replyTo = this.props.id;
-    console.log(reply);
     axios
       .post(`https://dt-back-end.herokuapp.com/comments`, reply)
-      .then(response => {
-        console.log(response.data);
+      .then(response => {        
         let comment = {};
         comment.replies = this.props.replies;
         comment.replies.push(response.data._id);
@@ -84,9 +82,34 @@ class Reply extends Component {
             comment
           )
           .then(response => {
-            console.log(this.props);
-            this.props.replyflag("true");
+            let unread;
+            if(this.props.user.username!==this.props.tag.user){
+            unread = this.props.tag.unreadComment +1
+            }else{
+              unread=this.props.tag.unreadComment
+            }
+             comment = {};
+             
+            comment.unreadComment = unread
+            console.log(this.props.propsId)
+            axios
+              .put(
+                `https://dt-back-end.herokuapp.com/tags/${this.props.propsId}`,
+                comment
+              )
+              .then(response => {
+                console.log(response.data)
+              this.props.replyflag("true");
             this.props.setupComments(this.props.propsId);
+            this.props.setTags(this.props.propsId)
+            this.setState({   reply: `Reply to ${this.props.username}`});
+
+              })
+              .catch(err => {});
+
+
+
+          
           })
           .catch(err => {});
       })
