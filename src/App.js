@@ -166,7 +166,7 @@ this.setState({count:count,post:response.data.post})
           />
              <Route
             exact
-            path="/dashboard/user/post"
+            path="/dashboard/:id/post"
             render={props => (
               <Post
                 post={this.state.post}
