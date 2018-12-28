@@ -599,6 +599,18 @@ p {
 .notify {
   background: lightgreen;
 }
+.link-style {
+  color: black;
+  text-decoration: none;
+}
+.link-style:hover {
+  color: black;
+  text-decoration: none;
+}
+.tr:hover {
+  background: #677fa3;
+  color: white;
+}
 td {
   min-width: 20vw;
 }
