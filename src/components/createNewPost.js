@@ -195,7 +195,7 @@ post.tag =this.state.tags
       <Col md={`${10 + this.props.tagVar}`} className="tags-container">
   
         {this.Form()}
-        <Button onClick={()=>this.handleSubmit()} className="create-button">Post New Tag</Button>
+        <Button onClick={()=>this.handleSubmit()} className="create-button">Create New Post</Button>
         <Row>{this.renderPictures()}</Row>
       </Col>
     );
