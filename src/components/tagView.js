@@ -89,7 +89,7 @@ class TagView extends Component {
           {" "}
           {tag.map(tag => (
             <div className="tag">
-              {`${tag}`}
+              {`${tag.replace(/-/g, " ")}`}
               <br />
             </div>
           ))}
