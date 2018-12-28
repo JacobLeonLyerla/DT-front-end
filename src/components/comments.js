@@ -100,7 +100,7 @@ class Comments extends Component {
       comment.comment = this.state.comment;
       comment.username = this.props.user.username;
     }
-    console.log(comment)
+
     axios
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
@@ -109,12 +109,17 @@ class Comments extends Component {
         comment.comments = this.props.comments;
         comment.comments.push(response.data._id);
        
-       let unread;
-       this.props.loadUser()
-       if(this.props.tag.user !== this.props.user.username){
-          unread= this.props.tag.unreadComment +1
+      
+       axios
+          .get(
+            `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`
+          )
+          .then(response => {
+             let unread;
+      if(this.props.tag.user !== this.props.user.username){
+          unread= response.data.unreadComment +1
        }else{
-         unread = this.props.tag.unreadComment
+         unread = response.data.unreadComment
        }
         comment.unreadComment = unread
         axios
@@ -128,6 +133,11 @@ class Comments extends Component {
             this.props.setTags(this.props.tagId)
           })
           .catch(err => {});
+
+
+          })
+          .catch(err => {});
+       
       })
       .catch(err => {});
   };
