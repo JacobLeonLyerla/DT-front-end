@@ -110,6 +110,7 @@ class Comments extends Component {
         comment.comments.push(response.data._id);
        
        let unread;
+       this.props.loadUser()
        if(this.props.tag.user !== this.props.user.username){
           unread= this.props.tag.unreadComment +1
        }else{
