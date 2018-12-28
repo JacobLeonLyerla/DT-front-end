@@ -29,10 +29,11 @@ class Post extends Component {
       axios
       .put(`https://dt-back-end.herokuapp.com/tags/${id}`,reset)
       .then(response => {
-       console.log(response.data)
+           this.props.loadUser()
+    this.props.history.push(`/dashboard/trek/${id}`);
       })
       .catch(err => {});
-    this.props.history.push(`/dashboard/trek/${id}`);
+     
   };
   renderTags = tag => {
     if (tag.length < 1) {
@@ -67,6 +68,7 @@ class Post extends Component {
     }
   };
   render() {
+     
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         <Table>
