@@ -18,7 +18,7 @@ class Dashboard extends Component {
     if (this.props.pictures.length > 0) {
       return this.props.pictures.map(cata => (
         <Link to={`/dashboard/${cata.name}`} style={{ textDecoration: "none" }}>
-          <DropdownItem>{cata.name}</DropdownItem>
+          <DropdownItem>{cata.name.replace(/-/g, " ")}</DropdownItem>
         </Link>
       ));
     }
