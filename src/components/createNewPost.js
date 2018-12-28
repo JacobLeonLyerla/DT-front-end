@@ -23,7 +23,7 @@ class Post extends Component {
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
       return this.props.pictures.map(tag => (<Fragment>
-          <DropdownItem className={`${this.checked(tag.name,"dropdown-check")}`}  onClick={() => this.filterTags(tag.name)}>{tag.name}</DropdownItem>
+          <DropdownItem className={`${this.checked(tag.name,"dropdown-check")}`}  onClick={() => this.filterTags(tag.name)}>{tag.name.replace(/-/g, " ")}</DropdownItem>
       </Fragment>));
     }
   };
@@ -91,7 +91,7 @@ class Post extends Component {
   renderPickedTags = () => {
     if (this.state.tags.length > 0) {
       return this.state.tags.map(tag => (
-        <Badge onClick={() => this.filterTags(tag)}>{tag}</Badge>
+        <Badge onClick={() => this.filterTags(tag)}>{tag.replace(/-/g, " ")}</Badge>
       ));
     }
   };
