@@ -6,20 +6,22 @@ class Post extends Component {
     let arr = this.sortPost();
     return arr.map(post => (
      
-       <tr
+       <tr onClick={()=>this.renderRoute(post._id)}
           className={
             post.unreadComment + post.unreadLike > 0 ? "tr notify" : "tr no-notify"
           }
         >
-          <Link className="link-style"  to={`/dashboard/trek/${post._id}`}> <td>{post.unreadComment + post.unreadLike}</td>
+          <td >{post.unreadComment + post.unreadLike}</td>
           <td>{post.name}</td>
           <td>{post.city}</td>
-          {this.renderTags(post.tag)}</Link>
+          {this.renderTags(post.tag)}
         </tr>
      
     ));
   };
-
+renderRoute =(id)=>{
+this.props.history.push(`/dashboard/trek/${id}`)
+}
   renderTags = tag => {
     if (tag.length < 1) {
       tag = [];
