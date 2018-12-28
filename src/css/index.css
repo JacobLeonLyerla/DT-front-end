@@ -599,3 +599,15 @@ p {
 .notify {
   background: lightgreen;
 }
+td {
+  min-width: 20vw;
+}
+.tag-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 40vw;
+}
+.tag-container .tag {
+  margin-left: .5vw;
+}
