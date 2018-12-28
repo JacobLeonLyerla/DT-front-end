@@ -198,9 +198,7 @@ class Signup extends Component {
             <Button onClick={() => this.handleSubmit()} color="success">
               Sign-up
             </Button>
-            <Link to="/">
-              <Button color="primary">Cancel</Button>
-            </Link>
+         
           </div>
         </Form>
       </div>
