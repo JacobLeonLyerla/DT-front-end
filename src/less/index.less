@@ -622,12 +622,10 @@ p {
       .btn:focus{
         background :@secondarycolor;
         border:none;
- 
+        box-shadow: none !important;
       }
-      .btn:link{
-        background :@secondarycolor;
-        border:none;
- 
+      .btn-primary:focus{
+        box-shadow: none !important;
       }
       .dropdown-check{
         color:@accentcolor;
@@ -639,7 +637,9 @@ p {
       overflow-y:hidden;
     }
   }
-
+  .btn:focus{
+    box-shadow: none !important;
+  }
 @maincolor : #EBE1CE;
 @secondarycolor: #677fa3;
 @accentcolor: #a8bdd6;

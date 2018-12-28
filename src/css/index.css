@@ -579,10 +579,10 @@ p {
 .create-form .btn:focus {
   background: #677fa3;
   border: none;
+  box-shadow: none !important;
 }
-.create-form .btn:link {
-  background: #677fa3;
-  border: none;
+.create-form .btn-primary:focus {
+  box-shadow: none !important;
 }
 .create-form .dropdown-check {
   color: #a8bdd6;
@@ -592,4 +592,7 @@ p {
   min-height: 5vh;
   overflow: none;
   overflow-y: hidden;
+}
+.btn:focus {
+  box-shadow: none !important;
 }
