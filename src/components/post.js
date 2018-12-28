@@ -2,7 +2,9 @@ import React, { Component,Fragment } from "react";
 import {Col,Table} from "reactstrap"
 class Post extends Component {
 renderPost=()=>{
-          return this.props.post.map(post =>(<Fragment>
+        let arr = this.sortPost()
+        console.log(arr)
+          return arr.map(post =>(<Fragment>
          <tr className={(post.unreadComment+ post.unreadLike >0)?"notify":"no-notify"}>
              {console.log(post)}
              <td >{post.unreadComment + post.unreadLike}</td>
@@ -13,6 +15,7 @@ renderPost=()=>{
       }
 
       renderTags = tag => {
+         
         if (tag.length < 1) {
           tag = [];
         }
@@ -29,7 +32,21 @@ renderPost=()=>{
           );
         }
       };
-
+sortPost =()=>{
+    let notifyArr=[]
+    let oldArr =[]
+    this.props.post.forEach(post => {
+    
+        if((post.unreadComment + post.unreadLike) >0){
+            notifyArr.push(post)
+        }else{
+            oldArr.push(post)
+        }
+        
+    });
+     let arr = [...notifyArr, ...oldArr]
+     return arr
+}
   render() {
       
     return (
