@@ -76,6 +76,8 @@ class Signup extends Component {
   render() {
     return (
       <div className="signup-container">
+    
+
         <Form onSubmit={this.handleSubmit} className="signup-form">
           <FormGroup>
             <Label for="exampleEmail">Please Enter username</Label>
