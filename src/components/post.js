@@ -3,7 +3,9 @@ import {Col,Table} from "reactstrap"
 class Post extends Component {
 renderPost=()=>{
           return this.props.post.map(post =>(<Fragment>
-         <tr>
+         <tr className={(post.unreadComment+ post.unreadLike >0)?"notify":"no-notify"}>
+             {console.log(post)}
+             <td >{post.unreadComment + post.unreadLike}</td>
             <td>{post.name}</td>
             <td>{post.city}</td>
             {this.renderTags(post.tag)}</tr>
@@ -32,10 +34,10 @@ renderPost=()=>{
       
     return (
         <Col className="table-container" md={`${10 + this.props.tagVar}`}>
-  <Table dark>
+  <Table hover>
         <thead>
           <tr>
-       
+            <th>Notifications</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Username</th>
