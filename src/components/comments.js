@@ -94,23 +94,26 @@ class Comments extends Component {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
+   
     let comment = {};
     if (this.state.comment !== "") {
       comment.comment = this.state.comment;
       comment.username = this.props.user.username;
     }
+    console.log(comment)
     axios
-
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
+       console.log(response.data)
         let comment = {};
         comment.comments = this.props.comments;
         comment.comments.push(response.data._id);
+       
        let unread;
-       if(this.props.tag.user!==this.props.user.username){
+       if(this.props.tag.user !== this.props.user.username){
           unread= this.props.tag.unreadComment +1
        }else{
-         unread = this.props.tage.unreadComment
+         unread = this.props.tag.unreadComment
        }
         comment.unreadComment = unread
         axios
