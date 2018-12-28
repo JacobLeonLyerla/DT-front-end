@@ -37,6 +37,7 @@ class Trek extends Component {
           tag={this.state.tag}
           tagId={this.state.tag._id}
           user={this.props.user}
+          loadUser={this.props.loadUser}
         />
         <Pictures imgTag={this.state.tag.tag} style="tag-filtered" />
       </Col>
