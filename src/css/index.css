@@ -356,10 +356,6 @@ tr:hover {
 }
 .table .table-items {
   width: 100%;
-  overflow: hidden;
-  overflow-y: scroll;
-  max-height: 25vh;
-  margin: 0 auto;
 }
 .table .table-items .btn:hover {
   background: #677fa3;
@@ -381,10 +377,16 @@ tr:hover {
   font-size: 1.2rem;
   background: #a8bdd6;
   border: none;
+  margin: 0.11%;
 }
 .btn:hover {
   background: #677fa3;
-  border: none;
+}
+.tbody {
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 15vh;
+  margin: 0 auto;
 }
 .details {
   min-height: 15vh;

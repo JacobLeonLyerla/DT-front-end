@@ -386,6 +386,7 @@ p {
     color:white;
     background:@secondarycolor;
   }
+
 .table {
   margin-right: 0px;
   margin: 0 auto;
@@ -393,10 +394,7 @@ p {
   min-height: 30.5vh;
   .table-items {
     width: 100%;
-    overflow: hidden;
-    overflow-y: scroll;
-    max-height: 25vh;
-    margin: 0 auto;
+   
   
     .btn:hover {
       background: @secondarycolor;
@@ -422,12 +420,18 @@ p {
       font-size: 1.2rem;
       background: @accentcolor;
       border: none;
+      margin:.11%
     }
     .btn:hover {
    
       background: @secondarycolor;
-      border: none;
     }
+    .tbody{
+      overflow: hidden;
+     overflow-y: scroll;
+     max-height: 15vh;
+     margin: 0 auto;
+   }
 //**********************************************************Details
 .details {
   min-height: 15vh;

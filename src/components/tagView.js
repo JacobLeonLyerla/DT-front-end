@@ -162,7 +162,7 @@ class TagView extends Component {
           </tr>
         </thead> 
        
-        <tbody> 
+        <tbody className="tbody"> 
          
                 
         
