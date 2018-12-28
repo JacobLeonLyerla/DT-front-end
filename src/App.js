@@ -172,6 +172,7 @@ this.setState({count:count,post:response.data.post})
                 post={this.state.post}
                 {...props}
                 tagVar={this.state.tagVar}
+                loadUser={this.loadUser}
                 likes={this.state.count}
                 post={this.state.post}
                 user={this.state.user}
