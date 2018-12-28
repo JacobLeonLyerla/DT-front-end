@@ -24,7 +24,7 @@ renderPost=()=>{
             <td className="tag-container">
               {tag.map(tag => (
                 <div className="tag">
-                  {`${tag}`}
+                  {`${tag.replace(/-/g, " ")}`}
                   <br />
                 </div>
               ))}
