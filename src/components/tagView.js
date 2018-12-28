@@ -169,7 +169,6 @@ class TagView extends Component {
         <Map />
         {this.checkp()}
         {this.setTag()}
-
         {this.renderTable()}
         <Pictures imgTag={this.state.imgTag} style="tag-filtered" />
       </Col>
