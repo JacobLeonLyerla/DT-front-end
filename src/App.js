@@ -14,7 +14,8 @@ import Trek from "./components/trek";
 import Tags from "./components/tags";
 import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
-import Post from "./components/createNewPost";
+import CreatePost from "./components/createNewPost";
+import Post from "./components/post"
 class App extends Component {
   state = {
     user: "",
@@ -148,7 +149,7 @@ this.setState({count:count,post:response.data.post})
             exact
             path="/dashboard/post"
             render={props => (
-              <Tags
+              <Post
                 post={this.state.post}
                 {...props}
                 tagVar={this.state.tagVar}
@@ -178,7 +179,7 @@ this.setState({count:count,post:response.data.post})
             exact
             path="/dashboard/create/:id"
             render={props => (
-              <Post
+              <CreatePost
                 {...props}
                 pictures={this.state.picture}
                 user={this.state.user}
