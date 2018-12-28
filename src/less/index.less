@@ -378,18 +378,14 @@ p {
     }
   }
 }
-.thead {
-  display: flex;
-  width: 80vw;
-  .tr {
-    width: 100%;
-  }
-  .th {
-    padding-right: 8.8vw;
-    padding-left: 9vw;
-  }
-}
 
+
+
+
+  tr:hover{
+    color:white;
+    background:@secondarycolor;
+  }
 .table {
   margin-right: 0px;
   margin: 0 auto;
@@ -401,12 +397,7 @@ p {
     overflow-y: scroll;
     max-height: 25vh;
     margin: 0 auto;
-    .btn {
-      width: 100%;
-      font-size: 1.2rem;
-      background: @accentcolor;
-      border: none;
-    }
+  
     .btn:hover {
       background: @secondarycolor;
     }
@@ -420,11 +411,23 @@ p {
       flex-wrap: wrap;
       max-width: 40vw;
     }
+   
     .tag {
       margin: 1%;
     }
   }
-}
+ 
+}  .btn {
+      width: 100%;
+      font-size: 1.2rem;
+      background: @accentcolor;
+      border: none;
+    }
+    .btn:hover {
+   
+      background: @secondarycolor;
+      border: none;
+    }
 //**********************************************************Details
 .details {
   min-height: 15vh;

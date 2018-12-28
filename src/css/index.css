@@ -344,16 +344,9 @@ p {
   margin: 0px;
   padding: 0px;
 }
-.thead {
-  display: flex;
-  width: 80vw;
-}
-.thead .tr {
-  width: 100%;
-}
-.thead .th {
-  padding-right: 8.8vw;
-  padding-left: 9vw;
+tr:hover {
+  color: white;
+  background: #677fa3;
 }
 .table {
   margin-right: 0px;
@@ -367,12 +360,6 @@ p {
   overflow-y: scroll;
   max-height: 25vh;
   margin: 0 auto;
-}
-.table .table-items .btn {
-  width: 100%;
-  font-size: 1.2rem;
-  background: #a8bdd6;
-  border: none;
 }
 .table .table-items .btn:hover {
   background: #677fa3;
@@ -388,6 +375,16 @@ p {
 }
 .table .table-items .tag {
   margin: 1%;
+}
+.btn {
+  width: 100%;
+  font-size: 1.2rem;
+  background: #a8bdd6;
+  border: none;
+}
+.btn:hover {
+  background: #677fa3;
+  border: none;
 }
 .details {
   min-height: 15vh;
