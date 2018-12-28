@@ -164,6 +164,20 @@ this.setState({count:count,post:response.data.post})
             path="/dashboard/:id"
             render={props => <TagView {...props} tagVar={this.state.tagVar} />}
           />
+             <Route
+            exact
+            path="/dashboard/user/post"
+            render={props => (
+              <Post
+                post={this.state.post}
+                {...props}
+                tagVar={this.state.tagVar}
+                likes={this.state.count}
+                post={this.state.post}
+                user={this.state.user}
+              />
+            )}
+          />
           <Route
             exact
             path="/dashboard/trek/:id"
