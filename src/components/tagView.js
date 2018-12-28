@@ -64,21 +64,22 @@ class TagView extends Component {
   };
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
-      <tbody>
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={`/dashboard/trek/${sub._id}`}
-        >
+       
           <tr>
             <td>{sub.name}</td>
             <td>{sub.city}</td>
             <td>{sub.country}</td>
             {this.renderTags(sub.tag)}
           </tr>
-        </Link>
-      </tbody>
+     
     ));
   };
+  renderRoute =(id,type)=>{
+    if(type ==="create"){
+      this.props.history.push(`/dashboard/create/${this.state.tag}`)
+    }else{
+    this.props.history.push(`/dashboard/trek/${id}`)
+  }}
   renderTags = tag => {
     if (tag.length < 1) {
       tag = [];
@@ -104,26 +105,7 @@ class TagView extends Component {
       this.setState({ tag: id });
     }
   };
-  renderTable = () => {
-    return (
-      <Table hover>
-        <thead className="thead">
-          <tr className="tr">
-            <th className="th">Name</th>
-            <th className="th">City</th>
-            <th className="th">Country</th>
-            <th className="th">Tags</th>
-          </tr>
-        </thead>
-        <div className="table-items">
-          <Link to={`/dashboard/create/${this.state.tag}`}>
-            <Button>New Post</Button>
-          </Link>
-        </div>
-        <div className="table-items">{this.userSubmissionTable()}</div>
-      </Table>
-    );
-  };
+
   checkp = () => {
     if (this.props.match.params.id !== this.state.tag) {
       this.setState({ tag: this.props.match.params.id });
@@ -169,7 +151,23 @@ class TagView extends Component {
         <Map />
         {this.checkp()}
         {this.setTag()}
-        {this.renderTable()}
+        <Button onClick={()=>this.renderRoute(this.state.tag,"create")}>New Post</Button>  
+        <Table >
+        <thead>
+          <tr >
+            <th >Name</th>
+            <th >City</th>
+            <th >Country</th>
+            <th >Tags</th>
+          </tr>
+        </thead> 
+       
+        <tbody> 
+         
+                
+        
+        {this.userSubmissionTable()}</tbody>
+        </Table>
         <Pictures imgTag={this.state.imgTag} style="tag-filtered" />
       </Col>
     );
