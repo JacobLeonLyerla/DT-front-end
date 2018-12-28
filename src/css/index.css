@@ -596,3 +596,6 @@ p {
 .btn:focus {
   box-shadow: none !important;
 }
+.notify {
+  background: lightgreen;
+}
