@@ -43,7 +43,7 @@ class Dashboard extends Component {
             <div className={this.props.link}>{this.props.user.username}</div>
             <Link
               className={this.props.link}
-              to="/dashboard/user/post"
+              to={`/dashboard/${this.props.user.username}/post`}
               style={{ textDecoration: "none" }}
             >
     {this.props.user !== undefined ?(<Fragment>{(this.props.likes >0)?(<div style={{display:"flex",justifyContent:"center"}}>Post <div style={{color:"coral",marginLeft:".4vw"}}>( {this.props.likes} )</div></div>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
