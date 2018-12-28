@@ -602,6 +602,7 @@ p {
 .link-style {
   color: black;
   text-decoration: none;
+  width: 100vw !important;
 }
 .link-style:hover {
   color: black;
