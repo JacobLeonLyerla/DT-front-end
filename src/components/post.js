@@ -22,18 +22,17 @@ class Post extends Component {
     ));
   };
   renderRoute = id => {
-      let reset = {}
-      reset.unreadComment =0
-      reset.unreadLike =0
+    let reset = {};
+    reset.unreadComment = 0;
+    reset.unreadLike = 0;
 
-      axios
-      .put(`https://dt-back-end.herokuapp.com/tags/${id}`,reset)
+    axios
+      .put(`https://dt-back-end.herokuapp.com/tags/${id}`, reset)
       .then(response => {
-           this.props.loadUser()
-    this.props.history.push(`/dashboard/trek/${id}`);
+        this.props.loadUser();
+        this.props.history.push(`/dashboard/trek/${id}`);
       })
       .catch(err => {});
-     
   };
   renderTags = tag => {
     if (tag.length < 1) {
@@ -68,7 +67,6 @@ class Post extends Component {
     }
   };
   render() {
-     
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         <Table>
