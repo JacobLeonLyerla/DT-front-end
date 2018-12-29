@@ -64,31 +64,32 @@ class TagView extends Component {
   };
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
-      <tr>
-        <td>{sub.name}</td>
-        <td>{sub.city}</td>
-        <td>{sub.country}</td>
-        {this.renderTags(sub.tag)}
-      </tr>
+       
+          <tr>
+            <td>{sub.name}</td>
+            <td>{sub.city}</td>
+            <td>{sub.country}</td>
+            {this.renderTags(sub.tag)}
+          </tr>
+     
     ));
   };
-  renderRoute = (id, type) => {
-    if (type === "create") {
-      this.props.history.push(`/dashboard/create/${this.state.tag}`);
-    } else {
-      this.props.history.push(`/dashboard/trek/${id}`);
-    }
-  };
+  renderRoute =(id,type)=>{
+    if(type ==="create"){
+      this.props.history.push(`/dashboard/create/${this.state.tag}`)
+    }else{
+    this.props.history.push(`/dashboard/trek/${id}`)
+  }}
   renderTags = tag => {
     if (tag.length < 1) {
       tag = [];
     }
     if (tag !== undefined || tag !== "") {
       return (
-        <td className="tag-container">
+        <td className="tag">
           {" "}
           {tag.map(tag => (
-            <div className="tag">
+            <div className="tags">
               {`${tag.replace(/-/g, " ")}`}
               <br />
             </div>
@@ -150,20 +151,22 @@ class TagView extends Component {
         <Map />
         {this.checkp()}
         {this.setTag()}
-        <Button onClick={() => this.renderRoute(this.state.tag, "create")}>
-          New Post
-        </Button>
-        <Table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>City</th>
-              <th>Country</th>
-              <th>Tags</th>
-            </tr>
-          </thead>
-
-          <tbody Scroll>{this.userSubmissionTable()}</tbody>
+        <Button onClick={()=>this.renderRoute(this.state.tag,"create")}>New Post</Button>  
+        <Table  className="tags-table">
+        <thead>
+          <tr className="tr" >
+            <th className="name" >Name</th>
+            <th   className="city">City</th>
+            <th  className="country">Country</th>
+            <th  className="tags">Tags</th>
+          </tr>
+        </thead> 
+       <div className="tbody">
+        <tbody > 
+         
+                
+        
+        {this.userSubmissionTable()}</tbody></div>
         </Table>
         <Pictures imgTag={this.state.imgTag} style="tag-filtered" />
       </Col>
