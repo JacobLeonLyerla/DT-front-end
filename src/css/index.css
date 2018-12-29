@@ -344,32 +344,45 @@ p {
   margin: 0px;
   padding: 0px;
 }
+.tr {
+  width: 1000px;
+  display: flex;
+}
+.tr th {
+  min-width: 24.5%;
+}
+.tag {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 20vw;
+}
+.tag .tags {
+  padding-right: 0.3vw;
+}
 tr:hover {
   color: white;
   background: #677fa3;
 }
-.table {
+.tags-table {
   margin-right: 0px;
   margin: 0 auto;
   min-width: 80vw;
   min-height: 30.5vh;
 }
-.table .table-items {
+.tags-table .table-items {
   width: 100%;
 }
-.table .table-items .btn:hover {
+.tags-table .table-items .btn:hover {
   background: #677fa3;
 }
-.table .table-items td {
-  min-width: 20vw;
-}
-.table .table-items .tag-container {
+.tags-table .table-items thead {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 40vw;
 }
-.table .table-items .tag {
+.tags-table .table-items td {
+  width: 25%;
+}
+.tags-table .table-items .tag {
   margin: 1%;
 }
 .btn {
@@ -383,10 +396,9 @@ tr:hover {
   background: #677fa3;
 }
 .tbody {
+  max-height: 35vh ;
   overflow: hidden;
   overflow-y: scroll;
-  max-height: 15vh;
-  margin: 0 auto;
 }
 .details {
   min-height: 15vh;
@@ -547,14 +559,14 @@ tr:hover {
   border: none;
 }
 .create-form {
-  border-radius: .6%;
+  border-radius: 0.6%;
   min-height: 40vh;
   padding-right: 3%;
   padding-left: 3%;
   background: #EBE1CE;
 }
 .create-form .text-left {
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 .create-form .form-control {
   border: none;
@@ -568,7 +580,7 @@ tr:hover {
   overflow-y: scroll;
 }
 .create-form .btn {
-  font-size: .6rem ;
+  font-size: 0.6rem;
   background: #a8bdd6;
   border: none;
 }
@@ -621,5 +633,5 @@ td {
   max-width: 40vw;
 }
 .tag-container .tag {
-  margin-left: .5vw;
+  margin-left: 0.5vw;
 }
