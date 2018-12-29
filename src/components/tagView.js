@@ -65,12 +65,12 @@ class TagView extends Component {
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
        
-          <tr>
-            <td>{sub.name}</td>
-            <td>{sub.city}</td>
-            <td>{sub.country}</td>
+          <div style={{display:"flex",flexDirection:"row"}}>
+            <div className="td">{sub.name}</div>
+            <div className="td">{sub.city}</div>
+            <div className="td">{sub.country}</div>
             {this.renderTags(sub.tag)}
-          </tr>
+          </div>
      
     ));
   };
@@ -86,7 +86,7 @@ class TagView extends Component {
     }
     if (tag !== undefined || tag !== "") {
       return (
-        <td className="tag">
+        <div className="td">
           {" "}
           {tag.map(tag => (
             <div className="tags">
@@ -94,7 +94,7 @@ class TagView extends Component {
               <br />
             </div>
           ))}
-        </td>
+        </div>
       );
     }
   };
@@ -153,20 +153,20 @@ class TagView extends Component {
         {this.setTag()}
         <Button onClick={()=>this.renderRoute(this.state.tag,"create")}>New Post</Button>  
         <Table  className="tags-table">
-        <thead>
-          <tr className="tr" >
-            <th className="name" >Name</th>
-            <th   className="city">City</th>
-            <th  className="country">Country</th>
-            <th  className="tags">Tags</th>
-          </tr>
-        </thead> 
+     
+          <div className="tr" >
+            <div className="name head" >Name</div>
+            <div   className="city head">City</div >
+            <div className="country head">Country</div>
+            <div  className="tags head">Tags</div>
+          </div>
+        
        <div className="tbody">
-        <tbody > 
+        <div > 
          
                 
         
-        {this.userSubmissionTable()}</tbody></div>
+        {this.userSubmissionTable()}</div></div>
         </Table>
         <Pictures imgTag={this.state.imgTag} style="tag-filtered" />
       </Col>
