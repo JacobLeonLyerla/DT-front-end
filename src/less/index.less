@@ -414,9 +414,19 @@ tr:hover {
       margin: 1%;
     }
   }
+  
   .td {
       min-width: 25%;
+     
     }
+    .td-container{
+       border-bottom: 1px dotted @accentcolor;
+    }
+    .td-container:hover{
+      background:@secondarycolor;
+      color:white;
+    }
+
     .head{
       min-width:24.7%;
       font-size: 1.4rem;
@@ -426,6 +436,15 @@ tr:hover {
     }
     .tr{
       background:@secondarycolor;
+    }
+    .tag {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 40vw;
+      .tags {
+        margin-left: 0.5vw;
+      }
     }
 
 }
