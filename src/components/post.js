@@ -15,9 +15,9 @@ class Post extends Component {
         }
         style={{display:"flex",flexDirection:"row"}}
       >
-        <div className="td" style={{fontSize:"1.3rem"}}>{post.unreadComment + post.unreadLike}</div>
-        <div className="td" style={{fontSize:"1.3rem"}}>{post.name}</div>
-        <div className="td" style={{fontSize:"1.3rem"}}>{post.city}</div>
+        <div className="td" style={{fontSize:"1.3rem",width:"20%"}}>{post.unreadComment + post.unreadLike}</div>
+        <div className="td" style={{fontSize:"1.3rem",width:"20%"}}>{post.name}</div>
+        <div className="td" style={{fontSize:"1.3rem",width:"20%"}}>{post.city}</div>
         {this.renderTags(post.tag)}
       </div>
     ));
@@ -41,7 +41,7 @@ class Post extends Component {
     }
     if (tag !== undefined || tag !== "") {
       return (
-        <div className="tag td" style={{fontSize:"1.3rem"}}>
+        <div className="tag td" style={{fontSize:"1.3rem",width:"20%"}}>
           {tag.map(tag => (
             <div className="tags">
               {`${tag.replace(/-/g, " ")}`}
@@ -73,10 +73,10 @@ class Post extends Component {
         <Table className="tags-table">
           <div>
             <div className="tr">
-              <div className="notification head">Notifications</div>
-              <div className="head">First Name</div>
-              <div className="head">Last Name</div>
-              <div className="head">Username</div>
+              <div className="notification head" style={{width:"20%"}}>Notifications</div>
+              <div className="head" style={{width:"20%"}}>First Name</div>
+              <div className="head" style={{width:"20%"}}>Last Name</div>
+              <div className="head" style={{width:"20%"}}>Username</div>
             </div>
           </div>
           <div>{this.renderPost()}</div>
