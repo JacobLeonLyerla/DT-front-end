@@ -6,19 +6,20 @@ class Post extends Component {
   renderPost = () => {
     let arr = this.sortPost();
     return arr.map(post => (
-      <tr
+      <div
         onClick={() => this.renderRoute(post._id)}
         className={
           post.unreadComment + post.unreadLike > 0
-            ? "tr notify"
-            : "tr no-notify"
+            ? "td-container notify"
+            : "td-container no-notify"
         }
+        style={{display:"flex",flexDirection:"row"}}
       >
-        <td>{post.unreadComment + post.unreadLike}</td>
-        <td>{post.name}</td>
-        <td>{post.city}</td>
+        <div className="td" style={{fontSize:"1.3rem"}}>{post.unreadComment + post.unreadLike}</div>
+        <div className="td" style={{fontSize:"1.3rem"}}>{post.name}</div>
+        <div className="td" style={{fontSize:"1.3rem"}}>{post.city}</div>
         {this.renderTags(post.tag)}
-      </tr>
+      </div>
     ));
   };
   renderRoute = id => {
@@ -40,14 +41,14 @@ class Post extends Component {
     }
     if (tag !== undefined || tag !== "") {
       return (
-        <td className="tag-container">
+        <div className="tag td" style={{fontSize:"1.3rem"}}>
           {tag.map(tag => (
-            <div className="tag">
+            <div className="tags">
               {`${tag.replace(/-/g, " ")}`}
               <br />
             </div>
           ))}
-        </td>
+        </div>
       );
     }
   };
@@ -69,16 +70,16 @@ class Post extends Component {
   render() {
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
-        <Table>
-          <thead>
-            <tr>
-              <th>Notifications</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>{this.renderPost()}</tbody>
+        <Table className="tags-table">
+          <div>
+            <div className="tr">
+              <div className="notification head">Notifications</div>
+              <div className="head">First Name</div>
+              <div className="head">Last Name</div>
+              <div className="head">Username</div>
+            </div>
+          </div>
+          <div>{this.renderPost()}</div>
         </Table>
       </Col>
     );
