@@ -377,7 +377,7 @@ p {
   }
 }
 .tr{
-  width:1000px;
+
   display: flex;
 
   th {
@@ -409,19 +409,25 @@ tr:hover {
     .btn:hover {
       background: @secondarycolor;
     }
-
-    thead {
-      display: flex;
-    }
-
-    td {
-      width: 25%;
-    }
-
+    
     .tag {
       margin: 1%;
     }
   }
+  .td {
+      min-width: 25%;
+    }
+    .head{
+      min-width:24.7%;
+      font-size: 1.4rem;
+      padding-bottom:1vh;
+      background:@secondarycolor;
+      color:white;
+    }
+    .tr{
+      background:@secondarycolor;
+    }
+
 }
 .btn {
   width: 100%;

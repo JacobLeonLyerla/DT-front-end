@@ -345,7 +345,6 @@ p {
   padding: 0px;
 }
 .tr {
-  width: 1000px;
   display: flex;
 }
 .tr th {
@@ -376,14 +375,21 @@ tr:hover {
 .tags-table .table-items .btn:hover {
   background: #677fa3;
 }
-.tags-table .table-items thead {
-  display: flex;
-}
-.tags-table .table-items td {
-  width: 25%;
-}
 .tags-table .table-items .tag {
   margin: 1%;
+}
+.tags-table .td {
+  min-width: 25%;
+}
+.tags-table .head {
+  min-width: 24.7%;
+  font-size: 1.4rem;
+  padding-bottom: 1vh;
+  background: #677fa3;
+  color: white;
+}
+.tags-table .tr {
+  background: #677fa3;
 }
 .btn {
   width: 100%;
