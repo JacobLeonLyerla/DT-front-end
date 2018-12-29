@@ -65,7 +65,7 @@ class TagView extends Component {
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
        
-          <div style={{display:"flex",flexDirection:"row"}}>
+          <div className="td-container" style={{display:"flex",flexDirection:"row"}}>
             <div className="td">{sub.name}</div>
             <div className="td">{sub.city}</div>
             <div className="td">{sub.country}</div>
@@ -86,7 +86,7 @@ class TagView extends Component {
     }
     if (tag !== undefined || tag !== "") {
       return (
-        <div className="td">
+        <div className="td tag">
           {" "}
           {tag.map(tag => (
             <div className="tags">
