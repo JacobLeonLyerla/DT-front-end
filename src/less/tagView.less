@@ -1,0 +1,152 @@
+.table-container {
+    .google {
+      display: flex;
+      border-radius: 1%;
+      margin-top: 2vh;
+      background: @secondarycolor;
+      min-width: 81vw;
+      height: 35vh;
+      color: white;
+      overflow: hidden;
+    }
+    p {
+      margin-top: 7%;
+      font-size: 3rem;
+    }
+  
+    .tag-filtered {
+      overflow: hidden;
+      overflow-y: scroll;
+      min-width: 81vw;
+      max-height: 35vh;
+      margin-right: 0px;
+      margin: 0 auto;
+      margin-top: 2vh;
+  
+      .cover {
+        width: 100%;
+        color: rgba(15, 15, 15, 0);
+      }
+      .cover:hover {
+        background: rgba(15, 15, 15, 0.342);
+        color: white;
+      }
+  
+      p {
+        padding-top: 22vh;
+        font-size: 3rem;
+        margin-top: 0px;
+        height: 45.8vh;
+      }
+      .tags {
+        -webkit-background-size: contain;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        height: 45.8vh;
+        margin-top: 5vh;
+      }
+  
+      .row {
+        overflow: hidden;
+        overflow-y: scroll;
+        max-height: 95vh;
+        margin-right: 0px;
+        margin: 0 auto;
+      }
+  
+      .tag-img {
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+  }
+  .tr{
+  
+    display: flex;
+  
+    th {
+      min-width: 24.5%;
+    }
+  }
+  .tag {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 20vw;
+    .tags {
+      padding-right: 0.3vw;
+    }
+  }
+  tr:hover {
+    color: white;
+    background: @secondarycolor;
+  }
+  
+  .tags-table {
+    margin-right: 0px;
+    margin: 0 auto;
+    min-width: 80vw;
+    min-height: 30.5vh;
+    .table-items {
+      width: 100%;
+  
+      .btn:hover {
+        background: @secondarycolor;
+      }
+      
+      .tag {
+        margin: 1%;
+      }
+    }
+    
+    .td {
+        min-width: 25%;
+       
+      }
+      .td-container{
+         border-bottom: 1px dotted @accentcolor;
+      }
+      .td-container:hover{
+        background:@secondarycolor;
+        color:white;
+      }
+  
+      .head{
+        min-width:24.7%;
+        font-size: 1.4rem;
+        padding-bottom:1vh;
+        background:@secondarycolor;
+        color:white;
+      }
+      .tr{
+        background:@secondarycolor;
+      }
+      .tag {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 40vw;
+        .tags {
+          margin-left: 0.5vw;
+        }
+      }
+  
+  }
+  .btn {
+    width: 100%;
+    font-size: 1.2rem;
+    background: @accentcolor;
+    border: none;
+    margin: 0.11%;
+  }
+  .btn:hover {
+    background: @secondarycolor;
+  }
+  .tbody {
+    max-height: 35vh ;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
