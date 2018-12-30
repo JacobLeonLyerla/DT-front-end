@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
-import imgs from "../assets/exportImgs.js";
+import imgs from "../../assets/exportImgs.js";
 
 class Pictures extends Component {
   renderPictures = () => {
