@@ -1,0 +1,49 @@
+.signup-container {
+  background-image: url("../assets/beach.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-container .form-control {
+  width: 50%;
+  height: 5vh;
+  margin: 0 auto;
+}
+.signup-container .text-muted {
+  font-size: 1rem;
+}
+.signup-container .invalid-feedback {
+  font-size: 1rem;
+}
+.signup-container .valid-feedback {
+  font-size: 1rem;
+}
+.signup-container .signup-form {
+  width: 30vw;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.767);
+  padding: 1%;
+  border-radius: 1%;
+  animation: bounceInDown;
+  animation-duration: 1.7s;
+  animation-iteration-count: 1;
+}
+.signup-container .signup-form .form-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.signup-container .signup-form .btn {
+  width: 50%;
+  font-size: 80%;
+}
+.signup-container .fa-eye {
+  font-size: 2rem;
+  color: darkcyan;
+}
