@@ -144,7 +144,7 @@ p {
   width: 30vw;
   height: 100%;
   background: rgba(255, 255, 255, 0.767);
-  padding: 1%;
+  padding-top: 1%;
   border-radius: 1%;
   animation: bounceInDown;
   animation-duration: 1.7s;
@@ -155,8 +155,7 @@ p {
   justify-content: space-evenly;
 }
 .signup-container .signup-form .btn {
-  width: 50%;
-  font-size: 80%;
+  font-size: 1.6rem;
 }
 .signup-container .fa-eye {
   font-size: 2rem;
@@ -650,6 +649,9 @@ td {
 }
 .tag-container .tag {
   margin-left: 0.5vw;
+}
+.post-head {
+  margin-left: .3%;
 }
 .App {
   overflow-x: hidden !important;
