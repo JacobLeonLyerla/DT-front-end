@@ -1,3 +1,4 @@
+@import "landing";
 .App {
   overflow-x: hidden !important;
 }
@@ -27,46 +28,7 @@
     text-decoration: underline @secondarycolor;
   }
 }
-.aboutRow {
-  min-height: 66vh;
-}
-.red {
-  background-image: url("../assets/red-forest.jpg");
-  //background:@maincolor;
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-}
-.sea {
-  background-image: url("../assets/water.jpg");
-  //background:@maincolor;
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-}
-.desert {
-  background-image: url("../assets/desert.jpg");
-  //background:@maincolor;
-  -webkit-background-size: contain;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-}
-.filter {
-  color: rgba(15, 15, 15, 0);
-}
-.filter:hover {
-  background: rgba(15, 15, 15, 0.404);
-  color: white;
-}
+
 p {
   margin-top: 5vh;
   font-size: 1.6rem;
@@ -100,37 +62,9 @@ p {
   width: 60vw;
 }
 //************************************************************************LANDING PAGE
-.landing-Nav {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.8rem;
-  background: rgba(3, 3, 3, 0.322);
 
-  .nav-link {
-    color: @accentcolor;
-  }
-  .nav-link:hover {
-    color: @maincolor;
-    background: darken(rgba(3, 3, 3, 0.103), 50%);
-  }
-  .signup {
-    color: white;
-    animation: wobble;
-    animation-duration: 3s;
-
-    animation-iteration-count: 1;
-  }
-  .signup:hover {
-    filter: brightness(160%);
-    animation: pulse;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-  }
-}
 //*************************************************************************NAV
-.navLogo-styles {
-  width: 12%;
-}
+
 //**************************************************************************SIGNUP
 .signup-container {
   background-image: url("../assets/beach.jpeg");
