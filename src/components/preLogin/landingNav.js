@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/index.css";
+import "../../css/index.css";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import { Link } from "react-router-dom";
 class LandingNav extends Component {
