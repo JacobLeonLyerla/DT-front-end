@@ -1,0 +1,6 @@
+.App {
+  overflow-x: hidden !important;
+}
+.row {
+  max-width: 100vw;
+}
