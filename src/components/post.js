@@ -73,10 +73,10 @@ class Post extends Component {
         <Table className="tags-table">
           <div>
             <div className="tr">
-              <div className="notification head" style={{width:"20%"}}>Notifications</div>
-              <div className="head" style={{width:"20%"}}>First Name</div>
-              <div className="head" style={{width:"20%"}}>Last Name</div>
-              <div className="head" style={{width:"20%"}}>Username</div>
+              <div className="notification head post-head" style={{width:"20%"}}>Notifications</div>
+              <div className="head post-head" style={{width:"20%"}}>First Name</div>
+              <div className="head post-head" style={{width:"20%"}}>Last Name</div>
+              <div className="head post-head" style={{width:"20%"}}>Username</div>
             </div>
           </div>
           <div>{this.renderPost()}</div>
