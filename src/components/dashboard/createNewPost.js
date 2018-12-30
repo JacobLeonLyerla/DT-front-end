@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Button, Col, Row, Badge, Form, Input, DropdownItem,UncontrolledDropdown,DropdownToggle,DropdownMenu } from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import imgs from "../assets/exportImgs.js";
+import imgs from "../../assets/exportImgs.js";
 class Post extends Component {
   
   
