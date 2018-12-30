@@ -8,14 +8,14 @@ import axios from "axios";
 import Landing from "./components/preLogin/landing";
 import Signup from "./components/preLogin/signup";
 import Signin from "./components/preLogin/signin";
-import Dashboard from "./components/dashboard";
-import TagView from "./components/tagView";
-import Trek from "./components/trek";
-import Tags from "./components/tags";
+import Dashboard from "./components/dashboard/dashboard";
+import TagView from "./components/dashboard/tagView";
+import Trek from "./components/dashboard/trek";
+import Tags from "./components/dashboard/tags";
 import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
-import CreatePost from "./components/createNewPost";
-import Post from "./components/post"
+import CreatePost from "./components/dashboard/createNewPost";
+import Post from "./components/dashboard/post"
 class App extends Component {
   state = {
     user: "",
