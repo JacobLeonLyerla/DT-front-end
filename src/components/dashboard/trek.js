@@ -5,7 +5,7 @@ import axios from "axios";
 import Details from "./tagDetails";
 import Pictures from "./renderPictures";
 import Map from "./googleMaps";
-import Comments from "./comments";
+import Comments from "../comments/comments";
 class Trek extends Component {
   state = {
     tag: ""

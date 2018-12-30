@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Table, Row, Col, Button } from "reactstrap";
-import imgs from "../assets/exportImgs.js";
+import imgs from "../../assets/exportImgs.js";
 import { Link } from "react-router-dom";
 import Map from "./googleMaps";
 import Pictures from "./renderPictures.js";
