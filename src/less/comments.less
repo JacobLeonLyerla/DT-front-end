@@ -1,114 +1,114 @@
 .comment-form {
+  display: flex;
+  .btn {
+    font-size: 0.9rem;
+    background: @accentcolor;
+    border: none;
+  }
+  .btn:hover {
+    background: @secondarycolor;
+  }
+}
+.no-comments {
+  height: 10vh;
+  background: rgb(240, 230, 230);
+  font-size: 1.8rem;
+}
+.comments-container {
+  min-height: 20vh;
+  min-width: 100%;
+  border-top: 3px solid @secondarycolor;
+  border-bottom: 1px solid @secondarycolor;
+  max-height: 38vh;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  .comment-container {
+    background: @maincolor;
+    width: 100%;
     display: flex;
-    .btn {
-      font-size: 0.9rem;
-      background: @accentcolor;
-      border: none;
-    }
-    .btn:hover {
-      background: @secondarycolor;
-    }
+    flex-direction: column;
+    text-align: left;
+    border: 0.1rem solid white;
+    border-radius: 2%;
   }
-  .no-comments {
-    height: 10vh;
-    background: rgb(240, 230, 230);
-    font-size: 1.8rem;
-  }
-  .comments-container {
-    min-height: 20vh;
-    min-width: 100%;
-    border-top: 3px solid @secondarycolor;
-    border-bottom: 1px solid @secondarycolor;
-    max-height: 38vh;
-    overflow: hidden;
-    overflow-y: scroll;
-  
-    .comment-container {
-      background: @maincolor;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      border: 0.1rem solid white;
-      border-radius: 2%;
-    }
-    .target-comment {
-      display: flex;
-      justify-content: flex-end;
-      margin-right: 1vw;
-      margin-top: 0.5vh;
-      .fa-reply {
-        margin-right: 0.5vw;
-        color: @secondarycolor;
-      }
-      .fa-edit {
-        margin-right: 0.5vw;
-        color: @accentcolor;
-      }
-      .fa-edit:hover {
-        margin-right: 0.5vw;
-        color: @secondarycolor;
-      }
-      .fa-times {
-        margin-left: 0.5vw;
-        color: coral;
-      }
-  
-      .fa-times:hover {
-        margin-left: 0.5vw;
-        color: tomato;
-      }
-    }
-    .replies {
-      background: white;
-      .reply {
-        font-size: 1.2rem;
-        min-height: 5vh;
-        border: 1px solid @accentcolor;
-        .reply-username {
-          padding-left: 4vw;
-          color: @secondarycolor;
-        }
-        .reply-comment {
-          padding-left: 6vw;
-        }
-        .sub-username {
-          padding-left: 6vw;
-        }
-        .sub-comment {
-          padding-left: 8vw;
-        }
-      }
-    }
-    .username {
-      font-size: 1.6rem;
-      margin-bottom: 0.2vh;
-      padding-left: 1vw;
+  .target-comment {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1vw;
+    margin-top: 0.5vh;
+    .fa-reply {
+      margin-right: 0.5vw;
       color: @secondarycolor;
     }
-    .comment {
-      font-size: 1.3rem;
-      margin-bottom: 1vh;
-      padding-left: 3vw;
+    .fa-edit {
+      margin-right: 0.5vw;
+      color: @accentcolor;
     }
-  }
-  .modal-content {
-    margin-top: 20vh;
-  }
-  .modal-footer {
-    justify-content: center;
-    padding: 0;
-  
-    .btn {
-      width: 100%;
-      background: @accentcolor;
-      border: none;
+    .fa-edit:hover {
+      margin-right: 0.5vw;
+      color: @secondarycolor;
+    }
+    .fa-times {
+      margin-left: 0.5vw;
+      color: coral;
     }
 
-    .btn:hover {
-      background: @secondarycolor;
+    .fa-times:hover {
+      margin-left: 0.5vw;
+      color: tomato;
     }
-  } 
-   .btn-post{
-      width:7%;
+  }
+  .replies {
+    background: white;
+    .reply {
+      font-size: 1.2rem;
+      min-height: 5vh;
+      border: 1px solid @accentcolor;
+      .reply-username {
+        padding-left: 4vw;
+        color: @secondarycolor;
+      }
+      .reply-comment {
+        padding-left: 6vw;
+      }
+      .sub-username {
+        padding-left: 6vw;
+      }
+      .sub-comment {
+        padding-left: 8vw;
+      }
     }
+  }
+  .username {
+    font-size: 1.6rem;
+    margin-bottom: 0.2vh;
+    padding-left: 1vw;
+    color: @secondarycolor;
+  }
+  .comment {
+    font-size: 1.3rem;
+    margin-bottom: 1vh;
+    padding-left: 3vw;
+  }
+}
+.modal-content {
+  margin-top: 20vh;
+}
+.modal-footer {
+  justify-content: center;
+  padding: 0;
+
+  .btn {
+    width: 100%;
+    background: @accentcolor;
+    border: none;
+  }
+
+  .btn:hover {
+    background: @secondarycolor;
+  }
+}
+.btn-post {
+  width: 7%;
+}
