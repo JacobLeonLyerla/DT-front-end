@@ -113,6 +113,11 @@ p {
   animation-duration: 3s;
   animation-iteration-count: 1;
 }
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  p {
+    font-size: 1rem;
+  }
+}
 .signup-container {
   background-image: url("../assets/beach.jpeg");
   -webkit-background-size: cover;

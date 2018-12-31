@@ -1,0 +1,137 @@
+.table-container .google {
+  display: flex;
+  border-radius: 1%;
+  margin-top: 2vh;
+  background: #677fa3;
+  min-width: 81vw;
+  height: 35vh;
+  color: white;
+  overflow: hidden;
+}
+.table-container p {
+  margin-top: 7%;
+  font-size: 3rem;
+}
+.table-container .tag-filtered {
+  overflow: hidden;
+  overflow-y: scroll;
+  min-width: 81vw;
+  max-height: 35vh;
+  margin-right: 0px;
+  margin: 0 auto;
+  margin-top: 2vh;
+}
+.table-container .tag-filtered .cover {
+  width: 100%;
+  color: rgba(15, 15, 15, 0);
+}
+.table-container .tag-filtered .cover:hover {
+  background: rgba(15, 15, 15, 0.342);
+  color: white;
+}
+.table-container .tag-filtered p {
+  padding-top: 22vh;
+  font-size: 3rem;
+  margin-top: 0px;
+  height: 45.8vh;
+}
+.table-container .tag-filtered .tags {
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+  margin-top: 5vh;
+}
+.table-container .tag-filtered .row {
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 95vh;
+  margin-right: 0px;
+  margin: 0 auto;
+}
+.table-container .tag-filtered .tag-img {
+  margin: 0px;
+  padding: 0px;
+}
+.tr {
+  display: flex;
+}
+.tr th {
+  min-width: 24.5%;
+}
+.tag {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 20vw;
+}
+.tag .tags {
+  padding-right: 0.3vw;
+}
+tr:hover {
+  color: white;
+  background: #677fa3;
+}
+.tags-table {
+  margin-right: 0px;
+  margin: 0 auto;
+  min-width: 80vw;
+  min-height: 30.5vh;
+}
+.tags-table .table-items {
+  width: 100%;
+}
+.tags-table .table-items .btn:hover {
+  background: #677fa3;
+}
+.tags-table .table-items .tag {
+  margin: 1%;
+}
+.tags-table .td {
+  min-width: 25%;
+}
+.tags-table .td-container {
+  border-bottom: 1px dotted #a8bdd6;
+}
+.tags-table .td-container:hover {
+  background: #677fa3;
+  color: white;
+}
+.tags-table .head {
+  min-width: 24.7%;
+  font-size: 1.4rem;
+  padding-bottom: 1vh;
+  background: #677fa3;
+  color: white;
+}
+.tags-table .tr {
+  background: #677fa3;
+}
+.tags-table .tag {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 40vw;
+}
+.tags-table .tag .tags {
+  margin-left: 0.5vw;
+}
+.btn {
+  width: 100%;
+  font-size: 1.2rem;
+  background: #a8bdd6;
+  border: none;
+  margin: 0.11%;
+}
+.btn:hover {
+  background: #677fa3;
+}
+.tbody {
+  font-size: 1.3rem;
+  max-height: 35vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
