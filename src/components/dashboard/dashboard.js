@@ -1,4 +1,4 @@
-import React, { Component,Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import {
   Col,
   Navbar,
@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Dashboard extends Component {
-  
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
       return this.props.pictures.map(cata => (
@@ -26,12 +25,9 @@ class Dashboard extends Component {
   };
   componentDidMount = event => {
     if (this.props.user === "") {
-      this.props.loadUser(); 
-  
+      this.props.loadUser();
     }
-
   };
-
 
   render() {
     return (
@@ -47,8 +43,24 @@ class Dashboard extends Component {
               to={`/dashboard/${this.props.user.username}/post`}
               style={{ textDecoration: "none" }}
             >
-    {this.props.user !== undefined ?(<Fragment>{(this.props.likes >0)?(<div style={{display:"flex",justifyContent:"center"}}>Post <div style={{color:"coral",marginLeft:".4vw"}}><Badge style={{background:"orange"}}>{this.props.likes}</Badge>  </div></div>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
-            
+              {this.props.user !== undefined ? (
+                <Fragment>
+                  {this.props.likes > 0 ? (
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      Post{" "}
+                      <div style={{ color: "coral", marginLeft: ".4vw" }}>
+                        <Badge style={{ background: "orange" }}>
+                          {this.props.likes}
+                        </Badge>{" "}
+                      </div>
+                    </div>
+                  ) : (
+                    <Fragment>post</Fragment>
+                  )}{" "}
+                </Fragment>
+              ) : (
+                <Fragment>Post</Fragment>
+              )}
             </Link>
             <Link
               className={this.props.link}
@@ -59,8 +71,12 @@ class Dashboard extends Component {
             </Link>
 
             <UncontrolledDropdown direction="right">
-              <DropdownToggle  className={this.props.btn} color="primary" caret>
-               {(this.props.btn === "btn-sml")?(<Fragment>Cata...</Fragment>):(<Fragment>Catagories</Fragment>)} 
+              <DropdownToggle className={this.props.btn} color="primary" caret>
+                {this.props.btn === "btn-sml" ? (
+                  <Fragment>Cata...</Fragment>
+                ) : (
+                  <Fragment>Catagories</Fragment>
+                )}
               </DropdownToggle>
               <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
             </UncontrolledDropdown>

@@ -6,7 +6,7 @@ class Details extends Component {
       <div className="details">
         <div className="header">
           <div className="username">
-            Posted by  <div className="user">{` ${this.props.tag.user}`}</div>
+            Posted by <div className="user">{` ${this.props.tag.user}`}</div>
           </div>
           <div className="name">{this.props.tag.name}</div>
         </div>
