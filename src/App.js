@@ -15,7 +15,7 @@ import Tags from "./components/dashboard/tags";
 import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
 import CreatePost from "./components/dashboard/createNewPost";
-import Post from "./components/dashboard/post"
+import Post from "./components/dashboard/post";
 class App extends Component {
   state = {
     user: "",
@@ -26,8 +26,8 @@ class App extends Component {
     linkClass: "nav-links",
     logo: logo,
     picture: {},
-    count:0,
-    post:[]
+    count: 0,
+    post: []
   };
   componentDidMount() {
     this.loadUser();
@@ -46,17 +46,16 @@ class App extends Component {
     axios
       .get(`https://dt-back-end.herokuapp.com/users/${id}`, requestOptions)
       .then(response => {
-        console.log(response.data)
+        console.log(response.data);
         this.setState({ user: response.data });
-        let count = 0 ;
+        let count = 0;
         response.data.post.forEach(like => {
-        count += like.unreadComment
-        count += like.unreadLike
-        
+          count += like.unreadComment;
+          count += like.unreadLike;
+        });
+        this.setState({ count: count, post: response.data.post });
       })
-this.setState({count:count,post:response.data.post})
-      })
-     
+
       .catch(err => {});
   };
 
@@ -145,7 +144,7 @@ this.setState({count:count,post:response.data.post})
               />
             )}
           />
-           <Route
+          <Route
             exact
             path="/dashboard/post"
             render={props => (
@@ -164,7 +163,7 @@ this.setState({count:count,post:response.data.post})
             path="/dashboard/:id"
             render={props => <TagView {...props} tagVar={this.state.tagVar} />}
           />
-             <Route
+          <Route
             exact
             path="/dashboard/:id/post"
             render={props => (

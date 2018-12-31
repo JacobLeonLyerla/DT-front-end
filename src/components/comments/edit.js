@@ -12,7 +12,6 @@ class Edit extends Component {
       tooltipDelete: false
     };
   }
-
   toggle(type) {
     if (type === "edit") {
       this.setState({

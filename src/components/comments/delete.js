@@ -24,9 +24,9 @@ class Delete extends Component {
       .then(response => {
         console.log(response.data);
         this.toggle();
-            
+
         this.props.setupComments(this.props.propsId);
-        this.props.replyflag("true")
+        this.props.replyflag("true");
       })
       .catch(err => {
         console.log(err);

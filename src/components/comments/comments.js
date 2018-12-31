@@ -7,7 +7,6 @@ import Edit from "./edit";
 import Reply from "./reply";
 import Replies from "./replies";
 
-
 class Comments extends Component {
   state = { comment: "", comments: {}, reply: false };
 
@@ -17,8 +16,7 @@ class Comments extends Component {
       .then(response => {
         this.setState({ comments: response.data.comments });
       })
-      .catch(err => {
-      });
+      .catch(err => {});
   };
   replyflag = type => {
     if (type === "true") {
@@ -42,7 +40,7 @@ class Comments extends Component {
               {comment.username !== this.props.user.username ? (
                 <Fragment>
                   <Reply
-                  tag = {this.props.tag}
+                    tag={this.props.tag}
                     reply={this.state.reply}
                     replyflag={this.replyflag}
                     reply={comment.replyTo}
@@ -94,7 +92,7 @@ class Comments extends Component {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
-    this.props.setTags(this.props.tagId)
+    this.props.setTags(this.props.tagId);
     let comment = {};
     if (this.state.comment !== "") {
       comment.comment = this.state.comment;
@@ -104,40 +102,34 @@ class Comments extends Component {
     axios
       .post("https://dt-back-end.herokuapp.com/comments", comment)
       .then(response => {
-       console.log(response.data)
+        console.log(response.data);
         let comment = {};
         comment.comments = this.props.comments;
         comment.comments.push(response.data._id);
-       
-      
-       axios
-          .get(
-            `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`
-          )
-          .then(response => {
-             let unread;
-      if(this.props.tag.user !== this.props.user.username){
-          unread= response.data.unreadComment +1
-       }else{
-         unread = response.data.unreadComment
-       }
-        comment.unreadComment = unread
+
         axios
-          .put(
-            `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`,
-            comment
-          )
+          .get(`https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`)
           .then(response => {
-            this.setState({ comment: "" });
-            this.setupComments(this.props.tagId);
-            this.props.setTags(this.props.tagId)
+            let unread;
+            if (this.props.tag.user !== this.props.user.username) {
+              unread = response.data.unreadComment + 1;
+            } else {
+              unread = response.data.unreadComment;
+            }
+            comment.unreadComment = unread;
+            axios
+              .put(
+                `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`,
+                comment
+              )
+              .then(response => {
+                this.setState({ comment: "" });
+                this.setupComments(this.props.tagId);
+                this.props.setTags(this.props.tagId);
+              })
+              .catch(err => {});
           })
           .catch(err => {});
-
-
-          })
-          .catch(err => {});
-       
       })
       .catch(err => {});
   };
@@ -146,7 +138,11 @@ class Comments extends Component {
       <Fragment>
         <div className="comments-container">{this.renderComments()}</div>
         <Form className="comment-form">
-          <Button className="btn-post" onClick={() => this.handleSubmit()} color="primary">
+          <Button
+            className="btn-post"
+            onClick={() => this.handleSubmit()}
+            color="primary"
+          >
             Post
           </Button>
           <Input
