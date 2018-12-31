@@ -7,7 +7,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Badge
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -46,7 +47,7 @@ class Dashboard extends Component {
               to={`/dashboard/${this.props.user.username}/post`}
               style={{ textDecoration: "none" }}
             >
-    {this.props.user !== undefined ?(<Fragment>{(this.props.likes >0)?(<div style={{display:"flex",justifyContent:"center"}}>Post <div style={{color:"coral",marginLeft:".4vw"}}>( {this.props.likes} )</div></div>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
+    {this.props.user !== undefined ?(<Fragment>{(this.props.likes >0)?(<div style={{display:"flex",justifyContent:"center"}}>Post <div style={{color:"coral",marginLeft:".4vw"}}><Badge style={{background:"orange"}}>{this.props.likes}</Badge>  </div></div>):(<Fragment>post</Fragment>)} </Fragment>):(<Fragment>Post</Fragment>)}
             
             </Link>
             <Link
