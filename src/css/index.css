@@ -179,6 +179,8 @@ p {
 .dashboard .navbar {
   display: flex;
   flex-direction: column;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 .dashboard .navbar .nav-links {
   color: #677fa3;
