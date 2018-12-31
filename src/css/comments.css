@@ -1,0 +1,110 @@
+.comment-form {
+  display: flex;
+}
+.comment-form .btn {
+  font-size: 0.9rem;
+  background: #a8bdd6;
+  border: none;
+}
+.comment-form .btn:hover {
+  background: #677fa3;
+}
+.no-comments {
+  height: 10vh;
+  background: #f0e6e6;
+  font-size: 1.8rem;
+}
+.comments-container {
+  min-height: 20vh;
+  min-width: 100%;
+  border-top: 3px solid #677fa3;
+  border-bottom: 1px solid #677fa3;
+  max-height: 38vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.comments-container .comment-container {
+  background: #EBE1CE;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 0.1rem solid white;
+  border-radius: 2%;
+}
+.comments-container .target-comment {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1vw;
+  margin-top: 0.5vh;
+}
+.comments-container .target-comment .fa-reply {
+  margin-right: 0.5vw;
+  color: #677fa3;
+}
+.comments-container .target-comment .fa-edit {
+  margin-right: 0.5vw;
+  color: #a8bdd6;
+}
+.comments-container .target-comment .fa-edit:hover {
+  margin-right: 0.5vw;
+  color: #677fa3;
+}
+.comments-container .target-comment .fa-times {
+  margin-left: 0.5vw;
+  color: coral;
+}
+.comments-container .target-comment .fa-times:hover {
+  margin-left: 0.5vw;
+  color: tomato;
+}
+.comments-container .replies {
+  background: white;
+}
+.comments-container .replies .reply {
+  font-size: 1.2rem;
+  min-height: 5vh;
+  border: 1px solid #a8bdd6;
+}
+.comments-container .replies .reply .reply-username {
+  padding-left: 4vw;
+  color: #677fa3;
+}
+.comments-container .replies .reply .reply-comment {
+  padding-left: 6vw;
+}
+.comments-container .replies .reply .sub-username {
+  padding-left: 6vw;
+}
+.comments-container .replies .reply .sub-comment {
+  padding-left: 8vw;
+}
+.comments-container .username {
+  font-size: 1.6rem;
+  margin-bottom: 0.2vh;
+  padding-left: 1vw;
+  color: #677fa3;
+}
+.comments-container .comment {
+  font-size: 1.3rem;
+  margin-bottom: 1vh;
+  padding-left: 3vw;
+}
+.modal-content {
+  margin-top: 20vh;
+}
+.modal-footer {
+  justify-content: center;
+  padding: 0;
+}
+.modal-footer .btn {
+  width: 100%;
+  background: #a8bdd6;
+  border: none;
+}
+.modal-footer .btn:hover {
+  background: #677fa3;
+}
+.btn-post {
+  width: 7%;
+}

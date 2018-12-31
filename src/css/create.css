@@ -1,0 +1,70 @@
+.checked {
+  background: rgba(131, 194, 245, 0.705);
+}
+.tag-badge {
+  text-align: left;
+  min-height: 3.2vh;
+}
+.tag-badge .badge {
+  cursor: pointer;
+  background: #677fa3;
+}
+.create-button {
+  width: 100%;
+  background: #a8bdd6;
+  border: none;
+}
+.create-button:hover {
+  width: 100%;
+  background: #677fa3;
+  border: none;
+}
+.create-form {
+  border-radius: 0.6%;
+  min-height: 40vh;
+  padding-right: 3%;
+  padding-left: 3%;
+  background: #EBE1CE;
+}
+.create-form .text-left {
+  letter-spacing: 0.2rem;
+}
+.create-form .form-control {
+  border: none;
+}
+.create-form .dropdown {
+  text-align: left;
+}
+.create-form .dropdown-menu {
+  max-height: 18vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.create-form .btn {
+  font-size: 0.6rem;
+  background: #a8bdd6;
+  border: none;
+}
+.create-form .btn:hover {
+  background: #677fa3;
+}
+.create-form .btn:focus {
+  background: #677fa3;
+  border: none;
+  box-shadow: none !important;
+}
+.create-form .btn-primary:focus {
+  box-shadow: none !important;
+}
+.create-form .dropdown-check {
+  color: #a8bdd6;
+}
+.create-form .create-inputmid {
+  width: 50vw;
+  min-height: 5vh;
+  overflow: none;
+  overflow-y: hidden;
+}
+.btn:focus {
+  box-shadow: none !important;
+}
