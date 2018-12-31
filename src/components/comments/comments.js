@@ -146,7 +146,7 @@ class Comments extends Component {
       <Fragment>
         <div className="comments-container">{this.renderComments()}</div>
         <Form className="comment-form">
-          <Button onClick={() => this.handleSubmit()} color="primary">
+          <Button className="btn-post" onClick={() => this.handleSubmit()} color="primary">
             Post
           </Button>
           <Input
