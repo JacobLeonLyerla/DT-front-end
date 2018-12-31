@@ -26,7 +26,7 @@ class EditComment extends Component {
       modal: !this.state.modal
     });
   }
-  
+
   handleEditComment = () => {
     console.log(this.props);
     let edit = {};
@@ -37,8 +37,7 @@ class EditComment extends Component {
         console.log(response.data);
         this.toggle();
         this.props.setupComments(this.props.propsId);
-        this.props.replyflag("true")
-
+        this.props.replyflag("true");
       })
       .catch(err => {
         console.log(err);
@@ -77,7 +76,6 @@ class EditComment extends Component {
     );
   };
   render() {
- 
     return <Fragment>{this.renderModal()}</Fragment>;
   }
 }

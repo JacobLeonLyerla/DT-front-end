@@ -72,7 +72,7 @@ class Reply extends Component {
     reply.replyTo = this.props.id;
     axios
       .post(`https://dt-back-end.herokuapp.com/comments`, reply)
-      .then(response => {        
+      .then(response => {
         let comment = {};
         comment.replies = this.props.replies;
         comment.replies.push(response.data._id);
@@ -83,33 +83,28 @@ class Reply extends Component {
           )
           .then(response => {
             let unread;
-            if(this.props.user.username!==this.props.tag.user){
-            unread = this.props.tag.unreadComment +1
-            }else{
-              unread=this.props.tag.unreadComment
+            if (this.props.user.username !== this.props.tag.user) {
+              unread = this.props.tag.unreadComment + 1;
+            } else {
+              unread = this.props.tag.unreadComment;
             }
-             comment = {};
-             
-            comment.unreadComment = unread
-            console.log(this.props.propsId)
+            comment = {};
+
+            comment.unreadComment = unread;
+            console.log(this.props.propsId);
             axios
               .put(
                 `https://dt-back-end.herokuapp.com/tags/${this.props.propsId}`,
                 comment
               )
               .then(response => {
-                console.log(response.data)
-              this.props.replyflag("true");
-            this.props.setupComments(this.props.propsId);
-            this.props.setTags(this.props.propsId)
-            this.setState({   reply: `Reply to ${this.props.username}`});
-
+                console.log(response.data);
+                this.props.replyflag("true");
+                this.props.setupComments(this.props.propsId);
+                this.props.setTags(this.props.propsId);
+                this.setState({ reply: `Reply to ${this.props.username}` });
               })
               .catch(err => {});
-
-
-
-          
           })
           .catch(err => {});
       })
