@@ -416,6 +416,7 @@ tr:hover {
   background: #677fa3;
 }
 .tbody {
+  font-size: 1.3rem;
   max-height: 35vh ;
   overflow: hidden;
   overflow-y: scroll;
@@ -556,6 +557,9 @@ tr:hover {
 }
 .modal-footer .btn:hover {
   background: #677fa3;
+}
+.btn-post {
+  width: 7%;
 }
 .checked {
   background: rgba(131, 194, 245, 0.705);
