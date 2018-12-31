@@ -632,7 +632,8 @@ tr:hover {
   box-shadow: none !important;
 }
 .notify {
-  background: lightgreen;
+  background: orange;
+  color: white;
 }
 .link-style {
   color: black;
