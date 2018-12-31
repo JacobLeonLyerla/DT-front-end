@@ -59,7 +59,7 @@ class Dashboard extends Component {
 
             <UncontrolledDropdown direction="right">
               <DropdownToggle  className={this.props.btn} color="primary" caret>
-                Catagories
+               {(this.props.btn === "btn-sml")?(<Fragment>Cata...</Fragment>):(<Fragment>Catagories</Fragment>)} 
               </DropdownToggle>
               <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
             </UncontrolledDropdown>
