@@ -296,21 +296,21 @@ p {
     margin: 0 auto;
   }
   .dashboard .navbar .btn {
-    font-size: .7rem;
+    font-size: 0.7rem;
     margin-top: 3vh;
     width: 95%;
   }
   .dashboard .navbar .btn-sml {
-    font-size: .4rem;
+    font-size: 0.4rem;
     width: 95%;
   }
   .dashboard .navbar .nav-sml {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 }
 @media only screen and (min-width: 450px) and (max-width: 719px) {
   .dashboard {
-    height: 60vh;
+    height: 65vh;
     min-height: 100%;
     background: white;
     box-shadow: none;
@@ -319,6 +319,9 @@ p {
     height: 13vw;
     max-width: 100%;
     margin: 0 auto;
+  }
+  .dashboard .navbar {
+    margin-bottom: 3%;
   }
 }
 .table-container .google {

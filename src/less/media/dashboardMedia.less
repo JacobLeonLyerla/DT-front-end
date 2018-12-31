@@ -3,37 +3,39 @@
 @media @laptop {
   .dashboard {
     .media {
-     max-width:80%;
-        margin: 0 auto;
-      }
-      .navbar{
-  .btn {
-        font-size: .7rem;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    .navbar {
+      .btn {
+        font-size: 0.7rem;
         margin-top: 3vh;
         width: 95%;
-
       }
       .btn-sml {
-        font-size: .4rem;
+        font-size: 0.4rem;
         width: 95%;
+      }
+      .nav-sml {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+@media @tablet {
+  .dashboard {
+    height: 65vh;
+    min-height: 100%;
+    background: white;
+    box-shadow: none;
 
-      }
-      .nav-sml{
-        font-size:.7rem;
-      }
+    .media {
+      height: 13vw;
+      max-width: 100%;
+      margin: 0 auto;
     }
-    } 
-  }
-  @media @tablet {
-    .dashboard {
-      height: 60vh;
-      min-height: 100%;
-      background: white;
-      box-shadow:none;
-      .media {
-        height: 13vw;
-        max-width:100%;
-           margin: 0 auto;
-         }
+    .navbar {
+      margin-bottom: 3%;
     }
   }
+}
