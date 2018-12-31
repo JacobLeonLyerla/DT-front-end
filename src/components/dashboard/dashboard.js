@@ -11,7 +11,6 @@ import {
   Badge
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 class Dashboard extends Component {
   renderCatagoreis = () => {
