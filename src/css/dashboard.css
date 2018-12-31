@@ -1,0 +1,123 @@
+.dashboard {
+  height: 100vh;
+  min-height: 100%;
+  background: white;
+  box-shadow: 5px 15px 10px #6b6969;
+}
+.dashboard .fas {
+  color: #a8bdd6;
+  margin-top: 3vh;
+  font-size: 2.9rem;
+}
+.dashboard .media {
+  height: 5.5vh;
+  margin-bottom: 3vh;
+}
+.dashboard .navbar {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.dashboard .navbar .nav-links {
+  color: #677fa3;
+  font-size: 1.3rem;
+  width: 100%;
+  padding: 3vh 0vh 3vh;
+}
+.dashboard .navbar .nav-sml {
+  color: #677fa3;
+  font-size: 0.9rem;
+  width: 100%;
+  padding: 3vh 0vh 3vh;
+}
+.dashboard .navbar .nav-links:hover {
+  background: rgba(8, 8, 8, 0.267);
+  color: #ffffff;
+}
+.dashboard .navbar .nav-sml:hover {
+  background: rgba(8, 8, 8, 0.267);
+  color: #ffffff;
+}
+.dashboard .navbar .btn {
+  border: none;
+  font-size: 1.3rem;
+  margin-top: 3vh;
+  width: 12vw;
+  background: #677fa3;
+}
+.dashboard .navbar .btn-sml {
+  border: none;
+  font-size: 0.8rem;
+  margin-top: 3vh;
+  width: 100%;
+  background: #677fa3;
+}
+.dashboard .navbar .btn:active {
+  background: #a8bdd6;
+  border: none;
+}
+.dashboard .navbar .btn:hover {
+  background: #a8bdd6;
+}
+.dashboard .navbar .btn:visited {
+  background: #a8bdd6;
+}
+.dashboard .navbar .dropdown-menu {
+  max-height: 18vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.dashboard .navbar .dropdown {
+  width: 100%;
+}
+.dashboard .navbar .show {
+  width: 100%;
+}
+.dashboard .navbar .dropdown-item {
+  text-align: center;
+}
+.tags-container {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-top: 3vh;
+}
+.tags-container .cover {
+  width: 100%;
+  color: rgba(15, 15, 15, 0);
+  cursor: pointer;
+}
+.tags-container .cover:hover {
+  background: rgba(15, 15, 15, 0.342);
+  color: white;
+}
+.tags-container p {
+  padding-top: 22vh;
+  font-size: 3rem;
+  margin-top: 0px;
+  height: 45.8vh;
+}
+.tags-container .tags {
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 45.8vh;
+  margin-top: 5vh;
+}
+.tags-container .row {
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 95vh;
+  margin-right: 0px;
+  margin: 0 auto;
+}
+.tags-container .tag-img {
+  margin: 0px;
+  padding: 0px;
+}
+.tags-container .tag {
+  height: 49.8vh;
+}

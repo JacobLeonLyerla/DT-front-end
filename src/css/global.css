@@ -1,5 +1,6 @@
 .App {
   overflow-x: hidden !important;
+  font-size: 64.5%;
 }
 .row {
   max-width: 100vw;
