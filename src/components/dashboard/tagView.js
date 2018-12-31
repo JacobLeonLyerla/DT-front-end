@@ -65,7 +65,7 @@ class TagView extends Component {
   userSubmissionTable = () => {
     return this.state.test.map(sub => (
        
-          <div className="td-container" style={{display:"flex",flexDirection:"row"}}>
+          <div  onClick={() => this.renderRoute(sub._id)} className="td-container" style={{display:"flex",flexDirection:"row"}}>
             <div className="td">{sub.name}</div>
             <div className="td">{sub.city}</div>
             <div className="td">{sub.country}</div>
