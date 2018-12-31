@@ -94,7 +94,7 @@ class Comments extends Component {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
-   
+    this.props.setTags(this.props.tagId)
     let comment = {};
     if (this.state.comment !== "") {
       comment.comment = this.state.comment;
