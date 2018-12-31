@@ -183,13 +183,13 @@ p {
 .dashboard .navbar .nav-links {
   color: #677fa3;
   font-size: 1.3rem;
-  width: 15.1vw;
+  width: 100%;
   padding: 3vh 0vh 3vh;
 }
 .dashboard .navbar .nav-sml {
   color: #677fa3;
   font-size: 0.9rem;
-  width: 7.1vw;
+  width: 100%;
   padding: 3vh 0vh 3vh;
 }
 .dashboard .navbar .nav-links:hover {
@@ -211,7 +211,7 @@ p {
   border: none;
   font-size: 0.8rem;
   margin-top: 3vh;
-  width: 5vw;
+  width: 100%;
   background: #677fa3;
 }
 .dashboard .navbar .btn:active {
@@ -229,8 +229,11 @@ p {
   overflow: hidden;
   overflow-y: scroll;
 }
+.dashboard .navbar .dropdown {
+  width: 100%;
+}
 .dashboard .navbar .show {
-  width: 12vw;
+  width: 100%;
 }
 .dashboard .navbar .dropdown-item {
   text-align: center;
@@ -655,6 +658,7 @@ td {
 }
 .App {
   overflow-x: hidden !important;
+  font-size: 64.5%;
 }
 .row {
   max-width: 100vw;
