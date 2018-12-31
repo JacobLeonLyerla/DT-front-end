@@ -1,12 +1,20 @@
 import React, { Component, Fragment } from "react";
-import { Button, Col, Row, Badge, Form, Input, DropdownItem,UncontrolledDropdown,DropdownToggle,DropdownMenu } from "reactstrap";
+import {
+  Button,
+  Col,
+  Row,
+  Badge,
+  Form,
+  Input,
+  DropdownItem,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu
+} from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import imgs from "../../assets/exportImgs.js";
 class Post extends Component {
-  
-  
-  
   state = {
     tags: [],
     name: "",
@@ -22,9 +30,16 @@ class Post extends Component {
   }
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
-      return this.props.pictures.map(tag => (<Fragment>
-          <DropdownItem className={`${this.checked(tag.name,"dropdown-check")}`}  onClick={() => this.filterTags(tag.name)}>{tag.name.replace(/-/g, " ")}</DropdownItem>
-      </Fragment>));
+      return this.props.pictures.map(tag => (
+        <Fragment>
+          <DropdownItem
+            className={`${this.checked(tag.name, "dropdown-check")}`}
+            onClick={() => this.filterTags(tag.name)}
+          >
+            {tag.name.replace(/-/g, " ")}
+          </DropdownItem>
+        </Fragment>
+      ));
     }
   };
   fetchTags = () => {};
@@ -65,15 +80,21 @@ class Post extends Component {
       });
     }
   };
-  checked = (id,type) => {
+  checked = (id, type) => {
     let filteredArr = this.state.tags.filter(function(value, index, arr) {
       return value !== id;
     });
-    if (filteredArr.length < this.state.tags.length && type !== "dropdown-check") {
+    if (
+      filteredArr.length < this.state.tags.length &&
+      type !== "dropdown-check"
+    ) {
       return "checked";
     }
-    if(filteredArr.length < this.state.tags.length && type === "dropdown-check"){
-      return"dropdown-check"
+    if (
+      filteredArr.length < this.state.tags.length &&
+      type === "dropdown-check"
+    ) {
+      return "dropdown-check";
     }
   };
   filterTags(id) {
@@ -91,111 +112,121 @@ class Post extends Component {
   renderPickedTags = () => {
     if (this.state.tags.length > 0) {
       return this.state.tags.map(tag => (
-        <Badge onClick={() => this.filterTags(tag)}>{tag.replace(/-/g, " ")}</Badge>
+        <Badge onClick={() => this.filterTags(tag)}>
+          {tag.replace(/-/g, " ")}
+        </Badge>
       ));
     }
   };
-  
+
   handleInput = input => {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
     let post = {};
-    if(this.state.description !=="" && this.state.name !== "" && this.state.tags.length >0){
-post.user = this.props.user.username
-post.tag =this.state.tags 
-    post.description = this.state.description;
-    post.name = this.state.name
-    post.city = this.state.city
-    post.region =this.state.region
-    post.country = this.state.country 
+    if (
+      this.state.description !== "" &&
+      this.state.name !== "" &&
+      this.state.tags.length > 0
+    ) {
+      post.user = this.props.user.username;
+      post.tag = this.state.tags;
+      post.description = this.state.description;
+      post.name = this.state.name;
+      post.city = this.state.city;
+      post.region = this.state.region;
+      post.country = this.state.country;
     }
     axios
-      .post('https://dt-back-end.herokuapp.com/tags', post)
+      .post("https://dt-back-end.herokuapp.com/tags", post)
       .then(response => {
-
-        let postId ={}
-        postId.post = this.props.user.post
-        postId.post.push(response.data._id)
+        let postId = {};
+        postId.post = this.props.user.post;
+        postId.post.push(response.data._id);
         axios
-        .put(`https://dt-back-end.herokuapp.com/users/${this.props.user._id}`, postId)
-        .then(response =>{
-        }).catch(err=>{
-        })
+          .put(
+            `https://dt-back-end.herokuapp.com/users/${this.props.user._id}`,
+            postId
+          )
+          .then(response => {})
+          .catch(err => {});
 
-        this.setState({tags: [],
-        name: "",
-        user: "",
-        country: "",
-        region: "",
-        city: "",
-        description: ""
-        })
-       
-      })     
-      .catch(err => {
-      });
+        this.setState({
+          tags: [],
+          name: "",
+          user: "",
+          country: "",
+          region: "",
+          city: "",
+          description: ""
+        });
+      })
+      .catch(err => {});
   };
   Form = () => {
     return (
       <Form className="create-form">
         <UncontrolledDropdown direction="left">
-              <DropdownToggle className={this.props.btn}  color="primary" caret>
-                Tags
-              </DropdownToggle>
-              <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
-            </UncontrolledDropdown>
+          <DropdownToggle className={this.props.btn} color="primary" caret>
+            Tags
+          </DropdownToggle>
+          <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
+        </UncontrolledDropdown>
         <div className="text-left">Title</div>
-       
-        <Input     name="name"
-              value={this.state.name}
-              onChange={this.handleInput}
-  
+
+        <Input
+          name="name"
+          value={this.state.name}
+          onChange={this.handleInput}
         />
-         <div className="tag-badge">{this.renderPickedTags()}</div>
-       
+        <div className="tag-badge">{this.renderPickedTags()}</div>
 
         <div className="text-left">Description</div>
-        <Input type="textarea" style={{ height: "30vh" }} 
-         name="description"
-         value={this.state.description}
-         onChange={this.handleInput}
+        <Input
+          type="textarea"
+          style={{ height: "30vh" }}
+          name="description"
+          value={this.state.description}
+          onChange={this.handleInput}
         />
-     <br />
+        <br />
         <Row className="create-inputmid">
           <Col md="4">
-            <Input placeholder="Country" 
-             name="country"
-             value={this.state.country}
-             onChange={this.handleInput}
+            <Input
+              placeholder="Country"
+              name="country"
+              value={this.state.country}
+              onChange={this.handleInput}
             />
           </Col>
           <Col md="4">
-            <Input placeholder="Region" 
-             name="region"
-             value={this.state.region}
-             onChange={this.handleInput}
+            <Input
+              placeholder="Region"
+              name="region"
+              value={this.state.region}
+              onChange={this.handleInput}
             />
           </Col>
           <Col md="4">
-            <Input placeholder="City" 
-             name="city"
-             value={this.state.city}
-             onChange={this.handleInput}
+            <Input
+              placeholder="City"
+              name="city"
+              value={this.state.city}
+              onChange={this.handleInput}
             />
           </Col>
         </Row>
-          <br />
+        <br />
       </Form>
     );
   };
   render() {
-
     return (
       <Col md={`${10 + this.props.tagVar}`} className="tags-container">
-  
         {this.Form()}
-        <Button onClick={()=>this.handleSubmit()} className="create-button">Create New Post</Button>
+        <Button onClick={() => this.handleSubmit()} className="create-button">
+          Create New Post
+        </Button>
         <Row>{this.renderPictures()}</Row>
       </Col>
     );

@@ -5,7 +5,6 @@ class SubReply extends Component {
       return this.props.replies.map(reply => (
         <Fragment>
           <div className="reply sub-reply">
-          
             <div className="reply-username sub-username">{reply.username}</div>
             <div className="reply-comment sub-comment">{reply.comment}</div>
           </div>
