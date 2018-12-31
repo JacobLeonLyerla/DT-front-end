@@ -417,7 +417,7 @@ tr:hover {
 }
 .tbody {
   font-size: 1.3rem;
-  max-height: 35vh ;
+  max-height: 35vh;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -661,7 +661,7 @@ td {
   margin-left: 0.5vw;
 }
 .post-head {
-  margin-left: .3%;
+  margin-left: 0.3%;
 }
 .App {
   overflow-x: hidden !important;

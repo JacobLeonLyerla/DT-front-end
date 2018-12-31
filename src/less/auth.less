@@ -1,51 +1,48 @@
-
-
 .signup-container {
-    background-image: url("../assets/beach.jpeg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100vh;
-    height: 100%;
+  background-image: url("../assets/beach.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-control {
+    width: 50%;
+    height: 5vh;
+    margin: 0 auto;
+  }
+  .text-muted {
     font-size: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .form-control {
-      width: 50%;
-      height: 5vh;
-      margin: 0 auto;
+  }
+  .invalid-feedback {
+    font-size: 1rem;
+  }
+  .valid-feedback {
+    font-size: 1rem;
+  }
+  .signup-form {
+    width: 30vw;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.767);
+    padding-top: 1%;
+    border-radius: 1%;
+    animation: bounceInDown;
+    animation-duration: 1.7s;
+    animation-iteration-count: 1;
+    .form-buttons {
+      display: flex;
+      justify-content: space-evenly;
     }
-    .text-muted {
-      font-size: 1rem;
-    }
-    .invalid-feedback {
-      font-size: 1rem;
-    }
-    .valid-feedback {
-      font-size: 1rem;
-    }
-    .signup-form {
-      width: 30vw;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.767);
-      padding-top: 1%;
-      border-radius: 1%;
-      animation: bounceInDown;
-      animation-duration: 1.7s;
-      animation-iteration-count: 1;
-      .form-buttons {
-        display: flex;
-        justify-content: space-evenly;
-      }
-      .btn {
-      
-        font-size: 1.6rem;
-      }
-    }
-    .fa-eye {
-      font-size: 2rem;
-      color: darkcyan;
+    .btn {
+      font-size: 1.6rem;
     }
   }
+  .fa-eye {
+    font-size: 2rem;
+    color: darkcyan;
+  }
+}
