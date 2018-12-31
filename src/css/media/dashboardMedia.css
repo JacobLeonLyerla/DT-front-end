@@ -1,0 +1,6 @@
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .dashboard .media {
+    height: 1.5vh;
+    margin-bottom: 3vh;
+  }
+}
