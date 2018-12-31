@@ -210,9 +210,9 @@ p {
 }
 .dashboard .navbar .btn {
   border: none;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: 3vh;
-  width: 12vw;
+  width: 95%;
   background: #677fa3;
 }
 .dashboard .navbar .btn-sml {
@@ -293,8 +293,12 @@ p {
 @media only screen and (min-width: 720px) and (max-width: 959px) {
   .dashboard .media {
     max-width: 80%;
-    margin-bottom: 3vh;
     margin: 0 auto;
+  }
+  .dashboard .navbar .btn {
+    font-size: .7rem;
+    margin-top: 3vh;
+    width: 95%;
   }
 }
 .table-container .google {

@@ -1,6 +1,12 @@
 @media only screen and (min-width: 720px) and (max-width: 959px) {
   .dashboard .media {
-    height: 1.5vh;
-    margin-bottom: 3vh;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .dashboard .btn {
+    background: pink;
+    font-size: .2rem;
+    margin-top: 3vh;
+    width: 1vw;
   }
 }
