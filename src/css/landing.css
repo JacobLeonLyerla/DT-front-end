@@ -1,0 +1,115 @@
+.mapBackground-styles {
+  min-height: 100vh;
+  background-image: url("../assets/adventure.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.col-md-12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.col-md-12 .aboutHeader {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 6rem;
+  margin-bottom: 1vh;
+  letter-spacing: 0.2ch;
+  color: white;
+  text-decoration: underline #677fa3;
+}
+p {
+  margin-top: 5vh;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.menu {
+  background: rgba(3, 3, 3, 0.219);
+  border-bottom: none;
+  box-shadow: none;
+}
+.menu .item {
+  color: white;
+}
+.menu .item:hover {
+  color: #EBE1CE !important;
+}
+.menu .active {
+  color: #EBE1CE !important;
+}
+.logo-wrapper {
+  margin-top: 22vh;
+  background: white;
+  opacity: 0.7;
+}
+.logo-styles {
+  width: 60vw;
+}
+.aboutRow {
+  min-height: 66vh;
+}
+.navLogo-styles {
+  width: 12%;
+}
+.red {
+  background-image: url("../assets/red-forest.jpg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.sea {
+  background-image: url("../assets/water.jpg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.desert {
+  background-image: url("../assets/desert.jpg");
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.filter {
+  color: rgba(15, 15, 15, 0);
+}
+.filter:hover {
+  background: rgba(15, 15, 15, 0.404);
+  color: white;
+}
+.landing-Nav {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.8rem;
+  background: rgba(3, 3, 3, 0.322);
+}
+.landing-Nav .nav-link {
+  color: #a8bdd6;
+}
+.landing-Nav .nav-link:hover {
+  color: #EBE1CE;
+  background: rgba(0, 0, 0, 0.103);
+}
+.landing-Nav .signup {
+  color: white;
+  animation: wobble;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+.landing-Nav .signup:hover {
+  filter: brightness(160%);
+  animation: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
