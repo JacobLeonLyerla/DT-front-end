@@ -178,7 +178,8 @@ p {
   font-size: 2.9rem;
 }
 .dashboard .media {
-  height: 5.5vh;
+  max-width: 100%;
+  height: 2.7vw;
   margin-bottom: 3vh;
 }
 .dashboard .navbar {
@@ -288,6 +289,13 @@ p {
 }
 .tags-container .tag {
   height: 49.8vh;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .dashboard .media {
+    max-width: 80%;
+    margin-bottom: 3vh;
+    margin: 0 auto;
+  }
 }
 .table-container .google {
   display: flex;
