@@ -92,6 +92,7 @@ tr:hover {
 }
 .tags-table .td {
   min-width: 25%;
+  font-size: 1.3rem;
 }
 .tags-table .td-container {
   border-bottom: 1px dotted #a8bdd6;

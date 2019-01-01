@@ -1,0 +1,16 @@
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .table-container .head {
+    font-size: 1.3rem;
+  }
+  .table-container .tags-table .td {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 719px) {
+  .table-container .head {
+    font-size: 1rem;
+  }
+  .table-container .tags-table .td {
+    font-size: 0.9rem;
+  }
+}

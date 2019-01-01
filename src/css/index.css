@@ -462,6 +462,22 @@ tr:hover {
   overflow: hidden;
   overflow-y: scroll;
 }
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .table-container .head {
+    font-size: 1.3rem;
+  }
+  .table-container .tags-table .td {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 719px) {
+  .table-container .head {
+    font-size: 1rem;
+  }
+  .table-container .tags-table .td {
+    font-size: 0.9rem;
+  }
+}
 .details {
   min-height: 15vh;
   max-height: 30vh;
@@ -717,7 +733,7 @@ td {
     font-size: 1rem;
   }
   .post-container .post-table .td {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 .App {
