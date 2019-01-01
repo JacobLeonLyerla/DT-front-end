@@ -308,7 +308,7 @@ p {
     font-size: 0.7rem;
   }
 }
-@media only screen and (min-width: 450px) and (max-width: 719px) {
+@media only screen and (max-width: 719px) {
   .dashboard {
     height: 65vh;
     min-height: 100%;
@@ -418,6 +418,7 @@ tr:hover {
 }
 .tags-table .td {
   min-width: 25%;
+  font-size: 1.3rem;
 }
 .tags-table .td-container {
   border-bottom: 1px dotted #a8bdd6;
@@ -702,6 +703,14 @@ td {
 }
 .post-head {
   margin-left: 0.3%;
+}
+@media only screen and (max-width: 719px) {
+  .post-container .post-head {
+    font-size: 1rem;
+  }
+  .post-container .post-table .td {
+    font-size: .9rem;
+  }
 }
 .App {
   overflow-x: hidden !important;

@@ -15,13 +15,13 @@ class Post extends Component {
         }
         style={{ display: "flex", flexDirection: "row" }}
       >
-        <div className="td" style={{ fontSize: "1.3rem", width: "20%" }}>
+        <div className="td" >
           {post.unreadComment + post.unreadLike}
         </div>
-        <div className="td" style={{ fontSize: "1.3rem", width: "20%" }}>
+        <div className="td" >
           {post.name}
         </div>
-        <div className="td" style={{ fontSize: "1.3rem", width: "20%" }}>
+        <div className="td" >
           {post.city}
         </div>
         {this.renderTags(post.tag)}
@@ -49,7 +49,7 @@ class Post extends Component {
       return (
         <div className="tag td" style={{ fontSize: "1.3rem", width: "20%" }}>
           {tag.map(tag => (
-            <div className="tags">
+            <div className="tags td">
               {`${tag.replace(/-/g, " ")}`}
               <br />
             </div>
@@ -75,8 +75,8 @@ class Post extends Component {
   };
   render() {
     return (
-      <Col className="table-container" md={`${10 + this.props.tagVar}`}>
-        <Table className="tags-table">
+      <Col className="table-container post-container" md={`${10 + this.props.tagVar}`}>
+        <Table className="tags-table post-table">
           <div>
             <div className="tr">
               <div
