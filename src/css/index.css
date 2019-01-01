@@ -462,12 +462,20 @@ tr:hover {
   overflow: hidden;
   overflow-y: scroll;
 }
-@media only screen and (min-width: 720px) and (max-width: 959px) {
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
   .table-container .head {
     font-size: 1.3rem;
   }
   .table-container .tags-table .td {
     font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .table-container .head {
+    font-size: 1.1rem;
+  }
+  .table-container .tags-table .td {
+    font-size: .8rem;
   }
 }
 @media only screen and (max-width: 719px) {
