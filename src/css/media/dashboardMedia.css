@@ -3,10 +3,32 @@
     max-width: 80%;
     margin: 0 auto;
   }
-  .dashboard .btn {
-    background: pink;
-    font-size: .2rem;
+  .dashboard .navbar .btn {
+    font-size: 0.7rem;
     margin-top: 3vh;
-    width: 1vw;
+    width: 95%;
+  }
+  .dashboard .navbar .btn-sml {
+    font-size: 0.4rem;
+    width: 95%;
+  }
+  .dashboard .navbar .nav-sml {
+    font-size: 0.7rem;
+  }
+}
+@media only screen and (max-width: 719px) {
+  .dashboard {
+    height: 65vh;
+    min-height: 100%;
+    background: white;
+    box-shadow: none;
+  }
+  .dashboard .media {
+    height: 13vw;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .dashboard .navbar {
+    margin-bottom: 3%;
   }
 }

@@ -42,9 +42,9 @@
 }
 .dashboard .navbar .btn {
   border: none;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: 3vh;
-  width: 12vw;
+  width: 95%;
   background: #677fa3;
 }
 .dashboard .navbar .btn-sml {
