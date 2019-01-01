@@ -704,6 +704,14 @@ td {
 .post-head {
   margin-left: 0.3%;
 }
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .post-container .post-head {
+    font-size: 1.3rem;
+  }
+  .post-container .post-table .td {
+    font-size: 1rem;
+  }
+}
 @media only screen and (max-width: 719px) {
   .post-container .post-head {
     font-size: 1rem;
