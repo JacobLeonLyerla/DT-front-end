@@ -324,16 +324,6 @@ p {
     margin-bottom: 3%;
   }
 }
-.table-container .google {
-  display: flex;
-  border-radius: 1%;
-  margin-top: 2vh;
-  background: #677fa3;
-  min-width: 81vw;
-  height: 35vh;
-  color: white;
-  overflow: hidden;
-}
 .table-container p {
   margin-top: 7%;
   font-size: 3rem;
@@ -485,6 +475,16 @@ tr:hover {
   .table-container .tags-table .td {
     font-size: 0.9rem;
   }
+}
+.google {
+  display: flex;
+  border-radius: 1%;
+  margin-top: 2vh;
+  background: #677fa3;
+  min-width: 81vw;
+  height: 55vh;
+  color: white;
+  overflow: hidden;
 }
 .details {
   min-height: 15vh;
