@@ -1,11 +1,16 @@
-import React, { Component } from "react";
-class Maps extends Component {
+import React, { Component,Fragment } from "react";
+import { GoogleMap, Marker } from "react-google-maps"
+import Map from "./map";
+
+
+class Maps extends Component  {
+ 
   render() {
-    return (
-      <div className="google">
-        <p>Google Placeholder</p>
-      </div>
-    );
+    return (<Fragment>
+     
+      <Map/>
+      
+    </Fragment>);
   }
 }
 export default Maps;
