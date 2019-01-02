@@ -668,6 +668,9 @@ tr:hover {
   overflow: hidden;
   overflow-y: scroll;
 }
+.create-form .dropdown-toggle {
+  width: 3%;
+}
 .create-form .btn {
   font-size: 0.6rem;
   background: #a8bdd6;
