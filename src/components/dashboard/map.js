@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React, { Component,Fragment } from "react";
+
 import {
     withGoogleMap,
     GoogleMap,
     Marker,
+    withScriptjs
   } from "react-google-maps";
   
-  const MapWithAMarker = withGoogleMap(props =>
-   
+
+  const MapWithAMarker = withScriptjs(withGoogleMap((props) =>{
     <GoogleMap
     
       defaultZoom={6}
@@ -16,7 +18,7 @@ import {
         position={{ lat: -34.397, lng: 150.644 }}
       />
     </GoogleMap>
-  );
+  }));
   class Map extends Component{
     constructor(props) {
         super(props);
@@ -27,27 +29,29 @@ import {
           }
         }
       }
-      componentDidMount(){
-      this.setupDefault()
-      }
+      
       setupDefault=()=>{
-          console.log(this.props)
-              if(this.props.picture.lat){
+      if(this.props.picture !== undefined){
+     
+    
+        
+              if(this.state.defaultCenter.lat ===0){
              this.setState({ defaultCenter:{
                 lat: this.props.picture.lat ,
                 lng: this.props.picture.lng ,
             }}) 
-          }
+          }  }
       }
   render(){
       console.log(this.state)
-      return(
-          
+      return(<Fragment>
+          {this.setupDefault()}
   <MapWithAMarker
     containerElement={<div style={{ height: `400px` }} />}
     mapElement={<div style={{ height: `100%` }} />}
     defaultCenter={this.state.defaultCenter}
-  />)
+  />
+  </Fragment>)
   }
   }
   export default Map;
