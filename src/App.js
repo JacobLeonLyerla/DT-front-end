@@ -46,7 +46,6 @@ class App extends Component {
     axios
       .get(`https://dt-back-end.herokuapp.com/users/${id}`, requestOptions)
       .then(response => {
-        console.log(response.data);
         this.setState({ user: response.data });
         let count = 0;
         response.data.post.forEach(like => {
@@ -161,7 +160,13 @@ class App extends Component {
           <Route
             exact
             path="/dashboard/:id"
-            render={props => <TagView {...props} tagVar={this.state.tagVar} />}
+            render={props => (
+              <TagView
+                picture={this.state.picture}
+                {...props}
+                tagVar={this.state.tagVar}
+              />
+            )}
           />
           <Route
             exact
