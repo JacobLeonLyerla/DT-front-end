@@ -11,7 +11,7 @@ class TagView extends Component {
     test: [{ tag: "" }],
     tag: "",
     flag: false,
-    picture: [{ name: "pat" }],
+    picture: [],
     imgTag: [],
     imgName: ""
   };
@@ -151,9 +151,10 @@ class TagView extends Component {
   render() {
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
-        <Map />
+        
         {this.checkp()}
         {this.setTag()}
+        <Map picture={this.state.picture} />
         <Button onClick={() => this.renderRoute(this.state.tag, "create")}>
           New Post
         </Button>
