@@ -11,6 +11,9 @@ import {
   DropdownToggle,
   DropdownMenu
 } from "reactstrap";
+import Geosuggest from 'react-geosuggest';
+
+
 import axios from "axios";
 import { Link } from "react-router-dom";
 import imgs from "../../assets/exportImgs.js";
@@ -188,7 +191,8 @@ class Post extends Component {
           name="description"
           value={this.state.description}
           onChange={this.handleInput}
-        />
+        /><br/>
+        <Geosuggest />
         <br />
         <Row className="create-inputmid">
           <Col md="4">

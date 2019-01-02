@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Col, Table } from "reactstrap";
 import axios from "axios";
+
+
 import { Link } from "react-router-dom";
 class Post extends Component {
   renderPost = () => {
