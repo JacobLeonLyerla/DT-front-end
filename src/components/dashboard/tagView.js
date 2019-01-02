@@ -154,7 +154,7 @@ class TagView extends Component {
         
         {this.checkp()}
         {this.setTag()}
-        <Map picture={this.state.picture} />
+        <Map picture={this.state.picture}/>
         <Button onClick={() => this.renderRoute(this.state.tag, "create")}>
           New Post
         </Button>
