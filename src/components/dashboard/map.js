@@ -19,12 +19,12 @@ const MapWithAMarker = withGoogleMap(props => {
         lng: props.defaultCenter.lng
       }}
     >
-      <Marker
+ 
+       <Marker
         position={{
           lat: props.defaultCenter.lat,
           lng: props.defaultCenter.lng
-        }}
-      />
+        }}/>
     </GoogleMap>
   );
 });

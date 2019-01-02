@@ -11,7 +11,7 @@ import {
   DropdownToggle,
   DropdownMenu
 } from "reactstrap";
-import Geosuggest from 'react-geosuggest';
+import Geosuggest from './geosuggest';
 
 
 import axios from "axios";
