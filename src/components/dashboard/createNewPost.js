@@ -166,8 +166,10 @@ class Post extends Component {
       })
       .catch(err => {});
   };
+
   Form = () => {
-    return (
+
+    return (<Fragment>
       <Form className="create-form">
         <UncontrolledDropdown direction="left">
           <DropdownToggle className={this.props.btn} color="primary" caret>
@@ -192,7 +194,13 @@ class Post extends Component {
           value={this.state.description}
           onChange={this.handleInput}
         /><br/>
-        <Geosuggest />
+    
+         <Geosuggest
+          placeholder="Start typing!"
+        />
+
+     
+    
         <br />
         <Row className="create-inputmid">
           <Col md="4">
@@ -222,8 +230,9 @@ class Post extends Component {
         </Row>
         <br />
       </Form>
-    );
-  };
+   </Fragment> );
+  }; 
+
   render() {
     return (
       <Col md={`${10 + this.props.tagVar}`} className="tags-container">
@@ -235,5 +244,8 @@ class Post extends Component {
       </Col>
     );
   }
+
+
 }
+
 export default Post;
