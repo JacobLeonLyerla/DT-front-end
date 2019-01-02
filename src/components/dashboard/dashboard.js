@@ -33,8 +33,8 @@ class Dashboard extends Component {
       <Col md={`${1 + this.props.dashboardVar}`}>
         <div className="dashboard">
           <Navbar>
-            <NavbarBrand href="/">
-              <Media src={this.props.logo} />
+            <NavbarBrand href="/dashboard">
+              <Link to="/dashboard"><Media src={this.props.logo} /></Link>
             </NavbarBrand>
             <div className={this.props.link}>{this.props.user.username}</div>
             <Link
