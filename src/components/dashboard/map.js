@@ -8,7 +8,6 @@ import {
 } from "react-google-maps";
 
 const MapWithAMarker = withGoogleMap(props => {
-  console.log(props);
   return (
     <GoogleMap
       defaultZoom={4}
@@ -36,24 +35,25 @@ class Map extends Component {
       defaultCenter: {
         lat: 0,
         lng: 0
-      }
+      },
+      name:""
     };
   }
 
   setupDefault = () => {
     if (this.props.picture !== undefined) {
-      if (this.state.defaultCenter.lat === 0) {
+      if (this.state.name !== this.props.name) {
         this.setState({
           defaultCenter: {
             lat: this.props.picture.lat,
             lng: this.props.picture.lng
-          }
+          },
+          name:this.props.name
         });
       }
     }
   };
   render() {
-    console.log(this.state);
     return (
       <Fragment>
         {this.setupDefault()}

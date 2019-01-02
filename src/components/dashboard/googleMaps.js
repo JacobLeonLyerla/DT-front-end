@@ -8,7 +8,7 @@ class Maps extends Component  {
   render() {
 
     return (<Fragment>
-      <Map picture={this.props.picture[0]}/> 
+      <Map picture={this.props.picture[0]} name={this.props.name}/> 
     </Fragment>);
   }
 }
