@@ -6,10 +6,9 @@ import Map from "./map";
 class Maps extends Component  {
  
   render() {
+
     return (<Fragment>
-     
-      <Map/>
-      
+      <Map picture={this.props.picture}/> 
     </Fragment>);
   }
 }
