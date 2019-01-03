@@ -52,7 +52,11 @@ class Post extends Component {
       location.push(placeObj);
       this.setState({ location });
     }
+    if (type === "country") {
+      this.setState({country:name})
+    }
   };
+  
   componentDidMount() {
     let { id } = this.props.match.params;
     this.fetchTags();
@@ -242,22 +246,20 @@ class Post extends Component {
           />
           {this.renderLocations()}
           <br />
+          <br/>
           <Button className="btn-location"  onClick={this.toggle}>
             Add Location
           </Button>
           <Modal
             isOpen={this.state.modal}
             toggle={this.toggle}
-            className={this.props.className}
+            className={`${this.props.className} geo-modal`}
           >
             <ModalHeader toggle={this.toggle}>select location</ModalHeader>
-            <ModalBody>
-              <div>
+            <ModalBody >
+            <div>{this.renderLocations()}</div>
             <Geosuggest setLocation={this.setLocation} name={"location"} placeholder={"Add Location"} />
-            </div>
-            <div>
-            <Geosuggest setLocation={this.setLocation} name={"country"} placeholder={"Add Country"} />
-            </div>
+          
             </ModalBody>
             <ModalFooter>
               <Button color="secondary" onClick={this.toggle}>
@@ -269,7 +271,7 @@ class Post extends Component {
           
 
           <br />
-          <Row className="create-inputmid">
+          {/* <Row className="create-inputmid">
             <Col md="4">
               <Input
                 placeholder="Country"
@@ -294,7 +296,7 @@ class Post extends Component {
                 onChange={this.handleInput}
               />
             </Col>
-          </Row>
+          </Row> */}
           <br />
         </Form>
       </Fragment>
