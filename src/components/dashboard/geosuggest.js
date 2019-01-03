@@ -34,6 +34,8 @@ class Geo extends Component {
     if(this.props.name === "location"){
   if(suggest !== undefined){
       this.props.setLocation(suggest.location,suggest.label,"location");
-  }}}
+  }}
+}
+  
 };
 export default Geo
