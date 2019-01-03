@@ -25,6 +25,7 @@ class Trek extends Component {
   };
 
   render() {
+    console.log(this.state.tag)
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         <Map
