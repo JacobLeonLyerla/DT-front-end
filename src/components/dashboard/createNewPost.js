@@ -9,16 +9,22 @@ import {
   DropdownItem,
   UncontrolledDropdown,
   DropdownToggle,
-  DropdownMenu
+  DropdownMenu,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
 } from "reactstrap";
-import Geosuggest from './geosuggest';
-
+import Geosuggest from "./geosuggest";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
 import imgs from "../../assets/exportImgs.js";
 class Post extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
+    modal: false,
     tags: [],
     name: "",
     user: "",
@@ -26,19 +32,27 @@ class Post extends Component {
     region: "",
     city: "",
     description: "",
-    location:[],
+    location: []
   };
-  setLocation=(cords,name,type)=>{
-    console.log(type)
-    if (type==="location"){
-      
-   let location = this.state.location;
-   let placeObj = {}
-   placeObj.name = name
-   placeObj.cords = cords 
-    location.push(placeObj)
-    this.setState({location,})
-  }}
+  
+  this.toggle = this.toggle.bind(this);
+}
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+  setLocation = (cords, name, type) => {
+    console.log(type);
+    if (type === "location") {
+      let location = this.state.location;
+      let placeObj = {};
+      placeObj.name = name;
+      placeObj.cords = cords;
+      location.push(placeObj);
+      this.setState({ location });
+    }
+  };
   componentDidMount() {
     let { id } = this.props.match.params;
     this.fetchTags();
@@ -124,6 +138,18 @@ class Post extends Component {
 
     this.setState({ tags: filteredArr });
   }
+  filterLocation(id) {
+    let arr = this.state.location;
+
+    let filteredArr = arr.filter(function(value, index, arr) {
+      return value !== id;
+    });
+    if (filteredArr.length === arr.length) {
+      filteredArr.push(id);
+    }
+
+    this.setState({ location: filteredArr });
+  }
   renderPickedTags = () => {
     if (this.state.tags.length > 0) {
       return this.state.tags.map(tag => (
@@ -136,7 +162,7 @@ class Post extends Component {
   renderLocations = () => {
     if (this.state.location.length > 0) {
       return this.state.location.map(location => (
-        <Badge onClick={() => this.filterTags(location)}>
+        <Badge onClick={() => this.filterLocation(location)}>
           {location.name}
         </Badge>
       ));
@@ -188,76 +214,90 @@ class Post extends Component {
   };
 
   Form = () => {
+    return (
+      <Fragment>
+        <Form className="create-form">
+          <UncontrolledDropdown direction="left">
+            <DropdownToggle className={this.props.btn} color="primary" caret>
+              Tags
+            </DropdownToggle>
+            <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
+          </UncontrolledDropdown>
+          <div className="text-left">Title</div>
 
-    return (<Fragment>
-      <Form className="create-form">
-        <UncontrolledDropdown direction="left">
-          <DropdownToggle className={this.props.btn} color="primary" caret>
-            Tags
-          </DropdownToggle>
-          <DropdownMenu>{this.renderCatagoreis()}</DropdownMenu>
-        </UncontrolledDropdown>
-        <div className="text-left">Title</div>
+          <Input
+            name="name"
+            value={this.state.name}
+            onChange={this.handleInput}
+          />
+          <div className="tag-badge">{this.renderPickedTags()}</div>
 
-        <Input
-          name="name"
-          value={this.state.name}
-          onChange={this.handleInput}
-        />
-        <div className="tag-badge">{this.renderPickedTags()}</div>
+          <div className="text-left">Description</div>
+          <Input
+            type="textarea"
+            style={{ height: "30vh" }}
+            name="description"
+            value={this.state.description}
+            onChange={this.handleInput}
+          />
+          {this.renderLocations()}
+          <br />
+          <Button className="btn-location"  onClick={this.toggle}>
+            Add Location
+          </Button>
+          <Modal
+            isOpen={this.state.modal}
+            toggle={this.toggle}
+            className={this.props.className}
+          >
+            <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+            <ModalBody>
+            <Geosuggest setLocation={this.setLocation} name={"location"} />
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={this.toggle}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
 
-        <div className="text-left">Description</div>
-        <Input
-          type="textarea"
-          style={{ height: "30vh" }}
-          name="description"
-          value={this.state.description}
-          onChange={this.handleInput}
-        />
-        {this.renderLocations()}
-        <br/>
-    
-         <Geosuggest
-         setLocation={this.setLocation}
-         name={"location"}
-        />
+          
 
-     
-    
-        <br />
-        <Row className="create-inputmid">
-          <Col md="4">
-            <Input
-              placeholder="Country"
-              name="country"
-              value={this.state.country}
-              onChange={this.handleInput}
-            />
-          </Col>
-          <Col md="4">
-            <Input
-              placeholder="Region"
-              name="region"
-              value={this.state.region}
-              onChange={this.handleInput}
-            />
-          </Col>
-          <Col md="4">
-            <Input
-              placeholder="City"
-              name="city"
-              value={this.state.city}
-              onChange={this.handleInput}
-            />
-          </Col>
-        </Row>
-        <br />
-      </Form>
-   </Fragment> );
-  }; 
+          <br />
+          <Row className="create-inputmid">
+            <Col md="4">
+              <Input
+                placeholder="Country"
+                name="country"
+                value={this.state.country}
+                onChange={this.handleInput}
+              />
+            </Col>
+            <Col md="4">
+              <Input
+                placeholder="Region"
+                name="region"
+                value={this.state.region}
+                onChange={this.handleInput}
+              />
+            </Col>
+            <Col md="4">
+              <Input
+                placeholder="City"
+                name="city"
+                value={this.state.city}
+                onChange={this.handleInput}
+              />
+            </Col>
+          </Row>
+          <br />
+        </Form>
+      </Fragment>
+    );
+  };
 
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <Col md={`${10 + this.props.tagVar}`} className="tags-container">
         {this.Form()}
@@ -268,8 +308,6 @@ class Post extends Component {
       </Col>
     );
   }
-
-
 }
 
 export default Post;

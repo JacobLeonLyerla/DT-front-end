@@ -29,7 +29,6 @@ class Geo extends Component {
    * @param  {Object} suggest The suggest
    */
   onSuggestSelect(suggest,props) {
-  console.log(suggest.label)
     this._geoSuggest.clear()
     this._geoSuggest.focus()
     if(this.props.name === "location"){
