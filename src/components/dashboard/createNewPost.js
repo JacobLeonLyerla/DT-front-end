@@ -25,8 +25,17 @@ class Post extends Component {
     country: "",
     region: "",
     city: "",
-    description: ""
+    description: "",
+    location:[]
   };
+  setLocation=(cords)=>{
+    console.log(cords)
+   let location = this.state.location;
+    location.push(cords)
+    this.setState({location,})
+
+
+  }
   componentDidMount() {
     let { id } = this.props.match.params;
     this.fetchTags();
@@ -196,7 +205,7 @@ class Post extends Component {
         /><br/>
     
          <Geosuggest
-          placeholder="Start typing!"
+         setLocation={this.setLocation}
         />
 
      
@@ -234,6 +243,7 @@ class Post extends Component {
   }; 
 
   render() {
+    console.log(this.state)
     return (
       <Col md={`${10 + this.props.tagVar}`} className="tags-container">
         {this.Form()}
