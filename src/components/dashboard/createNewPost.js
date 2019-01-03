@@ -257,7 +257,7 @@ class Post extends Component {
           >
             <ModalHeader toggle={this.toggle}>select location</ModalHeader>
             <ModalBody >
-            <div>{this.renderLocations()}</div>
+            <div className="modal-badges">{this.renderLocations()}</div>
             <Geosuggest setLocation={this.setLocation} name={"location"} placeholder={"Add Location"} />
           
             </ModalBody>

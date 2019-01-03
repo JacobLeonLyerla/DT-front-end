@@ -99,15 +99,30 @@
       border-bottom: 1px solid @accentcolor;
     }
 }
-.geo-modal{
-.modal-content{
-height:50vh;
-width:50vw;
-}
-}
 .badge{
   font-size:1.2rem;
   margin-right:.2%;
   background:@secondarycolor;
+}
+
+.geo-modal{
+  .modal-title{
+    font-size:1.6rem;
+  }
+.modal-content{
+height:50vh;
+width:50vw;
+}
+.modal-badges{
+  min-height:28vh;
+  width:100%;
+
+  overflow: hidden;
+    overflow-y: scroll;
+    max-height: 28vh;
+    .badge{
+        font-size:1rem;
+    }
+}
 }
 

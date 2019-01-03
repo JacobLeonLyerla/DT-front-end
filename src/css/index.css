@@ -722,14 +722,27 @@ tr:hover {
   padding-bottom: .5vh;
   border-bottom: 1px solid #a8bdd6;
 }
-.geo-modal .modal-content {
-  height: 50vh;
-  width: 50vw;
-}
 .badge {
   font-size: 1.2rem;
   margin-right: .2%;
   background: #677fa3;
+}
+.geo-modal .modal-title {
+  font-size: 1.6rem;
+}
+.geo-modal .modal-content {
+  height: 50vh;
+  width: 50vw;
+}
+.geo-modal .modal-badges {
+  min-height: 28vh;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 28vh;
+}
+.geo-modal .modal-badges .badge {
+  font-size: 1rem;
 }
 .notify {
   background: orange;
