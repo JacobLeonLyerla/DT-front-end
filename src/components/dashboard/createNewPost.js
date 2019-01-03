@@ -176,12 +176,15 @@ class Post extends Component {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
+    let location = this.state.location
+    let mainLocation = location.shift()
     let post = {};
     if (
       this.state.description !== "" &&
       this.state.name !== "" &&
       this.state.tags.length > 0
     ) {
+      
       post.user = this.props.user.username;
       post.tag = this.state.tags;
       post.description = this.state.description;
@@ -189,7 +192,14 @@ class Post extends Component {
       post.city = this.state.city;
       post.region = this.state.region;
       post.country = this.state.country;
+      post.latStart = mainLocation.cords.lat
+      post.lngStart = mainLocation.cords.lng
+      post.locationName = mainLocation.name
+      post.markers = location
+      
     }
+    
+
     axios
       .post("https://dt-back-end.herokuapp.com/tags", post)
       .then(response => {
@@ -211,7 +221,8 @@ class Post extends Component {
           country: "",
           region: "",
           city: "",
-          description: ""
+          description: "",
+          location:[]
         });
       })
       .catch(err => {});
