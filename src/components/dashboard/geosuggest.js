@@ -13,7 +13,7 @@ class Geo extends Component {
     
         <Geosuggest
           ref={el=>this._geoSuggest=el}
-          placeholder="Start typing!"
+          placeholder={this.props.placeholder}
           onSuggestSelect={e=> this.onSuggestSelect(e,this.props)}
           location={new google.maps.LatLng(34.009055,-118.497106)}
           radius="20" />

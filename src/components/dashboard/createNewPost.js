@@ -250,9 +250,14 @@ class Post extends Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+            <ModalHeader toggle={this.toggle}>select location</ModalHeader>
             <ModalBody>
-            <Geosuggest setLocation={this.setLocation} name={"location"} />
+              <div>
+            <Geosuggest setLocation={this.setLocation} name={"location"} placeholder={"Add Location"} />
+            </div>
+            <div>
+            <Geosuggest setLocation={this.setLocation} name={"country"} placeholder={"Add Country"} />
+            </div>
             </ModalBody>
             <ModalFooter>
               <Button color="secondary" onClick={this.toggle}>
