@@ -26,16 +26,19 @@ class Post extends Component {
     region: "",
     city: "",
     description: "",
-    location:[]
+    location:[],
   };
-  setLocation=(cords)=>{
-    console.log(cords)
+  setLocation=(cords,name,type)=>{
+    console.log(type)
+    if (type==="location"){
+      
    let location = this.state.location;
-    location.push(cords)
+   let placeObj = {}
+   placeObj.name = name
+   placeObj.cords = cords 
+    location.push(placeObj)
     this.setState({location,})
-
-
-  }
+  }}
   componentDidMount() {
     let { id } = this.props.match.params;
     this.fetchTags();
@@ -130,7 +133,15 @@ class Post extends Component {
       ));
     }
   };
-
+  renderLocations = () => {
+    if (this.state.location.length > 0) {
+      return this.state.location.map(location => (
+        <Badge onClick={() => this.filterTags(location)}>
+          {location.name}
+        </Badge>
+      ));
+    }
+  };
   handleInput = input => {
     this.setState({ [input.target.name]: input.target.value });
   };
@@ -202,10 +213,13 @@ class Post extends Component {
           name="description"
           value={this.state.description}
           onChange={this.handleInput}
-        /><br/>
+        />
+        {this.renderLocations()}
+        <br/>
     
          <Geosuggest
          setLocation={this.setLocation}
+         name={"location"}
         />
 
      
