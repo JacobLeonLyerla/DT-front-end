@@ -16,7 +16,6 @@ class Trek extends Component {
     this.setTags(id);
   }
   setTags = id => {
-    console.log("hey");
     axios
       .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
       .then(response => {
@@ -28,7 +27,11 @@ class Trek extends Component {
   render() {
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
-        <Map />
+        <Map
+          tag={this.state.tag}
+          name={this.state.tag.name}
+          markers={this.state.tag.markers}
+        />
         <Details tag={this.state.tag} />
 
         <Comments
