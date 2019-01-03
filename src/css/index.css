@@ -713,6 +713,10 @@ tr:hover {
   padding-bottom: .5vh;
   border-bottom: 1px solid #a8bdd6;
 }
+.geosuggest__suggests--hidden {
+  display: hidden;
+  background: #EBE1CE;
+}
 .notify {
   background: orange;
   color: white;
