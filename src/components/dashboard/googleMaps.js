@@ -8,7 +8,7 @@ class Maps extends Component {
       <Fragment>
         {this.props.picture ? (
           <Fragment>
-            <Map picture={this.props.picture[0]} name={this.props.name} />
+            <Map picture={this.props.picture} name={this.props.name} />
           </Fragment>
         ) : (
           <Fragment>
