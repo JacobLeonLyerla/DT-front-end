@@ -702,7 +702,11 @@ tr:hover {
 .btn:focus {
   box-shadow: none !important;
 }
+.geosuggest__input {
+  margin-top: 5%;
+}
 .geosuggest__suggests {
+  position: absolute;
   background: white;
   width: 35%;
   margin: 0 auto;
