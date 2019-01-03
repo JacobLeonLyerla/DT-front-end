@@ -11,9 +11,10 @@ class TagView extends Component {
     test: [{ tag: "" }],
     tag: "",
     flag: false,
-    picture: [],
+    picture: {},
     imgTag: [],
-    imgName: ""
+    imgName: "",
+    lat: 100000000000000000,
   };
   componentDidMount() {
     this.loadinfo();
@@ -56,7 +57,8 @@ class TagView extends Component {
         });
         let tag = pictureArr[0].tag;
         let name = pictureArr[0].name;
-        this.setState({ picture: pictureArr, imgTag: tag, imgName: name });
+        pictureArr = pictureArr.shift()
+        this.setState({ picture: pictureArr, imgTag: tag, imgName: name,lat:pictureArr.lat });
       })
       .catch(err => {
         this.props.history.push("/dashboard");
@@ -157,11 +159,31 @@ class TagView extends Component {
   };
 
   render() {
+    console.log(this.state.lat)
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         {this.checkp()}
         {this.setTag()}
-        <Map picture={this.state.picture} name={this.state.imgName} />
+        {(this.state.lat !== 100000000000000000 && this.state.lat !== undefined) ?(<Fragment>
+        <Map picture={this.state.picture} name={this.state.imgName} /></Fragment>):(<Fragment>
+          <div className="header-img"></div>
+          <div
+          data-ca="ca"
+          style={{
+            backgroundImage: `url(${imgs[this.state.imgName.replace(/-/g, "").toLowerCase()]})`
+          }}
+          className={`tag-img tags header-img`}
+       
+        >
+         
+            <div onClick={() => this.checkp()} className="cover ">
+              <p>{this.state.imgName.replace(/-/g, " ")}</p>
+            </div>
+        
+        </div>
+
+
+        </Fragment>)}
         <Button onClick={() => this.renderRoute(this.state.tag, "create")}>
           New Post
         </Button>
