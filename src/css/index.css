@@ -656,6 +656,7 @@ tr:hover {
 }
 .create-form .text-left {
   letter-spacing: 0.2rem;
+  font-size: 1.2rem;
 }
 .create-form .form-control {
   border: none;
@@ -704,6 +705,7 @@ tr:hover {
 }
 .geosuggest__input {
   margin-top: 5%;
+  width: 100%;
 }
 .geosuggest__suggests {
   position: absolute;
@@ -719,6 +721,15 @@ tr:hover {
 .geosuggest__suggests .geosuggest__item {
   padding-bottom: .5vh;
   border-bottom: 1px solid #a8bdd6;
+}
+.geo-modal .modal-content {
+  height: 50vh;
+  width: 50vw;
+}
+.badge {
+  font-size: 1.2rem;
+  margin-right: .2%;
+  background: #677fa3;
 }
 .notify {
   background: orange;
