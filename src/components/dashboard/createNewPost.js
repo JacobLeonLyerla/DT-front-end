@@ -24,26 +24,25 @@ class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    modal: false,
-    tags: [],
-    name: "",
-    user: "",
-    country: "",
-    region: "",
-    city: "",
-    description: "",
-    location: []
-  };
-  
-  this.toggle = this.toggle.bind(this);
-}
+      modal: false,
+      tags: [],
+      name: "",
+      user: "",
+      country: "",
+      region: "",
+      city: "",
+      description: "",
+      location: []
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
   toggle() {
     this.setState({
       modal: !this.state.modal
     });
   }
   setLocation = (cords, name, type) => {
-    console.log(type);
     if (type === "location") {
       let location = this.state.location;
       let placeObj = {};
@@ -53,10 +52,10 @@ class Post extends Component {
       this.setState({ location });
     }
     if (type === "country") {
-      this.setState({country:name})
+      this.setState({ country: name });
     }
   };
-  
+
   componentDidMount() {
     let { id } = this.props.match.params;
     this.fetchTags();
@@ -176,15 +175,14 @@ class Post extends Component {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
-    let location = this.state.location
-    let mainLocation = location.shift()
+    let location = this.state.location;
+    let mainLocation = location.shift();
     let post = {};
     if (
       this.state.description !== "" &&
       this.state.name !== "" &&
       this.state.tags.length > 0
     ) {
-      
       post.user = this.props.user.username;
       post.tag = this.state.tags;
       post.description = this.state.description;
@@ -192,13 +190,11 @@ class Post extends Component {
       post.city = this.state.city;
       post.region = this.state.region;
       post.country = this.state.country;
-      post.latStart = mainLocation.cords.lat
-      post.lngStart = mainLocation.cords.lng
-      post.locationName = mainLocation.name
-      post.markers = location
-      
+      post.latStart = mainLocation.cords.lat;
+      post.lngStart = mainLocation.cords.lng;
+      post.locationName = mainLocation.name;
+      post.markers = location;
     }
-    
 
     axios
       .post("https://dt-back-end.herokuapp.com/tags", post)
@@ -222,7 +218,7 @@ class Post extends Component {
           region: "",
           city: "",
           description: "",
-          location:[]
+          location: []
         });
       })
       .catch(err => {});
@@ -257,8 +253,8 @@ class Post extends Component {
           />
           {this.renderLocations()}
           <br />
-          <br/>
-          <Button className="btn-location"  onClick={this.toggle}>
+          <br />
+          <Button className="btn-location" onClick={this.toggle}>
             Add Location
           </Button>
           <Modal
@@ -267,10 +263,13 @@ class Post extends Component {
             className={`${this.props.className} geo-modal`}
           >
             <ModalHeader toggle={this.toggle}>select location</ModalHeader>
-            <ModalBody >
-            <div className="modal-badges">{this.renderLocations()}</div>
-            <Geosuggest setLocation={this.setLocation} name={"location"} placeholder={"Add Location"} />
-          
+            <ModalBody>
+              <div className="modal-badges">{this.renderLocations()}</div>
+              <Geosuggest
+                setLocation={this.setLocation}
+                name={"location"}
+                placeholder={"Add Location"}
+              />
             </ModalBody>
             <ModalFooter>
               <Button color="secondary" onClick={this.toggle}>
@@ -278,8 +277,6 @@ class Post extends Component {
               </Button>
             </ModalFooter>
           </Modal>
-
-          
 
           <br />
           {/* <Row className="create-inputmid">
@@ -315,7 +312,6 @@ class Post extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Col md={`${10 + this.props.tagVar}`} className="tags-container">
         {this.Form()}
