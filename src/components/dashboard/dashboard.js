@@ -34,7 +34,9 @@ class Dashboard extends Component {
         <div className="dashboard">
           <Navbar>
             <NavbarBrand href="/dashboard">
-              <Link to="/dashboard"><Media src={this.props.logo} /></Link>
+              <Link to="/dashboard">
+                <Media src={this.props.logo} />
+              </Link>
             </NavbarBrand>
             <div className={this.props.link}>{this.props.user.username}</div>
             <Link

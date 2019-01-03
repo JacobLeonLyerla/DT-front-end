@@ -134,6 +134,7 @@ class Comments extends Component {
       .catch(err => {});
   };
   render() {
+    console.log(this.props)
     return (
       <Fragment>
         <div className="comments-container">{this.renderComments()}</div>
