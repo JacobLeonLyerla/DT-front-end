@@ -1,0 +1,10 @@
+.google {
+  display: flex;
+  border-radius: 1%;
+  margin-top: 2vh;
+  background: #677fa3;
+  min-width: 81vw;
+  height: 55vh;
+  color: white;
+  overflow: hidden;
+}

@@ -50,7 +50,7 @@
   display: flex;
 }
 .tr th {
-  min-width: 24.5%;
+  min-width: 32.5%;
 }
 .tag {
   display: flex;
@@ -81,7 +81,8 @@ tr:hover {
   margin: 1%;
 }
 .tags-table .td {
-  min-width: 25%;
+  min-width: 33%;
+  max-width: 33%;
   font-size: 1.3rem;
 }
 .tags-table .td-container {
@@ -92,7 +93,7 @@ tr:hover {
   color: white;
 }
 .tags-table .head {
-  min-width: 24.7%;
+  min-width: 32.7%;
   font-size: 1.4rem;
   padding-bottom: 1vh;
   background: #677fa3;

@@ -28,6 +28,7 @@
 }
 .create-form .text-left {
   letter-spacing: 0.2rem;
+  font-size: 1.2rem;
 }
 .create-form .form-control {
   border: none;
@@ -39,6 +40,9 @@
   max-height: 18vh;
   overflow: hidden;
   overflow-y: scroll;
+}
+.create-form .dropdown-toggle {
+  width: 5%;
 }
 .create-form .btn {
   font-size: 0.6rem;
@@ -65,6 +69,50 @@
   overflow: none;
   overflow-y: hidden;
 }
+.create-form .btn-location {
+  font-size: 1.3rem;
+}
 .btn:focus {
   box-shadow: none !important;
+}
+.geosuggest__input {
+  margin-top: 5%;
+  width: 100%;
+}
+.geosuggest__suggests {
+  position: absolute;
+  background: white;
+  width: 35%;
+  margin: 0 auto;
+  margin-top: .4vh;
+  border-radius: 5px;
+  text-align: left;
+  padding: .3vw .5vw .3vw;
+  list-style-type: none;
+}
+.geosuggest__suggests .geosuggest__item {
+  padding-bottom: .5vh;
+  border-bottom: 1px solid #a8bdd6;
+}
+.badge {
+  font-size: 1.2rem;
+  margin-right: .2%;
+  background: #677fa3;
+}
+.geo-modal .modal-title {
+  font-size: 1.6rem;
+}
+.geo-modal .modal-content {
+  height: 50vh;
+  width: 50vw;
+}
+.geo-modal .modal-badges {
+  min-height: 28vh;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 28vh;
+}
+.geo-modal .modal-badges .badge {
+  font-size: 1rem;
 }

@@ -529,8 +529,7 @@ tr:hover {
   background: #677fa3;
 }
 .no-comments {
-  height: 10vh;
-  background: #f0e6e6;
+  height: 20vh;
   font-size: 1.8rem;
 }
 .comments-container {
