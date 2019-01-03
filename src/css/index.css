@@ -696,6 +696,9 @@ tr:hover {
   overflow: none;
   overflow-y: hidden;
 }
+.create-form .btn-location {
+  font-size: 1.3rem;
+}
 .btn:focus {
   box-shadow: none !important;
 }
@@ -712,10 +715,6 @@ tr:hover {
 .geosuggest__suggests .geosuggest__item {
   padding-bottom: .5vh;
   border-bottom: 1px solid #a8bdd6;
-}
-.geosuggest__suggests--hidden {
-  display: hidden;
-  background: #EBE1CE;
 }
 .notify {
   background: orange;
