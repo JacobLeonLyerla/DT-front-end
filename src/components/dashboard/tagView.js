@@ -71,7 +71,7 @@ class TagView extends Component {
           style={{ display: "flex", flexDirection: "row" }}
         >
           {" "}
-          <div className="td">{sub.user}</div>
+          <div className="td">{sub.name}</div>
           <div className="td">
             {sub.locationName ? (
               <Fragment>{sub.locationName}</Fragment>
@@ -167,7 +167,7 @@ class TagView extends Component {
         </Button>
         <Table className="tags-table">
           <div className="tr">
-            <div className="name head">Name</div>
+            <div className="name head">Title</div>
             <div className="city head">Location</div>
             <div className="tags head">Tags</div>
           </div>
