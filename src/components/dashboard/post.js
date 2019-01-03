@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { Col, Table } from "reactstrap";
 import axios from "axios";
 
-
 import { Link } from "react-router-dom";
 class Post extends Component {
   renderPost = () => {
@@ -17,14 +16,13 @@ class Post extends Component {
         }
         style={{ display: "flex", flexDirection: "row" }}
       >
-        <div className="td" >
-          {post.unreadComment + post.unreadLike}
-        </div>
-        <div className="td" >
-          {post.name}
-        </div>
-        <div className="td" >
-          {post.city}
+        <div className="td">{post.unreadComment + post.unreadLike}</div>
+        <div className="td">
+          {post.locationName ? (
+            <Fragment>{post.locationName}</Fragment>
+          ) : (
+            <Fragment>null</Fragment>
+          )}
         </div>
         {this.renderTags(post.tag)}
       </div>
@@ -49,9 +47,9 @@ class Post extends Component {
     }
     if (tag !== undefined || tag !== "") {
       return (
-        <div className="tag td" style={{ fontSize: "1.3rem", width: "20%" }}>
+        <div className="tag td">
           {tag.map(tag => (
-            <div className="tags td">
+            <div className="tags">
               {`${tag.replace(/-/g, " ")}`}
               <br />
             </div>
@@ -77,25 +75,17 @@ class Post extends Component {
   };
   render() {
     return (
-      <Col className="table-container post-container" md={`${10 + this.props.tagVar}`}>
+      <Col
+        className="table-container post-container"
+        md={`${10 + this.props.tagVar}`}
+      >
         <Table className="tags-table post-table">
           <div>
             <div className="tr">
-              <div
-                className="notification head post-head"
-                style={{ width: "20%" }}
-              >
-                Notifications
-              </div>
-              <div className="head post-head" style={{ width: "20%" }}>
-                First Name
-              </div>
-              <div className="head post-head" style={{ width: "20%" }}>
-                Last Name
-              </div>
-              <div className="head post-head" style={{ width: "20%" }}>
-                Username
-              </div>
+              <div className="notification head post-head">Notifications</div>
+              <div className="head post-head">Location</div>
+
+              <div className="head post-head">Tags</div>
             </div>
           </div>
           <div>{this.renderPost()}</div>
