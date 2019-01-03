@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { Table, Row, Col, Button } from "reactstrap";
 import imgs from "../../assets/exportImgs.js";
@@ -63,18 +63,26 @@ class TagView extends Component {
       });
   };
   userSubmissionTable = () => {
-    return this.state.test.map(sub => (
-      <div
-        onClick={() => this.renderRoute(sub._id)}
-        className="td-container"
-        style={{ display: "flex", flexDirection: "row" }}
-      >
-        <div className="td">{sub.name}</div>
-        <div className="td">{sub.city}</div>
-        <div className="td">{sub.country}</div>
-        {this.renderTags(sub.tag)}
-      </div>
-    ));
+    return this.state.test.map(sub => {
+      return (
+        <div
+          onClick={() => this.renderRoute(sub._id)}
+          className="td-container"
+          style={{ display: "flex", flexDirection: "row" }}
+        >
+          {" "}
+          <div className="td">{sub.user}</div>
+          <div className="td">
+            {sub.locationName ? (
+              <Fragment>{sub.locationName}</Fragment>
+            ) : (
+              <Fragment>null</Fragment>
+            )}
+          </div>
+          {this.renderTags(sub.tag)}
+        </div>
+      );
+    });
   };
   renderRoute = (id, type) => {
     if (type === "create") {
@@ -151,18 +159,16 @@ class TagView extends Component {
   render() {
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
-        
         {this.checkp()}
         {this.setTag()}
-        <Map picture={this.state.picture} name={this.state.imgName}/>
+        <Map picture={this.state.picture} name={this.state.imgName} />
         <Button onClick={() => this.renderRoute(this.state.tag, "create")}>
           New Post
         </Button>
         <Table className="tags-table">
           <div className="tr">
             <div className="name head">Name</div>
-            <div className="city head">City</div>
-            <div className="country head">Country</div>
+            <div className="city head">Location</div>
             <div className="tags head">Tags</div>
           </div>
 
