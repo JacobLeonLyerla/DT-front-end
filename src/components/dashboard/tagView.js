@@ -166,7 +166,7 @@ class TagView extends Component {
         {this.setTag()}
         {(this.state.lat !== 100000000000000000 && this.state.lat !== undefined) ?(<Fragment>
         <Map picture={this.state.picture} name={this.state.imgName} /></Fragment>):(<Fragment>
-          <div className="header-img"></div>
+        
           <div
           data-ca="ca"
           style={{
