@@ -162,9 +162,16 @@ p {
 .signup-container .signup-form .btn {
   font-size: 1.6rem;
 }
-.signup-container .fa-eye {
-  font-size: 2rem;
+.signup-container .unclicked {
+  font-size: 1.5rem;
+  color: gray;
+}
+.signup-container .clicked {
+  font-size: 1.5rem;
   color: darkcyan;
+}
+.signup-container .form-footer {
+  background: rgba(4, 231, 16, 0.144);
 }
 .dashboard {
   height: 100vh;

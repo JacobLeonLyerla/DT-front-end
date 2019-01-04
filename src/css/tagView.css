@@ -6,7 +6,7 @@
   overflow: hidden;
   overflow-y: scroll;
   min-width: 81vw;
-  max-height: 35vh;
+  max-height: 45vh;
   margin-right: 0px;
   margin: 0 auto;
   margin-top: 2vh;
@@ -126,4 +126,26 @@ tr:hover {
   max-height: 35vh;
   overflow: hidden;
   overflow-y: scroll;
+}
+.header-img {
+  height: 50vh;
+  -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.header-img .cover {
+  width: 100%;
+  color: rgba(15, 15, 15, 0);
+  background: rgba(15, 15, 15, 0.342);
+  color: white;
+  height: 100%;
+}
+.header-img p {
+  padding-top: 22vh;
+  font-size: 3rem;
+  margin-top: 0px;
+  height: 45.8vh;
 }
