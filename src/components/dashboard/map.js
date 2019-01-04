@@ -10,7 +10,7 @@ import {
 const MapWithAMarker = withGoogleMap(props => {
   return (
     <GoogleMap
-      defaultZoom={4}
+      defaultZoom={props.zoom}
       center={{
         lat: props.defaultCenter.lat,
         lng: props.defaultCenter.lng
@@ -96,6 +96,7 @@ class Map extends Component {
           mapElement={<div style={{ height: `100%` }} />}
           defaultCenter={this.state.defaultCenter}
           markers={this.props.markers}
+          zoom={this.props.zoom}
         />
       </Fragment>
     );

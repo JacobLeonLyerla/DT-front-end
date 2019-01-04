@@ -8,11 +8,14 @@ class Maps extends Component {
       <Fragment>
         {this.props.picture ? (
           <Fragment>
-            <Map picture={this.props.picture} name={this.props.name} />
+            <Map
+            zoom={4}
+            picture={this.props.picture} name={this.props.name} />
           </Fragment>
         ) : (
           <Fragment>
             <Map
+            zoom={9}
               tag={this.props.tag}
               name={this.props.name}
               markers={this.props.markers}
