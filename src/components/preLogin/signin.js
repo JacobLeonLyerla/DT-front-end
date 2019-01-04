@@ -56,6 +56,7 @@ class Signup extends Component {
     });
   };
   handleSubmit = e => {
+    e.preventDefault();
     localStorage.clear();
     localStorage.removeItem("id");
     const user = {
@@ -76,15 +77,14 @@ class Signup extends Component {
   render() {
     return (
       <div className="signup-container">
-    
-
-        <Form onSubmit={this.handleSubmit} className="signup-form">
+        <form onSubmit={this.handleSubmit} className="signup-form">
           <FormGroup>
             <Label for="exampleEmail">Please Enter username</Label>
             <Input
               type="username"
               name="username"
               id="username"
+              value={this.state.username}
               // placeholder="myemail@email.com"
               // value={this.state.email}
               // valid={this.state.validate.emailState === "has-success"}
@@ -108,19 +108,21 @@ class Signup extends Component {
               type="password"
               name="password"
               id="password"
+              value={this.state.password}
               onChange={this.handleChange}
             />
             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Button onClick={() => this.handleSubmit()} color="success">
-              Sign-in
+            <Button type="submit">
+              Sign In
             </Button>
-            {/* <Link to="/">
-              <Button color="primary">Cancel</Button>
-            </Link> */}
-          </div>
-        </Form>
+
+          </div >
+            <div
+             className="form-footer"
+            >{`Don't have an account yet? `}{(<Link to="/signup">Sign Up now!</Link>)}</div>
+        </form>
       </div>
     );
   }
