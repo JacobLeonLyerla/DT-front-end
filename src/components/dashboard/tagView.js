@@ -88,7 +88,7 @@ class TagView extends Component {
   };
   renderRoute = (id, type) => {
     if (type === "create") {
-      this.props.history.push(`/dashboard/create/${this.state.tag}`);
+      this.props.history.push('/dashboard/create');
     } else {
       this.props.history.push(`/dashboard/trek/${id}`);
     }
@@ -159,7 +159,6 @@ class TagView extends Component {
   };
 
   render() {
-    console.log(this.state.lat)
     return (
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         {this.checkp()}
@@ -184,9 +183,12 @@ class TagView extends Component {
 
 
         </Fragment>)}
-        <Button onClick={() => this.renderRoute(this.state.tag, "create")}>
+        <Link
+            to={`/dashboard/create/${this.props.user.username}}`}
+            style={{ textDecoration: "none" }}
+          ><Button>
           New Post
-        </Button>
+        </Button></Link>
         <Table className="tags-table">
           <div className="tr">
             <div className="name head">Title</div>
