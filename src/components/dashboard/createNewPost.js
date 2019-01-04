@@ -57,7 +57,6 @@ class Post extends Component {
   };
 
   componentDidMount() {
-    let { id } = this.props.match.params;
     this.fetchTags();
   }
   renderCatagoreis = () => {
@@ -207,7 +206,11 @@ class Post extends Component {
             `https://dt-back-end.herokuapp.com/users/${this.props.user._id}`,
             postId
           )
-          .then(response => {})
+          .then(response => {
+            this.props.history.push(`/dashboard/${this.props.user.username}/post`);
+
+
+          })
           .catch(err => {});
 
         this.setState({
