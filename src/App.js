@@ -164,6 +164,7 @@ class App extends Component {
               <TagView
                 picture={this.state.picture}
                 {...props}
+                user={this.state.user}
                 tagVar={this.state.tagVar}
               />
             )}
@@ -180,6 +181,7 @@ class App extends Component {
                 likes={this.state.count}
                 post={this.state.post}
                 user={this.state.user}
+                 loadUser={this.loadUser}
               />
             )}
           />
