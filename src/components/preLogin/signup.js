@@ -19,6 +19,7 @@ class Signup extends Component {
       password: "",
       password2: "",
       passwordType: "password",
+      clickedStyle:"unclicked",
       validate: {
         emailState: "",
         checkEmailState: "",
@@ -76,9 +77,9 @@ class Signup extends Component {
   };
   typefield = () => {
     if (this.state.passwordType === "password") {
-      this.setState({ passwordType: "text" });
+      this.setState({ passwordType: "text",clickedStyle:"clicked" });
     } else {
-      this.setState({ passwordType: "password" });
+      this.setState({ passwordType: "password",clickedStyle:"unclicked" });
     }
   };
   handleSubmit = e => {
@@ -115,7 +116,6 @@ class Signup extends Component {
             />
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
           </FormGroup>
-
           <FormGroup>
             <Label for="exampleEmail">Please Enter Email Address</Label>
             <Input
@@ -139,7 +139,6 @@ class Signup extends Component {
               a correct email.
             </FormFeedback>{" "}
           </FormGroup>
-
           <FormGroup>
             <Label for="checkEmail">Please Re-type Email Address</Label>
             <Input
@@ -160,8 +159,8 @@ class Signup extends Component {
           <FormGroup>
             <Label for="examplePassword">Please Enter a Password</Label>
             <br />
-            <i onClick={() => this.typefield()} className="far fa-eye" />
-
+            
+           
             <Input
               type={this.state.passwordType}
               name="password"
@@ -191,14 +190,18 @@ class Signup extends Component {
                 this.handleChange(e);
               }}
             />
+           <i onClick={() => this.typefield()} className={`far fa-eye ${this.state.clickedStyle}`} /> Show Password
             <FormFeedback valid>Email Matches</FormFeedback>
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
             <Button onClick={() => this.handleSubmit()} color="success">
-              Sign-up
+              Sign Up
             </Button>
-         
+          </div>{" "}
+          <div className="form-footer">
+            {`Already have an account `}
+            {<Link to="/signin">Sign In</Link>}, return{<Link to="/"> Home</Link>}. 
           </div>
         </Form>
       </div>
