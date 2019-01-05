@@ -83,6 +83,7 @@ class Signup extends Component {
     }
   };
   handleSubmit = e => {
+    e.preventDefault();
     const user = {
       username: this.state.username,
       password: this.state.password,
@@ -195,7 +196,7 @@ class Signup extends Component {
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Button onClick={() => this.handleSubmit()} color="success">
+            <Button type="submit" color="success">
               Sign Up
             </Button>
           </div>{" "}
