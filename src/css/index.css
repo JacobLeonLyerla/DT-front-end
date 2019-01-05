@@ -681,6 +681,7 @@ tr:hover {
   min-height: 40vh;
   padding-right: 3%;
   padding-left: 3%;
+  padding-bottom: 2%;
   background: #EBE1CE;
 }
 .create-form .text-left {
@@ -727,6 +728,7 @@ tr:hover {
   overflow-y: hidden;
 }
 .create-form .btn-location {
+  width: 30%;
   font-size: 1.3rem;
 }
 .btn:focus {
