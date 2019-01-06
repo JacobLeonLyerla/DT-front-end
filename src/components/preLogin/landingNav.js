@@ -11,7 +11,7 @@ class LandingNav extends Component {
           <NavItem>
             <Link
               style={{ color: "white", textDecoration: "none" }}
-              to="/#/signup"
+              to="/signup"
             >
               <NavLink className="signup">Sign Up</NavLink>{" "}
             </Link>
@@ -19,7 +19,7 @@ class LandingNav extends Component {
           <NavItem>
             <Link
               style={{ color: "white", textDecoration: "none" }}
-              to="/#/signin"
+              to="/signin"
             >
               {" "}
               <NavLink>Sign In</NavLink>

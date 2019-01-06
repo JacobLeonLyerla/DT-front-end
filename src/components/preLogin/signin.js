@@ -121,7 +121,7 @@ class Signup extends Component {
           </div >
             <div
              className="form-footer"
-            >{`Don't have an account yet? `}{(<Link to="/#/signup">Sign Up now!</Link>)}</div>
+            >{`Don't have an account yet? `}{(<Link to="/signup">Sign Up now!</Link>)}</div>
         </form>
       </div>
     );
