@@ -106,9 +106,9 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path="/" render={props => <Landing />} />
-        <Route path="/signup" render={props => <Signup {...props} />} />
+        <Route path="/#/signup" render={props => <Signup {...props} />} />
         <Route
-          path="/signin"
+          path="/#/signin"
           render={props => (
             <Signin loadPictures={this.loadPictures} {...props} />
           )}

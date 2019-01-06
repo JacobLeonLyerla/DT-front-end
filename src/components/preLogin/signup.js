@@ -202,7 +202,7 @@ class Signup extends Component {
           </div>{" "}
           <div className="form-footer">
             {`Already have an account `}
-            {<Link to="/signin">Sign In</Link>}, return{<Link to="/"> Home</Link>}. 
+            {<Link to="/#/signin">Sign In</Link>}, return{<Link to="/"> Home</Link>}. 
           </div>
         </Form>
       </div>
