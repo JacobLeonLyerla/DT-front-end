@@ -181,7 +181,7 @@ class App extends Component {
                 likes={this.state.count}
                 post={this.state.post}
                 user={this.state.user}
-                 loadUser={this.loadUser}
+                loadUser={this.loadUser}
               />
             )}
           />
