@@ -19,7 +19,7 @@ class Signup extends Component {
       password: "",
       password2: "",
       passwordType: "password",
-      clickedStyle:"unclicked",
+      clickedStyle: "unclicked",
       validate: {
         emailState: "",
         checkEmailState: "",
@@ -77,9 +77,9 @@ class Signup extends Component {
   };
   typefield = () => {
     if (this.state.passwordType === "password") {
-      this.setState({ passwordType: "text",clickedStyle:"clicked" });
+      this.setState({ passwordType: "text", clickedStyle: "clicked" });
     } else {
-      this.setState({ passwordType: "password",clickedStyle:"unclicked" });
+      this.setState({ passwordType: "password", clickedStyle: "unclicked" });
     }
   };
   handleSubmit = e => {
@@ -160,8 +160,7 @@ class Signup extends Component {
           <FormGroup>
             <Label for="examplePassword">Please Enter a Password</Label>
             <br />
-            
-           
+
             <Input
               type={this.state.passwordType}
               name="password"
@@ -191,7 +190,11 @@ class Signup extends Component {
                 this.handleChange(e);
               }}
             />
-           <i onClick={() => this.typefield()} className={`far fa-eye ${this.state.clickedStyle}`} /> Show Password
+            <i
+              onClick={() => this.typefield()}
+              className={`far fa-eye ${this.state.clickedStyle}`}
+            />{" "}
+            Show Password
             <FormFeedback valid>Email Matches</FormFeedback>
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
@@ -202,7 +205,8 @@ class Signup extends Component {
           </div>{" "}
           <div className="form-footer">
             {`Already have an account `}
-            {<Link to="/signin">Sign In</Link>}, return{<Link to="/"> Home</Link>}. 
+            {<Link to="/signin">Sign In</Link>}, return
+            {<Link to="/"> Home</Link>}.
           </div>
         </Form>
       </div>

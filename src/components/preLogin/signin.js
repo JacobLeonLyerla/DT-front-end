@@ -25,7 +25,7 @@ class Signup extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-  componentDidMount(){
+  componentDidMount() {
     localStorage.clear();
   }
   validateEmail(e) {
@@ -114,14 +114,12 @@ class Signup extends Component {
             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-            <Button type="submit">
-              Sign In
-            </Button>
-
-          </div >
-            <div
-             className="form-footer"
-            >{`Don't have an account yet? `}{(<Link to="/signup">Sign Up now!</Link>)}</div>
+            <Button type="submit">Sign In</Button>
+          </div>
+          <div className="form-footer">
+            {`Don't have an account yet? `}
+            {<Link to="/signup">Sign Up now!</Link>}
+          </div>
         </form>
       </div>
     );
