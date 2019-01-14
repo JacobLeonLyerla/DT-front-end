@@ -207,9 +207,9 @@ class Post extends Component {
             postId
           )
           .then(response => {
-            this.props.history.push(`/dashboard/${this.props.user.username}/post`);
-
-
+            this.props.history.push(
+              `/dashboard/${this.props.user.username}/post`
+            );
           })
           .catch(err => {});
 

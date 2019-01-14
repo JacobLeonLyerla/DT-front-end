@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from "react";
-import { Col, Table,Button } from "reactstrap";
+import { Col, Table, Button } from "reactstrap";
 import axios from "axios";
 
 import { Link } from "react-router-dom";
 class Post extends Component {
-
-  componentDidMount(){
-    this.props.loadUser()
+  componentDidMount() {
+    this.props.loadUser();
   }
   renderPost = () => {
     let arr = this.sortPost();
@@ -46,23 +45,23 @@ class Post extends Component {
       .catch(err => {});
   };
   renderTags = tag => {
-    if(tag){
-    if (tag.length < 1) {
-      tag = [];
+    if (tag) {
+      if (tag.length < 1) {
+        tag = [];
+      }
+      if (tag !== undefined || tag !== "") {
+        return (
+          <div className="tag td">
+            {tag.map(tag => (
+              <div className="tags">
+                {`${tag.replace(/-/g, " ")}`}
+                <br />
+              </div>
+            ))}
+          </div>
+        );
+      }
     }
-    if (tag !== undefined || tag !== "") {
-      return (
-        <div className="tag td">
-          {tag.map(tag => (
-            <div className="tags">
-              {`${tag.replace(/-/g, " ")}`}
-              <br />
-            </div>
-          ))}
-        </div>
-      );
-    }
-  }
   };
   sortPost = () => {
     let notifyArr = [];
@@ -85,12 +84,12 @@ class Post extends Component {
         className="table-container post-container"
         md={`${10 + this.props.tagVar}`}
       >
-         <Link
-            to={`/dashboard/create/${this.props.user.username}}`}
-            style={{ textDecoration: "none" }}
-          ><Button>
-          New Post
-        </Button></Link>
+        <Link
+          to={`/dashboard/create/${this.props.user.username}}`}
+          style={{ textDecoration: "none" }}
+        >
+          <Button>New Post</Button>
+        </Link>
         <Table className="tags-table post-table">
           <div>
             <div className="tr">

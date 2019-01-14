@@ -14,7 +14,7 @@ class TagView extends Component {
     picture: {},
     imgTag: [],
     imgName: "",
-    lat: 100000000000000000,
+    lat: 100000000000000000
   };
   componentDidMount() {
     this.loadinfo();
@@ -57,8 +57,13 @@ class TagView extends Component {
         });
         let tag = pictureArr[0].tag;
         let name = pictureArr[0].name;
-        pictureArr = pictureArr.shift()
-        this.setState({ picture: pictureArr, imgTag: tag, imgName: name,lat:pictureArr.lat });
+        pictureArr = pictureArr.shift();
+        this.setState({
+          picture: pictureArr,
+          imgTag: tag,
+          imgName: name,
+          lat: pictureArr.lat
+        });
       })
       .catch(err => {
         this.props.history.push("/dashboard");
@@ -88,7 +93,7 @@ class TagView extends Component {
   };
   renderRoute = (id, type) => {
     if (type === "create") {
-      this.props.history.push('/dashboard/create');
+      this.props.history.push("/dashboard/create");
     } else {
       this.props.history.push(`/dashboard/trek/${id}`);
     }
@@ -163,32 +168,34 @@ class TagView extends Component {
       <Col className="table-container" md={`${10 + this.props.tagVar}`}>
         {this.checkp()}
         {this.setTag()}
-        {(this.state.lat !== 100000000000000000 && this.state.lat !== undefined) ?(<Fragment>
-        <Map picture={this.state.picture} name={this.state.imgName} /></Fragment>):(<Fragment>
-        
-          <div
-          data-ca="ca"
-          style={{
-            backgroundImage: `url(${imgs[this.state.imgName.replace(/-/g, "").toLowerCase()]})`
-          }}
-          className={`tag-img tags header-img`}
-       
-        >
-         
-            <div onClick={() => this.checkp()} className="cover ">
-              <p>{this.state.imgName.replace(/-/g, " ")}</p>
+        {this.state.lat !== 100000000000000000 &&
+        this.state.lat !== undefined ? (
+          <Fragment>
+            <Map picture={this.state.picture} name={this.state.imgName} />
+          </Fragment>
+        ) : (
+          <Fragment>
+            <div
+              data-ca="ca"
+              style={{
+                backgroundImage: `url(${
+                  imgs[this.state.imgName.replace(/-/g, "").toLowerCase()]
+                })`
+              }}
+              className={`tag-img tags header-img`}
+            >
+              <div onClick={() => this.checkp()} className="cover ">
+                <p>{this.state.imgName.replace(/-/g, " ")}</p>
+              </div>
             </div>
-        
-        </div>
-
-
-        </Fragment>)}
+          </Fragment>
+        )}
         <Link
-            to={`/dashboard/create/${this.props.user.username}}`}
-            style={{ textDecoration: "none" }}
-          ><Button>
-          New Post
-        </Button></Link>
+          to={`/dashboard/create/${this.props.user.username}}`}
+          style={{ textDecoration: "none" }}
+        >
+          <Button>New Post</Button>
+        </Link>
         <Table className="tags-table">
           <div className="tr">
             <div className="name head">Title</div>
