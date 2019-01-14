@@ -92,7 +92,9 @@ class Map extends Component {
       <Fragment>
         {this.setupDefault()}
         <MapWithAMarker
-          containerElement={<div style={{ height: `45vh`, marginTop:"1.5vh" }} />}
+          containerElement={
+            <div style={{ height: `45vh`, marginTop: "1.5vh" }} />
+          }
           mapElement={<div style={{ height: `100%` }} />}
           defaultCenter={this.state.defaultCenter}
           markers={this.props.markers}
