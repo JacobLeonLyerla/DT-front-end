@@ -5,7 +5,6 @@ import Nav from "./landingNav";
 import About from "./landingAbout";
 const Landing = () => {
   return (
-    
     <Fragment>
       {localStorage.clear()}
       <div className="App mapBackground-styles">
