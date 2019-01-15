@@ -33,6 +33,7 @@ class App extends Component {
     this.loadUser();
     this.loadPictures();
   }
+ 
   loadUser = () => {
     const token = localStorage.getItem("token");
     const id = localStorage.getItem("id");
@@ -57,7 +58,9 @@ class App extends Component {
 
       .catch(err => {});
   };
-
+ RenderAbout =()=>{
+    
+  }
   loadPictures = () => {
     const token = localStorage.getItem("token");
 
