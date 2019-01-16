@@ -86,19 +86,19 @@
   background: white;
   width: 35%;
   margin: 0 auto;
-  margin-top: .4vh;
+  margin-top: 0.4vh;
   border-radius: 5px;
   text-align: left;
-  padding: .3vw .5vw .3vw;
+  padding: 0.3vw 0.5vw 0.3vw;
   list-style-type: none;
 }
 .geosuggest__suggests .geosuggest__item {
-  padding-bottom: .5vh;
+  padding-bottom: 0.5vh;
   border-bottom: 1px solid #a8bdd6;
 }
 .badge {
   font-size: 1.2rem;
-  margin-right: .2%;
+  margin-right: 0.2%;
   background: #677fa3;
 }
 .geo-modal .modal-title {
