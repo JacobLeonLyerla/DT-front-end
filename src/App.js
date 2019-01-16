@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row } from "reactstrap";
+import { Row,Modal } from "reactstrap";
 
 import "./App.css";
 import "./css/index.css";
@@ -16,8 +16,12 @@ import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
 import CreatePost from "./components/dashboard/createNewPost";
 import Post from "./components/dashboard/post";
+import Info from "./components/preLogin/about";
 class App extends Component {
-  state = {
+
+  constructor(props) {
+    super(props);
+  this.state = {
     user: "",
     dashboardVar: 1,
     tagVar: 0,
@@ -27,8 +31,12 @@ class App extends Component {
     logo: logo,
     picture: {},
     count: 0,
-    post: []
-  };
+    post: [],
+    modal:false,
+  };  
+  
+  this.toggle = this.toggle.bind(this);
+}
   componentDidMount() {
     this.loadUser();
     this.loadPictures();
@@ -58,9 +66,12 @@ class App extends Component {
 
       .catch(err => {});
   };
- RenderAbout =()=>{
-    
+ toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
+    
   loadPictures = () => {
     const token = localStorage.getItem("token");
 
@@ -108,6 +119,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+<Modal isOpen={this.state.modal} toggle={this.toggle} className="modal-about">
+      <Info/>
+</Modal>
         <Route exact path="/" render={props => <Landing />} />
         <Route path="/signup" render={props => <Signup {...props} />} />
         <Route
@@ -132,6 +147,7 @@ class App extends Component {
                 collapseIcon={this.state.collapseIcon}
                 columnSizer={this.columnSizer}
                 dashboardVar={this.state.dashboardVar}
+                toggle={this.toggle}
               />
             )}
           />
@@ -143,6 +159,7 @@ class App extends Component {
                 pictures={this.state.picture}
                 {...props}
                 tagVar={this.state.tagVar}
+                
               />
             )}
           />
