@@ -1,18 +1,13 @@
 import React, { Component, Fragment } from "react";
 import YouTube from "react-youtube";
 import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
+
   Button
 } from "reactstrap";
 
 class About extends Component {
   state = {
-    vidieo: "HNFvgneBabE"
+    vidieo: "aPjcPXQeYzc"
   };
 
   render() {
@@ -34,7 +29,7 @@ class About extends Component {
           onReady={this._onReady}
         /></div>
         <div className="modal-buttons">
-          <Button onClick={() => this.setState({ vidieo: "HNFvgneBabE" })}>
+          <Button onClick={() => this.setState({ vidieo: "aPjcPXQeYzc" })}>
             Intro
           </Button>
           <Button onClick={() => this.setState({ vidieo: "Si7IoSK_bJM" })}>
