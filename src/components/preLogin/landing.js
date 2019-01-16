@@ -4,7 +4,7 @@ import Header from "./header";
 import Nav from "./landingNav";
 import About from "./landingAbout";
 import Info from "./about"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, } from 'reactstrap';
 class Landing extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class Landing extends Component {
         
         <Header />
       </div>
-      <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+      <Modal isOpen={this.state.modal} toggle={this.toggle} className="modal-about">
       <Info/>
 </Modal>
       <About />
