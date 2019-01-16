@@ -9,12 +9,9 @@ class LandingNav extends Component {
         <Nav>
           {" "}
           <NavItem>
-            <Link
-              style={{ color: "white", textDecoration: "none" }}
-              to="/about"
-            >
-              <NavLink style={{ textAlign:"left"}} className="about">About</NavLink>{" "}
-            </Link>
+          
+              <NavLink onClick={()=>this.props.toggle()} style={{ textAlign:"left",color:"white",cursor:"pointer"}} className="about">About</NavLink>{" "}
+     
           </NavItem>
           <NavItem>
             <Link
