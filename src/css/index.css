@@ -833,14 +833,14 @@ td {
 .modal-about {
   height: 50vh;
   width: 50vw;
-  margin-right: 53vw;
+  margin-right: 47vw;
 }
 .modal-about .modal-content {
-  height: 50vh;
-  width: 60vw;
+  height: 40vh;
+  width: 45vw;
 }
 .modal-container .youtube {
-  width: 60vw;
+  width: 45vw;
   height: 50vh;
 }
 .modal-container .modal-buttons {
