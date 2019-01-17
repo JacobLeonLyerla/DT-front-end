@@ -133,7 +133,7 @@ class Signup extends Component {
               }}
             />
             <FormFeedback valid>
-              That's a tasty looking email you've got there.
+              That's a good looking email you've got there.
             </FormFeedback>
             <FormFeedback invalid>
               Uh oh! Looks like there is an issue with your email. Please input
