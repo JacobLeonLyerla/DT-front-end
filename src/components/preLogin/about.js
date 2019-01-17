@@ -7,8 +7,15 @@ import {
 
 class About extends Component {
   state = {
-    vidieo: "aPjcPXQeYzc"
+    vidieo: "aPjcPXQeYzc",
+    button:""
   };
+  buttonClicked=(id)=>{
+    if(id === this.state.button){
+      return "clicked"
+    }
+
+  }
 
   render() {
     const opts = {
@@ -29,13 +36,13 @@ class About extends Component {
           onReady={this._onReady}
         /></div>
         <div className="modal-buttons">
-          <Button onClick={() => this.setState({ vidieo: "aPjcPXQeYzc" })}>
+          <Button className={this.buttonClicked("intro")} onClick={() => this.setState({ vidieo: "aPjcPXQeYzc",button:"intro" })}>
             Intro
           </Button>
-          <Button onClick={() => this.setState({ vidieo: "fQRcpxmw-2U" })}>
+          <Button className={this.buttonClicked("viewing")} onClick={() => this.setState({ vidieo: "fQRcpxmw-2U",button:"viewing" })}>
             Viewing
           </Button>
-          <Button onClick={() => this.setState({ vidieo: "shUuiDnF0VU" })}>
+          <Button className={this.buttonClicked("creating")} onClick={() => this.setState({ vidieo: "shUuiDnF0VU",button:"creating" })}>
             Creating
           </Button>
         </div>
