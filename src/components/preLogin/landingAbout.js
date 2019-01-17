@@ -9,11 +9,9 @@ const About = () => {
           {/* <div className="aboutHeader">Forest</div> */}
 
           <p>
-            Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam
-            alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret
-            referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque
-            electram, eos choro alterum definiebas in. Vim dolorum definiebas
-            an. Mei ex natum rebum iisque.
+         Explore the unknown, the green places of the world<br/>
+         Get back to center and find your next andventure <br/>
+         Where nature is around you. And where the stars shine brightest
           </p>
         </Col>
       </Row>
@@ -21,11 +19,9 @@ const About = () => {
         <Col md="12" className="filter">
           {/* <div className="aboutHeader">Beach</div> */}
           <p>
-            Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam
-            alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret
-            referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque
-            electram, eos choro alterum definiebas in. Vim dolorum definiebas
-            an. Mei ex natum rebum iisque.
+           The quite times await, visit the places off the beaten path<br/>
+           Take Joy in the rarely seen and serene places of the world<br/>
+           Make it a priority to see the places less visited
           </p>
         </Col>
       </Row>{" "}
@@ -34,11 +30,9 @@ const About = () => {
           {/* <div className="aboutHeader">Desert</div> */}
 
           <p>
-            Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam
-            alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret
-            referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque
-            electram, eos choro alterum definiebas in. Vim dolorum definiebas
-            an. Mei ex natum rebum iisque.
+          Marvel at the art of nature, see first hand the patterns of the world<br/>
+          Explore with a community. And see the world in new light<br/>
+          Welcome to Dreamtrekking, Enjoy the andventure
           </p>
         </Col>
       </Row>
