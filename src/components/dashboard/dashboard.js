@@ -8,17 +8,11 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Badge,
-  Modal
+  Badge
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-
 class Dashboard extends Component {
-
-   
-
-
   renderCatagoreis = () => {
     if (this.props.pictures.length > 0) {
       return this.props.pictures.map(cata => (
@@ -71,7 +65,7 @@ class Dashboard extends Component {
             </Link>
             <div
               className={this.props.link}
-              onClick={()=>this.props.toggle()}
+              onClick={() => this.props.toggle()}
               style={{ textDecoration: "none" }}
             >
               About
