@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Col } from "reactstrap";
 import axios from "axios";
 import Details from "./tagDetails";
 import Pictures from "./renderPictures";

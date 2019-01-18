@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
-import { Table, Row, Col, Button } from "reactstrap";
+import { Table,  Col, Button } from "reactstrap";
 import imgs from "../../assets/exportImgs.js";
 import { Link } from "react-router-dom";
 import Map from "./googleMaps";
