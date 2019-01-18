@@ -4,7 +4,6 @@ import {
   withGoogleMap,
   GoogleMap,
   Marker,
-  withScriptjs
 } from "react-google-maps";
 
 const MapWithAMarker = withGoogleMap(props => {
