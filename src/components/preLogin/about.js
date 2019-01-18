@@ -1,21 +1,17 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import YouTube from "react-youtube";
-import {
-
-  Button
-} from "reactstrap";
+import { Button } from "reactstrap";
 
 class About extends Component {
   state = {
     vidieo: "aPjcPXQeYzc",
-    button:""
+    button: ""
   };
-  buttonClicked=(id)=>{
-    if(id === this.state.button){
-      return "clicked"
+  buttonClicked = id => {
+    if (id === this.state.button) {
+      return "clicked";
     }
-
-  }
+  };
 
   render() {
     const opts = {
@@ -29,20 +25,36 @@ class About extends Component {
 
     return (
       <div className="modal-container">
-      <div className="youtube">
-        <YouTube
-          videoId={this.state.vidieo}
-          opts={opts}
-          onReady={this._onReady}
-        /></div>
+        <div className="youtube">
+          <YouTube
+            videoId={this.state.vidieo}
+            opts={opts}
+            onReady={this._onReady}
+          />
+        </div>
         <div className="modal-buttons">
-          <Button className={this.buttonClicked("intro")} onClick={() => this.setState({ vidieo: "aPjcPXQeYzc",button:"intro" })}>
+          <Button
+            className={this.buttonClicked("intro")}
+            onClick={() =>
+              this.setState({ vidieo: "aPjcPXQeYzc", button: "intro" })
+            }
+          >
             Intro
           </Button>
-          <Button className={this.buttonClicked("viewing")} onClick={() => this.setState({ vidieo: "fQRcpxmw-2U",button:"viewing" })}>
+          <Button
+            className={this.buttonClicked("viewing")}
+            onClick={() =>
+              this.setState({ vidieo: "fQRcpxmw-2U", button: "viewing" })
+            }
+          >
             Viewing
           </Button>
-          <Button className={this.buttonClicked("creating")} onClick={() => this.setState({ vidieo: "shUuiDnF0VU",button:"creating" })}>
+          <Button
+            className={this.buttonClicked("creating")}
+            onClick={() =>
+              this.setState({ vidieo: "shUuiDnF0VU", button: "creating" })
+            }
+          >
             Creating
           </Button>
         </div>
