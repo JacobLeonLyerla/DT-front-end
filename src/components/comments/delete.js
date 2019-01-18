@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Modal, ModalFooter } from "reactstrap";
 
 import axios from "axios";
 class Delete extends Component {

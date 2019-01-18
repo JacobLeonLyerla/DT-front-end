@@ -5,7 +5,6 @@ import EditComment from "./editComment";
 class Edit extends Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       tooltipEdit: false,
