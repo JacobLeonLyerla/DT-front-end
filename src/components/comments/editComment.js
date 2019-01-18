@@ -1,13 +1,5 @@
 import React, { Component, Fragment } from "react";
-import {
-  Form,
-  Input,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from "reactstrap";
+import { Form, Input, Button, Modal, ModalFooter } from "reactstrap";
 
 import axios from "axios";
 class EditComment extends Component {

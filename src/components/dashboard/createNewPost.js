@@ -18,7 +18,6 @@ import {
 import Geosuggest from "./geosuggest";
 
 import axios from "axios";
-import { Link } from "react-router-dom";
 import imgs from "../../assets/exportImgs.js";
 class Post extends Component {
   constructor(props) {
