@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Row,Modal } from "reactstrap";
-
+import { Row, Modal } from "reactstrap";
 import "./App.css";
 import "./css/index.css";
 import { Route } from "react-router-dom";
@@ -18,30 +17,29 @@ import CreatePost from "./components/dashboard/createNewPost";
 import Post from "./components/dashboard/post";
 import Info from "./components/preLogin/about";
 class App extends Component {
-
   constructor(props) {
     super(props);
-  this.state = {
-    user: "",
-    dashboardVar: 1,
-    tagVar: 0,
-    collapseIcon: "fas fa-angle-double-left",
-    buttonClass: "btn",
-    linkClass: "nav-links",
-    logo: logo,
-    picture: {},
-    count: 0,
-    post: [],
-    modal:false,
-  };  
-  
-  this.toggle = this.toggle.bind(this);
-}
+    this.state = {
+      user: "",
+      dashboardVar: 1,
+      tagVar: 0,
+      collapseIcon: "fas fa-angle-double-left",
+      buttonClass: "btn",
+      linkClass: "nav-links",
+      logo: logo,
+      picture: {},
+      count: 0,
+      post: [],
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
   componentDidMount() {
     this.loadUser();
     this.loadPictures();
   }
- 
+
   loadUser = () => {
     const token = localStorage.getItem("token");
     const id = localStorage.getItem("id");
@@ -66,12 +64,12 @@ class App extends Component {
 
       .catch(err => {});
   };
- toggle() {
+  toggle() {
     this.setState({
       modal: !this.state.modal
     });
   }
-    
+
   loadPictures = () => {
     const token = localStorage.getItem("token");
 
@@ -119,10 +117,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-<Modal isOpen={this.state.modal} toggle={this.toggle} className="modal-about">
-      <Info/>
-</Modal>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className="modal-about"
+        >
+          <Info />
+        </Modal>
         <Route exact path="/" render={props => <Landing />} />
         <Route path="/signup" render={props => <Signup {...props} />} />
         <Route
@@ -159,7 +160,6 @@ class App extends Component {
                 pictures={this.state.picture}
                 {...props}
                 tagVar={this.state.tagVar}
-                
               />
             )}
           />
