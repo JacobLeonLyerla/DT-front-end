@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormFeedback,
-  Button
-} from "reactstrap";
+import { FormGroup, Label, Input, FormFeedback, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
