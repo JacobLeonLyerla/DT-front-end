@@ -1,7 +1,7 @@
 # Dreamtrekking
   Dreamtrekking allows a community to share a passion for exploration, food and outdoor activity.
   A user driven experience, where you can explore and share your passion for exploration.
-<img src=https://media.giphy.com/media/2hgcLrn3k9Cl7lcAsE/giphy.gif" width="400" height="200" />
+![Alt Text](<img src=https://media.giphy.com/media/2hgcLrn3k9Cl7lcAsE/giphy.gif" width="400" height="200" />)
 
 ## Deployment
 * Website: https://dreamtrekking.netlify.com/
