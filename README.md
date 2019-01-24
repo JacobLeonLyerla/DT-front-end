@@ -9,7 +9,7 @@
 # Deployment
 * Website: https://dreamtrekking.netlify.com/
 # Back End Repo
-* Backend: https://github.com/JacobLeonLyerla/DT-back-end
+* Back End: https://github.com/JacobLeonLyerla/DT-back-end
 
 ## Built With
 * [MongoDB](https://www.mongodb.com/what-is-mongodb) 
