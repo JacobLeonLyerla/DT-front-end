@@ -29,26 +29,37 @@ class Signup extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+  // this function runs basic regualar expression to check that the email is formatted correctly
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // deconstruct validate from the object we set on state
     const { validate } = this.state;
+    // we test the value we passed in  and if it passed return success or failure
     if (emailRex.test(e.target.value)) {
       validate.emailState = "has-success";
     } else {
       validate.emailState = "has-danger";
     }
+    // set that object back on state
     this.setState({ validate });
   }
+  // this function uses regualar expression to check password strength 
   passwordStrength(e) {
+    // I found this regex line is very basic and just checks for length that it has a digit in it
     const mediumRegex = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
+    // deconstruct the validate from state
     const { validate } = this.state;
+    // we test that if the value passes the regex
     if (mediumRegex.test(e.target.value)) {
       validate.passwordState = "has-success";
     } else {
       validate.passwordState = "has-danger";
     }
+    // we set that new value onto state
     this.setState({ validate });
   }
+  // this checks the first the email from the value passed in matches the email on state
+  // the value is the second email input
   emailMatch = e => {
     const { validate } = this.state;
     if (e.target.value === this.state.email) {
@@ -58,6 +69,9 @@ class Signup extends Component {
     }
     this.setState({ validate });
   };
+  // this checks the password match the same code as the email
+  // email and password match could be one function now that I look at it
+  // I think I tunneled on this, and missed it.
   passwordMatch = e => {
     const { validate } = this.state;
     if (e.target.value === this.state.password) {
@@ -67,14 +81,22 @@ class Signup extends Component {
     }
     this.setState({ validate });
   };
+  //  this will handle the change from the input
   handleChange = event => {
+    // deconstruct taget from event
     const { target } = event;
-    const value = target.type === "checkbox" ? target.checked : target.value;
+    // deconstruct value from target
+    const {value} = target;
+    // deconstruct the name from the target
     const { name } = target;
+    // I could have just dne this.setState({[event.target.name]:event.target.value})
+    // I just wanted to build it diffent for fun, I don't know if I like how many lines it is.
+    // set the value on the name
     this.setState({
       [name]: value
     });
   };
+  // thise is for showing the password
   typefield = () => {
     if (this.state.passwordType === "password") {
       this.setState({ passwordType: "text", clickedStyle: "clicked" });
@@ -84,17 +106,21 @@ class Signup extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
+    // set up a user object
     const user = {
       username: this.state.username,
       password: this.state.password,
       password2: this.state.password2,
       email: this.state.email
     };
+    // pass in the user object into the register route to create a new user
     axios
       .post("https://dt-back-end.herokuapp.com/auth/register", user)
       .then(resp => {
+        // push the user to the signin route
         this.props.history.push("/signin");
       });
+      // reset the inputs
     this.setState({
       username: "",
       password: "",
@@ -105,9 +131,15 @@ class Signup extends Component {
   render() {
     return (
       <div className="signup-container">
+        {/* set up a form with an on submit for when the user hits enter or pressed the button */}
         <Form onSubmit={this.handleSubmit} className="signup-form">
           <FormGroup>
             <Label for="username">Please Enter a Username</Label>
+            {/* this is the basic structure for the input field
+            pull the value off of state 
+            when you type into the input it triggers on change
+            that onchange then sets it on state
+            the id is used to tie the label to the name */}
             <Input
               type="username"
               name="username"
@@ -119,6 +151,10 @@ class Signup extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="exampleEmail">Please Enter Email Address</Label>
+            {/* this one has validators and the strings it calls the functions
+            that we set up to run a test of validation
+            if the valid calls the method and that method returns the right string
+            same for invalid also on change it calls that validation method and passes it in */}
             <Input
               type="email"
               name="email"
@@ -199,6 +235,8 @@ class Signup extends Component {
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
+          {/* making the type of this as a submit works 
+          so the user can click or hit enter  */}
             <Button type="submit" color="success">
               Sign Up
             </Button>
