@@ -12,13 +12,13 @@
 * Back End: https://github.com/JacobLeonLyerla/DT-back-end
 
 ## Built With
+* [Google Maps API](https://developers.google.com/maps/documentation/)
+* [React-Google-Maps](https://www.npmjs.com/package/google-map-react)
+* [React-Geosuggest](http://ubilabs.github.io/react-geosuggest/)
 * [MongoDB](https://www.mongodb.com/what-is-mongodb) 
 * [Express.js](https://expressjs.com/)
 * [React](https://reactjs.org/) 
 * [Node.js](https://nodejs.org/en/about/) 
-* [Google Maps API](https://developers.google.com/maps/documentation/)
-* [React-Google-Maps](https://www.npmjs.com/package/google-map-react)
-* [React-Geosuggest](http://ubilabs.github.io/react-geosuggest/)
 * [Reactstrap](https://reactstrap.github.io/)
 * [Passport](http://www.passportjs.org/) 
 * [Passport-JWT](https://www.npmjs.com/package/passport-jwt) 
