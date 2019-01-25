@@ -43,7 +43,7 @@ class Signup extends Component {
     // set that object back on state
     this.setState({ validate });
   }
-  // this function uses regualar expression to check password strength 
+  // this function uses regualar expression to check password strength
   passwordStrength(e) {
     // I found this regex line is very basic and just checks for length that it has a digit in it
     const mediumRegex = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
@@ -86,7 +86,7 @@ class Signup extends Component {
     // deconstruct taget from event
     const { target } = event;
     // deconstruct value from target
-    const {value} = target;
+    const { value } = target;
     // deconstruct the name from the target
     const { name } = target;
     // I could have just dne this.setState({[event.target.name]:event.target.value})
@@ -120,7 +120,7 @@ class Signup extends Component {
         // push the user to the signin route
         this.props.history.push("/signin");
       });
-      // reset the inputs
+    // reset the inputs
     this.setState({
       username: "",
       password: "",
@@ -235,7 +235,7 @@ class Signup extends Component {
             <FormFeedback invalid>Email Does Not Match</FormFeedback>
           </FormGroup>
           <div className="form-buttons">
-          {/* making the type of this as a submit works 
+            {/* making the type of this as a submit works 
           so the user can click or hit enter  */}
             <Button type="submit" color="success">
               Sign Up
