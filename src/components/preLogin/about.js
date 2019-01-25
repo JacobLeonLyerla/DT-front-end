@@ -7,6 +7,8 @@ class About extends Component {
     vidieo: "aPjcPXQeYzc",
     button: ""
   };
+  // this function is like a focus however it does not lose its styling when the user  interacts with the page
+  // and since the modal renders a youtube video the the focus was constantly being lost
   buttonClicked = id => {
     if (id === this.state.button) {
       return "clicked";
@@ -14,16 +16,19 @@ class About extends Component {
   };
 
   render() {
+
+    // this coming from the docs  for react youtube, it's setting the rules for the player
     const opts = {
       height: "100%",
       width: "100%",
       playerVars: {
-        // https://developers.google.com/youtube/player_parameters
         autoplay: 1
       }
     };
 
     return (
+      // we wrapped the youtube component that we pulled form react-youtube and we pass in the id we want for the video as well
+      // as the rules we want for the player, so it will auto play and be full width and height
       <div className="modal-container">
         <div className="youtube">
           <YouTube
@@ -33,6 +38,10 @@ class About extends Component {
           />
         </div>
         <div className="modal-buttons">
+        {/* since we pull the video url from the state if we change the state with these
+        buttons it will change the video being played
+        and allso passing in the button into the state will allow us to asign the styles we want
+        for a clicked button */}
           <Button
             className={this.buttonClicked("intro")}
             onClick={() =>
