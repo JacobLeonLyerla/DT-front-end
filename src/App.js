@@ -64,9 +64,9 @@ class App extends Component {
         // we than create a count variable to store our values
         let count = 0;
         // the users post is an array of objects
-        // this allows us to interate over it, and pull out the unread comments and likes
+        // this allows us to interate over it, and pull out the unread comments and notifications
         // than we can store that into the count variable,
-        // I use this for notifications so the unreadComments and likes are added and rendered as notifcations to the user
+        // I use this for notifications so the unreadComments and notifications are added and rendered as notifcations to the user
         response.data.post.forEach(like => {
           count += like.unreadComment;
           count += like.unreadLike;
@@ -182,7 +182,7 @@ class App extends Component {
               // however I would have put a lot of these into one object
               // I will try to fix that if I get that chance.
               <Dashboard
-                likes={this.state.count}
+                notifications={this.state.count}
                 post={this.state.post}
                 user={this.state.user}
                 loadUser={this.loadUser}
@@ -216,7 +216,7 @@ class App extends Component {
                 post={this.state.post}
                 {...props}
                 tagVar={this.state.tagVar}
-                likes={this.state.count}
+                notifications={this.state.count}
                 post={this.state.post}
                 user={this.state.user}
               />
@@ -243,7 +243,7 @@ class App extends Component {
                 {...props}
                 tagVar={this.state.tagVar}
                 loadUser={this.loadUser}
-                likes={this.state.count}
+                notifications={this.state.count}
                 post={this.state.post}
                 user={this.state.user}
                 loadUser={this.loadUser}
