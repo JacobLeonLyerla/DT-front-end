@@ -13,18 +13,16 @@ import {
 import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
-
-
- // when the user props is not an empty array it will call load user from the props
+  // when the user props is not an empty array it will call load user from the props
   componentDidMount = event => {
     if (this.props.user === "") {
       this.props.loadUser();
     }
-  }; 
-  
+  };
+
   // this is for our drop down, it allows us to map through the categories
   // and render them as items inside of our dropdown list
- renderCategoreis = () => {
+  renderCategoreis = () => {
     if (this.props.pictures.length > 0) {
       return this.props.pictures.map(cate => (
         <Link to={`/dashboard/${cate.name}`} style={{ textDecoration: "none" }}>
@@ -37,7 +35,7 @@ class Dashboard extends Component {
     return (
       // our route is wrapped in a row so this col will assign it a size in the row
       // it takes the variable form app.js and uses it to control sizing.
-      
+
       <Col md={`${1 + this.props.dashboardVar}`}>
         <div className="dashboard">
           <Navbar>
@@ -48,7 +46,7 @@ class Dashboard extends Component {
                 <Media src={this.props.logo} />
               </Link>
             </NavbarBrand>
-             {/* this just renders whatever user is signed in pulling it off of props */}
+            {/* this just renders whatever user is signed in pulling it off of props */}
             <div className={this.props.link}>{this.props.user.username}</div>
             {/* the class name is set by props so it changes based on what is passed in
             allowing resizing, this all may be a bit brute force.
@@ -59,7 +57,7 @@ class Dashboard extends Component {
               to={`/dashboard/${this.props.user.username}/post`}
               style={{ textDecoration: "none" }}
             >
-             {/* this ternary checks if our user is defined and if they are
+              {/* this ternary checks if our user is defined and if they are
              we render we can check more info */}
               {this.props.user !== undefined ? (
                 <Fragment>
