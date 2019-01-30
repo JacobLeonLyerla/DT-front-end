@@ -10,14 +10,14 @@ class Pictures extends Component {
     let arr = [];
     // if pictures is defined we can go inside and start doing work
     if (this.props.pictures !== undefined) {
- // when the props pictures is longer than one we map over them and push thme into our array
+      // when the props pictures is longer than one we map over them and push thme into our array
       if (this.props.pictures.length > 0) {
         this.props.pictures.forEach(picture => {
           arr.push(picture.name);
         });
       }
     }
-    // next we check and make sure that the img tage is defined than we 
+    // next we check and make sure that the img tage is defined than we
     // chec it's length if the length is greater than 0 we set our array to that
     if (this.props.imgTag !== undefined) {
       if (this.props.imgTag.length > 0) {
