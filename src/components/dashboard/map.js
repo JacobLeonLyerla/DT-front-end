@@ -1,13 +1,11 @@
 import React, { Component, Fragment } from "react";
 
-import {
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} from "react-google-maps";
+import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
+// set a varaible for the google maps render
 const MapWithAMarker = withGoogleMap(props => {
   return (
+    // set up the GoogleMap and use the values off props
     <GoogleMap
       defaultZoom={props.zoom}
       center={{
@@ -19,6 +17,8 @@ const MapWithAMarker = withGoogleMap(props => {
         lng: props.defaultCenter.lng
       }}
     >
+      {/* if our markers are passed in this will map over them
+    and render a marker for each marker in the array */}
       {props.markers ? (
         <Fragment>
           {props.markers.map(marker => {
@@ -62,7 +62,8 @@ class Map extends Component {
       name: ""
     };
   }
-
+  // this is going to set up the default state
+  // deprending on where this compoent is rendered from
   setupDefault = () => {
     if (this.props.picture !== undefined) {
       if (this.state.name !== this.props.name) {
@@ -89,7 +90,9 @@ class Map extends Component {
   render() {
     return (
       <Fragment>
+        {/* this function is called when the component is rendered  */}
         {this.setupDefault()}
+        {/* pass our values into the map to use as props */}
         <MapWithAMarker
           containerElement={
             <div style={{ height: `45vh`, marginTop: "1.5vh" }} />
