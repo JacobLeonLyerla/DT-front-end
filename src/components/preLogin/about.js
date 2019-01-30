@@ -16,7 +16,6 @@ class About extends Component {
   };
 
   render() {
-
     // this coming from the docs  for react youtube, it's setting the rules for the player
     const opts = {
       height: "100%",
@@ -38,7 +37,7 @@ class About extends Component {
           />
         </div>
         <div className="modal-buttons">
-        {/* since we pull the video url from the state if we change the state with these
+          {/* since we pull the video url from the state if we change the state with these
         buttons it will change the video being played
         and allso passing in the button into the state will allow us to asign the styles we want
         for a clicked button */}
