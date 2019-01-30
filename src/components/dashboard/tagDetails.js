@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Details extends Component {
   render() {
     return (
-      // very basic function just takes the props passed in and renders the 
+      // very basic function just takes the props passed in and renders the
       // infromation about the user the title and the discription
       <div className="details">
         <div className="header">
