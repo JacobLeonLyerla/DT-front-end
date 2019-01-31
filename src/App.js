@@ -208,20 +208,7 @@ class App extends Component {
               />
             )}
           />
-          <Route
-            exact
-            path="/dashboard/post"
-            render={props => (
-              <Post
-                post={this.state.post}
-                {...props}
-                tagVar={this.state.tagVar}
-                notifications={this.state.count}
-                post={this.state.post}
-                user={this.state.user}
-              />
-            )}
-          />
+         
           <Route
             exact
             path="/dashboard/:id"
@@ -239,14 +226,13 @@ class App extends Component {
             path="/dashboard/:id/post"
             render={props => (
               <Post
-                post={this.state.post}
                 {...props}
                 tagVar={this.state.tagVar}
                 loadUser={this.loadUser}
                 notifications={this.state.count}
                 post={this.state.post}
                 user={this.state.user}
-                loadUser={this.loadUser}
+      
               />
             )}
           />
