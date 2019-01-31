@@ -23,19 +23,18 @@ class Delete extends Component {
     axios
       .delete(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`)
       .then(response => {
-      // close the modal
+        // close the modal
         this.toggle();
         // call setupcomments
         this.props.setupComments(this.props.propsId);
-        // and set the reply flag to true 
+        // and set the reply flag to true
         this.props.replyflag("true");
       })
-      .catch(err => {
-      });
+      .catch(err => {});
   };
-// when the user wants to delete sometihng they click delete
-// this modal is rendered and it asked them if they are sure
-// if they are than we actually delete the item
+  // when the user wants to delete sometihng they click delete
+  // this modal is rendered and it asked them if they are sure
+  // if they are than we actually delete the item
   renderModal = () => {
     return (
       <Fragment>
