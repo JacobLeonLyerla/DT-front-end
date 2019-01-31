@@ -53,7 +53,7 @@ class Trek extends Component {
         />
         {/* lastly we render the associated "tags" rather subcategories
         I really got mixed up with naming here. I will be fixing this at some point soon. */}
-        <Pictures imgTag={this.state.tag.tag} style="tag-filtered" />
+        <Pictures imgTag={this.state.tag.tag} styleName="tag-filtered" />
       </Col>
     );
   }

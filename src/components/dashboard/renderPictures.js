@@ -57,7 +57,7 @@ class Pictures extends Component {
     }
   };
   render() {
-    return <Row className={`${this.props.style}`}>{this.renderPictures()}</Row>;
+    return <Row className={`${this.props.styleName}`}>{this.renderPictures()}</Row>;
   }
 }
 export default Pictures;
