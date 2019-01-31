@@ -20,19 +20,16 @@ class EditComment extends Component {
   }
 
   handleEditComment = () => {
-    console.log(this.props);
     let edit = {};
     edit.comment = this.state.comment;
     axios
       .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, edit)
       .then(response => {
-        console.log(response.data);
         this.toggle();
         this.props.setupComments(this.props.propsId);
         this.props.replyflag("true");
       })
       .catch(err => {
-        console.log(err);
       });
   };
 
