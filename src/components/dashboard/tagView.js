@@ -164,7 +164,6 @@ class TagView extends Component {
     }
 
     return arr.map(img => {
-      let tagArr;
       return (
         <Col
           data-ca="ca"
@@ -237,7 +236,7 @@ class TagView extends Component {
             <div>{this.userSubmissionTable()}</div>
           </div>
         </Table>
-        <Pictures imgTag={this.state.imgTag} style="tag-filtered" />
+        <Pictures imgTag={this.state.imgTag} styleName="tag-filtered" />
       </Col>
     );
   }
