@@ -9,15 +9,17 @@ import Replies from "./replies";
 
 class Comments extends Component {
   state = { comment: "", comments: {}, reply: false };
-
+  // setting up our comments
   setupComments = id => {
+    // we grab the post by the post id
     axios
       .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
       .then(response => {
         this.setState({ comments: response.data.comments });
       })
-      .catch(err => {});
   };
+  // reply flag is for re-rendering the comments when the type passed in is true
+  // it sets the reply on state to true, we use that reply flag to gate rendering for other functions
   replyflag = type => {
     if (type === "true") {
       this.setState({ reply: true });
@@ -25,10 +27,16 @@ class Comments extends Component {
       this.setState({ reply: false });
     }
   };
+
   renderComments = () => {
+    // set up an array variable
     let arr;
+    // we have to make sure it's not undefined before excuting the code inside
     if (this.props.comments !== undefined) {
+      // when the comments on props is greater than zero load this
       if (this.props.comments.length > 0) {
+        // when the comments on state is greater than 0
+        // if not we set arr based on props
         if (this.state.comments.length > 0) {
           arr = this.state.comments;
         } else {
@@ -127,14 +135,11 @@ class Comments extends Component {
                 this.setupComments(this.props.tagId);
                 this.props.setTags(this.props.tagId);
               })
-              .catch(err => {});
-          })
-          .catch(err => {});
+          }) 
       })
-      .catch(err => {});
+      
   };
   render() {
-    console.log(this.props);
     return (
       <Fragment>
         <div className="comments-container">{this.renderComments()}</div>
