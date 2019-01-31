@@ -19,7 +19,7 @@ class Delete extends Component {
   }
   // when the user says yes to wanting to delete the comment we call this function
   handleDelete = () => {
-    // the function uses a delete method pulling the id off of props that was passed in from the comments component
+    // the function uses a delete method pulling the id off of props that was passed in from the edit component
     axios
       .delete(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`)
       .then(response => {
