@@ -3,9 +3,7 @@ import React, { Component } from "react";
 import Geosuggest from "react-geosuggest";
 
 class Geo extends Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     return (
