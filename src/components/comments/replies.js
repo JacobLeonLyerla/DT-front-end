@@ -93,24 +93,6 @@ class Replies extends Component {
       })
       .catch(err => {});
   };
-  // renderSubReplies=()=>{
-  //     if(this.state.subReply !== undefined && this.state.reply !==undefined){
-  //     if(this.state.subReply.length !== this.state.reply.replies.length){
-
-  //     }}
-  //   if(this.state.subReplycalled !==true){
-  //    if(this.state.reply.length >0){
-  //      this.state.reply.forEach(reply => {
-  //          for (let i = 0; i < reply.replies.length; i++) {
-  //              this.setupSubReplies(reply.replies[i])
-
-  //          }
-  //          this.setupReplies(reply._id)
-
-  //      });
-  //    }
-  //   }
-  // }
   render() {
     return <Fragment>{this.renderReplies()}</Fragment>;
   }
