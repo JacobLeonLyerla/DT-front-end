@@ -60,7 +60,7 @@ class Comments extends Component {
                     tag={this.props.tag}
                     reply={this.state.reply}
                     replyflag={this.replyflag}
-                    reply={comment.replyTo}
+                    replyTo={comment.replyTo}
                     id={comment._id}
                     username={comment.username}
                     replies={comment.replies}
