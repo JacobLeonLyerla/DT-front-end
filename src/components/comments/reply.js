@@ -1,53 +1,94 @@
 import React, { Component } from "react";
+
 import {
+
   Button,
+
   Tooltip,
+
   Modal,
+
   ModalHeader,
+
   ModalFooter,
+
   Input,
+
   Form
+
 } from "reactstrap";
+
 import axios from "axios";
+
 class Reply extends Component {
+
   constructor(props) {
+
     super(props);
 
     this.toggle = this.toggle.bind(this);
+
     this.toggleTwo = this.toggleTwo.bind(this);
+
     this.state = {
+
       tooltipReply: false,
+
       modal: false,
+
       reply: `Reply to ${this.props.username}`
+
     };
+
   }
   toggle() {
+
     this.setState({
+
       tooltipReply: !this.state.tooltipReply
+
     });
   }
   toggleTwo() {
+
     this.setState({
+
       modal: !this.state.modal
+
     });
   }
 
   renderModal = () => {
+
     return (
+
       <Modal
+
         isOpen={this.state.modal}
+
         toggle={this.toggleTwo}
+
         className={this.props.className}
+
       >
         <ModalHeader toggle={this.toggleTwo}>{`Reply to ${
+
           this.props.username
+
         }`}</ModalHeader>
+
         <Form>
+
           <Input
+
             style={{ height: "30vh" }}
+
             name="reply"
+
             value={this.state.reply}
+
             onChange={this.handleInput}
+            
             type="textarea"
           />
         </Form>
