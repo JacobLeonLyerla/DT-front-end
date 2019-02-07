@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+
 import { Tooltip } from "reactstrap";
+
 import Delete from "./delete";
+
 import EditComment from "./editComment";
+
 class Edit extends Component {
   constructor(props) {
     super(props);
