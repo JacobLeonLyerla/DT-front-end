@@ -7,57 +7,34 @@ class LandingNav extends Component {
     return (
       <div className="landing-Nav">
         <Nav>
-    
           <NavItem>
-
             <NavLink
-
               onClick={() => this.props.toggle()}
-
               style={{ textAlign: "left", color: "white", cursor: "pointer" }}
-
               className="about"
             >
-
               About
             </NavLink>
-
           </NavItem>
 
           <NavItem>
-
             <Link
-
               style={{ color: "white", textDecoration: "none" }}
-
               to="/signup"
-
             >
-
               <NavLink className="signup">Sign Up</NavLink>
-
             </Link>
-
           </NavItem>
 
           <NavItem>
-
             <Link
-
               style={{ color: "white", textDecoration: "none" }}
-
               to="/signin"
-              
             >
-              
               <NavLink>Sign In</NavLink>
-
             </Link>
-
           </NavItem>
-
         </Nav>
-        
       </div>
     );
   }
