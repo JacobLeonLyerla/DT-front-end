@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+
 import { Form, Input, Button, Modal, ModalFooter } from "reactstrap";
 
 import axios from "axios";
@@ -35,8 +36,7 @@ class EditComment extends Component {
         this.props.setupComments(this.props.propsId);
         this.props.replyflag("true");
       })
-      .catch(err => {
-      });
+      .catch(err => {});
   };
   // input takes the name and value from our input target and uses that to set the state
   handleInput = input => {
