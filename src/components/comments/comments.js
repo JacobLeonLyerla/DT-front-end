@@ -1,10 +1,15 @@
 // here is where we will render the commetns and set up all the puts and stuff to maintain them
 
 import React, { Component, Fragment } from "react";
+
 import { Button, Input, Form } from "reactstrap";
+
 import axios from "axios";
+
 import Edit from "./edit";
+
 import Reply from "./reply";
+
 import Replies from "./replies";
 
 class Comments extends Component {
