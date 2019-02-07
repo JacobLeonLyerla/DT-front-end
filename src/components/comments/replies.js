@@ -1,8 +1,13 @@
 import React, { Component, Fragment } from "react";
+
 import SubReplies from "./subReplies";
+
 import axios from "axios";
+
 import Reply from "./reply";
+
 import Edit from "./edit";
+
 class Replies extends Component {
   state = {
     reply: {},
