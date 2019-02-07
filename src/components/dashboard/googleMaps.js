@@ -5,9 +5,8 @@ import Map from "./map";
 class Maps extends Component {
   render() {
     return (
-
       <Fragment>
-         {/* picture is only passed in inside of of tagsview and pass in the props
+        {/* picture is only passed in inside of of tagsview and pass in the props
 
          so since tag view is for a whole wide region the zoom is less
 
@@ -17,33 +16,20 @@ class Maps extends Component {
 
          also since the tag view has no markers those are not passing in */}
         {this.props.picture ? (
-
           <Fragment>
-
             <Map zoom={4} picture={this.props.picture} name={this.props.name} />
-
           </Fragment>
-
         ) : (
-
           <Fragment>
-
             <Map
               zoom={9}
-              
               tag={this.props.tag}
-
               name={this.props.name}
-
               markers={this.props.markers}
             />
-
           </Fragment>
-
         )}
-
       </Fragment>
-      
     );
   }
 }
