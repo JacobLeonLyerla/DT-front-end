@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import YouTube from "react-youtube";
 
 import { Button } from "reactstrap";
-
+import {buttonClicked} from "../../helpers/aboutHelpers"
 class About extends Component {
   state = {
     vidieo: "aPjcPXQeYzc",
@@ -11,13 +11,10 @@ class About extends Component {
   };
   // this function is like a focus however it does not lose its styling when the user  interacts with the page
   // and since the modal renders a youtube video the the focus was constantly being lost
-  buttonClicked = id => {
-    if (id === this.state.button) {
-      return "clicked";
-    }
-  };
+
 
   render() {
+    this.buttonClicked = buttonClicked.bind(this)
     // this coming from the docs  for react youtube, it's setting the rules for the player
     const opts = {
       height: "100%",
