@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
+import {handleChange} from "../../helpers/commonHelpers"
+
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,7 @@ class Signup extends Component {
       password: ""
     };
 
-    this.handleChange = this.handleChange.bind(this);
+
   }
 
   // when this component is rendered it clears out local storage
@@ -24,17 +26,7 @@ class Signup extends Component {
     localStorage.clear();
   }
 
-  handleChange = event => {
-    const { target } = event;
-
-    const { value } = target;
-
-    const { name } = target;
-
-    this.setState({
-      [name]: value
-    });
-  };
+  
 
   handleSubmit = e => {
     e.preventDefault();
@@ -70,6 +62,7 @@ class Signup extends Component {
   };
 
   render() {
+    this.handleChange = handleChange.bind(this)
     return (
       <div className="signup-container">
         <form onSubmit={this.handleSubmit} className="signup-form">
