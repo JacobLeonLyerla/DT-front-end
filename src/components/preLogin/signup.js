@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import { handleChange } from "../../helpers/commonHelpers";
-import { validateEmail,passwordStrength } from "../../helpers/signupHelpers";
+import { validateEmail,passwordStrength,emailMatch } from "../../helpers/signupHelpers";
 
 class Signup extends Component {
   constructor(props) {
@@ -46,20 +46,6 @@ class Signup extends Component {
       }
     };
   }
-
- 
-  // this checks the first the email from the value passed in matches the email on state
-  // the value is the second email input
-  emailMatch = e => {
-    const { validate } = this.state;
-
-    if (e.target.value === this.state.email) {
-      validate.checkEmailState = "has-success";
-    } else {
-      validate.checkEmailState = "has-danger";
-    }
-    this.setState({ validate });
-  };
 
   // this checks the password match the same code as the email
   // email and password match could be one function now that I look at it
@@ -123,6 +109,7 @@ class Signup extends Component {
     this.handleChange = handleChange.bind(this);
     this.validateEmail = validateEmail.bind(this);
     this.passwordStrength = passwordStrength.bind(this);
+    this.emailMatch = emailMatch.bind(this);
     return (
       <div className="signup-container">
         {/* set up a form with an on submit for when the user hits enter or pressed the button */}
