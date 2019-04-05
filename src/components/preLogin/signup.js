@@ -13,6 +13,9 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
+import { handleChange } from "../../helpers/commonHelpers";
+import { validateEmail,passwordStrength,emailMatch } from "../../helpers/signupHelpers";
+
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -42,55 +45,7 @@ class Signup extends Component {
         password2State: ""
       }
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
-  // this function runs basic regualar expression to check that the email is formatted correctly
-  validateEmail(e) {
-    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    // deconstruct validate from the object we set on state
-    const { validate } = this.state;
-
-    // we test the value we passed in  and if it passed return success or failure
-    if (emailRex.test(e.target.value)) {
-      validate.emailState = "has-success";
-    } else {
-      validate.emailState = "has-danger";
-    }
-
-    // set that object back on state
-    this.setState({ validate });
-  }
-  // this function uses regualar expression to check password strength
-  passwordStrength(e) {
-    // I found this regex line is very basic and just checks for length that it has a digit in it
-    const mediumRegex = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
-
-    // deconstruct the validate from state
-    const { validate } = this.state;
-
-    // we test that if the value passes the regex
-    if (mediumRegex.test(e.target.value)) {
-      validate.passwordState = "has-success";
-    } else {
-      validate.passwordState = "has-danger";
-    }
-    // we set that new value onto state
-    this.setState({ validate });
-  }
-  // this checks the first the email from the value passed in matches the email on state
-  // the value is the second email input
-  emailMatch = e => {
-    const { validate } = this.state;
-
-    if (e.target.value === this.state.email) {
-      validate.checkEmailState = "has-success";
-    } else {
-      validate.checkEmailState = "has-danger";
-    }
-    this.setState({ validate });
-  };
 
   // this checks the password match the same code as the email
   // email and password match could be one function now that I look at it
@@ -106,24 +61,7 @@ class Signup extends Component {
 
     this.setState({ validate });
   };
-  //  this will handle the change from the input
-  handleChange = event => {
-    // deconstruct taget from event
-    const { target } = event;
 
-    // deconstruct value from target
-    const { value } = target;
-
-    // deconstruct the name from the target
-    const { name } = target;
-
-    // I could have just dne this.setState({[event.target.name]:event.target.value})
-    // I just wanted to build it diffent for fun, I don't know if I like how many lines it is.
-    // set the value on the name
-    this.setState({
-      [name]: value
-    });
-  };
   // thise is for showing the password
   typefield = () => {
     if (this.state.passwordType === "password") {
@@ -168,6 +106,10 @@ class Signup extends Component {
   };
 
   render() {
+    this.handleChange = handleChange.bind(this);
+    this.validateEmail = validateEmail.bind(this);
+    this.passwordStrength = passwordStrength.bind(this);
+    this.emailMatch = emailMatch.bind(this);
     return (
       <div className="signup-container">
         {/* set up a form with an on submit for when the user hits enter or pressed the button */}
