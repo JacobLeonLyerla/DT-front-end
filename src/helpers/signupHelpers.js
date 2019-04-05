@@ -15,3 +15,21 @@ export function validateEmail(e) {
     // set that object back on state
     this.setState({ validate });
   }
+
+   // this function uses regualar expression to check password strength
+   export function passwordStrength(e) {
+    // I found this regex line is very basic and just checks for length that it has a digit in it
+    const mediumRegex = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
+
+    // deconstruct the validate from state
+    const { validate } = this.state;
+
+    // we test that if the value passes the regex
+    if (mediumRegex.test(e.target.value)) {
+      validate.passwordState = "has-success";
+    } else {
+      validate.passwordState = "has-danger";
+    }
+    // we set that new value onto state
+    this.setState({ validate });
+  }
