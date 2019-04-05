@@ -13,6 +13,8 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
+import { handleChange } from "../../helpers/commonHelpers";
+
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +45,6 @@ class Signup extends Component {
       }
     };
 
-    this.handleChange = this.handleChange.bind(this);
   }
   // this function runs basic regualar expression to check that the email is formatted correctly
   validateEmail(e) {
@@ -106,24 +107,7 @@ class Signup extends Component {
 
     this.setState({ validate });
   };
-  //  this will handle the change from the input
-  handleChange = event => {
-    // deconstruct taget from event
-    const { target } = event;
 
-    // deconstruct value from target
-    const { value } = target;
-
-    // deconstruct the name from the target
-    const { name } = target;
-
-    // I could have just dne this.setState({[event.target.name]:event.target.value})
-    // I just wanted to build it diffent for fun, I don't know if I like how many lines it is.
-    // set the value on the name
-    this.setState({
-      [name]: value
-    });
-  };
   // thise is for showing the password
   typefield = () => {
     if (this.state.passwordType === "password") {
@@ -168,6 +152,7 @@ class Signup extends Component {
   };
 
   render() {
+    this.handleChange = handleChange.bind(this);
     return (
       <div className="signup-container">
         {/* set up a form with an on submit for when the user hits enter or pressed the button */}
