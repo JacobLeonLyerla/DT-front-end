@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import { handleChange } from "../../helpers/commonHelpers";
-import { validateEmail } from "../../helpers/signupHelpers";
+import { validateEmail,passwordStrength } from "../../helpers/signupHelpers";
 
 class Signup extends Component {
   constructor(props) {
@@ -47,23 +47,7 @@ class Signup extends Component {
     };
   }
 
-  // this function uses regualar expression to check password strength
-  passwordStrength(e) {
-    // I found this regex line is very basic and just checks for length that it has a digit in it
-    const mediumRegex = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
-
-    // deconstruct the validate from state
-    const { validate } = this.state;
-
-    // we test that if the value passes the regex
-    if (mediumRegex.test(e.target.value)) {
-      validate.passwordState = "has-success";
-    } else {
-      validate.passwordState = "has-danger";
-    }
-    // we set that new value onto state
-    this.setState({ validate });
-  }
+ 
   // this checks the first the email from the value passed in matches the email on state
   // the value is the second email input
   emailMatch = e => {
@@ -138,6 +122,7 @@ class Signup extends Component {
   render() {
     this.handleChange = handleChange.bind(this);
     this.validateEmail = validateEmail.bind(this);
+    this.passwordStrength = passwordStrength.bind(this);
     return (
       <div className="signup-container">
         {/* set up a form with an on submit for when the user hits enter or pressed the button */}
