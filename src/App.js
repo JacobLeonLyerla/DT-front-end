@@ -1,3 +1,6 @@
+// DEV COMMENTS!!!
+//Is there a away to reduce the number of imports or make a file that handles importing maybe allowing me to have less lines here.
+// DEV
 import React, { Component } from "react";
 import { Row, Modal } from "reactstrap";
 import "./App.css";
@@ -19,6 +22,10 @@ import Info from "./components/preLogin/about";
 class App extends Component {
   constructor(props) {
     super(props);
+    // DEV COMMENTS!!!!!
+    // look into a better form of statemanagment, 
+    // also refine the collasp it is pretty janky
+    // DEV
     this.state = {
       user: "",
       dashboardVar: 1,
