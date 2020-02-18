@@ -1,5 +1,9 @@
-// here is where we will render the commetns and set up all the puts and stuff to maintain them
+// DEV COMMENTS!!!
+//  overhaul how I am doing comments, I know it's a bit janky
+// find a better way to do it
+// DEV
 
+// here is where we will render the commetns and set up all the puts and stuff to maintain them
 import React, { Component, Fragment } from "react";
 
 import { Button, Input, Form } from "reactstrap";
