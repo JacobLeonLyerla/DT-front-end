@@ -39,9 +39,7 @@ class App extends Component {
       post: [],
       modal: false
     };
-
     this.toggle = this.toggle.bind(this);
-
   }
   // this will call when the component is rendered
   // in turn it will call the load users and pictures methods
