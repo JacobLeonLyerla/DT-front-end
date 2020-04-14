@@ -13,7 +13,7 @@ class Replies extends Component {
     reply: {},
     subReply: {},
     subReplycalled: false,
-    id: ""
+    id: "",
   };
   componentDidMount() {
     this.setupReplies();
@@ -21,17 +21,17 @@ class Replies extends Component {
   setupReplies = () => {
     axios
       .get(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`)
-      .then(response => {
+      .then((response) => {
         this.setState({ reply: response.data.replies });
         let sub = [];
-        response.data.replies.forEach(reply => {
-          reply.replies.forEach(nReply => {
+        response.data.replies.forEach((reply) => {
+          reply.replies.forEach((nReply) => {
             sub.push(nReply);
           });
         });
         this.setState({ subReply: sub, id: this.props.propsId });
       })
-      .catch(err => {});
+      .catch((err) => {});
   };
 
   renderReplies = () => {
@@ -45,14 +45,14 @@ class Replies extends Component {
         this.setupReplies();
       }
       if (this.state.reply.length > 0) {
-        this.state.reply.forEach(count => {
-          count.replies.forEach(repliesCount => {
+        this.state.reply.forEach((count) => {
+          count.replies.forEach((repliesCount) => {
             countReply.push(repliesCount);
           });
         });
       }
       if (this.state.reply.length > 0) {
-        return this.state.reply.map(reply => (
+        return this.state.reply.map((reply) => (
           <Fragment>
             <div className="reply">
               {reply.username === this.props.user.username ? (
@@ -90,13 +90,13 @@ class Replies extends Component {
     }
   };
 
-  setupSubReplies = id => {
+  setupSubReplies = (id) => {
     axios
       .get(`https://dt-back-end.herokuapp.com/comments/${id}`)
-      .then(response => {
+      .then((response) => {
         this.setState({ subReply: response.data.replies });
       })
-      .catch(err => {});
+      .catch((err) => {});
   };
   render() {
     return <Fragment>{this.renderReplies()}</Fragment>;
