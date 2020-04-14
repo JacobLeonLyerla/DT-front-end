@@ -19,17 +19,17 @@ import Replies from "./replies";
 class Comments extends Component {
   state = { comment: "", comments: {}, reply: false };
   // setting up our comments
-  setupComments = id => {
+  setupComments = (id) => {
     // we grab the post by the post id
     axios
       .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
-      .then(response => {
+      .then((response) => {
         this.setState({ comments: response.data.comments });
-      })
+      });
   };
   // reply flag is for re-rendering the comments when the type passed in is true
   // it sets the reply on state to true, we use that reply flag to gate rendering for other functions
-  replyflag = type => {
+  replyflag = (type) => {
     if (type === "true") {
       this.setState({ reply: true });
     } else {
@@ -52,12 +52,11 @@ class Comments extends Component {
           array = this.props.comments;
         }
         // iterate over the array we pulled off of state or off of props
-        return array.map(comment => {
+        return array.map((comment) => {
           return (
-
             // this is the container that holds each comment
             <div className="comment-container">
-             {/* when the username does not match the loged in user name than the reply component is rendered
+              {/* when the username does not match the loged in user name than the reply component is rendered
              we pass in the needed props for our reply to work.
 
               if it does match we render our edit and delete components and pass in the props for them
@@ -113,11 +112,11 @@ class Comments extends Component {
       }
     }
   };
- // this is an handle input function that takes our name and value from the inpute target and sets it on state
-  handleInput = input => {
+  // this is an handle input function that takes our name and value from the inpute target and sets it on state
+  handleInput = (input) => {
     this.setState({ [input.target.name]: input.target.value });
   };
-  // this is for handling the submit of a comment 
+  // this is for handling the submit of a comment
   handleSubmit = () => {
     // when we hit submit we call this function to render out the new data
     this.props.setTags(this.props.tagId);
@@ -133,7 +132,7 @@ class Comments extends Component {
     // that will add our comment to the comment collection
     axios
       .post("https://dt-back-end.herokuapp.com/comments", comment)
-      .then(response => {
+      .then((response) => {
         // we now reset our comment object
         let comment = {};
         // we set the comment key to the value of the comments passed in from props
@@ -145,7 +144,7 @@ class Comments extends Component {
         // when than get post  from the tags endpoint
         axios
           .get(`https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`)
-          .then(response => {
+          .then((response) => {
             // we set up a unread variable
             let unread;
             // if the user posting is not the user who made the post
@@ -165,15 +164,14 @@ class Comments extends Component {
                 `https://dt-back-end.herokuapp.com/tags/${this.props.tagId}`,
                 comment
               )
-              // we than reset our comment input and call these functions to update the data being rendered 
-              .then(response => {
+              // we than reset our comment input and call these functions to update the data being rendered
+              .then((response) => {
                 this.setState({ comment: "" });
                 this.setupComments(this.props.tagId);
                 this.props.setTags(this.props.tagId);
-              })
-          }) 
-      })
-      
+              });
+          });
+      });
   };
   render() {
     return (
