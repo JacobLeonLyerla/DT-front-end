@@ -1,11 +1,11 @@
-export function handleChange ( event ) {
-    const { target } = event;
+export function handleChange(event) {
+  const { target } = event;
 
-    const { value } = target;
+  const { value } = target;
 
-    const { name } = target;
+  const { name } = target;
 
-    this.setState({
-      [name]: value
-    });
-  };
+  this.setState({
+    [name]: value,
+  });
+}
