@@ -128,6 +128,7 @@ class Signup extends Component {
               id="username"
               value={this.state.username}
               onChange={this.handleChange}
+
             />
 
             <FormFeedback valid>Sweet! that name is available</FormFeedback>
@@ -144,7 +145,7 @@ class Signup extends Component {
               type="email"
               name="email"
               id="exampleEmail"
-              placeholder="myemail@email.com"
+              placeholder="Email@Email.com"
               value={this.state.email}
               valid={this.state.validate.emailState === "has-success"}
               invalid={this.state.validate.emailState === "has-danger"}

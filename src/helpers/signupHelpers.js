@@ -39,6 +39,8 @@ export function passwordStrength(e) {
 export function emailMatch(e) {
   const { validate } = this.state;
 
+  
+
   if (e.target.value === this.state.email) {
     validate.checkEmailState = "has-success";
   } else {
