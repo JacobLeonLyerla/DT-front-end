@@ -6,7 +6,7 @@
     "@types/react-geosuggest": "^2.7.8",
     "animate.css": "^3.7.0",
     "availity-reactstrap-validation": "^2.2.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.1.3",
     "google-map-react": "^1.1.2",
     "react": "^16.7.0",
