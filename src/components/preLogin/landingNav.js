@@ -7,8 +7,6 @@ class LandingNav extends Component {
     return (
       <div className="landing-Nav">
         <Nav>
-        
-
           <NavItem>
             <Link
               style={{ color: "white", textDecoration: "none" }}
