@@ -12,25 +12,25 @@ class Edit extends Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       tooltipEdit: false,
-      tooltipDelete: false
+      tooltipDelete: false,
     };
   }
   // this toggle toggles the tooltip  for edit or delete based on what type is passed
   toggle(type) {
     if (type === "edit") {
       this.setState({
-        tooltipEdit: !this.state.tooltipEdit
+        tooltipEdit: !this.state.tooltipEdit,
       });
     } else {
       this.setState({
-        tooltipDelete: !this.state.tooltipDelete
+        tooltipDelete: !this.state.tooltipDelete,
       });
     }
   }
   render() {
     return (
       <div className="target-comment">
-      {/* this is where our edit comment is rendering it also has a div container that we use for rendering the tooltip */}
+        {/* this is where our edit comment is rendering it also has a div container that we use for rendering the tooltip */}
         <div className="edit-constainer" id={`edit${this.props.id}`}>
           <EditComment
             id={this.props.id}
@@ -48,9 +48,7 @@ class Edit extends Component {
         >
           Edit
         </Tooltip>
-        |
-              {/* same thing here for delete as we are doing for edit */}
-
+        |{/* same thing here for delete as we are doing for edit */}
         <div className="delete-constainer" id={`delete${this.props.id}`}>
           <Delete
             id={this.props.id}

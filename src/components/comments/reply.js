@@ -7,7 +7,7 @@ import {
   ModalHeader,
   ModalFooter,
   Input,
-  Form
+  Form,
 } from "reactstrap";
 
 import axios from "axios";
@@ -25,17 +25,17 @@ class Reply extends Component {
 
       modal: false,
 
-      reply: `Reply to ${this.props.username}`
+      reply: `Reply to ${this.props.username}`,
     };
   }
   toggle() {
     this.setState({
-      tooltipReply: !this.state.tooltipReply
+      tooltipReply: !this.state.tooltipReply,
     });
   }
   toggleTwo() {
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
     });
   }
 
@@ -46,9 +46,9 @@ class Reply extends Component {
         toggle={this.toggleTwo}
         className={this.props.className}
       >
-        <ModalHeader toggle={this.toggleTwo}>{`Reply to ${
-          this.props.username
-        }`}</ModalHeader>
+        <ModalHeader
+          toggle={this.toggleTwo}
+        >{`Reply to ${this.props.username}`}</ModalHeader>
 
         <Form>
           <Input
@@ -67,7 +67,7 @@ class Reply extends Component {
       </Modal>
     );
   };
-  handleInput = input => {
+  handleInput = (input) => {
     this.setState({ [input.target.name]: input.target.value });
   };
   handleSubmit = () => {
@@ -79,7 +79,7 @@ class Reply extends Component {
     reply.replyTo = this.props.id;
     axios
       .post(`https://dt-back-end.herokuapp.com/comments`, reply)
-      .then(response => {
+      .then((response) => {
         let comment = {};
         comment.replies = this.props.replies;
         comment.replies.push(response.data._id);
@@ -88,7 +88,7 @@ class Reply extends Component {
             `https://dt-back-end.herokuapp.com/comments/${this.props.id}`,
             comment
           )
-          .then(response => {
+          .then((response) => {
             let unread;
             if (this.props.user.username !== this.props.tag.user) {
               unread = this.props.tag.unreadComment + 1;
@@ -104,18 +104,18 @@ class Reply extends Component {
                 `https://dt-back-end.herokuapp.com/tags/${this.props.propsId}`,
                 comment
               )
-              .then(response => {
+              .then((response) => {
                 console.log(response.data);
                 this.props.replyflag("true");
                 this.props.setupComments(this.props.propsId);
                 this.props.setTags(this.props.propsId);
                 this.setState({ reply: `Reply to ${this.props.username}` });
               })
-              .catch(err => {});
+              .catch((err) => {});
           })
-          .catch(err => {});
+          .catch((err) => {});
       })
-      .catch(err => {});
+      .catch((err) => {});
   };
   render() {
     return (

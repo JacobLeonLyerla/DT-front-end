@@ -35,10 +35,10 @@ p {
   color: white;
 }
 .menu .item:hover {
-  color: #EBE1CE !important;
+  color: #ebe1ce !important;
 }
 .menu .active {
-  color: #EBE1CE !important;
+  color: #ebe1ce !important;
 }
 .logo-wrapper {
   margin-top: 22vh;
@@ -98,7 +98,7 @@ p {
   color: #a8bdd6;
 }
 .landing-Nav .nav-link:hover {
-  color: #EBE1CE;
+  color: #ebe1ce;
   background: rgba(0, 0, 0, 0.103);
 }
 .landing-Nav .signup {
@@ -495,7 +495,7 @@ tr:hover {
     font-size: 1.1rem;
   }
   .table-container .tags-table .td {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 @media only screen and (max-width: 719px) {
@@ -571,7 +571,7 @@ tr:hover {
   overflow-y: scroll;
 }
 .comments-container .comment-container {
-  background: #EBE1CE;
+  background: #ebe1ce;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -682,7 +682,7 @@ tr:hover {
   padding-right: 3%;
   padding-left: 3%;
   padding-bottom: 2%;
-  background: #EBE1CE;
+  background: #ebe1ce;
 }
 .create-form .text-left {
   letter-spacing: 0.2rem;

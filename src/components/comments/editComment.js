@@ -8,7 +8,7 @@ class EditComment extends Component {
     super(props);
     this.state = {
       modal: false,
-      comment: `${this.props.comment.comment}`
+      comment: `${this.props.comment.comment}`,
     };
 
     this.toggle = this.toggle.bind(this);
@@ -16,7 +16,7 @@ class EditComment extends Component {
 
   toggle() {
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
     });
   }
   // this is our main function it handles the edit of the comment
@@ -29,17 +29,17 @@ class EditComment extends Component {
     // than we run a put request targeting that compoennt by the id and updating it with the new edit object
     axios
       .put(`https://dt-back-end.herokuapp.com/comments/${this.props.id}`, edit)
-      .then(response => {
+      .then((response) => {
         // close the modal
         this.toggle();
         // call the setup comments function for rending data and set our reply flag to true
         this.props.setupComments(this.props.propsId);
         this.props.replyflag("true");
       })
-      .catch(err => {});
+      .catch((err) => {});
   };
   // input takes the name and value from our input target and uses that to set the state
-  handleInput = input => {
+  handleInput = (input) => {
     this.setState({ [input.target.name]: input.target.value });
   };
   renderModal = () => {
