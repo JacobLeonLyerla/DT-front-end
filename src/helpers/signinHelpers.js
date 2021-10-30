@@ -17,7 +17,7 @@ export function signinLayout() {
             name="username"
             id="username"
             value={this.state.username}
-            onChange={e => {
+            onChange={(e) => {
               this.handleChange(e);
             }}
           />
@@ -59,14 +59,14 @@ export function handleSubmit(e) {
   const user = {
     username: this.state.username,
 
-    password: this.state.password
+    password: this.state.password,
   };
   // make a post to our login route that returns a  token and user id
   // than we set that one local storage for persisting the data
   axios
     .post("https://dt-back-end.herokuapp.com/auth/login", user)
 
-    .then(resp => {
+    .then((resp) => {
       localStorage.setItem("token", `Bearer ${resp.data.token}`);
 
       localStorage.setItem("id", resp.data.user._id);
