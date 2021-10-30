@@ -1,18 +1,28 @@
 import React from 'react'
+import AppContext from '../../context';
 
-const UserSubmissionTable = () => {
+import { useContext } from 'react'
+const UserSubmission = () => {
+  const { tags } = useContext(AppContext);
+    const tag = tags[0]
+    console.log(tag)
     return (
         <div
         className="td-container"
         style={{ display: "flex", flexDirection: "row" }}
       >
-        <div className="td">{sub.name}</div>
+        <div className="td">{tag.name}</div>
         <div className="td">
-          {sub.locationName ? sub.locationName : null}
+          {tag.locationName ? tag.locationName : "location not given"}
         </div>
-        {this.renderTags(sub.tag)}
+        <div className="td tag">
+        {tag.tag.map(tag=>(
+         <div className="tags">{tag}<br/></div>
+        ))} </div>     
       </div>
     )
 }
 
-export default UserSubmissionTable
+export default UserSubmission
+
+
