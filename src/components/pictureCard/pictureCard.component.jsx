@@ -1,20 +1,18 @@
 import React from 'react'
 import IMAGES from "../../assets/images.js";
+import AppContext from "../../context";
+import { useContext } from 'react';
 import {
     Col,
-    Row,
     CardImg,
     Card,
     CardImgOverlay,
     CardText,
   } from "reactstrap";
-  
   import { Link } from "react-router-dom";
-const PictureCard = (props) => {
-    const {img} = props
-    console.log(img)
+const PictureCard = ({img,pictureStyle}) => {
+  const { getCurrentPicture } = useContext(AppContext);
     const imgString = img.replace(/-/g, "").toLowerCase();
-    console.log(imgString)
     return (
         // we use a column with an inline style for the background
         // we also use our img function to import the imgages by their name
@@ -25,8 +23,11 @@ const PictureCard = (props) => {
           data-ca="ca"
           className={`tag-img tags`}
           md="6"
+         
         >
-          <Card  className={`tag-img tags`}>
+          <Card  className={`tag-img tags`}
+           onClick={()=>getCurrentPicture(img.toLowerCase())}
+          >
             <Link
               to={`/dashboard/${img.toLowerCase()}`}
               style={{ textDecoration: "none" }}
