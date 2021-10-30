@@ -4,11 +4,14 @@ import { Row } from "reactstrap";
 import PictureCard from "../pictureCard/pictureCard.component.jsx";
 
 class Pictures extends Component {
+
+
+  
   // our render pictures funtion is pretty cool
   renderPictures = () => {
     // first we set up an empty array for the images
     let arr = [];
-
+    console.log(this.props.pictures);
     // if pictures is defined we can go inside and start doing work
     if (this.props.pictures !== undefined) {
       // when the props pictures is longer than one we map over them and push thme into our array
@@ -32,12 +35,12 @@ class Pictures extends Component {
 
         return <PictureCard img={img} />;
       });
-    } 
-    return null
+    } else {
+    }
   };
   render() {
     return (
-      <Row>{this.renderPictures}</Row>
+      <Row>{this.renderPictures()}</Row>
     );
   }
 }
