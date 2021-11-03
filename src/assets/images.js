@@ -1,4 +1,7 @@
 const IMAGES = {
+  
+  placeholder: require("./placeholder.png").default,
+  australia: require("./australia.jpg").default,
   sledding: require("./sledding.jpg").default,
   skating: require("./skating.jpg").default,
   festive: require("./festive.jpg").default,
