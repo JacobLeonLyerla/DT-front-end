@@ -11,7 +11,6 @@ class Pictures extends Component {
   renderPictures = () => {
     // first we set up an empty array for the images
     let arr = [];
-    console.log(this.props.pictures);
     // if pictures is defined we can go inside and start doing work
     if (this.props.pictures !== undefined) {
       // when the props pictures is longer than one we map over them and push thme into our array
