@@ -12,10 +12,13 @@ import Trek from "./components/dashboard/trek";
 import Tags from "./components/dashboard/tags";
 import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
-import CreatePost from "./components/dashboard/createNewPost";
+import CreatePost from "./components/post/createPost.component"
 import Post from "./components/dashboard/post";
 import Info from "./components/preLogin/about";
 import TagViewContainer from "./components/containers/tagViewContainer.component";
+import CommentContainer from "./components/containers/commentContainer";
+import TagComments from "./components/comments/tagComments.compnent";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,11 +37,15 @@ class App extends Component {
     };
 
     this.toggle = this.toggle.bind(this);
-
   }
   // this will call when the component is rendered
   // in turn it will call the load users and pictures methods
   componentDidMount() {
+    console.log("You need to turn this component into a statless component"
+    )
+ //So we can use our loadUser function from our context and that will allow for a lot better data floow
+ //however a lot of things might break. I would sudgest we copy this app component so we have a referense to what the code is supposed to look like
+ 
 
     this.loadUser();
     this.loadPictures();
@@ -330,7 +337,7 @@ class App extends Component {
             path="/dashboard/trek/:id"
 
             render={props => (
-              <Trek
+              <CommentContainer
 
                 {...props}
 
