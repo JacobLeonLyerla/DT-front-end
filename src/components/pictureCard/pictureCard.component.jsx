@@ -10,7 +10,7 @@ import {
     CardText,
   } from "reactstrap";
   import { Link } from "react-router-dom";
-const PictureCard = ({img,pictureStyle}) => {
+const PictureCard = ({img}) => {
   const { getCurrentPicture } = useContext(AppContext);
     const imgString = img.replace(/-/g, "").toLowerCase();
     return (
