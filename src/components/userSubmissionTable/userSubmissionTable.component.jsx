@@ -1,13 +1,10 @@
 import React from 'react'
-import AppContext from '../../context';
-
-import { useContext } from 'react'
-const UserSubmission = () => {
-  const { tags } = useContext(AppContext);
-    const tag = tags[0]
-    console.log(tag)
+import { withRouter } from 'react-router';
+const UserSubmission = ({history,tag}) => {
     return (
+      
         <div
+        onClick={()=>history.push(`/dashboard/trek/${tag._id}`)}
         className="td-container"
         style={{ display: "flex", flexDirection: "row" }}
       >
@@ -23,6 +20,6 @@ const UserSubmission = () => {
     )
 }
 
-export default UserSubmission
+export default withRouter(UserSubmission)
 
 
