@@ -1,10 +1,10 @@
-const filterLocations=(id)=>{
-    let array = this.state.location;
+const filterLocations=(id,tags)=>{
+    let array = tags;
 
-    let filteredArr = array.filter(value => {
+    let filteredArr = tags.filter(value => {
       return value !== id;
     });
-    if (filteredArr.length === array.length) {
+    if (filteredArr.length === tags.length) {
       filteredArr.push(id);
     }
 

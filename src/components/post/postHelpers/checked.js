@@ -4,6 +4,7 @@ if(tags){
     let filteredArr =  tags.filter(value => {
       return value !== id;
     });
+
     // if the id passed in was removed from  than the array on state will be longer than the filtered array
 
     // however if the id was not insider of the state array nothing will be filteter so they will be the size

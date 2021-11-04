@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Post = () => {
     const {user} = useContext(AppContext)
+ 
     return (
         <div>
             <Link

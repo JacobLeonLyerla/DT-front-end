@@ -4,8 +4,11 @@ import Map from "./map";
 
 class Maps extends Component {
   render() {
+
     return (
       <Fragment>
+  <Map zoom={4} picture={{picture:{"lat":8.774985,"lng":34.507238}}} name={"africa"} />
+
         {/* picture is only passed in inside of of tagsview and pass in the props
 
          so since tag view is for a whole wide region the zoom is less
@@ -15,9 +18,9 @@ class Maps extends Component {
          this will render a closer zoom of 9.
 
          also since the tag view has no markers those are not passing in */}
-        {this.props.picture ? (
+        {/* {1 ? (
           <Fragment>
-            <Map zoom={4} picture={this.props.picture} name={this.props.name} />
+            <Map zoom={4} picture={{picture:{"lat":8.774985,"lng":34.507238}}} name={"africa"} />
           </Fragment>
         ) : (
           <Fragment>
@@ -28,7 +31,7 @@ class Maps extends Component {
               markers={this.props.markers}
             />
           </Fragment>
-        )}
+        )} */}
       </Fragment>
     );
   }
