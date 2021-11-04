@@ -5,10 +5,9 @@ import { Col } from "reactstrap";
 import Pictures from "./renderPictures.js";
  import AppContext from "../../context/index.js";
 const Tags= (props)=> {
-  const {example,getPictures} = useContext(AppContext);
-    let pictures = []
+  const {pictures,getPictures} = useContext(AppContext);
   useEffect(() => {
-      pictures = getPictures()
+    getPictures()
   }, [])
   
   
@@ -20,7 +19,7 @@ const Tags= (props)=> {
       pictures are just the categories that load in.
       so we pass them into our pictures component and it renders them for us
       neat right!? */}
-        <Pictures pictures={example} />
+        <Pictures pictures={pictures} />
       </Col>
     );}
 

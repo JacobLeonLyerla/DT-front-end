@@ -97,6 +97,8 @@ class TagView extends Component {
   };
   // render out our tag arr data
   userSubmissionTable = () => {
+
+     TagArr
     // we return the data we iterated as a jsx element
     return this.state.tagArr.map(sub => (
       // i had to be creative here the LINK from react router dom was causing issues

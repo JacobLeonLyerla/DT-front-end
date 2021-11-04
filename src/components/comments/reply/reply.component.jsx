@@ -1,5 +1,5 @@
-import React,{useContext,useEffect} from 'react'
-import AppContext from '../../context';
+import React,{useContext} from 'react'
+import AppContext from '../../../context';
 import {
     Button,
     Tooltip,
@@ -10,11 +10,8 @@ import {
     Form
   } from "reactstrap";
 const Reply = ({comment}) => {
-  const { user,currentTag, loadUser,reply,setReply,handleReply,setCurrentToggleState,toggle } = useContext(AppContext);
-  useEffect(() => {
-   loadUser()
-    
-  }, [])
+  const { currentTag, reply,setReply,handleReply,setCurrentToggleState,toggle } = useContext(AppContext);
+
   const renderModal =()=>{
     return(<>
       <i
@@ -27,7 +24,7 @@ const Reply = ({comment}) => {
       toggle={setCurrentToggleState}
     >
       <ModalHeader  toggle={()=>setCurrentToggleState()}>{`Reply to ${
-        user.username
+        currentTag.user
       }`}</ModalHeader>
 
       <Form>
