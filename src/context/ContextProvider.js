@@ -1,11 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AppContext from ".";
 import axios from "axios";
+import filterLocations from "../components/post/postHelpers/filterLocation";
 
 const ContextProvider = ({ children }) => {
-  const [example, setExample] = useState([]);
+  const [user, setUser] = useState([]);
+  const [pictures, setPictures] = useState([]);
   const [tags, setTags] = useState([]);
-  const [currentPicture, setCurrentPicture] = useState({});
+  const [currentPicture, setCurrentPicture] = useState();
+  const [currentTag, setCurrentTag] = useState();
+  const [comments, setComments] = useState([]);
+  const [count, setCount] = useState([]);
+  const [post, setPost] = useState([]);
+
+  //comment section useStat declecations
+  const [toggle, setToggle] = useState(false);
+  const [reply, setReply] = useState("");
+  const [title, setTitle] = useState("");
+  const [comment, setComment] = useState("");
+  const [description, setDescription] = useState("");
+  const [filteredTagsArr, setFilteredTagsArr] = useState([]);
+  const [filteredLocationsArr, setFilteredLocationsArr] = useState([]);
+  const [renderReplies, setRenderReplies] = useState(false)
+  const loadUser = () => {
+    const token = localStorage.getItem("token");
+
+    const id = localStorage.getItem("id");
+    const requestOptions = {
+      headers: {
+        Authorization: token,
+      },
+    };
+
+    axios
+      .get(`https://dt-back-end.herokuapp.com/users/${id}`, requestOptions)
+
+      .then((response) => {
+        setUser(response.data);
+
+        let count = 0;
+
+        response.data.post.forEach((like) => {
+          count += like.unreadComment;
+          count += like.unreadLike;
+        });
+
+        setCount(count);
+        setPost(response.data.post);
+      })
+
+      .catch((err) => {});
+  };
 
   const getPictures = () => {
     const token = localStorage.getItem("token");
@@ -19,7 +64,7 @@ const ContextProvider = ({ children }) => {
       .get("https://dt-back-end.herokuapp.com/pictures", requestOptions)
 
       .then((response) => {
-        setExample([...response.data]);
+        setPictures([...response.data]);
       })
       .catch(() => {});
     return () => {};
@@ -49,7 +94,7 @@ const ContextProvider = ({ children }) => {
           }
         });
 
-        setTags([...tagArr]);
+        setTags(tagArr);
       })
 
       .catch((err) => {
@@ -69,25 +114,254 @@ const ContextProvider = ({ children }) => {
       .get("https://dt-back-end.herokuapp.com/pictures", requestOptions)
 
       .then((response) => {
-          
-        const current = response.data.filter(res => res.name.toLowerCase() === id);
+        const current = response.data.filter(
+          (res) => res.name.toLowerCase() === id
+        );
 
-        setCurrentPicture([...current]);
+        setCurrentPicture(current[0]);
       })
       .catch(() => {});
     return () => {};
   };
 
+  const getTagById = (id) => {
+    axios
+      .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
+      .then((response) => {
+        setCurrentTag(response.data);
+      })
+
+      .catch((err) => {});
+  };
+
+  const getComments = (id) => {
+    console.log(id)
+    axios
+      .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
+      .then((response) => {
+        setComments(response.data.comments);
+      });
+  };
+  const setCurrentToggleState = () => {
+    setToggle(!toggle);
+  };
+  const handleComment = () => {
+    let commentObj = {};
+
+    const checkedString = !comment.replace(/\s/g, "").length
+      ? setComment("")
+      : comment;
+    if (comment !== "") {
+      commentObj.comment = checkedString;
+      commentObj.username = user.username;
+    }
+    axios
+      .post("https://dt-back-end.herokuapp.com/comments", commentObj)
+      .then((response) => {
+        // we now reset our comment object
+        commentObj = {};
+        // we set the comment key to the value of the comments passed in from props
+        commentObj.comments = currentTag.comments;
+        // when than push in this new id into that comments array
+        // on the backend the array is a ref by id so it uses the comment id's to reference the comments
+        // from the comment collection
+        commentObj.comments.push(response.data._id);
+        // when than get post  from the tags endpoint
+
+        axios
+          .get(`https://dt-back-end.herokuapp.com/tags/${currentTag._id}`)
+          .then((response) => {
+            // we set up a unread variable
+            let unread;
+            // if the user posting is not the user who made the post
+            // than we increment the undread counter for the post
+            // and if it is them we don't increment it we just pass in the current
+            if (currentTag.user !== user.username) {
+              unread = response.data.unreadComment + 1;
+            } else {
+              unread = response.data.unreadComment;
+            }
+            // we add that new undread value to the comment object under the unreadComment key
+            // and we update the tag(post) with that new value
+            // this will mean the post has a new notification :D!!!
+            commentObj.unreadComment = unread;
+
+            axios
+              .put(
+                `https://dt-back-end.herokuapp.com/tags/${currentTag._id}`,
+                commentObj
+              )
+              // we than reset our comment input and call these functions to update the data being rendered
+              .then((response) => {
+                setComment("");
+                getComments(currentTag._id);
+              });
+          });
+      });
+  };
+  const handleReply = (comment) => {
+    const { _id, replies } = comment;
+
+    setCurrentToggleState();
+    const replyObj = {};
+    replyObj.username = user.username;
+    replyObj.replyTo = _id;
+    replyObj.comment = reply;
+
+    //creates a comment to be stored in our comments collection
+    axios
+      .post("https://dt-back-end.herokuapp.com/comments", replyObj)
+      .then((response) => {
+        let commentObj = {};
+        commentObj.replies = replies;
+        commentObj.replies.push(response.data._id);
+        // puts our reply into our comments replies so it can render them
+        axios
+          .put(`https://dt-back-end.herokuapp.com/comments/${_id}`, commentObj)
+          .then((response) => {
+            console.log(response.data);
+            let unread;
+            if (user.username !== currentTag.user) {
+              unread = currentTag.unreadComment + 1;
+            } else {
+              unread = currentTag.unreadComment;
+            }
+            commentObj = {};
+            commentObj.unreadComment = unread;
+            //just if the user who made the post is not the one commenting the user gets a unread comment notification increment
+            axios
+              .put(
+                `https://dt-back-end.herokuapp.com/tags/${currentTag._id}`,
+                commentObj
+              )
+              .then((response) => {
+                setReply("");
+                setRenderReplies(!renderReplies)
+                            })
+              .catch((err) => {
+                console.log(err);
+              });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const handlePost = () => {
+    console.log(filteredLocationsArr);
+    console.log(filteredLocationsArr);
+    const location = filteredLocationsArr;
+    const mainLocation = filteredLocationsArr.shift();
+
+    if (location.length === 0) {
+      location.push(mainLocation);
+    }
+
+    const post = {};
+
+    if (
+      description !== "" &&
+      title !== "" &&
+      filteredTagsArr.length &&
+      location.length
+    ) {
+      // set up keys and values for post object
+      post.user = user.username;
+
+      post.tag = filteredTagsArr;
+
+      post.description = description;
+
+      post.name = title;
+
+      post.latStart = mainLocation.cords.lat;
+
+      post.lngStart = mainLocation.cords.lng;
+      // blanks for now because we are not using them right now
+      post.city = "";
+
+      post.region = "";
+
+      post.country = "";
+
+      post.locationName = mainLocation.name;
+      post.markers = location;
+    }
+
+    axios
+      .post("https://dt-back-end.herokuapp.com/tags", post)
+      .then((response) => {
+        const postId = {};
+
+        postId.post = user.post;
+
+        postId.post.push(response.data._id);
+        console.log("postid", postId);
+
+        axios
+          .put(`https://dt-back-end.herokuapp.com/users/${user._id}`, postId)
+          .then(() => {
+            // after we move the user to thier post page
+            // this.props.history.push(
+            //   `/dashboard/${this.props.user.username}/post`
+            // );
+            setDescription("");
+            setTitle("");
+            setFilteredLocationsArr([]);
+            setFilteredTagsArr([]);
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+  };
+
   const context = {
-    setExample,
-    example,
+    setUser,
+    user,
+    setPictures,
+    pictures,
     setTags,
     tags,
     setCurrentPicture,
     currentPicture,
+    setCurrentTag,
+    currentTag,
+    setComments,
+    comments,
+    setCount,
+    count,
+    setPost,
+    post,
+    setReply,
+    reply,
+    setToggle,
+    toggle,
+    setFilteredTagsArr,
+    filteredTagsArr,
+    setFilteredLocationsArr,
+    filteredLocationsArr,
+    setTitle,
+    title,
+    setDescription,
+    description,
+    setComment,
+    comment,
+
     getPictures,
     getCurrentPicture,
-    getTags
+    getTags,
+    getTagById,
+    getComments,
+    loadUser,
+    handleReply,
+    setCurrentToggleState,
+    handlePost,
+    handleComment,
+    
+    renderReplies, setRenderReplies
   };
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
