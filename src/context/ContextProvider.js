@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AppContext from ".";
 import axios from "axios";
-import filterLocations from "../components/post/postHelpers/filterLocation";
 
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState([]);
@@ -21,7 +20,7 @@ const ContextProvider = ({ children }) => {
   const [description, setDescription] = useState("");
   const [filteredTagsArr, setFilteredTagsArr] = useState([]);
   const [filteredLocationsArr, setFilteredLocationsArr] = useState([]);
-  const [renderReplies, setRenderReplies] = useState(false)
+  const [renderReplies, setRenderReplies] = useState(false);
   const loadUser = () => {
     const token = localStorage.getItem("token");
 
@@ -135,7 +134,6 @@ const ContextProvider = ({ children }) => {
   };
 
   const getComments = (id) => {
-    console.log(id)
     axios
       .get(`https://dt-back-end.herokuapp.com/tags/${id}`)
       .then((response) => {
@@ -219,7 +217,6 @@ const ContextProvider = ({ children }) => {
         axios
           .put(`https://dt-back-end.herokuapp.com/comments/${_id}`, commentObj)
           .then((response) => {
-            console.log(response.data);
             let unread;
             if (user.username !== currentTag.user) {
               unread = currentTag.unreadComment + 1;
@@ -236,23 +233,15 @@ const ContextProvider = ({ children }) => {
               )
               .then((response) => {
                 setReply("");
-                setRenderReplies(!renderReplies)
-                            })
-              .catch((err) => {
-                console.log(err);
-              });
+                setRenderReplies(!renderReplies);
+              })
+              .catch((err) => {});
           })
-          .catch((err) => {
-            console.log(err);
-          });
+          .catch((err) => {});
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
   const handlePost = () => {
-    console.log(filteredLocationsArr);
-    console.log(filteredLocationsArr);
     const location = filteredLocationsArr;
     const mainLocation = filteredLocationsArr.shift();
 
@@ -299,7 +288,6 @@ const ContextProvider = ({ children }) => {
         postId.post = user.post;
 
         postId.post.push(response.data._id);
-        console.log("postid", postId);
 
         axios
           .put(`https://dt-back-end.herokuapp.com/users/${user._id}`, postId)
@@ -312,10 +300,30 @@ const ContextProvider = ({ children }) => {
             setTitle("");
             setFilteredLocationsArr([]);
             setFilteredTagsArr([]);
-          })
-          .catch((err) => console.log(err));
+          });
+      });
+  };
+  const editComment = (id, comment) => {
+    // first we make an edit object
+    let edit = {};
+    // we than set the key of comment to this.state.comment
+    edit.comment = comment;
+    // we use the id that was passed from the edit component to know what comment we want to edit
+    // than we run a put request targeting that compoennt by the id and updating it with the new edit object
+    axios
+      .put(`https://dt-back-end.herokuapp.com/comments/${id}`, edit)
+      .then((response) => {
+        setRenderReplies(!renderReplies);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {});
+  };
+  const deleteComment = (id) => {
+    axios
+      .delete(`https://dt-back-end.herokuapp.com/comments/${id}`)
+      .then((response) => {
+        getComments(currentTag._id);
+      })
+      .catch((err) => {});
   };
 
   const context = {
@@ -360,8 +368,11 @@ const ContextProvider = ({ children }) => {
     setCurrentToggleState,
     handlePost,
     handleComment,
-    
-    renderReplies, setRenderReplies
+    editComment,
+    deleteComment,
+
+    renderReplies,
+    setRenderReplies,
   };
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
