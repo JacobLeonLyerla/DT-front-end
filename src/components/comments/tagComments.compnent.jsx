@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 
 import { Button, Input, Form } from "reactstrap";
 import Reply from "./reply/reply.component"
+import Edit from "./edit/edit.component";
 import Replies from "./replies/replies.component";
 const TagComments = ({ match }) => {
   const {
@@ -35,7 +36,7 @@ const TagComments = ({ match }) => {
               </>
             ) : (
               <>
-                Edit
+                <Edit comment={comment}/>
                 <div className="username">You Commented</div>
               </>
             )}
