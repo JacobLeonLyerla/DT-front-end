@@ -6,14 +6,16 @@ const Replies = ({comment}) => {
     const [subReplyArr, setSubReplyArr] = useState([]);
     const {comments,renderReplies,user,setRenderReplies} = useContext(AppContext);
 
-   const {_id,replies} = comment;
-
-    const setupReplies = () => {
+  
+    
+    const setupReplies = (id) => {
+        const {_id} = comment;
 
       axios
         .get(`https://dt-back-end.herokuapp.com/comments/${_id}`)
         .then((response) => {
-            setRepliesArr(...repliesArr, response.data.replies );
+        
+            setRepliesArr( response.data.replies );
             let sub = [];
             response.data.replies.forEach(reply => {
               reply.replies.forEach(nReply => {
@@ -23,15 +25,17 @@ const Replies = ({comment}) => {
             setSubReplyArr(sub)
           })
           .catch(err => {});
-          setRenderReplies(!renderReplies)
+         
   };
     useEffect(() => {
             setupReplies()
-
+        
     }, [])
 
-if(renderReplies && repliesArr.length){
+if(renderReplies){
      
+     setupReplies("test test test")
+      setRenderReplies(!renderReplies)
 }
 
     if (repliesArr.length > 0) {
