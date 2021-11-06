@@ -21,7 +21,7 @@ const EditComment = ({comment}) => {
         }
     return (
         
-<div className="target-comment">
+<>
 
 <>
 {inputToggle?      <i
@@ -50,7 +50,7 @@ const EditComment = ({comment}) => {
         </Button>}</>)}
      
   </>
-      </div>
+      </>
     
     )
 }

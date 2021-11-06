@@ -103,7 +103,7 @@ class Post extends Component {
           to={`/dashboard/create/${this.props.user.username}}`}
           style={{ textDecoration: "none" }}
         >
-          <Button>New Post</Button>
+          <Button><span className="post-list-span">New Post</span></Button>
         </Link>
 
         <Table className="tags-table post-table">

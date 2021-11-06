@@ -13,7 +13,7 @@ const Post = () => {
           to={`/dashboard/create/${user.username}}`}
           style={{ textDecoration: "none" }}
         >
-          <Button>New Post</Button>
+          <Button  ><span className="post-span">New Post</span></Button>
         </Link>
         </div>
     )

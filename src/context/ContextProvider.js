@@ -21,6 +21,8 @@ const ContextProvider = ({ children }) => {
   const [filteredTagsArr, setFilteredTagsArr] = useState([]);
   const [filteredLocationsArr, setFilteredLocationsArr] = useState([]);
   const [renderReplies, setRenderReplies] = useState(false);
+  const [newReplies,setNewReplies] = useState([])
+
   const loadUser = () => {
     const token = localStorage.getItem("token");
 
@@ -201,7 +203,7 @@ const ContextProvider = ({ children }) => {
     const { _id, replies } = comment;
 
     setCurrentToggleState();
-    const replyObj = {};
+    let replyObj = {};
     replyObj.username = user.username;
     replyObj.replyTo = _id;
     replyObj.comment = reply;
@@ -211,6 +213,7 @@ const ContextProvider = ({ children }) => {
       .post("https://dt-back-end.herokuapp.com/comments", replyObj)
       .then((response) => {
         let commentObj = {};
+        replyObj = response.data 
         commentObj.replies = replies;
         commentObj.replies.push(response.data._id);
         // puts our reply into our comments replies so it can render them
@@ -233,7 +236,7 @@ const ContextProvider = ({ children }) => {
               )
               .then((response) => {
                 setReply("");
-                setRenderReplies(!renderReplies);
+                setNewReplies([...newReplies, replyObj])
               })
               .catch((err) => {});
           })
@@ -266,9 +269,9 @@ const ContextProvider = ({ children }) => {
 
       post.name = title;
 
-      post.latStart = mainLocation.cords.lat;
+      post.lat = mainLocation.cords.lat;
 
-      post.lngStart = mainLocation.cords.lng;
+      post.lng = mainLocation.cords.lng;
       // blanks for now because we are not using them right now
       post.city = "";
 
@@ -321,7 +324,8 @@ const ContextProvider = ({ children }) => {
     axios
       .delete(`https://dt-back-end.herokuapp.com/comments/${id}`)
       .then((response) => {
-        getComments(currentTag._id);
+        setRenderReplies(!renderReplies);
+
       })
       .catch((err) => {});
   };
@@ -357,6 +361,8 @@ const ContextProvider = ({ children }) => {
     description,
     setComment,
     comment,
+    setNewReplies,
+    newReplies,
 
     getPictures,
     getCurrentPicture,

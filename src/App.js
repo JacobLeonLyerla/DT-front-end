@@ -8,7 +8,6 @@ import Landing from "./components/preLogin/landing";
 import Signup from "./components/preLogin/signup";
 import Signin from "./components/preLogin/signin";
 import Dashboard from "./components/dashboard/dashboard";
-import Trek from "./components/dashboard/trek";
 import Tags from "./components/dashboard/tags";
 import logo from "./assets/logo.png";
 import logoSml from "./assets/logoinit.png";
@@ -17,7 +16,6 @@ import Post from "./components/dashboard/post";
 import Info from "./components/preLogin/about";
 import TagViewContainer from "./components/containers/tagViewContainer.component";
 import CommentContainer from "./components/containers/commentContainer";
-import TagComments from "./components/comments/tagComments.compnent";
 
 class App extends Component {
   constructor(props) {
@@ -284,12 +282,6 @@ class App extends Component {
             render={props => (
 
               <Tags
-                pictures={this.state.picture}
-
-                {...props}
-
-                tagVar={this.state.tagVar}
-
               />
             )}
           />
@@ -339,13 +331,6 @@ class App extends Component {
             render={props => (
               <CommentContainer
 
-                {...props}
-
-                user={this.state.user}
-
-                tagVar={this.state.tagVar}
-
-                loadUser={this.loadUser}
               />
             )}
           />
