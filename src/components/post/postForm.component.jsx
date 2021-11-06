@@ -52,9 +52,7 @@ useEffect(() => {
       placeObj.cords = cords;
 
       location.push(placeObj);
-      console.log(location)
       setFilteredLocationsArr(location)
-      setToggle()
       return 
  
     }
@@ -104,16 +102,16 @@ useEffect(() => {
 
         <br />
         {/* this button is to render our modal that allows us to set up the user location  */}
-        <Button className="btn-location" onClick={setToggle}>
+        <Button className="btn-location" onClick={()=>setToggle(!toggle)}>
           Add Location
         </Button>
 
         <Modal
           isOpen={toggle}
-          toggle={setCurrentToggleState}
+          toggle={()=>setToggle(!toggle)}
           className={` geo-modal`}
         >
-          <ModalHeader toggle={setToggle}>select location</ModalHeader>
+          <ModalHeader toggle={()=>setToggle(!toggle)}>select location</ModalHeader>
 
           <ModalBody>
             <div className="modal-badges">
@@ -128,7 +126,7 @@ useEffect(() => {
           </ModalBody>
 
           <ModalFooter>
-            <Button color="secondary" onClick={setToggle}>
+            <Button color="secondary" onClick={()=>setToggle(!toggle)}>
               Close
             </Button>
           </ModalFooter>

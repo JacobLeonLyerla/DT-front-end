@@ -1,3 +1,4 @@
+
 .mapBackground-styles {
   min-height: 100vh;
   background-image: url("../assets/adventure.jpeg");
@@ -126,11 +127,14 @@ p {
   -o-background-size: cover;
   background-size: cover;
   min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100%;
   font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
 .signup-container .form-control {
   width: 50%;
@@ -520,7 +524,10 @@ tr:hover {
 }
 .details {
   min-height: 15vh;
+  max-height: 40vh;
   padding-bottom: 3vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .details .header {
   justify-content: space-between;
@@ -856,4 +863,19 @@ td {
 }
 .tag-img-checked{
   opacity: 0.5;
+}
+.reply-input{
+  width: 70vw;
+}
+.post-span{
+  margin-right:2.2%;
+}
+.post-list-span{
+  margin-right:1.2%;
+}
+.header-picture-col{
+  margin:0 auto;
+}
+.header-picture-text{
+  color:white !important;
 }

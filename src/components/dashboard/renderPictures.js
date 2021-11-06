@@ -30,7 +30,7 @@ class Pictures extends Component {
 
     // when our array is longer than zero we than map out the array
     if (arr.length > 0) {
-      return arr.map((img) => {
+      return arr.sort().map((img) => {
 
         return <PictureCard img={img} />;
       });
