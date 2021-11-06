@@ -1,15 +1,21 @@
-import React, { Component, Fragment } from "react";
+import React, { useContext,useEffect } from "react";
+import AppContext from "../../context";
 
 import Map from "./map";
 
-class Maps extends Component {
-  render() {
+const Maps =({currentPicture})=> {
+ const {currentTag} = useContext(AppContext)
+console.log(currentTag)
 
     return (
-      <Fragment>
-  <Map zoom={4} picture={{picture:{"lat":8.774985,"lng":34.507238}}} name={"africa"} />
-
-        {/* picture is only passed in inside of of tagsview and pass in the props
+      <>
+          {currentPicture ? <> <Map zoom={4} picture={{picture:{"lat":8.774985,"lng":34.507238}}} name={"africa"} />
+ <Map
+              zoom={9}
+              tag={currentPicture.tag}
+              name={currentPicture.name}
+              markers={currentPicture.markers}
+            /></>:null }       {/* picture is only passed in inside of of tagsview and pass in the props
 
          so since tag view is for a whole wide region the zoom is less
 
@@ -26,14 +32,14 @@ class Maps extends Component {
           <Fragment>
             <Map
               zoom={9}
-              tag={this.props.tag}
-              name={this.props.name}
-              markers={this.props.markers}
+              tag={currentTag.tag}
+              name={currentTag.name}
+              markers={currentTag.markers}
             />
           </Fragment>
         )} */}
-      </Fragment>
+      </>
     );
-  }
+  
 }
 export default Maps;
