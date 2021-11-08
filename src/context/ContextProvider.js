@@ -73,7 +73,6 @@ const ContextProvider = ({ children }) => {
 
   const getTags = (id, tagArr = []) => {
     const token = localStorage.getItem("token");
-
     const requestOptions = {
       headers: {
         Authorization: token,
@@ -83,7 +82,7 @@ const ContextProvider = ({ children }) => {
       .get("https://dt-back-end.herokuapp.com/tags", requestOptions)
       .then((response) => {
         // create an array
-
+        
         // iterate over our resposne from our axios call
         response.data.forEach((post) => {
           // this iterates though each and pushes in the post
@@ -282,12 +281,11 @@ const ContextProvider = ({ children }) => {
       post.locationName = mainLocation.name;
       post.markers = location;
     }
-
+    post.user = user.username
     axios
       .post("https://dt-back-end.herokuapp.com/tags", post)
       .then((response) => {
         const postId = {};
-
         postId.post = user.post;
 
         postId.post.push(response.data._id);
@@ -329,6 +327,31 @@ const ContextProvider = ({ children }) => {
       })
       .catch((err) => {});
   };
+  const deleteTag =(id)=>{
+    const token = localStorage.getItem("token");
+
+    const requestOptions = {
+      headers: {
+        Authorization: token,
+      },
+    };
+    axios
+    .delete(`https://dt-back-end.herokuapp.com/tags/${id}`,requestOptions)
+    .then((response) => {
+      return "success"
+
+    })
+    
+  }
+  const clearNotifications =(id)=>{
+
+    const notifcations ={unreadComment:0,unreadLike:0}
+
+    axios
+    .put(`https://dt-back-end.herokuapp.com/tags/${id}`,notifcations)
+    .then(response=>{
+    })
+  }
 
   const context = {
     setUser,
@@ -379,6 +402,8 @@ const ContextProvider = ({ children }) => {
 
     renderReplies,
     setRenderReplies,
+    clearNotifications,
+    deleteTag,
   };
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
