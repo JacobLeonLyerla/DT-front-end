@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import AppContext from '../../context';
-import { Col, Table, Button } from "reactstrap";
+import {  Button } from "reactstrap";
 
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,7 @@ const Post = () => {
           to={`/dashboard/create/${user.username}}`}
           style={{ textDecoration: "none" }}
         >
-          <Button  ><span className="post-span">New Post</span></Button>
+          <Button  ><span className="post-list-span">New Post</span></Button>
         </Link>
         </div>
     )

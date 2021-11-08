@@ -5,10 +5,8 @@ import {
   Col,
   Row,
 } from "reactstrap";
-import PictureCard from "../pictureCard/pictureCard.component";
 import AppContext from "../../context/index.js";
 import PostForm from "./postForm.component";
-import filterTags from "./postHelpers/filterTags";
 import PostPictures from "./postHelpers/postPictures.component";
 const CreatePost = () => {
   const { pictures,handlePost,filteredTagsArr } = useContext(AppContext);

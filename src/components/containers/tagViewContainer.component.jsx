@@ -29,7 +29,7 @@ if(!currentPicture){
     <Col className="table-container col-md-10">
      {setPicture.hasOwnProperty("lat")?<Map current={currentPicture} type="picture"/>:<HeaderPicture name={setPicture.name}/>}
       <Post/>
-       {tags.length!==0?<TableContainer colOneLabel="Title" colTwoLabel="Location" colThreeLabel="Tags" />:null}
+       {tags.length!==0?<TableContainer colOneLabel="Title" colTwoLabel="Location" colThreeLabel="Tags" type="Tag" />:null}
       <Row className="tag-filtered">
        
         {tag.sort().map((img) => {

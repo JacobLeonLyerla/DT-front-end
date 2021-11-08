@@ -20,7 +20,6 @@ const Map = ({ current }) => {
   }
   
   if(current.lat!== lat){
-    console.log("triggered")
     setLat(current.lat)
     setLng(current.lng)
     if(currentMarker){

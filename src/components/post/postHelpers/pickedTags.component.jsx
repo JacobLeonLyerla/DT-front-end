@@ -5,7 +5,7 @@ import { Badge } from 'reactstrap'
 const PickedTags = () => {
     const {filteredTagsArr,setFilteredTagsArr}= useContext(AppContext)
     return filteredTagsArr.map(tag => (
-        <Badge onClick={() => setFilteredTagsArr(filterTags(tag,filteredTagsArr))}>
+        <Badge color="primary" onClick={() => setFilteredTagsArr(filterTags(tag,filteredTagsArr))}>
           {tag.replace(/-/g, " ")}
         </Badge>))
 }
