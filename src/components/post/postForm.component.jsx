@@ -9,10 +9,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
+
 } from "reactstrap";
 import Catagories from "./postHelpers/catagories.component";
 import PickedTags from "./postHelpers/pickedTags.component";
@@ -21,7 +18,6 @@ const PostForm = () => {
   const {
     getPictures,
     pictures,
-    setCurrentToggleState,
     toggle,
     title,
     description,
@@ -31,10 +27,11 @@ const PostForm = () => {
     filteredTagsArr,
     setToggle,
     setFilteredLocationsArr,
+    loadUser
   } = useContext(AppContext);
 useEffect(() => {
   getPictures()
-
+  loadUser()
 }, [])
   
   const setLocation = (cords, name) => {
@@ -53,9 +50,9 @@ useEffect(() => {
 
       location.push(placeObj);
       setFilteredLocationsArr(location)
-      return 
- 
+      setToggle(!toggle)
     }
+
    
   return (
     <>
@@ -102,35 +99,13 @@ useEffect(() => {
 
         <br />
         {/* this button is to render our modal that allows us to set up the user location  */}
-        <Button className="btn-location" onClick={()=>setToggle(!toggle)}>
-          Add Location
-        </Button>
-
-        <Modal
-          isOpen={toggle}
-          toggle={()=>setToggle(!toggle)}
-          className={` geo-modal`}
-        >
-          <ModalHeader toggle={()=>setToggle(!toggle)}>select location</ModalHeader>
-
-          <ModalBody>
-            <div className="modal-badges">
-              {filteredLocationsArr.length > 0 ? <Locations /> : null}
-            </div>
-
-            <Geosuggest
-              setLocation={ setLocation}
+              <div  className="geosuggest-container"><Geosuggest
+              setLocation={setLocation}
               name={"location"}
               placeholder={"Add Location"}
-            />
-          </ModalBody>
-
-          <ModalFooter>
-            <Button color="secondary" onClick={()=>setToggle(!toggle)}>
-              Close
-            </Button>
-          </ModalFooter>
-        </Modal>
+              className="geosuggest-input"
+              /></div>
+      
       </Form>
     </>
   );
