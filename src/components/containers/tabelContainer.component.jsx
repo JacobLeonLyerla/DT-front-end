@@ -4,12 +4,12 @@ import UserSubmission from "../userSubmissionTable/userSubmissionTable.component
 import { Table } from "semantic-ui-react";
 import AppContext from "../../context";
 import { useContext } from "react";
-import Post from "../post/post.component";
-const TableContainer = ({ colOneLabel, colTwoLabel, colThreeLabel }) => {
+const TableContainer = ({ colOneLabel, colTwoLabel, colThreeLabel,post }) => {
   const { tags } = useContext(AppContext);
 
   return (
     <Table className="tags-table">
+      
       <div className="tr">
         <div className="name head">{colOneLabel}</div>
 
@@ -18,13 +18,30 @@ const TableContainer = ({ colOneLabel, colTwoLabel, colThreeLabel }) => {
         <div className="tags head">{colThreeLabel}</div>
       </div>
 
-      {tags.map((tag) => (
+   {post?  
+     <>{post.map((tag) => (
         <div className="tbody">
-          <div>
+        <div>
+            <UserSubmission tag={tag} type="Post"/>
+          </div>
+        </div>
+      ))}</>
+      : 
+     
+     
+
+
+     <>{tags.map((tag) => (
+        <div className="tbody">
+        <div>
             <UserSubmission tag={tag} />
           </div>
         </div>
-      ))}
+      ))}</>
+      
+
+
+      }
     </Table>
   );
 };
