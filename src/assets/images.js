@@ -16,7 +16,7 @@ const IMAGES = {
   colombia: require("./colombia.jpg").default,
   peru: require("./peru.jpg").default,
   chile: require("./chile.jpg").default,
-  egypt: require("./egypt.jpg").default,
+  egypt: require("./egypt.jpeg").default,
   nigeria: require("./nigeria.jpg").default,
   ethiopia: require("./ethiopia.jpg").default,
   europe: require("./europe.jpg").default,
