@@ -666,6 +666,7 @@ cursor: pointer;
 }
 .btn-post {
   width: 7%;
+  min-width: 120px;
 }
 .checked {
   background: rgba(131, 194, 245, 0.705);
@@ -902,4 +903,5 @@ td {
 }
 .delete-tag-button{
   width:20vw;
+  min-width: 220px;
 }
