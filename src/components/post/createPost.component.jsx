@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-
+import { withRouter } from "react-router";
 import {
   Button,
   Col,
@@ -8,10 +8,15 @@ import {
 import AppContext from "../../context/index.js";
 import PostForm from "./postForm.component";
 import PostPictures from "./postHelpers/postPictures.component";
-const CreatePost = () => {
-  const { pictures,handlePost,filteredTagsArr } = useContext(AppContext);
-  const pictureArr = pictures.map((picture) => picture.name);
+const CreatePost = ({history}) => {
 
+
+  const { currentPost,pictures,handlePost,filteredTagsArr,renderReplies,setRenderReplies } = useContext(AppContext);
+  const pictureArr = pictures.map((picture) => picture.name);
+  if(renderReplies){
+    setRenderReplies(!renderReplies)
+     history.push(`/dashboard/trek/${currentPost._id}`)
+  }
   return (
     <Col md="10" className="tags-container"><PostForm/>
       <Button onClick={()=>handlePost()} className="create-button">Create New Post</Button>
@@ -25,4 +30,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default withRouter(CreatePost);
