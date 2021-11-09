@@ -11,6 +11,7 @@ const ContextProvider = ({ children }) => {
   const [comments, setComments] = useState([]);
   const [count, setCount] = useState([]);
   const [post, setPost] = useState([]);
+  const [currentPost, setCurrentPost] = useState("");
 
   //comment section useStat declecations
   const [toggle, setToggle] = useState(false);
@@ -57,10 +58,10 @@ const ContextProvider = ({ children }) => {
           count += like.unreadComment;
           count += like.unreadLike;
         });
-
+        
         setCount(count);
         setPost(response.data.post);
-        setGotoDashboard(!gotoDashboard)
+        setGotoDashboard(!gotoDashboard);
       })
 
       .catch((err) => {});
@@ -84,10 +85,9 @@ const ContextProvider = ({ children }) => {
       .post("https://dt-back-end.herokuapp.com/auth/register", user)
 
       .then(() => {
-
         setEmail("");
         setCheckPassword("");
-        signInUser()
+        signInUser();
       });
     // reset the inputs
   };
@@ -116,14 +116,13 @@ const ContextProvider = ({ children }) => {
 
         // call the load pictures function and push the user to the dashboard
         getPictures();
-        loadUser()
+        loadUser();
         setUsername("");
         setPassword("");
         setGotoDashboard(!gotoDashboard);
       })
 
-      .catch((err) => {
-      });
+      .catch((err) => {});
   };
   const getPictures = () => {
     const token = localStorage.getItem("token");
@@ -357,11 +356,12 @@ const ContextProvider = ({ children }) => {
     axios
       .post("https://dt-back-end.herokuapp.com/tags", post)
       .then((response) => {
+        
         const postId = {};
         postId.post = user.post;
 
         postId.post.push(response.data._id);
-
+        setCurrentPost(response.data)
         axios
           .put(`https://dt-back-end.herokuapp.com/users/${user._id}`, postId)
           .then(() => {
@@ -373,6 +373,7 @@ const ContextProvider = ({ children }) => {
             setTitle("");
             setFilteredLocationsArr([]);
             setFilteredTagsArr([]);
+            setRenderReplies(!renderReplies)
           });
       });
   };
@@ -437,6 +438,8 @@ const ContextProvider = ({ children }) => {
     count,
     setPost,
     post,
+    setCurrentPost,
+    currentPost,
     setReply,
     reply,
     setToggle,
