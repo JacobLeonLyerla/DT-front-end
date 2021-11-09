@@ -7,7 +7,7 @@ import logoSml from "../../assets/logoinit.png";
 import { Link } from "react-router-dom";
 
 const DashBoardContainer = () => {
-  const { pictures,loadUser, getPictures, dashboardVar, notifications, user } =
+  const { pictures,loadUser, getPictures, dashboardVar, notifications, user,setNotifications } =
     useContext(AppContext);
   useEffect(() => {
     if (!user) {
@@ -16,7 +16,22 @@ const DashBoardContainer = () => {
     if (!pictures) {
       getPictures();
     }
+
+    
   }, []);
+  const setUpNotifications =()=>{
+   if(notifications===0) 
+  {  
+   let count =0
+  if(!Array.isArray(user)){
+  
+user.post.forEach(post => {
+   count += post.unreadLike + post.unreadComment
+  
+});
+  }
+  setNotifications(count)}
+  }
   return (
     // our route is wrapped in a row so this col will assign it a size in the row
     // it takes the variable form app.js and uses it to control sizing.
@@ -30,7 +45,7 @@ const DashBoardContainer = () => {
               {dashboardVar ? <Media src={logo} /> : <Media src={logoSml} />}
             </Link>
           </NavbarBrand>
-
+  {setUpNotifications()}
           {/* this just renders whatever user is signed in pulling it off of props */}
           <Link
             style={{ textDecoration: "none" }}
@@ -59,9 +74,9 @@ const DashBoardContainer = () => {
                     if they do we render a badge next to post showing the number */}
                 {notifications > 0 ? (
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    Post
+                   Post 
                     <div style={{ color: "coral", marginLeft: ".4vw" }}>
-                      <Badge style={{ background: "orange" }}>
+                      <Badge color style={{ background: "orange" }}>
                         {notifications}
                       </Badge>
                     </div>
