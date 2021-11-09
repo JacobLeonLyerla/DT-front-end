@@ -21,7 +21,19 @@ const ContextProvider = ({ children }) => {
   const [filteredTagsArr, setFilteredTagsArr] = useState([]);
   const [filteredLocationsArr, setFilteredLocationsArr] = useState([]);
   const [renderReplies, setRenderReplies] = useState(false);
-  const [newReplies,setNewReplies] = useState([])
+  const [newReplies, setNewReplies] = useState([]);
+
+  //dashboard
+  const [btn, setBtn] = useState("btn");
+  const [dashboardVar, setDashboardVar] = useState(1);
+  const [notifications, setNotifications] = useState(0);
+
+  //sign-in/sign-up
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [checkPassword, setCheckPassword] = useState("");
+  const [gotoDashboard, setGotoDashboard] = useState(false);
 
   const loadUser = () => {
     const token = localStorage.getItem("token");
@@ -48,11 +60,71 @@ const ContextProvider = ({ children }) => {
 
         setCount(count);
         setPost(response.data.post);
+        setGotoDashboard(!gotoDashboard)
       })
 
       .catch((err) => {});
   };
+  const createAndSignInUser = (e) => {
+    e.preventDefault();
+    // set up a user object
 
+    const user = {
+      username: username,
+
+      password: password,
+
+      password2: checkPassword,
+
+      email: email,
+    };
+    // pass in the user object into the register route to create a new user
+
+    axios
+      .post("https://dt-back-end.herokuapp.com/auth/register", user)
+
+      .then(() => {
+
+        setEmail("");
+        setCheckPassword("");
+        signInUser()
+      });
+    // reset the inputs
+  };
+  const signInUser = () => {
+    // clear ou storage and reomove id
+    // i was having issues with this.
+
+    localStorage.clear();
+    localStorage.removeItem("id");
+
+    const userObj = {
+      username: username,
+
+      password: password,
+    };
+
+    // make a post to our login route that returns a  token and user id
+    // than we set that one local storage for persisting the data
+    axios
+      .post("https://dt-back-end.herokuapp.com/auth/login", userObj)
+
+      .then((response) => {
+        localStorage.setItem("token", `Bearer ${response.data.token}`);
+
+        localStorage.setItem("id", response.data.user._id);
+
+        // call the load pictures function and push the user to the dashboard
+        getPictures();
+        loadUser()
+        setUsername("");
+        setPassword("");
+        setGotoDashboard(!gotoDashboard);
+      })
+
+      .catch((err) => {
+      });
+  };
   const getPictures = () => {
     const token = localStorage.getItem("token");
 
@@ -82,7 +154,7 @@ const ContextProvider = ({ children }) => {
       .get("https://dt-back-end.herokuapp.com/tags", requestOptions)
       .then((response) => {
         // create an array
-        
+
         // iterate over our resposne from our axios call
         response.data.forEach((post) => {
           // this iterates though each and pushes in the post
@@ -212,7 +284,7 @@ const ContextProvider = ({ children }) => {
       .post("https://dt-back-end.herokuapp.com/comments", replyObj)
       .then((response) => {
         let commentObj = {};
-        replyObj = response.data 
+        replyObj = response.data;
         commentObj.replies = replies;
         commentObj.replies.push(response.data._id);
         // puts our reply into our comments replies so it can render them
@@ -235,7 +307,7 @@ const ContextProvider = ({ children }) => {
               )
               .then((response) => {
                 setReply("");
-                setNewReplies([...newReplies, replyObj])
+                setNewReplies([...newReplies, replyObj]);
               })
               .catch((err) => {});
           })
@@ -281,7 +353,7 @@ const ContextProvider = ({ children }) => {
       post.locationName = mainLocation.name;
       post.markers = location;
     }
-    post.user = user.username
+    post.user = user.username;
     axios
       .post("https://dt-back-end.herokuapp.com/tags", post)
       .then((response) => {
@@ -323,11 +395,10 @@ const ContextProvider = ({ children }) => {
       .delete(`https://dt-back-end.herokuapp.com/comments/${id}`)
       .then((response) => {
         setRenderReplies(!renderReplies);
-
       })
       .catch((err) => {});
   };
-  const deleteTag =(id)=>{
+  const deleteTag = (id) => {
     const token = localStorage.getItem("token");
 
     const requestOptions = {
@@ -336,22 +407,18 @@ const ContextProvider = ({ children }) => {
       },
     };
     axios
-    .delete(`https://dt-back-end.herokuapp.com/tags/${id}`,requestOptions)
-    .then((response) => {
-      return "success"
-
-    })
-    
-  }
-  const clearNotifications =(id)=>{
-
-    const notifcations ={unreadComment:0,unreadLike:0}
+      .delete(`https://dt-back-end.herokuapp.com/tags/${id}`, requestOptions)
+      .then((response) => {
+        return "success";
+      });
+  };
+  const clearNotifications = (id) => {
+    const notifcations = { unreadComment: 0, unreadLike: 0 };
 
     axios
-    .put(`https://dt-back-end.herokuapp.com/tags/${id}`,notifcations)
-    .then(response=>{
-    })
-  }
+      .put(`https://dt-back-end.herokuapp.com/tags/${id}`, notifcations)
+      .then((response) => {});
+  };
 
   const context = {
     setUser,
@@ -404,6 +471,27 @@ const ContextProvider = ({ children }) => {
     setRenderReplies,
     clearNotifications,
     deleteTag,
+
+    notifications,
+    setNotifications,
+    setDashboardVar,
+    dashboardVar,
+    setBtn,
+    btn,
+
+    setPassword,
+    password,
+    setUsername,
+    username,
+    setEmail,
+    email,
+    setCheckPassword,
+    checkPassword,
+    setGotoDashboard,
+    gotoDashboard,
+
+    createAndSignInUser,
+    signInUser,
   };
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
