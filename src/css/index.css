@@ -1,3 +1,4 @@
+
 .mapBackground-styles {
   min-height: 100vh;
   background-image: url("../assets/adventure.jpeg");
@@ -6,6 +7,7 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
 .col-md-12 {
   display: flex;
   flex-direction: column;
@@ -125,11 +127,14 @@ p {
   -o-background-size: cover;
   background-size: cover;
   min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100%;
   font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
 .signup-container .form-control {
   width: 50%;
@@ -155,6 +160,7 @@ p {
   animation-duration: 1.7s;
   animation-iteration-count: 1;
 }
+
 .signup-container .signup-form .form-buttons {
   display: flex;
   justify-content: space-evenly;
@@ -293,6 +299,7 @@ p {
 .tags-container .tag-img {
   margin: 0px;
   padding: 0px;
+
 }
 .tags-container .tag {
   height: 49.8vh;
@@ -420,6 +427,7 @@ tr:hover {
 }
 .tags-table .td-container {
   border-bottom: 1px dotted #a8bdd6;
+cursor: pointer;
 }
 .tags-table .td-container:hover {
   background: #677fa3;
@@ -455,7 +463,8 @@ tr:hover {
   background: #677fa3;
 }
 .tbody {
-  font-size: 1.3rem;
+  border-top: 0.1px solid black !important;
+    font-size: 1.3rem;
   max-height: 35vh;
   overflow: hidden;
   overflow-y: scroll;
@@ -518,8 +527,10 @@ tr:hover {
 }
 .details {
   min-height: 15vh;
-  max-height: 30vh;
+  max-height: 40vh;
   padding-bottom: 3vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .details .header {
   justify-content: space-between;
@@ -597,6 +608,7 @@ tr:hover {
   margin-right: 0.5vw;
   color: #677fa3;
 }
+
 .comments-container .target-comment .fa-times {
   margin-left: 0.5vw;
   color: coral;
@@ -654,6 +666,7 @@ tr:hover {
 }
 .btn-post {
   width: 7%;
+  min-width: 120px;
 }
 .checked {
   background: rgba(131, 194, 245, 0.705);
@@ -734,20 +747,27 @@ tr:hover {
 .btn:focus {
   box-shadow: none !important;
 }
+
 .geosuggest__input {
-  margin-top: 5%;
-  width: 100%;
+  margin-top:3%;
+  width: 45%;
+  height: 3.5vh;
+  font-size: 1.2rem;
+  border-radius:6%;
 }
 .geosuggest__suggests {
   position: absolute;
+  right:24%;
   background: white;
-  width: 35%;
+  width: 35.6%;
   margin: 0 auto;
   margin-top: 0.4vh;
-  border-radius: 5px;
+  border-radius: 0px 0px 20px 20px;
   text-align: left;
   padding: 0.3vw 0.5vw 0.3vw;
   list-style-type: none;
+  font-size: 1rem;
+  
 }
 .geosuggest__suggests .geosuggest__item {
   padding-bottom: 0.5vh;
@@ -776,7 +796,7 @@ tr:hover {
   font-size: 1rem;
 }
 .notify {
-  background: orange;
+  background: orange !important;
   color: white;
 }
 .link-style {
@@ -852,4 +872,36 @@ td {
 }
 .modal-container .modal-buttons .clicked {
   background: #677fa3;
+}
+.tag-img-checked{
+  opacity: 0.5;
+}
+.reply-input{
+  width: 70vw;
+}
+.post-span{
+  margin-right:2.2%;
+}
+.post-list-span{
+  margin-right:1.2%;
+}
+.header-picture-col{
+  margin:0 auto;
+}
+.header-picture-text{
+  color:white !important;
+}
+.geosuggest-container{
+  margin-top:2%;
+  margin-bottom:7%;
+}
+.fa-times{
+  color:coral;
+}
+.delete-tag{
+ display: flex;
+}
+.delete-tag-button{
+  width:20vw;
+  min-width: 220px;
 }

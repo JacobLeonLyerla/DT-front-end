@@ -1,9 +1,21 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import "../../css/index.css";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import { Link } from "react-router-dom";
-class LandingNav extends Component {
-  render() {
+import AppContext from "../../context";
+import { withRouter } from "react-router";
+
+const LandingNav = ({history})=> {
+  const{loadUser,gotoDashboard} =useContext(AppContext)
+ const isSignedIn=()=>{
+  if (localStorage.getItem("id") !== null &&localStorage.getItem("token") !== null) {
+    loadUser()
+    if(gotoDashboard){
+      setGotoDashboard(!gotoDashboard);
+      history.push("/dashboard")
+    }
+   }
+}
     return (
       <div className="landing-Nav">
         <Nav>
@@ -21,12 +33,12 @@ class LandingNav extends Component {
               style={{ color: "white", textDecoration: "none" }}
               to="/signin"
             >
-              <NavLink>Sign In</NavLink>
+              <NavLink onClick={()=>isSignedIn()}>Sign In</NavLink>
             </Link>
           </NavItem>
         </Nav>
       </div>
     );
-  }
+  
 }
-export default LandingNav;
+export default withRouter(LandingNav);
