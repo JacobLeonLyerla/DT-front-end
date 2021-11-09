@@ -13,7 +13,6 @@ const Pictures = ({ pictures }) => {
         });
       }
     }
-    console.log(arr);
     return arr.sort().map((img) => {
       return <PictureCard img={img} />;
     });

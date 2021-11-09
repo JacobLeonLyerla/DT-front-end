@@ -11,6 +11,7 @@ const LandingNav = ({history})=> {
   if (localStorage.getItem("id") !== null &&localStorage.getItem("token") !== null) {
     loadUser()
     if(gotoDashboard){
+      setGotoDashboard(!gotoDashboard);
       history.push("/dashboard")
     }
    }

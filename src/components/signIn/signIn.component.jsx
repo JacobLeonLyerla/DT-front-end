@@ -21,8 +21,8 @@ const SignIn = ({ history }) => {
 
   };
     if (gotoDashboard) {
-      history.push("/dashboard");
       setGotoDashboard(!gotoDashboard);
+      history.push("/dashboard");
     }
   return (
     <div className="signup-container">

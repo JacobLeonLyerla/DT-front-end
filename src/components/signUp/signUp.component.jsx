@@ -48,8 +48,8 @@ const SignUp = ({ history }) => {
     },
   });
   if (gotoDashboard) {
-    history.push("/dashboard");
     setGotoDashboard(!gotoDashboard);
+    history.push("/dashboard");
   }
   const typefield = () => {
     if (passwordType === "password") {
