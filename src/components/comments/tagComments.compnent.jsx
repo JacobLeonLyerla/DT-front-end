@@ -23,6 +23,7 @@ const TagComments = ({ match }) => {
     getComments(id);
     getTagById(id);
   }, []);
+  
   return (
     <>
       {" "}
@@ -47,20 +48,20 @@ const TagComments = ({ match }) => {
         
       ))}</div>
       <Form className="comment-form">
-        <Button
-          className="btn-post"
-          onClick={() => handleComment()}
-          color="primary"
-        >
-          Post
-        </Button>
+        
         <Input
           name="comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           type="textarea"
           style={{ height: "10vh" }}
-        />
+        /><Button
+          className="btn-post"
+          onClick={() => handleComment()}
+          color="primary"
+        >
+          Post
+        </Button>
       </Form>
     </>
   );
