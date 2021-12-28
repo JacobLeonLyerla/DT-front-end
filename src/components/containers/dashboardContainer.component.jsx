@@ -7,7 +7,7 @@ import logoSml from "../../assets/logoinit.png";
 import { Link } from "react-router-dom";
 
 const DashBoardContainer = () => {
-  const { pictures,loadUser, getPictures, dashboardVar, notifications, user,setNotifications } =
+  const { pictures,loadUser, getPictures, dashboardVar, notifications, user,setNotifications,setGotoDashboard,gotoDashboard } =
     useContext(AppContext);
   useEffect(() => {
     if (!user) {
@@ -51,7 +51,7 @@ user.post.forEach(post => {
             style={{ textDecoration: "none" }}
             className={`${dashboardVar ? "nav-links" : ""}`}
             to="/"
-            onClick={() => localStorage.clear()}
+            onClick={() => {localStorage.clear(); setGotoDashboard(!gotoDashboard)}}
           >
             <div>{user.username} (Sign-Out)</div>
           </Link>
