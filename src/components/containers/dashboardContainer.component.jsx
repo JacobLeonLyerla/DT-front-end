@@ -90,7 +90,6 @@ user.post.forEach(post => {
             )}
           </Link>
 
-          <RenderCatagories />
 
           {/* <div onClick={() => this.props.columnSizer()}>
                 <i class={this.props.collapseIcon} />
